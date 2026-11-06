@@ -1,4 +1,6 @@
-res://level/map1.tscn
+res://school/objects/door/door.tscn
 res://school/objects/door/door_mesh.tres
-res://school/materials/skybox.tres
-res://level/level.gd
+res://school/objects/door/door.gd
+res://level/map1.tscn
+res://level/map_1.gd
+res://multiplayer/multiplayer.gd

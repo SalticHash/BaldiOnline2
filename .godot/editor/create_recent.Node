@@ -1,3 +1,8 @@
+AudioStreamPlayer3D
+Sprite3D
+AudioStreamPlayer
+Label3D
+Camera3D
 MultiplayerSynchronizer
 Node3D
 RayCast3D

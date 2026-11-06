@@ -1,22 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://byvqnas55ur6w"]
+[gd_scene format=3 uid="uid://byvqnas55ur6w"]
 
-[ext_resource type="Script" uid="uid://ba1txbfcastux" path="res://school/objects/door/door.gd" id="1_uve04"]
+[ext_resource type="Script" uid="uid://cw55tgnkm71d2" path="res://school/objects/door/door.gd" id="1_i13wh"]
 [ext_resource type="ArrayMesh" uid="uid://fqct0au6b7rt" path="res://school/objects/door/door_mesh.tres" id="2_gk5ps"]
 [ext_resource type="SpriteFrames" uid="uid://cnny8t7fh4cnp" path="res://school/objects/door/door_spriteframes.tres" id="2_h85xk"]
-[ext_resource type="Material" uid="uid://ke54s3cdrg1i" path="res://school/materials/Wall.tres" id="2_oo83u"]
 [ext_resource type="AudioStream" uid="uid://dflu630q30eqi" path="res://school/objects/door/Doors_StandardOpen.wav" id="4_rcmh0"]
 [ext_resource type="AudioStream" uid="uid://buhst0717iosj" path="res://school/objects/door/Doors_StandardShut.wav" id="5_iffc6"]
-
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tghp3"]
-properties/0/path = NodePath(".:open")
-properties/0/spawn = false
-properties/0/replication_mode = 2
-properties/1/path = NodePath("Sounds/SoundOpen:playing")
-properties/1/spawn = true
-properties/1/replication_mode = 1
-properties/2/path = NodePath("Sounds/SoundClose:playing")
-properties/2/spawn = true
-properties/2/replication_mode = 1
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4uyul"]
 data = PackedVector3Array(-0.396, 0, 0.7487, -1, 0, -1, -0.396, 0, -1, 1, 0, 1, 0.3971, 0, -1, 1, 0, -1, 1, 0, 1, 0.3971, 0, 0.7487, 0.3971, 0, -1, -0.396, 0, 0.7487, -1, 0, 1, -1, 0, -1, 1, 0, 1, -0.396, 0, 0.7487, 0.3971, 0, 0.7487, -0.396, 0, 0.7487, 1, 0, 1, -1, 0, 1)
@@ -31,58 +19,52 @@ backface_collision = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_n1w0f"]
 size = Vector3(0.4, 0.88, 0.08)
 
-[node name="Door" type="Area3D"]
+[node name="Door" type="Area3D" unique_id=1711912784]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_uve04")
-front_material = ExtResource("2_oo83u")
-back_material = ExtResource("2_oo83u")
+script = ExtResource("1_i13wh")
 
-[node name="StateSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_tghp3")
+[node name="Collisions" type="Node3D" parent="." unique_id=735002324]
 
-[node name="Collisions" type="Node3D" parent="."]
-
-[node name="Front" type="StaticBody3D" parent="Collisions"]
+[node name="Front" type="StaticBody3D" parent="Collisions" unique_id=1065754087]
 transform = Transform3D(-0.5, -4.37114e-08, -1.91069e-15, 0, -2.18557e-08, 0.5, -4.37114e-08, 0.5, 2.18557e-08, 0, 0, 0)
 
-[node name="Collision" type="CollisionShape3D" parent="Collisions/Front"]
+[node name="Collision" type="CollisionShape3D" parent="Collisions/Front" unique_id=1198535818]
 shape = SubResource("ConcavePolygonShape3D_4uyul")
 
-[node name="Mesh" type="MeshInstance3D" parent="Collisions/Front"]
+[node name="Mesh" type="MeshInstance3D" parent="Collisions/Front" unique_id=2005185879]
 gi_mode = 0
 mesh = ExtResource("2_gk5ps")
-skeleton = NodePath("")
 
-[node name="Back" type="StaticBody3D" parent="Collisions"]
+[node name="Back" type="StaticBody3D" parent="Collisions" unique_id=1020514436]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 0)
 
-[node name="Collision" type="CollisionShape3D" parent="Collisions/Back"]
+[node name="Collision" type="CollisionShape3D" parent="Collisions/Back" unique_id=2050685692]
 shape = SubResource("ConcavePolygonShape3D_j35vt")
 
-[node name="Mesh" type="MeshInstance3D" parent="Collisions/Back"]
+[node name="Mesh" type="MeshInstance3D" parent="Collisions/Back" unique_id=1238838528]
 gi_mode = 0
 mesh = ExtResource("2_gk5ps")
-skeleton = NodePath("")
 
-[node name="Solid" type="StaticBody3D" parent="Collisions"]
+[node name="Solid" type="StaticBody3D" parent="Collisions" unique_id=1922654142]
 visible = false
 collision_mask = 2
 
-[node name="Collision" type="CollisionShape3D" parent="Collisions/Solid"]
+[node name="Collision" type="CollisionShape3D" parent="Collisions/Solid" unique_id=465962950]
 shape = SubResource("ConcavePolygonShape3D_ghlmo")
 
-[node name="Sprites" type="Node3D" parent="."]
+[node name="Sprites" type="Node3D" parent="." unique_id=660464182]
 
-[node name="DoorSpriteBack" type="AnimatedSprite3D" parent="Sprites"]
+[node name="DoorSpriteBack" type="AnimatedSprite3D" parent="Sprites" unique_id=402630823]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0.001)
 pixel_size = 0.0078
 double_sided = false
 texture_filter = 0
 sprite_frames = ExtResource("2_h85xk")
-animation = &"normal_close"
+animation = &"faculty_close"
+frame_progress = 1.0
 
-[node name="DoorSpriteFront" type="AnimatedSprite3D" parent="Sprites"]
+[node name="DoorSpriteFront" type="AnimatedSprite3D" parent="Sprites" unique_id=151787535]
 transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 0, 0, -0.001)
 pixel_size = 0.0078
 double_sided = false
@@ -90,22 +72,26 @@ texture_filter = 0
 sprite_frames = ExtResource("2_h85xk")
 animation = &"normal_close"
 
-[node name="Sounds" type="Node3D" parent="."]
+[node name="Sounds" type="Node3D" parent="." unique_id=935550768]
 
-[node name="SoundOpen" type="AudioStreamPlayer3D" parent="Sounds"]
+[node name="Open" type="AudioStreamPlayer3D" parent="Sounds" unique_id=410135398]
 stream = ExtResource("4_rcmh0")
 max_distance = 10.0
 
-[node name="SoundClose" type="AudioStreamPlayer3D" parent="Sounds"]
+[node name="Close" type="AudioStreamPlayer3D" parent="Sounds" unique_id=705405149]
 stream = ExtResource("5_iffc6")
 max_distance = 10.0
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=998841527]
 wait_time = 1.5
 one_shot = true
 
-[node name="Trigger" type="CollisionShape3D" parent="."]
+[node name="Trigger" type="CollisionShape3D" parent="." unique_id=392822068]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
 shape = SubResource("BoxShape3D_n1w0f")
 
-[connection signal="input_event" from="." to="." method="_on_input_event"]
+[node name="OpenSound" type="AudioStreamPlayer3D" parent="." unique_id=1751844625]
+stream = ExtResource("4_rcmh0")
+
+[node name="ShutSound" type="AudioStreamPlayer3D" parent="." unique_id=288849244]
+stream = ExtResource("5_iffc6")

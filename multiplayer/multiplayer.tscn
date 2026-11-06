@@ -1,18 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvnwjpd0f3oa0"]
+[gd_scene format=3 uid="uid://bvnwjpd0f3oa0"]
 
-[ext_resource type="Script" uid="uid://bs2gkrlndvjyn" path="res://multiplayer/multiplayer.gd" id="1_jiv4u"]
+[ext_resource type="Script" uid="uid://b4qtvrrr8kdou" path="res://multiplayer/multiplayer.gd" id="1_jiv4u"]
 
-[node name="Multiplayer" type="Node"]
+[node name="Multiplayer" type="Node" unique_id=1826616497]
 script = ExtResource("1_jiv4u")
 
-[node name="Level" type="Node" parent="."]
+[node name="Level" type="Node" parent="." unique_id=382064402]
 
-[node name="LevelSpawner" type="MultiplayerSpawner" parent="."]
+[node name="LevelSpawner" type="MultiplayerSpawner" parent="." unique_id=539208009]
 _spawnable_scenes = PackedStringArray("uid://efwjm4hfeqf2")
 spawn_path = NodePath("../Level")
 spawn_limit = 1
 
-[node name="UI" type="Control" parent="."]
+[node name="UI" type="Control" parent="." unique_id=1044657320]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -21,7 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Net" type="VBoxContainer" parent="UI"]
+[node name="Net" type="VBoxContainer" parent="UI" unique_id=2113210344]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,22 +29,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Options" type="HBoxContainer" parent="UI/Net"]
+[node name="Options" type="HBoxContainer" parent="UI/Net" unique_id=936315301]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UI/Net/Options"]
+[node name="Label" type="Label" parent="UI/Net/Options" unique_id=305443328]
 layout_mode = 2
 text = "Direct:"
 
-[node name="Host" type="Button" parent="UI/Net/Options"]
+[node name="Host" type="Button" parent="UI/Net/Options" unique_id=903466371]
 layout_mode = 2
 text = "Host"
 
-[node name="Connect" type="Button" parent="UI/Net/Options"]
+[node name="Connect" type="Button" parent="UI/Net/Options" unique_id=84532377]
 layout_mode = 2
 text = "Connect"
 
-[node name="Remote" type="LineEdit" parent="UI/Net/Options"]
+[node name="Remote" type="LineEdit" parent="UI/Net/Options" unique_id=849003175]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "127.0.0.1"
@@ -52,14 +52,14 @@ placeholder_text = "Remote Host"
 caret_blink = true
 caret_blink_interval = 0.5
 
-[node name="Options2" type="HBoxContainer" parent="UI/Net"]
+[node name="Options2" type="HBoxContainer" parent="UI/Net" unique_id=1567114473]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UI/Net/Options2"]
+[node name="Label" type="Label" parent="UI/Net/Options2" unique_id=841930663]
 layout_mode = 2
 text = "Custom Config:"
 
-[node name="Username" type="LineEdit" parent="UI/Net/Options2"]
+[node name="Username" type="LineEdit" parent="UI/Net/Options2" unique_id=1735005906]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Player"
@@ -67,7 +67,7 @@ placeholder_text = "Username"
 caret_blink = true
 caret_blink_interval = 0.5
 
-[node name="Type" type="LineEdit" parent="UI/Net/Options2"]
+[node name="Type" type="LineEdit" parent="UI/Net/Options2" unique_id=372782228]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "player"

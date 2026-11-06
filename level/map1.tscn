@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://efwjm4hfeqf2"]
 
+[ext_resource type="Script" uid="uid://djuuh8ggif5mh" path="res://level/map_1.gd" id="1_1tj1m"]
+[ext_resource type="Script" uid="uid://br42skjk86uqx" path="res://level/skybox.gd" id="3_h7bvd"]
+[ext_resource type="AudioStream" uid="uid://dflu630q30eqi" path="res://school/objects/door/Doors_StandardOpen.wav" id="5_ap4oy"]
 [ext_resource type="PackedScene" uid="uid://b0agfwaeofre5" path="res://school/school.tscn" id="5_bds5c"]
+[ext_resource type="PackedScene" uid="uid://byvqnas55ur6w" path="res://school/objects/door/door.tscn" id="6_agfmf"]
 [ext_resource type="Material" uid="uid://vm5lydct25ju" path="res://school/materials/skybox.tres" id="6_iba72"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_agfmf"]
@@ -8,6 +12,7 @@ material = ExtResource("6_iba72")
 size = Vector3(80, 80, 80)
 
 [node name="World" type="Node3D" unique_id=195171405]
+script = ExtResource("1_1tj1m")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1542903877]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -23,3 +28,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.352, 0)
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 top_level = true
 mesh = SubResource("BoxMesh_agfmf")
+script = ExtResource("3_h7bvd")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=700433439]
+transform = Transform3D(-0.9565848, 0, -0.29145417, 0, 1, 0, 0.29145417, 0, -0.9565848, -2.7774873, 0.9341004, -17.83472)
+
+[node name="Label3D" type="Label3D" parent="Camera3D" unique_id=435237612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8361916, 0.3926313, -0.71655965)
+text = "1"
+
+[node name="Camera3D2" type="Camera3D" parent="." unique_id=1053185010]
+transform = Transform3D(-0.8334834, 0, 0.5525446, 0, 1, 0, -0.5525446, 0, -0.8334834, -0.4601755, 0.9341004, -17.83472)
+
+[node name="Label3D" type="Label3D" parent="Camera3D2" unique_id=58009881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8361916, 0.3926313, -0.71655965)
+text = "2 "
+
+[node name="Sound" type="AudioStreamPlayer" parent="." unique_id=145976226]
+stream = ExtResource("5_ap4oy")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1500953349]
+
+[node name="Door" parent="." unique_id=1711912784 instance=ExtResource("6_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.610224, 0.5123124, -16.020386)
