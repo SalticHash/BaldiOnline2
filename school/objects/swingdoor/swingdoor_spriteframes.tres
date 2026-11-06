@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bxf8knvo5fkm7"]
+
+[ext_resource type="Texture2D" uid="uid://dmu2apbtpm8u3" path="res://school/textures/WideDoor.png" id="1_jki2c"]
+[ext_resource type="Texture2D" uid="uid://b4aguvgs72wnr" path="res://school/textures/SwingDoor.png" id="2_pisbo"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jki2c")
+}],
+"loop": false,
+"name": &"close",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pisbo")
+}],
+"loop": false,
+"name": &"open",
+"speed": 1.0
+}]

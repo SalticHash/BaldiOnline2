@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c4rcnhh076wcj"]
+
+[ext_resource type="Texture2D" uid="uid://bfi8rvq1fl5ae" path="res://school/textures/Restroom Door M.png" id="1_i8822"]
+
+[resource]
+resource_name = "Bathroom Door"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_i8822")
+uv1_scale = Vector3(-0.5, -0.5, -0.5)
+uv1_offset = Vector3(-0.5, -0.5, -0.5)
+uv1_triplanar = true
+texture_filter = 0

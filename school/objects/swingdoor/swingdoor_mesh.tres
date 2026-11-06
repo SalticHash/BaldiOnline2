@@ -1,0 +1,35 @@
+[gd_resource type="ArrayMesh" load_steps=3 format=3 uid="uid://bx6u6n3yru6u5"]
+
+[ext_resource type="Material" uid="uid://ke54s3cdrg1i" path="res://school/materials/Wall.tres" id="1_tfrde"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bycyo"]
+_surfaces = [{
+"aabb": AABB(-1, -2.38419e-07, -1, 2.00001, 1.04768e-05, 2),
+"format": 34896613377,
+"index_count": 18,
+"index_data": PackedByteArray(2, 0, 5, 0, 0, 0, 2, 0, 7, 0, 5, 0, 4, 0, 3, 0, 1, 0, 2, 0, 6, 0, 7, 0, 6, 0, 3, 0, 4, 0, 6, 0, 2, 0, 3, 0),
+"name": "Material.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(254, 255, 166, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 254, 255, 166, 11, 255, 255, 0, 0, 0, 0, 0, 0, 254, 255, 0, 0, 13, 35, 152, 1, 0, 0, 0, 0, 253, 220, 14, 10, 0, 0, 0, 0, 13, 35, 152, 1, 184, 208, 0, 0, 253, 220, 14, 10, 184, 208, 0, 0)
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "swingdoor_mesh_Plane_012"
+_surfaces = [{
+"aabb": AABB(-1, -2.38419e-07, -1, 2.00001, 1.04768e-05, 2),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 240, 220, 255, 255, 0, 35, 255, 255, 240, 220, 70, 47, 0, 35, 70, 47),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray(2, 0, 5, 0, 0, 0, 2, 0, 7, 0, 5, 0, 4, 0, 3, 0, 1, 0, 2, 0, 6, 0, 7, 0, 6, 0, 3, 0, 4, 0, 6, 0, 2, 0, 3, 0),
+"material": ExtResource("1_tfrde"),
+"name": "Wall",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(254, 255, 166, 11, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 254, 255, 166, 11, 255, 255, 255, 255, 0, 0, 0, 0, 254, 255, 255, 255, 13, 35, 152, 1, 0, 0, 255, 255, 253, 220, 14, 10, 0, 0, 255, 255, 13, 35, 152, 1, 184, 208, 255, 255, 253, 220, 14, 10, 184, 208, 255, 255, 255, 127, 255, 191, 255, 127, 255, 191, 255, 127, 255, 191, 255, 127, 255, 191, 255, 127, 255, 191, 255, 127, 255, 191, 255, 127, 255, 191, 255, 127, 255, 191)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_bycyo")

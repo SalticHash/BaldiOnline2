@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b48e5jm3daxin"]
+
+[ext_resource type="Texture2D" uid="uid://cmy1efgkvu5rl" path="res://school/textures/Door.png" id="1_1lty8"]
+
+[resource]
+resource_name = "Door Indicator"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_1lty8")
+uv1_scale = Vector3(-0.5, -0.5, -0.5)
+uv1_offset = Vector3(-0.5, -0.5, -0.5)
+uv1_triplanar = true
+texture_filter = 0

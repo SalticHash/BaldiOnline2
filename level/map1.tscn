@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://efwjm4hfeqf2"]
+
+[ext_resource type="PackedScene" uid="uid://b0agfwaeofre5" path="res://school/school.tscn" id="5_bds5c"]
+[ext_resource type="Material" uid="uid://vm5lydct25ju" path="res://school/materials/skybox.tres" id="6_iba72"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_agfmf"]
+material = ExtResource("6_iba72")
+size = Vector3(80, 80, 80)
+
+[node name="World" type="Node3D" unique_id=195171405]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1542903877]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Players" type="Node3D" parent="." unique_id=516743745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1357, 0, 0)
+
+[node name="School" parent="." unique_id=2136692982 instance=ExtResource("5_bds5c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.352, 0)
+
+[node name="Skybox" type="MeshInstance3D" parent="." unique_id=1782278352]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+top_level = true
+mesh = SubResource("BoxMesh_agfmf")

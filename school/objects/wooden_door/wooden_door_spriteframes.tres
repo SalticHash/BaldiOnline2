@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://t2g2si4i5vrc"]
+
+[ext_resource type="Texture2D" uid="uid://d2eiboqr53t20" path="res://school/textures/WoodDoor.png" id="1_sbpu3"]
+[ext_resource type="Texture2D" uid="uid://b4aguvgs72wnr" path="res://school/textures/SwingDoor.png" id="2_f0vii"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sbpu3")
+}],
+"loop": false,
+"name": &"wooden_close",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f0vii")
+}],
+"loop": false,
+"name": &"wooden_open",
+"speed": 1.0
+}]

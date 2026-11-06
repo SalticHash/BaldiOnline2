@@ -1,0 +1,109 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1732569378
+icon.svg::CompressedTexture2D::9192906016182003942::1732551549::1732551556::1::::<><>::
+::res://characters/::1732551735
+::res://characters/baldi/::1732551750
+baldi.gd::GDScript::-1::1732550361::0::1::::<>BasePlayer<>::
+baldi.tscn::PackedScene::6954252686467566053::1732550564::0::1::::<><>::res://characters/baldi/baldi.gd<>res://characters/baldi/baldi_input.gd<>uid://diji7xksu00gl::::res://characters/baldi/sprites/baldiSlap0.png<>res://characters/base_player/skybox.gd<>uid://vm5lydct25ju::::res://school/materials/skybox.tres<>uid://da2xwlvjny2ci::::res://characters/baldi/sprites/baldiSlap1.png<>uid://cfvqtcx5wqit0::::res://characters/baldi/sprites/baldiSlap2.png<>uid://o5dps7tdynpm::::res://characters/baldi/sprites/baldiSlap3.png<>uid://dfpm731ou8wm8::::res://characters/baldi/sprites/baldiSlap4.png<>uid://ctanpaq6wh7n6::::res://characters/baldi/slap.wav
+baldi_input.gd::GDScript::-1::1732550564::0::1::::<>BaseInput<>::
+slap.wav::AudioStreamWAV::6107245530478435665::1731436731::1732551750::1::::<><>::
+::res://characters/baldi/sprites/::1732551749
+baldiSlap0.png::CompressedTexture2D::7739896305647862147::1701814297::1732551749::1::::<><>::
+baldiSlap1.png::CompressedTexture2D::7216436639363463592::1701814297::1732551749::1::::<><>::
+baldiSlap2.png::CompressedTexture2D::5168143062350378527::1701814297::1732551749::1::::<><>::
+baldiSlap3.png::CompressedTexture2D::1044785077163404302::1701814297::1732551749::1::::<><>::
+baldiSlap4.png::CompressedTexture2D::7541959196381380377::1701814297::1732551749::1::::<><>::
+::res://characters/base_player/::1732569218
+base_player.gd::GDScript::-1::1732569218::0::1::::BasePlayer<>CharacterBody3D<>::
+base_player.tscn::PackedScene::6386511649374471819::1732569218::0::1::::<><>::res://characters/base_player/base_player.gd<>res://characters/base_player/skybox.gd<>uid://vm5lydct25ju::::res://school/materials/skybox.tres
+player.tscn::PackedScene::7471690900035685887::1732556801::0::1::::<><>::res://characters/player/player.gd<>res://characters/base_player/skybox.gd<>uid://ddkns2qxiwiht::::res://characters/player/capsule.png<>uid://vm5lydct25ju::::res://school/materials/skybox.tres
+skybox.gd::GDScript::-1::1732566411::0::1::::<>Camera3D<>::
+::res://characters/player/::1732556801
+capsule.png::CompressedTexture2D::7391295268634154417::1701806113::1732551749::1::::<><>::
+player.gd::GDScript::-1::1732555313::0::1::::<>BasePlayer<>::
+player.tscn::PackedScene::654935240674297890::1732556801::0::1::::<><>::uid://cw8w6clmxedi6::::res://characters/base_player/base_player.tscn<>res://characters/player/player.gd<>uid://ddkns2qxiwiht::::res://characters/player/capsule.png
+::res://level/::1732569378
+level.gd::GDScript::-1::1731436181::0::1::::<>Node3D<>::
+map1.tscn::PackedScene::292429784712870037::1732569378::0::1::::<><>::res://level/level.gd<>uid://dtx1y26nkvi51::::res://school/objects/swingdoor/swingdoor.tscn<>uid://byvqnas55ur6w::::res://school/objects/door/door.tscn<>res://school/objects/woodendoor/woodendoor.tscn<>uid://b0agfwaeofre5::::res://school/school.tscn
+::res://multiplayer/::1732556801
+data.gd::GDScript::-1::1701876447::0::1::::<>Node<>::
+multiplayer.gd::GDScript::-1::1701890410::0::1::::<>Node<>::
+multiplayer.tscn::PackedScene::3888575950508913889::1732556801::0::1::::<><>::res://multiplayer/multiplayer.gd
+::res://school/::1732551750
+school.glb::PackedScene::6233231053112184985::1701894333::1732551750::1::::<><>::uid://dn1ksby1sil0a::::res://school/materials/Ceiling.tres<>uid://t8egbtcrmbcq::::res://school/materials/Basic Floor.tres<>uid://ke54s3cdrg1i::::res://school/materials/Wall.tres<>uid://c4rcnhh076wcj::::res://school/materials/Bathroom Door.tres<>uid://d0w7xaxqnt2hs::::res://school/materials/Nasty Floor.tres<>uid://bgsbkfe7wbtnd::::res://school/materials/WideDoor Indicator.tres<>uid://bxm0vxy8i2cbf::::res://school/materials/Window.tres<>uid://b48e5jm3daxin::::res://school/materials/Door Indicator.tres<>uid://cfbxevjdidmtx::::res://school/materials/Carpet.tres<>uid://b5nas36ef5pe::::res://school/materials/Wooden Wall.tres<>uid://c2sf2xml0na2x::::res://school/materials/Electric Box.tres<>uid://bxi11pil7e7w7::::res://school/materials/Floor.tres<>uid://1oo8q8po1m1l::::res://school/materials/Faculty Door.tres<>uid://c1rjeu8re7ut::::res://school/materials/Faculty.tres<>uid://dyn5rbcib3t0j::::res://school/materials/Faculty Window.tres<>uid://c4irr81cslv70::::res://school/materials/Fence.tres<>uid://dtt54smk4dy0m::::res://school/materials/Grass.tres<>uid://d1buc50qw4ra0::::res://school/materials/Wood Door.tres<>uid://bmiijxlt2j0xa::::res://school/materials/Wood Fence.tres<>uid://cjj666468jske::::res://school/materials/StandartDoorFaculty.tres
+school.tscn::PackedScene::4141516161284403826::1702054991::0::1::::<><>::uid://dn1ksby1sil0a::::res://school/materials/Ceiling.tres<>uid://t8egbtcrmbcq::::res://school/materials/Basic Floor.tres<>uid://ke54s3cdrg1i::::res://school/materials/Wall.tres<>uid://c4rcnhh076wcj::::res://school/materials/Bathroom Door.tres<>uid://d0w7xaxqnt2hs::::res://school/materials/Nasty Floor.tres<>uid://bgsbkfe7wbtnd::::res://school/materials/WideDoor Indicator.tres<>uid://bxm0vxy8i2cbf::::res://school/materials/Window.tres<>uid://b48e5jm3daxin::::res://school/materials/Door Indicator.tres<>uid://cfbxevjdidmtx::::res://school/materials/Carpet.tres<>uid://b5nas36ef5pe::::res://school/materials/Wooden Wall.tres<>uid://c2sf2xml0na2x::::res://school/materials/Electric Box.tres<>uid://bxi11pil7e7w7::::res://school/materials/Floor.tres<>uid://1oo8q8po1m1l::::res://school/materials/Faculty Door.tres<>uid://c1rjeu8re7ut::::res://school/materials/Faculty.tres<>uid://dyn5rbcib3t0j::::res://school/materials/Faculty Window.tres<>uid://c4irr81cslv70::::res://school/materials/Fence.tres<>uid://dtt54smk4dy0m::::res://school/materials/Grass.tres<>uid://bmiijxlt2j0xa::::res://school/materials/Wood Fence.tres<>uid://cjj666468jske::::res://school/materials/StandartDoorFaculty.tres
+::res://school/materials/::1732551698
+Basic Floor.tres::StandardMaterial3D::1401966159729778632::1732549523::0::1::::<><>::uid://4u575nd3qla1::::res://school/textures/Basic Floor.png
+Bathroom Door.tres::StandardMaterial3D::6843557283671428221::1732549523::0::1::::<><>::uid://bfi8rvq1fl5ae::::res://school/textures/Restroom Door M.png
+Carpet.tres::StandardMaterial3D::5127254714380394245::1732549523::0::1::::<><>::uid://ca3d7sjjcl73r::::res://school/textures/Carpet.png
+Ceiling.tres::StandardMaterial3D::8126030245001590302::1732549523::0::1::::<><>::uid://cvubmprpoo5m::::res://school/textures/Standart Ceiling.png
+Door Indicator.tres::StandardMaterial3D::4490318549392257577::1732549523::0::1::::<><>::uid://cmy1efgkvu5rl::::res://school/textures/Door.png
+Electric Box.tres::StandardMaterial3D::6705451973693833221::1732549523::0::1::::<><>::uid://jggq8n01gb0m::::res://school/textures/Electric Box Texture.png
+Faculty Door.tres::StandardMaterial3D::1854721084296695679::1732549523::0::1::::<><>::uid://db7wfsoxcnpyw::::res://school/textures/FacultyDoor.png
+Faculty Window.tres::StandardMaterial3D::8872483133453136663::1732549523::0::1::::<><>::uid://7soagtjuxhri::::res://school/textures/FacultyWindo.png
+Faculty.tres::StandardMaterial3D::195100012415563403::1732549523::0::1::::<><>::uid://djn6fcn4g6rm1::::res://school/textures/Faculty.png
+Fence.tres::StandardMaterial3D::6825897175845884773::1732549523::0::1::::<><>::uid://cq7v7tbsv3meo::::res://school/textures/fence.png
+Floor.tres::StandardMaterial3D::4018904982605214348::1732549523::0::1::::<><>::uid://bp60y4me4p2m0::::res://school/textures/Voronoi Floor.png
+Grass.tres::StandardMaterial3D::8533947519786500198::1732549523::0::1::::<><>::uid://def5s8lw4xejp::::res://school/textures/Grass.png
+Nasty Floor.tres::StandardMaterial3D::8961383505923386260::1732549523::0::1::::<><>::uid://bkwyrt8jxd5e1::::res://school/textures/Tile.png
+skybox.tres::StandardMaterial3D::1500580668275519302::1701908200::0::1::::<><>::uid://dl5gb63d8ev28::::res://school/textures/skybox.png
+StandartDoorFaculty.tres::StandardMaterial3D::5425059620777998360::1732549524::0::1::::<><>::uid://db7wfsoxcnpyw::::res://school/textures/FacultyDoor.png
+Wall.tres::StandardMaterial3D::712020233973180940::1732549523::0::1::::<><>::uid://cy1ca3uap28jg::::res://school/textures/Standard Wall.png
+WideDoor Indicator.tres::StandardMaterial3D::2844791390305549809::1732549523::0::1::::<><>::uid://dmu2apbtpm8u3::::res://school/textures/WideDoor.png
+Window.tres::StandardMaterial3D::4027093293531210151::1732549523::0::1::::<><>::uid://b2w6bkc1s6ins::::res://school/textures/WallWindo.png
+Wood Door.tres::StandardMaterial3D::8987455889943484389::1702051379::0::1::::<><>::uid://d2eiboqr53t20::::res://school/textures/WoodDoor.png
+Wood Fence.tres::StandardMaterial3D::3245704863398883082::1732549524::0::1::::<><>::uid://ic5wy6u278wg::::res://school/textures/Woodfence.png
+Wooden Wall.tres::StandardMaterial3D::132910487254691138::1732549523::0::1::::<><>::uid://b4e0me1r4relj::::res://school/textures/Wooden Wall.png
+::res://school/objects/::1732569378
+::res://school/objects/door/::1732569218
+door.gd::GDScript::-1::1732569029::0::1::::Door<>Area3D<>::
+door.tscn::PackedScene::4115299580256599736::1732569218::0::1::::<><>::res://school/objects/door/door.gd<>uid://fqct0au6b7rt::::res://school/objects/door/door_mesh.tres<>uid://cnny8t7fh4cnp::::res://school/objects/door/door_spriteframes.tres<>uid://ke54s3cdrg1i::::res://school/materials/Wall.tres<>uid://dflu630q30eqi::::res://school/objects/door/Doors_StandardOpen.wav<>uid://buhst0717iosj::::res://school/objects/door/Doors_StandardShut.wav
+Doors_StandardOpen.wav::AudioStreamWAV::7534185634069790080::1702051585::1732551750::1::::<><>::
+Doors_StandardShut.wav::AudioStreamWAV::3805776400428066469::1702051585::1732551750::1::::<><>::
+door_mesh.tres::ArrayMesh::384130940358809677::1732566403::0::1::::<><>::
+door_spriteframes.tres::SpriteFrames::5713650432123725001::1732549523::0::1::::<><>::uid://cmy1efgkvu5rl::::res://school/textures/Door.png<>uid://db7wfsoxcnpyw::::res://school/textures/FacultyDoor.png<>uid://dh38avru570j7::::res://school/textures/ClassStandard_Open.png
+::res://school/objects/swingdoor/::1732569378
+Doors_Swinging.ogg::AudioStreamOggVorbis::5567793981793781006::1701987873::1732569378::1::::<><>::
+swingdoor.gd::GDScript::-1::1732569218::0::1::::<>Area3D<>::
+swingdoor.tscn::PackedScene::8541953736035189214::1732569378::0::1::::<><>::res://school/objects/swingdoor/swingdoor.gd<>uid://ke54s3cdrg1i::::res://school/materials/Wall.tres<>uid://bxf8knvo5fkm7::::res://school/objects/swingdoor/swingdoor_spriteframes.tres<>uid://cllc0u7h65kqg::::res://school/objects/swingdoor/Doors_Swinging.ogg
+swingdoor_mesh.tres::ArrayMesh::4066030224382146034::1701977470::0::1::::<><>::uid://ke54s3cdrg1i::::res://school/materials/Wall.tres
+swingdoor_spriteframes.tres::SpriteFrames::4013108210759326184::1732549523::0::1::::<><>::uid://dmu2apbtpm8u3::::res://school/textures/WideDoor.png<>uid://b4aguvgs72wnr::::res://school/textures/SwingDoor.png
+::res://school/objects/wooden_door/::1732569362
+Doors_StandardOpen.wav::AudioStreamWAV::8154808128213336566::1702054354::1732569353::1::::<><>::
+Doors_StandardShut.wav::AudioStreamWAV::8091836047194643949::1702054354::1732569353::1::::<><>::
+wooden_door.gd::GDScript::-1::1732569344::0::1::::<>Door<>::
+wooden_door.tscn::PackedScene::1108109238303565795::1732569362::0::1::::<><>::uid://byvqnas55ur6w::::res://school/objects/door/door.tscn<>res://school/objects/wooden_door/wooden_door.gd<>uid://t2g2si4i5vrc::::res://school/objects/wooden_door/wooden_door_spriteframes.tres
+wooden_door_spriteframes.tres::SpriteFrames::1389739705982520104::1732567705::0::1::::<><>::uid://d2eiboqr53t20::::res://school/textures/WoodDoor.png<>uid://b4aguvgs72wnr::::res://school/textures/SwingDoor.png
+::res://school/textures/::1732551750
+Basic Floor.png::CompressedTexture2D::2078644271729412262::1701820960::1732551749::1::::<><>::
+Carpet.png::CompressedTexture2D::4830884200618736033::1701820960::1732551749::1::::<><>::
+Ceiling Lamp.png::CompressedTexture2D::925994483582259991::1701820960::1732551749::1::::<><>::
+ClassStandard_Open.png::CompressedTexture2D::7710391324622610518::1702051566::1732551749::1::::<><>::
+Door Mask.png::CompressedTexture2D::82403901774442119::1701820960::1732551749::1::::<><>::
+Door.png::CompressedTexture2D::5666238614496388853::1701820960::1732551749::1::::<><>::
+Electric Box Texture.png::CompressedTexture2D::644480488449607570::1701820960::1732551750::1::::<><>::
+Faculty.png::CompressedTexture2D::7819689836825698094::1701820960::1732551749::1::::<><>::
+FacultyDoor.png::CompressedTexture2D::7296856653753416042::1701820960::1732551749::1::::<><>::
+FacultyWindo.png::CompressedTexture2D::2284052178816785726::1701825402::1732551749::1::::<><>::
+fence.png::CompressedTexture2D::5963256156313157878::1701822460::1732551749::1::::<><>::
+Grass.png::CompressedTexture2D::7452194719777658969::1701820960::1732551749::1::::<><>::
+RestDoor.png::CompressedTexture2D::1878456508385983024::1701820960::1732551749::1::::<><>::
+Restroom Door M.png::CompressedTexture2D::2755915072069111140::1701820960::1732551749::1::::<><>::
+Restroom Door W.png::CompressedTexture2D::5577838873474682744::1701820960::1732551749::1::::<><>::
+RestWall.png::CompressedTexture2D::4233659212075041733::1701820960::1732551749::1::::<><>::
+skybox.png::CompressedTexture2D::7993638423128922267::1701905543::1732551749::1::::<><>::
+Standard Wall.png::CompressedTexture2D::6511170371861103492::1701820960::1732551749::1::::<><>::
+Standart Ceiling.png::CompressedTexture2D::184946400005836928::1701820960::1732551749::1::::<><>::
+Supplies Door.png::CompressedTexture2D::8687383626616766418::1701820960::1732551749::1::::<><>::
+SwingDoor.png::CompressedTexture2D::4422298280151603899::1701975047::1732551749::1::::<><>::
+Swinging Door Mask.png::CompressedTexture2D::1338268889578364837::1701820960::1732551749::1::::<><>::
+Tile.png::CompressedTexture2D::3135214046347524098::1701820960::1732551749::1::::<><>::
+Tree Border.png::CompressedTexture2D::4068437415303305855::1701820960::1732551750::1::::<><>::
+Voronoi Floor.png::CompressedTexture2D::3504811374448242789::1701820960::1732551749::1::::<><>::
+WallWindo.png::CompressedTexture2D::4328820314608669252::1701825402::1732551749::1::::<><>::
+WideDoor.png::CompressedTexture2D::8044455878900467000::1701820960::1732551749::1::::<><>::
+win dough.png::CompressedTexture2D::6324007791090340051::1701820960::1732551749::1::::<><>::
+Window Mask.png::CompressedTexture2D::1909395376725691555::1701820960::1732551749::1::::<><>::
+WoodDoor.png::CompressedTexture2D::9063106622915841627::1701820960::1732551749::1::::<><>::
+Wooden Wall.png::CompressedTexture2D::4431694265628444167::1701820960::1732551749::1::::<><>::
+Woodfence.png::CompressedTexture2D::567501611256706790::1701820960::1732551749::1::::<><>::

@@ -1,0 +1,131 @@
+[gd_scene load_steps=11 format=4 uid="uid://dtx1y26nkvi51"]
+
+[ext_resource type="Script" uid="uid://duql1wm83ermp" path="res://school/objects/swingdoor/swingdoor.gd" id="1_xqugo"]
+[ext_resource type="Material" uid="uid://ke54s3cdrg1i" path="res://school/materials/Wall.tres" id="2_312y2"]
+[ext_resource type="SpriteFrames" uid="uid://bxf8knvo5fkm7" path="res://school/objects/swingdoor/swingdoor_spriteframes.tres" id="3_s0dfi"]
+[ext_resource type="AudioStream" uid="uid://cllc0u7h65kqg" path="res://school/objects/swingdoor/Doors_Swinging.ogg" id="5_na0vf"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tghp3"]
+properties/0/path = NodePath("Sound:playing")
+properties/0/spawn = false
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:open")
+properties/1/spawn = false
+properties/1/replication_mode = 2
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ghlmo"]
+data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0)
+backface_collision = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bycyo"]
+_surfaces = [{
+"aabb": AABB(-1, -2.38419e-07, -1, 2.00001, 1.04768e-05, 2),
+"format": 34896613377,
+"index_count": 18,
+"index_data": PackedByteArray("AgAFAAAAAgAHAAUABAADAAEAAgAGAAcABgADAAQABgACAAMA"),
+"name": "Material.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/v+mCwAAAAAAAAAAAAAAAP7/pgv//wAAAAAAAP7/AAANI5gBAAAAAP3cDgoAAAAADSOYAbjQAAD93A4KuNAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_av6hx"]
+resource_name = "swingdoor_mesh_Plane_012"
+_surfaces = [{
+"aabb": AABB(-1, -2.38419e-07, -1, 2.00001, 1.04768e-05, 2),
+"attribute_data": PackedByteArray("AAD///////8AAAAA//8AAPDc//8AI///8NxGLwAjRi8="),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("AgAFAAAAAgAHAAUABAADAAEAAgAGAAcABgADAAQABgACAAMA"),
+"name": "WallFront",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/v+mCwAA//8AAAAAAAD///7/pgv/////AAAAAP7///8NI5gBAAD///3cDgoAAP//DSOYAbjQ///93A4KuND///9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_bycyo")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ivb88"]
+resource_name = "swingdoor_mesh_Plane_012"
+_surfaces = [{
+"aabb": AABB(-1, -2.38419e-07, -1, 2.00001, 1.04768e-05, 2),
+"attribute_data": PackedByteArray("AAD///////8AAAAA//8AAPDc//8AI///8NxGLwAjRi8="),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("AgAFAAAAAgAHAAUABAADAAEAAgAGAAcABgADAAQABgACAAMA"),
+"name": "WallBack",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/v+mCwAA//8AAAAAAAD///7/pgv/////AAAAAP7///8NI5gBAAD///3cDgoAAP//DSOYAbjQ///93A4KuND///9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_bycyo")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cu1xn"]
+size = Vector3(1, 1, 0.25)
+
+[node name="Swinging Door" type="Area3D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_xqugo")
+front_material = ExtResource("2_312y2")
+back_material = ExtResource("2_312y2")
+
+[node name="StateSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_tghp3")
+
+[node name="Solid" type="StaticBody3D" parent="."]
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape3D" parent="Solid"]
+shape = SubResource("ConcavePolygonShape3D_ghlmo")
+
+[node name="Meshes" type="Node3D" parent="."]
+transform = Transform3D(-0.5, -4.37114e-08, -1.91069e-15, 0, -2.18557e-08, 0.5, -4.37114e-08, 0.5, 2.18557e-08, 0, 0, 0)
+
+[node name="Front" type="MeshInstance3D" parent="Meshes"]
+gi_mode = 0
+mesh = SubResource("ArrayMesh_av6hx")
+skeleton = NodePath("")
+
+[node name="Back" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, -8.74228e-08, -1, -8.74228e-08, -3.82137e-15, -8.74228e-08, 1, 0, 0, 0)
+gi_mode = 0
+mesh = SubResource("ArrayMesh_ivb88")
+skeleton = NodePath("")
+
+[node name="Sprites" type="Node3D" parent="."]
+
+[node name="SwingDoorSpriteBack" type="AnimatedSprite3D" parent="Sprites"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0.001)
+pixel_size = 0.0078
+double_sided = false
+texture_filter = 0
+sprite_frames = ExtResource("3_s0dfi")
+animation = &"close"
+
+[node name="SwingDoorSpriteFront" type="AnimatedSprite3D" parent="Sprites"]
+transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 0, 0, -0.001)
+pixel_size = 0.0078
+double_sided = false
+texture_filter = 0
+sprite_frames = ExtResource("3_s0dfi")
+animation = &"close"
+
+[node name="Trigger" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_cu1xn")
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_na0vf")
+max_distance = 10.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

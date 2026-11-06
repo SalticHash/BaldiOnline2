@@ -1,0 +1,111 @@
+[gd_scene load_steps=12 format=3 uid="uid://byvqnas55ur6w"]
+
+[ext_resource type="Script" uid="uid://ba1txbfcastux" path="res://school/objects/door/door.gd" id="1_uve04"]
+[ext_resource type="ArrayMesh" uid="uid://fqct0au6b7rt" path="res://school/objects/door/door_mesh.tres" id="2_gk5ps"]
+[ext_resource type="SpriteFrames" uid="uid://cnny8t7fh4cnp" path="res://school/objects/door/door_spriteframes.tres" id="2_h85xk"]
+[ext_resource type="Material" uid="uid://ke54s3cdrg1i" path="res://school/materials/Wall.tres" id="2_oo83u"]
+[ext_resource type="AudioStream" uid="uid://dflu630q30eqi" path="res://school/objects/door/Doors_StandardOpen.wav" id="4_rcmh0"]
+[ext_resource type="AudioStream" uid="uid://buhst0717iosj" path="res://school/objects/door/Doors_StandardShut.wav" id="5_iffc6"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tghp3"]
+properties/0/path = NodePath(".:open")
+properties/0/spawn = false
+properties/0/replication_mode = 2
+properties/1/path = NodePath("Sounds/SoundOpen:playing")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Sounds/SoundClose:playing")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4uyul"]
+data = PackedVector3Array(-0.396, 0, 0.7487, -1, 0, -1, -0.396, 0, -1, 1, 0, 1, 0.3971, 0, -1, 1, 0, -1, 1, 0, 1, 0.3971, 0, 0.7487, 0.3971, 0, -1, -0.396, 0, 0.7487, -1, 0, 1, -1, 0, -1, 1, 0, 1, -0.396, 0, 0.7487, 0.3971, 0, 0.7487, -0.396, 0, 0.7487, 1, 0, 1, -1, 0, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_j35vt"]
+data = PackedVector3Array(-0.396, 0, 0.7487, -1, 0, -1, -0.396, 0, -1, 1, 0, 1, 0.3971, 0, -1, 1, 0, -1, 1, 0, 1, 0.3971, 0, 0.7487, 0.3971, 0, -1, -0.396, 0, 0.7487, -1, 0, 1, -1, 0, -1, 1, 0, 1, -0.396, 0, 0.7487, 0.3971, 0, 0.7487, -0.396, 0, 0.7487, 1, 0, 1, -1, 0, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ghlmo"]
+data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0)
+backface_collision = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n1w0f"]
+size = Vector3(0.4, 0.88, 0.08)
+
+[node name="Door" type="Area3D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_uve04")
+front_material = ExtResource("2_oo83u")
+back_material = ExtResource("2_oo83u")
+
+[node name="StateSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_tghp3")
+
+[node name="Collisions" type="Node3D" parent="."]
+
+[node name="Front" type="StaticBody3D" parent="Collisions"]
+transform = Transform3D(-0.5, -4.37114e-08, -1.91069e-15, 0, -2.18557e-08, 0.5, -4.37114e-08, 0.5, 2.18557e-08, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="Collisions/Front"]
+shape = SubResource("ConcavePolygonShape3D_4uyul")
+
+[node name="Mesh" type="MeshInstance3D" parent="Collisions/Front"]
+gi_mode = 0
+mesh = ExtResource("2_gk5ps")
+skeleton = NodePath("")
+
+[node name="Back" type="StaticBody3D" parent="Collisions"]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="Collisions/Back"]
+shape = SubResource("ConcavePolygonShape3D_j35vt")
+
+[node name="Mesh" type="MeshInstance3D" parent="Collisions/Back"]
+gi_mode = 0
+mesh = ExtResource("2_gk5ps")
+skeleton = NodePath("")
+
+[node name="Solid" type="StaticBody3D" parent="Collisions"]
+visible = false
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape3D" parent="Collisions/Solid"]
+shape = SubResource("ConcavePolygonShape3D_ghlmo")
+
+[node name="Sprites" type="Node3D" parent="."]
+
+[node name="DoorSpriteBack" type="AnimatedSprite3D" parent="Sprites"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0.001)
+pixel_size = 0.0078
+double_sided = false
+texture_filter = 0
+sprite_frames = ExtResource("2_h85xk")
+animation = &"normal_close"
+
+[node name="DoorSpriteFront" type="AnimatedSprite3D" parent="Sprites"]
+transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 0, 0, -0.001)
+pixel_size = 0.0078
+double_sided = false
+texture_filter = 0
+sprite_frames = ExtResource("2_h85xk")
+animation = &"normal_close"
+
+[node name="Sounds" type="Node3D" parent="."]
+
+[node name="SoundOpen" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("4_rcmh0")
+max_distance = 10.0
+
+[node name="SoundClose" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("5_iffc6")
+max_distance = 10.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="Trigger" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
+shape = SubResource("BoxShape3D_n1w0f")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

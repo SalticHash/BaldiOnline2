@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://p11nrh3ja2t8"]
+
+[ext_resource type="PackedScene" uid="uid://byvqnas55ur6w" path="res://school/objects/door/door.tscn" id="1_s737h"]
+[ext_resource type="Script" uid="uid://cdatv11s72g3y" path="res://school/objects/wooden_door/wooden_door.gd" id="2_xirve"]
+[ext_resource type="SpriteFrames" uid="uid://t2g2si4i5vrc" path="res://school/objects/wooden_door/wooden_door_spriteframes.tres" id="3_c3u7k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e1gys"]
+size = Vector3(1, 1, 0.08)
+
+[node name="WoodenDoor" instance=ExtResource("1_s737h")]
+script = ExtResource("2_xirve")
+front_material = null
+back_material = null
+
+[node name="Front" parent="Collisions" index="0"]
+visible = false
+
+[node name="Collision" parent="Collisions/Front" index="0"]
+disabled = true
+
+[node name="Back" parent="Collisions" index="1"]
+visible = false
+
+[node name="Collision" parent="Collisions/Back" index="0"]
+disabled = true
+
+[node name="DoorSpriteBack" parent="Sprites" index="0"]
+sprite_frames = ExtResource("3_c3u7k")
+animation = &"wooden_close"
+
+[node name="DoorSpriteFront" parent="Sprites" index="1"]
+sprite_frames = ExtResource("3_c3u7k")
+animation = &"wooden_close"
+
+[node name="Trigger" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49012e-08, 0)
+shape = SubResource("BoxShape3D_e1gys")

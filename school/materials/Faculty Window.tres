@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dyn5rbcib3t0j"]
+
+[ext_resource type="Texture2D" uid="uid://7soagtjuxhri" path="res://school/textures/FacultyWindo.png" id="1_vwcgo"]
+
+[resource]
+resource_name = "Faculty Window"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_vwcgo")
+uv1_scale = Vector3(-0.5, -0.5, -0.5)
+uv1_offset = Vector3(-0.5, -0.5, -0.5)
+uv1_triplanar = true
+texture_filter = 0

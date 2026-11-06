@@ -1,0 +1,38 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://fqct0au6b7rt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4svn"]
+resource_name = "Material.003"
+cull_mode = 2
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rdk1r"]
+_surfaces = [{
+"aabb": AABB(-1, -2.38419e-07, -1, 2.00001, 1.04768e-05, 2),
+"format": 34896613377,
+"index_count": 18,
+"index_data": PackedByteArray("BgABAAQAAgAFAAAAAgAHAAUABgADAAEAAgAGAAcABgACAAMA"),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/v+mCwAAAAAAAAAAAAAAAP7/pgv//wAAAAAAAP7/AABPTYQDAAAAANKyIwgAAAAAT02EA9XfAADSsiMI1d8AAA==")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "swingdoor_mesh_Plane_064"
+_surfaces = [{
+"aabb": AABB(-1, -2.38419e-07, -1, 2.00001, 1.04768e-05, 2),
+"attribute_data": PackedByteArray("AAD///////8AAAAA//8AAK+y//8sTf//r7IpICxNKSA="),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("BgABAAQAAgAFAAAAAgAHAAUABgADAAEAAgAGAAcABgACAAMA"),
+"material": SubResource("StandardMaterial3D_c4svn"),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/v+mCwAA//8AAAAAAAD///7/pgv/////AAAAAP7///9PTYQDAAD//9KyIwgAAP//T02EA9Xf///SsiMI1d////9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_rdk1r")

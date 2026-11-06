@@ -1,0 +1,56 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://cnny8t7fh4cnp"]
+
+[ext_resource type="Texture2D" uid="uid://cmy1efgkvu5rl" path="res://school/textures/Door.png" id="1_3yd41"]
+[ext_resource type="Texture2D" uid="uid://db7wfsoxcnpyw" path="res://school/textures/FacultyDoor.png" id="1_uvq6x"]
+[ext_resource type="Texture2D" uid="uid://dh38avru570j7" path="res://school/textures/ClassStandard_Open.png" id="2_dp30c"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uvq6x")
+}],
+"loop": false,
+"name": &"faculty_close",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dp30c")
+}],
+"loop": false,
+"name": &"faculty_open",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3yd41")
+}],
+"loop": false,
+"name": &"normal_close",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dp30c")
+}],
+"loop": false,
+"name": &"normal_open",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3yd41")
+}],
+"loop": false,
+"name": &"suplies_close",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dp30c")
+}],
+"loop": false,
+"name": &"suplies_open",
+"speed": 1.0
+}]

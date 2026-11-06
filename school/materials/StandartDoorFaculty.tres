@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cjj666468jske"]
+
+[ext_resource type="Texture2D" uid="uid://db7wfsoxcnpyw" path="res://school/textures/FacultyDoor.png" id="1_4215j"]
+
+[resource]
+resource_name = "StandartDoorFaculty"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_4215j")
+uv1_scale = Vector3(-0.5, -0.5, -0.5)
+uv1_offset = Vector3(-0.5, -0.5, -0.5)
+uv1_triplanar = true
+texture_filter = 0
