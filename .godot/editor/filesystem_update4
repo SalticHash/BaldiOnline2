@@ -1,6 +1,13 @@
-res://school/objects/door/door.tscn
-res://school/objects/door/door_mesh.tres
-res://school/objects/door/door.gd
-res://level/map1.tscn
+res://characters/base/base.gd
+res://characters/base/input_sync.gd
 res://level/map_1.gd
+res://multiplayer/multiplayer.tscn
+res://school/objects/door/door_mesh.tres
 res://multiplayer/multiplayer.gd
+res://characters/base/Base.tscn
+res://characters/base/base.tscn
+res://characters/player/player.tscn
+res://characters/player/player.gd
+res://characters/baldi/baldi.tscn
+res://characters/baldi/baldi.gd
+res://characters/player/input_sync.gd

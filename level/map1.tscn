@@ -19,7 +19,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="Players" type="Node3D" parent="." unique_id=516743745]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1357, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -16)
 
 [node name="School" parent="." unique_id=2136692982 instance=ExtResource("5_bds5c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.352, 0)
@@ -50,4 +50,9 @@ stream = ExtResource("5_ap4oy")
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1500953349]
 
 [node name="Door" parent="." unique_id=1711912784 instance=ExtResource("6_agfmf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.610224, 0.5123124, -16.020386)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -15)
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1084410004]
+_spawnable_scenes = PackedStringArray("uid://civ8vhnxcx713")
+spawn_path = NodePath("../Players")
+spawn_limit = 4

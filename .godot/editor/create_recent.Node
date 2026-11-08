@@ -1,9 +1,13 @@
+Label3D
+MultiplayerSpawner
+MeshInstance3D
+RayCast3D
+Camera3D
+MultiplayerSynchronizer
+CollisionShape3D
+CharacterBody3D
 AudioStreamPlayer3D
 Sprite3D
 AudioStreamPlayer
-Label3D
-Camera3D
-MultiplayerSynchronizer
 Node3D
-RayCast3D
 ColorRect

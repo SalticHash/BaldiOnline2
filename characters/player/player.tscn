@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://l2rvbld2oa7n"]
+
+[ext_resource type="PackedScene" uid="uid://civ8vhnxcx713" path="res://characters/base/base.tscn" id="1_508ok"]
+[ext_resource type="Script" uid="uid://ie1ve1b0uu2r" path="res://characters/player/player.gd" id="2_xxgcw"]
+[ext_resource type="Script" uid="uid://buj70anysmbbw" path="res://characters/player/input_sync.gd" id="3_exd8k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1d8oa"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_jh3y0"]
+material = SubResource("StandardMaterial3D_1d8oa")
+radius = 0.029
+height = 0.058
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jh3y0"]
+radius = 0.10498047
+height = 0.6484375
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jh3y0"]
+radius = 0.111816406
+height = 0.6699219
+
+[node name="Player" unique_id=991214998 instance=ExtResource("1_508ok")]
+script = ExtResource("2_xxgcw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Camera" parent_id_path=PackedInt32Array(1168804949) index="0" unique_id=1823499319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.17525017)
+mesh = SubResource("SphereMesh_jh3y0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="1" unique_id=1306059409]
+shape = SubResource("CapsuleShape3D_jh3y0")
+
+[node name="InputSync" parent="." index="4" unique_id=1842741868]
+script = ExtResource("3_exd8k")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="5" unique_id=12711661]
+mesh = SubResource("CapsuleMesh_jh3y0")

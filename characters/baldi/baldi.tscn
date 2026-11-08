@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dxwcygbhjis0f"]
+
+[ext_resource type="PackedScene" uid="uid://civ8vhnxcx713" path="res://characters/base/base.tscn" id="1_pfkde"]
+[ext_resource type="Script" uid="uid://s5vog24nowk5" path="res://characters/baldi/baldi.gd" id="2_1rn1s"]
+
+[node name="Baldi" unique_id=991214998 instance=ExtResource("1_pfkde")]
+script = ExtResource("2_1rn1s")

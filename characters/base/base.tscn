@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://civ8vhnxcx713"]
+
+[ext_resource type="Script" uid="uid://rytsvsfsc6a6" path="res://characters/base/base.gd" id="1_o12hc"]
+[ext_resource type="Script" uid="uid://dj5y5pjufoe0l" path="res://characters/base/input_sync.gd" id="2_wj330"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_6tfhu"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_lc2iy"]
+properties/0/path = NodePath(".:rotation")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:input_dir")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+
+[node name="Base" type="CharacterBody3D" unique_id=991214998]
+script = ExtResource("1_o12hc")
+
+[node name="Camera" type="Camera3D" parent="." unique_id=1168804949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1828394, 0)
+
+[node name="NameLabel" type="Label3D" parent="." unique_id=1285109512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43291968, 0)
+billboard = 2
+text = "Plauer"
+
+[node name="ServerSync" type="MultiplayerSynchronizer" parent="." unique_id=491288195]
+replication_config = SubResource("SceneReplicationConfig_6tfhu")
+
+[node name="InputSync" type="MultiplayerSynchronizer" parent="." unique_id=1842741868]
+replication_config = SubResource("SceneReplicationConfig_lc2iy")
+script = ExtResource("2_wj330")

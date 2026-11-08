@@ -33,7 +33,6 @@ transform = Transform3D(-0.5, -4.37114e-08, -1.91069e-15, 0, -2.18557e-08, 0.5, 
 shape = SubResource("ConcavePolygonShape3D_4uyul")
 
 [node name="Mesh" type="MeshInstance3D" parent="Collisions/Front" unique_id=2005185879]
-gi_mode = 0
 mesh = ExtResource("2_gk5ps")
 
 [node name="Back" type="StaticBody3D" parent="Collisions" unique_id=1020514436]
@@ -43,11 +42,9 @@ transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 
 shape = SubResource("ConcavePolygonShape3D_j35vt")
 
 [node name="Mesh" type="MeshInstance3D" parent="Collisions/Back" unique_id=1238838528]
-gi_mode = 0
 mesh = ExtResource("2_gk5ps")
 
 [node name="Solid" type="StaticBody3D" parent="Collisions" unique_id=1922654142]
-visible = false
 collision_mask = 2
 
 [node name="Collision" type="CollisionShape3D" parent="Collisions/Solid" unique_id=465962950]
