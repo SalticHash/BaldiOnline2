@@ -13,6 +13,7 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	
 	# TESTING code
 	if event is InputEventMouseButton and event.double_click:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED \

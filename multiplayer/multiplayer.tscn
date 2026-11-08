@@ -22,7 +22,7 @@ mesh = SubResource("BoxMesh_agfmf")
 script = ExtResource("4_kvucw")
 
 [node name="Players" type="Node3D" parent="World" unique_id=516743745]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -16)
 
 [node name="School" parent="World" unique_id=2136692982 instance=ExtResource("5_83gp4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.352, 0)
@@ -94,9 +94,10 @@ caret_blink = true
 caret_blink_interval = 0.5
 
 [node name="Type" type="LineEdit" parent="UI/Net/Options2" unique_id=372782228]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "player"
+text = "0"
 placeholder_text = "Character"
 caret_blink = true
 caret_blink_interval = 0.5

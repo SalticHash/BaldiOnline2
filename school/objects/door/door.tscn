@@ -19,9 +19,9 @@ backface_collision = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_n1w0f"]
 size = Vector3(0.4, 0.88, 0.08)
 
-[node name="Door" type="Area3D" unique_id=1711912784]
-collision_layer = 4
-collision_mask = 2
+[node name="Door" type="Area3D" unique_id=1711912784 groups=["door"]]
+collision_layer = 8
+collision_mask = 4
 script = ExtResource("1_i13wh")
 
 [node name="Collisions" type="Node3D" parent="." unique_id=735002324]
@@ -45,7 +45,8 @@ shape = SubResource("ConcavePolygonShape3D_j35vt")
 mesh = ExtResource("2_gk5ps")
 
 [node name="Solid" type="StaticBody3D" parent="Collisions" unique_id=1922654142]
-collision_mask = 2
+collision_layer = 2
+collision_mask = 0
 
 [node name="Collision" type="CollisionShape3D" parent="Collisions/Solid" unique_id=465962950]
 shape = SubResource("ConcavePolygonShape3D_ghlmo")
@@ -92,3 +93,5 @@ stream = ExtResource("4_rcmh0")
 
 [node name="ShutSound" type="AudioStreamPlayer3D" parent="." unique_id=288849244]
 stream = ExtResource("5_iffc6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

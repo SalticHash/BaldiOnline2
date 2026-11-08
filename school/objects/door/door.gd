@@ -33,7 +33,7 @@ func change_state(state: bool, request: bool = false):
 	var spr_state = "_open" if state else "_close"
 	$Sprites/DoorSpriteBack.play(door_back + spr_state)
 	$Sprites/DoorSpriteFront.play(door_front + spr_state)
-	$Collisions/Solid/Collision.disabled = open
+	$Collisions/Solid/Collision.set_deferred("disabled", open)
 	
 	if request: return
 	if state == false: $Sounds/Close.play()
@@ -51,3 +51,10 @@ func open_door():
 # Called when door timer closes (ON SERVER)
 func close_door():
 	change_state.rpc(false)
+
+
+func _on_body_entered(body: Node3D) -> void:
+	if !is_multiplayer_authority(): return
+	if body.is_in_group(&"baldi"):
+		open_door()
+		
