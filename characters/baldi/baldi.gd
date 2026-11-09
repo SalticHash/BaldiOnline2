@@ -1,12 +1,12 @@
 extends BaseController
 
-const SPEED: float = 300.0
+const SPEED: float = 450.0
 
 var slapping: bool = false
 var slap_buffer: float = 0.0
 var slap_interval: float = 0.0
-const SLAP_BUFFER: float = 0.25
-const SLAP_INTERVAL: float = 0.25
+const SLAP_BUFFER: float = 0.167 #10 frames in a 60fps game
+const SLAP_INTERVAL: float = 1.2
 func _physics_process(delta: float) -> void:
 	if !is_multiplayer_authority(): return
 

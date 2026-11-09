@@ -18,7 +18,7 @@ config/icon="uid://dfn8mawx7qioo"
 
 [autoload]
 
-Data="res://multiplayer/data.gd"
+Server="*uid://dglbgo6wwftt8"
 
 [display]
 
@@ -91,3 +91,8 @@ click={
 3d_physics/layer_2="World2"
 3d_physics/layer_3="Baldi"
 3d_physics/layer_4="Door"
+3d_physics/layer_5="Player"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

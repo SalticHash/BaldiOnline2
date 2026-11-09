@@ -28,9 +28,13 @@ func _physics_process(delta: float) -> void:
 
 func _process(_delta: float) -> void:
 	if multiplayer.get_unique_id() != id: return
+	$Camera.rotation.y = PI if Input.is_action_pressed("flip") else 0.0
 	$UI/Stamina.value = stamina
 	$UI.show()
-	if Input.is_action_just_pressed("click"):
-		var obj = $Camera/InteractRay.get_collider()
-		if obj and obj.is_in_group("door"):
-			obj.open_door.rpc_id(1)
+	
+	var obj = $Camera/InteractRay.get_collider()
+	if obj and obj.is_in_group("interact"):
+		$UI/Hand.show()
+		if Input.is_action_just_pressed("click"):
+			if obj.is_in_group("door"): obj.open_door.rpc_id(1, true)
+	else: $UI/Hand.hide()

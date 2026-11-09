@@ -2,13 +2,15 @@ extends Node
 
 var peer = ENetMultiplayerPeer.new()
 
-func _ready() -> void:
+func start_game():
+	var game = preload("res://level/map1.tscn").instantiate()
+	add_child(game)
+	playerSpawner = $World/MultiplayerSpawner
 	playerSpawner.spawn_function = _spawn_player
 	
 
 #################### HOST ######################
-@onready var playerSpawner: MultiplayerSpawner = $World/MultiplayerSpawner
-var players: Dictionary = {}
+var playerSpawner: MultiplayerSpawner
 func _on_host_pressed() -> void:
 	get_window().size = Vector2(716, 698)
 	get_window().position = Vector2(1844, 54)
@@ -16,6 +18,7 @@ func _on_host_pressed() -> void:
 	peer.create_server(8080, 4)
 	multiplayer.multiplayer_peer = peer
 	$UI.hide()
+	start_game()
 	player_connected(1, %Username.text, int(%Type.text))
 
 
@@ -24,7 +27,7 @@ func player_connected(id: int, username: String, type: int):
 	if !is_multiplayer_authority():
 		push_error("CONNECT should be called by AUTHORITY ONLY")
 		return
-	players[id] = {"name": username, "type": type}
+	Server.players[id] = {"name": username, "type": type}
 	playerSpawner.spawn({"id": id, "name": username, "type": type})
 
 
@@ -51,6 +54,8 @@ func _on_connect_pressed() -> void:
 	multiplayer.multiplayer_peer = peer
 	$UI.hide()
 	await multiplayer.connected_to_server
+	start_game()
+	
 	player_connected.rpc_id(1, multiplayer.get_unique_id(), %Username.text, int(%Type.text))
 	
 	multiplayer.server_disconnected.connect(get_tree().quit)

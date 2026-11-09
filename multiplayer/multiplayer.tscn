@@ -1,39 +1,9 @@
 [gd_scene format=3 uid="uid://bvnwjpd0f3oa0"]
 
 [ext_resource type="Script" uid="uid://b4qtvrrr8kdou" path="res://multiplayer/multiplayer.gd" id="1_jiv4u"]
-[ext_resource type="Material" uid="uid://vm5lydct25ju" path="res://school/materials/skybox.tres" id="3_pg840"]
-[ext_resource type="Script" uid="uid://br42skjk86uqx" path="res://level/skybox.gd" id="4_kvucw"]
-[ext_resource type="PackedScene" uid="uid://b0agfwaeofre5" path="res://school/school.tscn" id="5_83gp4"]
-[ext_resource type="PackedScene" uid="uid://byvqnas55ur6w" path="res://school/objects/door/door.tscn" id="6_hy4vt"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_agfmf"]
-material = ExtResource("3_pg840")
-size = Vector3(80, 80, 80)
 
 [node name="Game" type="Node" unique_id=1826616497]
 script = ExtResource("1_jiv4u")
-
-[node name="World" type="Node3D" parent="." unique_id=195171405]
-
-[node name="Skybox" type="MeshInstance3D" parent="World" unique_id=1782278352]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-top_level = true
-mesh = SubResource("BoxMesh_agfmf")
-script = ExtResource("4_kvucw")
-
-[node name="Players" type="Node3D" parent="World" unique_id=516743745]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -16)
-
-[node name="School" parent="World" unique_id=2136692982 instance=ExtResource("5_83gp4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.352, 0)
-
-[node name="Door" parent="World" unique_id=1711912784 instance=ExtResource("6_hy4vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -15)
-
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="World" unique_id=1084410004]
-_spawnable_scenes = PackedStringArray("uid://l2rvbld2oa7n")
-spawn_path = NodePath("../Players")
-spawn_limit = 4
 
 [node name="UI" type="Control" parent="." unique_id=1044657320]
 process_mode = 3
