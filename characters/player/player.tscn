@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://ie1ve1b0uu2r" path="res://characters/player/player.gd" id="2_xxgcw"]
 [ext_resource type="Script" uid="uid://buj70anysmbbw" path="res://characters/player/input_sync.gd" id="3_exd8k"]
 [ext_resource type="Texture2D" uid="uid://trf58n7cv1fj" path="res://characters/player/CursorSprite.png" id="4_5dc8e"]
+[ext_resource type="Texture2D" uid="uid://rgm44vm7qmbx" path="res://characters/player/ItemSlotLeft.png" id="5_idpv6"]
+[ext_resource type="SpriteFrames" uid="uid://by1mdtlm1aavo" path="res://characters/player/items.tres" id="6_rpf03"]
+[ext_resource type="Texture2D" uid="uid://0iq5jvqurwn5" path="res://characters/player/ItemSlotMiddle.png" id="7_x5dtk"]
+[ext_resource type="Texture2D" uid="uid://ue3cjeqybias" path="res://characters/player/ItemSlotRight.png" id="8_3t07l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1d8oa"]
 albedo_color = Color(1, 0, 0, 1)
@@ -21,6 +25,9 @@ height = 0.6484375
 properties/0/path = NodePath(".:stamina")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath(".:inventory")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5dc8e"]
 properties/0/path = NodePath(".:rotation")
@@ -113,6 +120,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Hand" type="TextureRect" parent="UI" index="2" unique_id=494472546]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -126,3 +134,76 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_5dc8e")
+
+[node name="InvBg" type="ColorRect" parent="UI" index="3" unique_id=2015405913]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -396.0
+offset_top = 3.0
+offset_right = -9.0
+offset_bottom = 68.0
+grow_horizontal = 0
+
+[node name="Inventory" type="HBoxContainer" parent="UI" index="4" unique_id=1917340847]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_bottom = 35.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+pivot_offset_ratio = Vector2(1, 0)
+theme_override_constants/separation = 0
+
+[node name="Slot1" type="TextureRect" parent="UI/Inventory" index="0" unique_id=1263946013]
+layout_mode = 2
+texture = ExtResource("5_idpv6")
+
+[node name="Item" type="AnimatedSprite2D" parent="UI/Inventory/Slot1" index="0" unique_id=177683670]
+position = Vector2(3, 2)
+sprite_frames = ExtResource("6_rpf03")
+animation = &"0"
+centered = false
+
+[node name="Slot2" type="TextureRect" parent="UI/Inventory" index="1" unique_id=1874736875]
+layout_mode = 2
+texture = ExtResource("7_x5dtk")
+
+[node name="Item" type="AnimatedSprite2D" parent="UI/Inventory/Slot2" index="0" unique_id=1670418124]
+position = Vector2(3, 2)
+sprite_frames = ExtResource("6_rpf03")
+animation = &"0"
+centered = false
+
+[node name="Slot3" type="TextureRect" parent="UI/Inventory" index="2" unique_id=1276878444]
+layout_mode = 2
+texture = ExtResource("7_x5dtk")
+
+[node name="Item" type="AnimatedSprite2D" parent="UI/Inventory/Slot3" index="0" unique_id=1815190814]
+position = Vector2(3, 2)
+sprite_frames = ExtResource("6_rpf03")
+animation = &"0"
+centered = false
+
+[node name="Slot4" type="TextureRect" parent="UI/Inventory" index="3" unique_id=689759864]
+layout_mode = 2
+texture = ExtResource("7_x5dtk")
+
+[node name="Item" type="AnimatedSprite2D" parent="UI/Inventory/Slot4" index="0" unique_id=228922274]
+position = Vector2(3, 2)
+sprite_frames = ExtResource("6_rpf03")
+animation = &"0"
+centered = false
+
+[node name="Slot5" type="TextureRect" parent="UI/Inventory" index="4" unique_id=1380591096]
+layout_mode = 2
+texture = ExtResource("8_3t07l")
+
+[node name="Item" type="AnimatedSprite2D" parent="UI/Inventory/Slot5" index="0" unique_id=709535841]
+position = Vector2(3, 2)
+sprite_frames = ExtResource("6_rpf03")
+animation = &"0"
+centered = false

@@ -11,3 +11,6 @@ res://characters/baldi/baldi.tscn
 res://school/objects/wooden_door/wooden_door.tscn
 res://school/objects/swingdoor/swingdoor.gd
 res://school/objects/swingdoor/swingdoor.tscn
+res://characters/player/player.tscn
+res://characters/player/player.gd
+res://characters/player/items.tres

@@ -29,7 +29,9 @@ baldiSlap4.png::CompressedTexture2D/CompressedTexture2D::7541959196381380377::17
 base.gd::GDScript::1243942306145014251::1794107515::0::1::::BaseController<>CharacterBody3D<><>0<>0<><>::
 base.tscn::PackedScene::5379745600553550344::1794107564::0::1::::<><><>0<>0<><>::uid://rytsvsfsc6a6::::res://characters/base/base.gd
 input_sync.gd::GDScript::7854404560756367725::1794104720::0::1::::BaseInputSync<>MultiplayerSynchronizer<><>0<>0<><>::
-::res://characters/player/::1794776612
+::res://characters/player/::1794776685
+BlankItem.png::CompressedTexture2D::2234243205448372829::1794776683::1794777941::1::::<><><>0<>0<>e042f763daa98c2420a5de63d164e117<>res://.godot/imported/BlankItem.png-89cc183eaaf3f208aa8247f65c24292b.ctex::
+BsodaIcon_Small.png::CompressedTexture2D::4678532267372739819::1794776665::1794777941::1::::<><><>0<>0<>18f0df71587cb811aa7ba1f4f1bc8d98<>res://.godot/imported/BsodaIcon_Small.png-7099ad0147b179965034f19baa44387b.ctex::
 CursorSprite.png::CompressedTexture2D::1369041364533084707::1794172101::1794172227::1::::<><><>0<>0<>78de0c7c372e76331e5f3903fc4871ee<>res://.godot/imported/CursorSprite.png-c0b9efad57d07f280c965b56361962f2.ctex::
 input_sync.gd::GDScript::3810764566053870460::1794107029::0::1::::<>BaseInputSync<><>0<>0<><>::
 ItemSlotLeft.png::CompressedTexture2D::1206378556514026281::1794776575::1794776614::1::::<><><>0<>0<>91748686034b34cdab89e45122e10d41<>res://.godot/imported/ItemSlotLeft.png-695f432a5eeb6c3b3e9f1afe58aef6c2.ctex::
@@ -37,6 +39,7 @@ ItemSlotMiddle.png::CompressedTexture2D::1772261664590129720::1794776594::179477
 ItemSlotRight.png::CompressedTexture2D::1413738510810613946::1794776607::1794776614::1::::<><><>0<>0<>a39e4dbb5328553ec82c594b0debb386<>res://.godot/imported/ItemSlotRight.png-e94f1823e155059501949a980f8ceb0e.ctex::
 player.gd::GDScript::571384653942398407::1794194934::0::1::::<>BaseController<><>0<>0<><>::
 player.tscn::PackedScene::828885239616140301::1794195057::0::1::::<><><>0<>0<><>::uid://civ8vhnxcx713::::res://characters/base/base.tscn<>uid://ie1ve1b0uu2r::::res://characters/player/player.gd<>uid://buj70anysmbbw::::res://characters/player/input_sync.gd<>uid://trf58n7cv1fj::::res://characters/player/CursorSprite.png
+ZestyBarIcon_Small.png::CompressedTexture2D::4915167945337664807::1794776675::1794777941::1::::<><><>0<>0<>2f500a05e6409a33764c68d383d95f8f<>res://.godot/imported/ZestyBarIcon_Small.png-d66ee00d981c07291b6cdd011221bf84.ctex::
 ::res://level/::1794195310
 map1.tscn::PackedScene::292429784712870037::1794195310::0::1::::<><><>0<>0<><>::uid://br42skjk86uqx::::res://level/skybox.gd<>uid://b0agfwaeofre5::::res://school/school.tscn<>uid://dtx1y26nkvi51::::res://school/objects/swingdoor/swingdoor.tscn<>uid://byvqnas55ur6w::::res://school/objects/door/door.tscn<>uid://vm5lydct25ju::::res://school/materials/skybox.tres<>uid://p11nrh3ja2t8::::res://school/objects/wooden_door/wooden_door.tscn
 map_1.gd::GDScript::7833477782138369791::1794093404::0::1::::<>RefCounted<><>0<>0<><>::

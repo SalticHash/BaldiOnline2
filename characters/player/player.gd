@@ -1,10 +1,18 @@
 extends BaseController
 
+enum ITEM {
+	NONE,
+	BSODA,
+	ZESTY
+}
+
 const SPEED_RUN: float = 180.0
 const SPEED_WALK: float = 80.0
 const STAM_LOSS_SPEED: float = 0.25
 const STAM_GAIN_SPEED: float = 0.5
 var running: bool = false
+var inventory: Array[int] = [0, 0, 0, 0, 0]
+
 var stamina: float = 1.0 :
 	set(value):
 		stamina = clampf(value, 0.0, 1.0)
@@ -31,6 +39,11 @@ func _process(_delta: float) -> void:
 	$Camera.rotation.y = PI if Input.is_action_pressed("flip") else 0.0
 	$UI/Stamina.value = stamina
 	$UI.show()
+	# Update inventory
+	for i in range(inventory.size()):
+		var slot = $UI/Inventory.get_child(i)
+		var anim: AnimatedSprite2D = slot.get_node("Item")
+		anim.animation = str(inventory[i])
 	
 	var obj = $Camera/InteractRay.get_collider()
 	if obj and obj.is_in_group("interact"):
