@@ -1,3 +1,4 @@
+Node3D
 VisibleOnScreenNotifier3D
 MeshInstance3D
 Timer
@@ -11,5 +12,3 @@ ProgressBar
 CollisionShape3D
 AudioStreamPlayer3D
 AnimatedSprite3D
-Label3D
-MultiplayerSpawner

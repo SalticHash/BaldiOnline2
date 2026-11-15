@@ -34,3 +34,18 @@ func _process(_delta: float) -> void:
 	if multiplayer.get_unique_id() != id: return
 	$UI/Stamina.value = slap_interval
 	$UI.show()
+
+
+@onready var player_hightlight = preload("res://characters/baldi/player_highlight.tscn")
+@rpc("authority", "call_local", "reliable")
+func spawn_highlight(player_position: Vector3, loudness: float):
+	# Is not baldi owner
+	if multiplayer.get_unique_id() != id:
+		push_error("Spawn highlight invoked for non baldi owner")
+		return
+	
+	
+	var inst = player_hightlight.instantiate()
+	inst.loudness = loudness
+	$Highlights.add_child(inst)
+	inst.global_position = player_position

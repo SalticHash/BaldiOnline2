@@ -13,11 +13,6 @@ func _ready() -> void:
 	if is_multiplayer_authority():
 		$Timer.timeout.connect(close_door)
 
-func _process(delta: float) -> void:
-	var gb = remap($HighlightTimer.time_left, $HighlightTimer.wait_time, 0.0, 0.0, 1.0)
-	$Sprites/DoorSpriteBack.modulate = Color(1.0, gb, gb)
-	$Sprites/DoorSpriteFront.modulate = Color(1.0, gb, gb)
-
 # Client requests the current state.
 @rpc("any_peer", "call_local", "reliable")
 func request_state():
@@ -49,8 +44,9 @@ func open_door(player: bool = false):
 		push_error("OPEN DOOR REQUEST should be to AUTHORITY ONLY")
 		return
 	if player and !open:
-		var baldiId = Server.get_type_id(1)
-		highlight.rpc_id(baldiId)
+		var playerPos = \
+			Server.get_type_instance(Server.TYPE.PLAYER).global_position
+		Server.rpc_type(Server.TYPE.BALDI, "spawn_highlight", playerPos, 10.0)
 	change_state.rpc(true)
 	$Timer.start()
 
@@ -58,20 +54,8 @@ func open_door(player: bool = false):
 func close_door():
 	change_state.rpc(false)
 
-@rpc("any_peer", "call_local", "reliable")
-func highlight():
-	$Sprites/DoorSpriteBack.no_depth_test = true
-	$Sprites/DoorSpriteFront.no_depth_test = true
-	$HighlightTimer.start()
-
 
 func _on_body_entered(body: Node3D) -> void:
 	if !is_multiplayer_authority(): return
 	if body.is_in_group(&"baldi"):
 		open_door()
-		
-
-
-func _on_highlight_timer_timeout() -> void:
-	$Sprites/DoorSpriteBack.no_depth_test = false
-	$Sprites/DoorSpriteFront.no_depth_test = false

@@ -8,7 +8,7 @@ func _ready() -> void:
 	$Meshes/Front.material_override = front_material
 	$Meshes/Back.material_override = back_material
 
-func _process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	$Sprites/Back.play("open" if open else "close")
 	$Sprites/Front.play("open" if open else "close")
 	
@@ -25,3 +25,12 @@ func _on_timer_timeout() -> void:
 @rpc("authority", "call_local", "reliable")
 func play_sound():
 	$Sound.play()
+
+
+func _on_body_entered(body: Node3D) -> void:
+	if !is_multiplayer_authority(): return
+	if !body.is_in_group("player"): return
+	if open: return
+	
+	var playerPos = body.global_position
+	Server.rpc_type(Server.TYPE.BALDI, "spawn_highlight", playerPos, 10.0)

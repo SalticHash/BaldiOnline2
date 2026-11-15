@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bjtqnalyjx5ss"]
+
+[ext_resource type="Script" uid="uid://cbmx7eu5a32q6" path="res://characters/baldi/player_highlight.gd" id="1_1g1do"]
+[ext_resource type="Material" uid="uid://basnxjadfsvrx" path="res://characters/baldi/player_highlight.tres" id="2_yg3j4"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_la8md"]
+radius = 0.111816406
+height = 0.6699219
+
+[node name="PlayerHighlight" type="Node3D" unique_id=54622931]
+top_level = true
+script = ExtResource("1_1g1do")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1737966068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33589804, 0)
+material_override = ExtResource("2_yg3j4")
+mesh = SubResource("CapsuleMesh_la8md")

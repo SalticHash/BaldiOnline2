@@ -39,6 +39,7 @@ const entities = [
 func _spawn_player(data) -> Node:
 	var player = entities[data.get("type")].instantiate()
 	player.id = data.get("id")
+	player.name = str(data.get("id"))
 	player.username = data.get("name")
 	return player
 
