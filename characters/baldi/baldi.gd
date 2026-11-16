@@ -6,7 +6,16 @@ var slapping: bool = false
 var slap_buffer: float = 0.0
 var slap_interval: float = 0.0
 const SLAP_BUFFER: float = 0.167 #10 frames in a 60fps game
-const SLAP_INTERVAL: float = 1.2
+var SLAP_INTERVAL: float = 1.2
+
+signal got_notebook(total: int)
+func _ready() -> void:
+	if !is_multiplayer_authority(): return
+	got_notebook.connect(speed_up)
+
+func speed_up(_total_notebooks: int):
+	SLAP_INTERVAL -= 0.1
+
 func _physics_process(delta: float) -> void:
 	if !is_multiplayer_authority(): return
 

@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://byl75xlecy6r4"]
+
+[ext_resource type="Script" uid="uid://1a6lyrmva2qa" path="res://notebook/notebook.gd" id="1_7eu1k"]
+[ext_resource type="Texture2D" uid="uid://jbphhfl74tid" path="res://notebook/NotebookSheet_1.png" id="2_1j1k1"]
+[ext_resource type="Texture2D" uid="uid://x05p2ojatcup" path="res://notebook/NotebookSheet_0.png" id="2_7rtp4"]
+[ext_resource type="Texture2D" uid="uid://dq721ky8vs0cm" path="res://notebook/NotebookSheet_2.png" id="4_ft0je"]
+[ext_resource type="Texture2D" uid="uid://ds5n7qeqhbujh" path="res://notebook/NotebookSheet_3.png" id="5_7rwif"]
+[ext_resource type="Texture2D" uid="uid://cn01cu4t0dapj" path="res://notebook/NotebookSheet_4.png" id="6_egov3"]
+[ext_resource type="Texture2D" uid="uid://coopo0yt5xbxa" path="res://notebook/NotebookSheet_5.png" id="7_a5d5w"]
+[ext_resource type="Texture2D" uid="uid://bkqqg1oq0lj6b" path="res://notebook/NotebookSheet_6.png" id="8_1veoj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1d8oa"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1d8oa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7rtp4")
+}],
+"loop": 1,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1j1k1")
+}],
+"loop": 1,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ft0je")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7rwif")
+}],
+"loop": 1,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_egov3")
+}],
+"loop": 1,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_a5d5w")
+}],
+"loop": 1,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_1veoj")
+}],
+"loop": 1,
+"name": &"6",
+"speed": 5.0
+}]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_0yflk"]
+properties/0/path = NodePath(".:visible")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
+[sub_resource type="Animation" id="Animation_0yflk"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_qlib2"]
+resource_name = "hover"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(-0.02, 0, 0, 0.4, 0, 0.02, -0.4, 0, 0.4, 0, -0.02, -0.4, 0, 0, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tso6w"]
+_data = {
+&"RESET": SubResource("Animation_0yflk"),
+&"hover": SubResource("Animation_qlib2")
+}
+
+[node name="Notebook" type="Area3D" unique_id=1310239658 groups=["interact", "notebook"]]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_7eu1k")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1670937426]
+shape = SubResource("BoxShape3D_1d8oa")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="." unique_id=1463689509]
+pixel_size = 0.0025
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_1d8oa")
+animation = &"0"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1050767804]
+replication_config = SubResource("SceneReplicationConfig_0yflk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=309078364]
+libraries/ = SubResource("AnimationLibrary_tso6w")

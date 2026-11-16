@@ -1,30 +1,10 @@
 [gd_scene format=3 uid="uid://cebq6sn3gt6cu"]
 
 [ext_resource type="Script" uid="uid://ne5372in4hs" path="res://item/item.gd" id="1_0yflk"]
-[ext_resource type="Texture2D" uid="uid://3qhgwaf4glt0" path="res://item/BsodaIcon_Large.png" id="2_qlib2"]
-[ext_resource type="Texture2D" uid="uid://ck20c2jlksqn6" path="res://item/ZestyBarIcon_Large.png" id="3_tso6w"]
+[ext_resource type="SpriteFrames" uid="uid://bdgqjvn5tfq3o" path="res://item/item.tres" id="2_6t40p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1d8oa"]
 size = Vector3(0.25, 0.25, 0.25)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jh3y0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_qlib2")
-}],
-"loop": 1,
-"name": &"1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_tso6w")
-}],
-"loop": 1,
-"name": &"2",
-"speed": 5.0
-}]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_0yflk"]
 properties/0/path = NodePath(".:visible")
@@ -80,7 +60,7 @@ pixel_size = 0.005
 billboard = 2
 alpha_cut = 1
 texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_jh3y0")
+sprite_frames = ExtResource("2_6t40p")
 animation = &"1"
 frame_progress = 0.25628948
 
