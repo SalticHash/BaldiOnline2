@@ -1,7 +1,0 @@
-res://window/window.tscn
-res://school/objects/door/door_mesh.tres
-res://window/window.gdshader
-res://window/fix_green_mesh.gd
-res://window/green_mesh.tres
-res://window/wood_mesh.tres
-res://window/window.gd
