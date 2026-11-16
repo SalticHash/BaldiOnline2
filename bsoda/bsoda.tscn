@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bud1fd2ay8cfy"]
+
+[ext_resource type="Script" uid="uid://c0x130rgyosan" path="res://bsoda/bsoda.gd" id="1_7ng31"]
+[ext_resource type="Texture2D" uid="uid://fuddlqjodv50" path="res://bsoda/BsodaSpray_Sprite_Transparent.png" id="1_k08dc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jh3y0"]
+size = Vector3(1.2324219, 1.328125, 0.049804688)
+
+[node name="BSodaSpray" type="StaticBody3D" unique_id=1295825491]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_7ng31")
+
+[node name="Sprite" type="Sprite3D" parent="." unique_id=2056475631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_k08dc")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1480650358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_jh3y0")

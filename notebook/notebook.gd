@@ -29,5 +29,6 @@ func pickup() -> void:
 		push_error("Non player picked up notebook")
 		return
 	sender_inst.notebooks += 1
+	sender_inst.stamina = 1.0
 	Server.get_type_instance(Server.TYPE.BALDI).got_notebook.emit(sender_inst.notebooks)
 	hide()

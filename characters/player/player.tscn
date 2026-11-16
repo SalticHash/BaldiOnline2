@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://c70njx84527l" path="res://characters/player/Staminometer.png" id="11_icpky"]
 [ext_resource type="Texture2D" uid="uid://b4nu4m3rm0b6t" path="res://characters/player/NotebookIcon_Sheet.png" id="12_gqopd"]
 [ext_resource type="AudioStream" uid="uid://bnr1df7405ua" path="res://characters/player/NotebookCollect.wav" id="14_icpky"]
+[ext_resource type="AudioStream" uid="uid://b1u4pcxfc3q2w" path="res://characters/player/ChipCrunch.wav" id="15_8l73k"]
+[ext_resource type="AudioStream" uid="uid://df3jsjkyi0hyv" path="res://characters/player/BsodaSpray.wav" id="16_aqrcq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1d8oa"]
 albedo_color = Color(1, 0, 0, 1)
@@ -428,3 +430,11 @@ max_polyphony = 2
 [node name="NotebookPickupSound" type="AudioStreamPlayer" parent="." index="10" unique_id=1445260707]
 stream = ExtResource("14_icpky")
 max_polyphony = 2
+
+[node name="Sounds" type="Node3D" parent="." index="11" unique_id=1469665790]
+
+[node name="zesty" type="AudioStreamPlayer3D" parent="Sounds" index="0" unique_id=387913826]
+stream = ExtResource("15_8l73k")
+
+[node name="bsoda" type="AudioStreamPlayer3D" parent="Sounds" index="1" unique_id=945726001]
+stream = ExtResource("16_aqrcq")
