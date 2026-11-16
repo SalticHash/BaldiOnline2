@@ -85,7 +85,7 @@ func use_item(cursor):
 		ITEM.NONE: return
 		ITEM.BSODA:
 			var b = bsoda.instantiate()
-			get_parent().add_child(b)
+			get_parent().get_parent().get_node("Instances").add_child(b)
 			b.global_position = global_position
 			b.global_rotation = global_rotation
 			play_sound.rpc("bsoda")
