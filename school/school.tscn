@@ -5363,8 +5363,6 @@ door_back = "women"
 
 [node name="Window" parent="Bathrooms/BRoom_002" unique_id=1296971378 instance=ExtResource("6_kwye5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.98649, 0.145667, -14.9133)
-window_back = "faculty"
-back_material = ExtResource("14_vw7cd")
 
 [node name="Cafeteria" type="Node3D" parent="." unique_id=2085375260]
 
@@ -5639,6 +5637,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.01
 
 [node name="Window" parent="Classrooms/Room_003" unique_id=360777505 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.51351, 0.145667, -1.41327)
+back_material = ExtResource("14_vw7cd")
 
 [node name="Room_004" type="Node3D" parent="Classrooms" unique_id=1990060334]
 
@@ -7482,6 +7481,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.5
 
 [node name="Window2" parent="Outdoor Elements/OWalls" unique_id=363692758 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.5135, 0.145667, -1.41327)
+back_material = ExtResource("14_vw7cd")
 
 [node name="Window3" parent="Outdoor Elements/OWalls" unique_id=859822169 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.5135, 0.145667, 4.58673)

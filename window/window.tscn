@@ -3,12 +3,15 @@
 [ext_resource type="SpriteFrames" uid="uid://wfd2ra7k87p5" path="res://window/window.tres" id="1_ss1gs"]
 [ext_resource type="Script" uid="uid://doj5pwum3froy" path="res://window/window.gd" id="1_tmt5v"]
 [ext_resource type="ArrayMesh" uid="uid://bgearmdmdl0dr" path="res://window/green_mesh.tres" id="1_u8io4"]
+[ext_resource type="Material" uid="uid://ke54s3cdrg1i" path="res://school/materials/Wall.tres" id="2_u8io4"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tmt5v"]
 points = PackedVector3Array(-0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0)
 
 [node name="Window" type="StaticBody3D" unique_id=1296971378]
 script = ExtResource("1_tmt5v")
+front_material = ExtResource("2_u8io4")
+back_material = ExtResource("2_u8io4")
 
 [node name="Collision" type="CollisionShape3D" parent="." unique_id=465962950]
 shape = SubResource("ConvexPolygonShape3D_tmt5v")
