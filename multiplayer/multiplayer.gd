@@ -2,6 +2,9 @@ extends Node
 
 var peer = ENetMultiplayerPeer.new()
 
+func _ready() -> void:
+	$UI/Net/Options/Remote.text = IP.get_local_addresses()[0]
+
 func start_game():
 	var game = preload("res://level/map1.tscn").instantiate()
 	add_child(game)
@@ -51,7 +54,7 @@ func _on_connect_pressed() -> void:
 	get_window().size = Vector2(716, 698)
 	get_window().position = Vector2(1844, 810)
 	
-	peer.create_client("127.0.0.1", 8080)
+	peer.create_client($UI/Net/Options/Remote.text, 8080)
 	multiplayer.multiplayer_peer = peer
 	$UI.hide()
 	await multiplayer.connected_to_server
