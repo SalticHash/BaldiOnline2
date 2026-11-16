@@ -108,6 +108,7 @@ use={
 3d_physics/layer_4="Door"
 3d_physics/layer_5="Player"
 3d_physics/layer_6="Item"
+3d_physics/layer_7="BSoda"
 
 [rendering]
 
