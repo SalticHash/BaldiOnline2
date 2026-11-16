@@ -193,6 +193,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33589804, 0)
 mesh = SubResource("CapsuleMesh_jh3y0")
 
 [node name="UI" type="Control" parent="." index="8" unique_id=1681700583]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

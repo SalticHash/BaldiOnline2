@@ -14,7 +14,8 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	
+	if Input.is_key_pressed(KEY_F11):
+		get_window().mode = Window.MODE_FULLSCREEN
 	# TESTING code
 	#if event is InputEventMouseButton and event.double_click:
 		#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED \
