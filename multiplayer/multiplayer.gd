@@ -4,6 +4,7 @@ var peer = ENetMultiplayerPeer.new()
 
 func _ready() -> void:
 	$UI/Net/Options/Remote.text = IP.get_local_addresses()[0]
+	print(IP.get_local_addresses())
 
 func start_game():
 	var game = preload("res://level/map1.tscn").instantiate()
