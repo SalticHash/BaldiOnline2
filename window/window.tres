@@ -1,0 +1,41 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://wfd2ra7k87p5"]
+
+[ext_resource type="Texture2D" uid="uid://dmq1vregqk1g0" path="res://window/WoodWindow_Overlay_Broken.png" id="1_6rui0"]
+[ext_resource type="Texture2D" uid="uid://cgwo4mhxq56lp" path="res://window/WoodWindow_Overlay.png" id="2_qmjqi"]
+[ext_resource type="Texture2D" uid="uid://b3ef7bnk1pqmj" path="res://window/GreenWindow_Overlay_Broken.png" id="3_b0jrs"]
+[ext_resource type="Texture2D" uid="uid://cu2olwov2c35r" path="res://window/GreenWindow_Overlay.png" id="4_m23g8"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6rui0")
+}],
+"loop": 1,
+"name": &"faculty_broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qmjqi")
+}],
+"loop": 1,
+"name": &"faculty_normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b0jrs")
+}],
+"loop": 1,
+"name": &"normal_broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_m23g8")
+}],
+"loop": 1,
+"name": &"normal_normal",
+"speed": 5.0
+}]

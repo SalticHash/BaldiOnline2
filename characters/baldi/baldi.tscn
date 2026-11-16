@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dfpm731ou8wm8" path="res://characters/baldi/sprites/baldiSlap4.png" id="7_mgn76"]
 [ext_resource type="AudioStream" uid="uid://ctanpaq6wh7n6" path="res://characters/baldi/slap.wav" id="8_8irye"]
 [ext_resource type="Script" uid="uid://dc4r27qbo58jf" path="res://characters/baldi/input_sync.gd" id="9_8fcnu"]
+[ext_resource type="Texture2D" uid="uid://c78xg4h2cgkiy" path="res://characters/player/StaminometerSheet_BG.png" id="10_mgn76"]
+[ext_resource type="Texture2D" uid="uid://bmt4x781xnsvb" path="res://characters/player/StaminometerSheet_Needle.png" id="11_8irye"]
+[ext_resource type="Texture2D" uid="uid://c70njx84527l" path="res://characters/player/Staminometer.png" id="12_7kqed"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jh3y0"]
 animations = [{
@@ -100,14 +103,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Stamina" type="ProgressBar" parent="UI" index="0" unique_id=1224675272]
-layout_mode = 0
-offset_right = 410.0
-offset_bottom = 58.0
-max_value = 0.25
-step = 0.001
-
-[node name="Cursor" type="ColorRect" parent="UI" index="1" unique_id=1811380097]
+[node name="Cursor" type="ColorRect" parent="UI" index="0" unique_id=1811380097]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -121,5 +117,69 @@ offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Stamina" type="Control" parent="UI" index="1" unique_id=1876167471]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -396.0
+offset_top = -176.0
+offset_right = -12.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="BG" type="TextureRect" parent="UI/Stamina" index="0" unique_id=710896578]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -328.0
+offset_top = -118.0
+offset_right = -54.0
+offset_bottom = -74.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("10_mgn76")
+
+[node name="Needle" type="TextureRect" parent="UI/Stamina" index="1" unique_id=2000081450]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 70.0
+offset_right = 62.0
+offset_bottom = 134.0
+texture = ExtResource("11_8irye")
+
+[node name="FG" type="TextureRect" parent="UI/Stamina" index="2" unique_id=1750033020]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = -192.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("12_7kqed")
+
+[node name="Start" type="Control" parent="UI/Stamina" index="3" unique_id=956579344]
+anchors_preset = 0
+offset_left = 46.0
+offset_top = 70.0
+offset_right = 46.0
+offset_bottom = 70.0
+
+[node name="End" type="Control" parent="UI/Stamina" index="4" unique_id=430399737]
+anchors_preset = 0
+offset_left = 324.0
+offset_top = 70.0
+offset_right = 324.0
+offset_bottom = 70.0
 
 [node name="Highlights" type="Node3D" parent="." index="10" unique_id=1429456648]

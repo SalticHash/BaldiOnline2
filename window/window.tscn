@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://7oebi5ia8eap"]
+
+[ext_resource type="SpriteFrames" uid="uid://wfd2ra7k87p5" path="res://window/window.tres" id="1_ss1gs"]
+[ext_resource type="Script" uid="uid://doj5pwum3froy" path="res://window/window.gd" id="1_tmt5v"]
+[ext_resource type="ArrayMesh" uid="uid://bgearmdmdl0dr" path="res://window/green_mesh.tres" id="1_u8io4"]
+[ext_resource type="Material" uid="uid://ke54s3cdrg1i" path="res://school/materials/Wall.tres" id="2_0npdx"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tmt5v"]
+points = PackedVector3Array(-0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0)
+
+[node name="Window" type="StaticBody3D" unique_id=1296971378]
+script = ExtResource("1_tmt5v")
+front_material = ExtResource("2_0npdx")
+back_material = ExtResource("2_0npdx")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=465962950]
+shape = SubResource("ConvexPolygonShape3D_tmt5v")
+
+[node name="Sprites" type="Node3D" parent="." unique_id=660464182]
+
+[node name="Back" type="AnimatedSprite3D" parent="Sprites" unique_id=402630823]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0.001)
+pixel_size = 0.0078
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = ExtResource("1_ss1gs")
+animation = &"normal_broken"
+
+[node name="Front" type="AnimatedSprite3D" parent="Sprites" unique_id=151787535]
+transform = Transform3D(-0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, 0, 0, -0.001)
+pixel_size = 0.0078
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = ExtResource("1_ss1gs")
+animation = &"normal_normal"
+
+[node name="Mesh" type="Node3D" parent="." unique_id=902525311]
+
+[node name="Front" type="MeshInstance3D" parent="Mesh" unique_id=1592189204]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = ExtResource("1_u8io4")
+
+[node name="Back" type="MeshInstance3D" parent="Mesh" unique_id=1961501411]
+transform = Transform3D(-0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, 0, 0, 0)
+mesh = ExtResource("1_u8io4")

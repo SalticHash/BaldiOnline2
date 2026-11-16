@@ -1,8 +1,8 @@
 extends Area3D
 
 var open: bool = false
-@export_enum("normal", "faculty", "suplies", "wooden") var door_front: String = "normal"
-@export_enum("normal", "faculty", "suplies", "wooden") var door_back: String = "normal"
+@export_enum("normal", "faculty", "suplies", "wooden", "men", "women") var door_front: String = "normal"
+@export_enum("normal", "faculty", "suplies", "wooden", "men", "women") var door_back: String = "normal"
 @export var front_material: Material
 @export var back_material: Material
 # Request current door state and connects timer if on authority
@@ -39,11 +39,18 @@ func change_state(state: bool, request: bool = false):
 
 # Anyone can try and open the door
 @rpc("any_peer", "call_local", "reliable")
-func open_door(player: bool = false):
+func open_door(id: int = -1):
 	if !is_multiplayer_authority():
 		push_error("OPEN DOOR REQUEST should be to AUTHORITY ONLY")
 		return
-	if player and !open:
+	var sender_id = multiplayer.get_remote_sender_id() if id == -1 else id
+	var is_player = Server.get_id_type(sender_id) == Server.TYPE.PLAYER
+	var sender_inst = Server.get_id_instance(sender_id)
+	var door_dist = sender_inst.global_position.distance_squared_to(global_position)
+	if door_dist > 4:
+		push_error("Unreachable door opened")
+		return
+	if is_player and !open:
 		var playerPos = \
 			Server.get_type_instance(Server.TYPE.PLAYER).global_position
 		Server.rpc_type(Server.TYPE.BALDI, "spawn_highlight", playerPos, 10.0)
@@ -58,4 +65,4 @@ func close_door():
 func _on_body_entered(body: Node3D) -> void:
 	if !is_multiplayer_authority(): return
 	if body.is_in_group(&"baldi"):
-		open_door()
+		open_door(body.id)

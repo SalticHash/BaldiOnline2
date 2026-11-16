@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://cebq6sn3gt6cu"]
+
+[ext_resource type="Script" uid="uid://ne5372in4hs" path="res://item/item.gd" id="1_0yflk"]
+[ext_resource type="Texture2D" uid="uid://3qhgwaf4glt0" path="res://item/BsodaIcon_Large.png" id="2_qlib2"]
+[ext_resource type="Texture2D" uid="uid://ck20c2jlksqn6" path="res://item/ZestyBarIcon_Large.png" id="3_tso6w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1d8oa"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jh3y0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qlib2")
+}],
+"loop": 1,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tso6w")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_0yflk"]
+properties/0/path = NodePath(".:visible")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
+[sub_resource type="Animation" id="Animation_0yflk"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_qlib2"]
+resource_name = "hover"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(-0.02, 0, 0, 0.4, 0, 0.02, -0.4, 0, 0.4, 0, -0.02, -0.4, 0, 0, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tso6w"]
+_data = {
+&"RESET": SubResource("Animation_0yflk"),
+&"hover": SubResource("Animation_qlib2")
+}
+
+[node name="Item" type="Area3D" unique_id=1310239658 groups=["interact", "item"]]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_0yflk")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1670937426]
+shape = SubResource("BoxShape3D_1d8oa")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="." unique_id=1463689509]
+pixel_size = 0.005
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_jh3y0")
+animation = &"1"
+frame_progress = 0.25628948
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1050767804]
+replication_config = SubResource("SceneReplicationConfig_0yflk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=309078364]
+libraries/ = SubResource("AnimationLibrary_tso6w")

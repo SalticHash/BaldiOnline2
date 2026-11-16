@@ -12,11 +12,14 @@ func get_type_id(type: int) -> int:
 			return player_id
 	return -1
 
-func get_type_instance(type: int) -> Node:
+func get_id_type(id: int) -> int:
+	return players.get(id).get("type")
+	
+func get_type_instance(type: int) -> Node3D:
 	var id = get_type_id(type)
 	return get_id_instance(id)
 
-func get_id_instance(id: int) -> Node:
+func get_id_instance(id: int) -> Node3D:
 	if id == -1:
 		push_error("Invalid ID for get_id_instance")
 		return null

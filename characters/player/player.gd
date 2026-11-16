@@ -6,6 +6,7 @@ enum ITEM {
 	ZESTY
 }
 
+var cursor_pos: int = 0
 const SPEED_RUN: float = 180.0
 const SPEED_WALK: float = 80.0
 const STAM_LOSS_SPEED: float = 0.25
@@ -37,17 +38,29 @@ func _physics_process(delta: float) -> void:
 func _process(_delta: float) -> void:
 	if multiplayer.get_unique_id() != id: return
 	$Camera.rotation.y = PI if Input.is_action_pressed("flip") else 0.0
-	$UI/Stamina.value = stamina
+	$UI/Stamina/Needle.position.x = \
+		remap(stamina, 0.0, 1.0, $UI/Stamina/Start.position.x, $UI/Stamina/End.position.x)
 	$UI.show()
+	if Input.is_action_just_pressed("scroll_up"):
+		cursor_pos -= 1
+	if Input.is_action_just_pressed("scroll_down"):
+		cursor_pos += 1
+	cursor_pos = wrapi(cursor_pos, 0, inventory.size())
+	
 	# Update inventory
 	for i in range(inventory.size()):
 		var slot = $UI/Inventory.get_child(i)
+		var bg: ColorRect = slot.get_node("BG")
 		var anim: AnimatedSprite2D = slot.get_node("Item")
+		bg.color = Color.RED if cursor_pos == i else Color.WHITE
 		anim.animation = str(inventory[i])
 	
 	var obj = $Camera/InteractRay.get_collider()
 	if obj and obj.is_in_group("interact"):
 		$UI/Hand.show()
 		if Input.is_action_just_pressed("click"):
-			if obj.is_in_group("door"): obj.open_door.rpc_id(1, true)
+			if obj.is_in_group("door"): obj.open_door.rpc_id(1)
+			if obj.is_in_group("item"):
+				$PickupSound.play()
+				obj.pickup.rpc_id(1, cursor_pos)
 	else: $UI/Hand.hide()

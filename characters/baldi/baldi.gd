@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 	if !is_multiplayer_authority(): return
 
 	slap_buffer -= delta
-	slap_interval -= delta
+	if slap_interval > 0.0: slap_interval -= delta
 	if slapping and slap_interval <= 0.0:
 		slap_buffer = SLAP_BUFFER
 		slap_interval = SLAP_INTERVAL
@@ -32,7 +32,11 @@ func slap_effect():
 
 func _process(_delta: float) -> void:
 	if multiplayer.get_unique_id() != id: return
-	$UI/Stamina.value = slap_interval
+	var v = remap(slap_interval, SLAP_INTERVAL, 0.0, $UI/Stamina/Start.position.x - 96.0, $UI/Stamina/End.position.x)
+	var tween = create_tween().set_trans(Tween.TRANS_SINE)
+	var y = $UI/Stamina/Needle.position.y
+	tween.tween_property($UI/Stamina/Needle, "position", Vector2(v, y), 0.1)
+		
 	$UI.show()
 
 

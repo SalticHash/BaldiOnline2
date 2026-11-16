@@ -14,3 +14,16 @@ res://school/objects/swingdoor/swingdoor.tscn
 res://characters/player/player.tscn
 res://characters/player/player.gd
 res://characters/player/items.tres
+res://item/item.tscn
+res://item/item.gd
+res://level/map1.tscn
+res://school/materials/Bathroom Door.tres
+res://school/objects/door/door_spriteframes.tres
+res://school/school.tscn
+res://school/objects/door/window.tscn
+res://window/window.tscn
+res://window/window.tres
+res://window/window.gdshader
+res://school/materials/Wall.tres
+res://window/window.gd
+res://window/green_mesh.tres

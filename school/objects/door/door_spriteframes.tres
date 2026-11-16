@@ -3,8 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://cmy1efgkvu5rl" path="res://school/textures/Door.png" id="1_3yd41"]
 [ext_resource type="Texture2D" uid="uid://db7wfsoxcnpyw" path="res://school/textures/FacultyDoor.png" id="1_uvq6x"]
 [ext_resource type="Texture2D" uid="uid://dh38avru570j7" path="res://school/textures/ClassStandard_Open.png" id="2_dp30c"]
+[ext_resource type="Texture2D" uid="uid://bfi8rvq1fl5ae" path="res://school/textures/Restroom Door M.png" id="3_54i3s"]
 [ext_resource type="Texture2D" uid="uid://d2eiboqr53t20" path="res://school/textures/WoodDoor.png" id="4_mdfgm"]
+[ext_resource type="Texture2D" uid="uid://dv1h66t505uhu" path="res://school/textures/Supplies Door.png" id="5_8kfm8"]
 [ext_resource type="Texture2D" uid="uid://b4aguvgs72wnr" path="res://school/textures/SwingDoor.png" id="5_rg6jr"]
+[ext_resource type="Texture2D" uid="uid://clp7grfnlx3ng" path="res://school/textures/Restroom Door W.png" id="6_brfdy"]
 
 [resource]
 animations = [{
@@ -26,6 +29,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_54i3s")
+}],
+"loop": 1,
+"name": &"men_close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dp30c")
+}],
+"loop": 1,
+"name": &"men_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_3yd41")
 }],
 "loop": 0,
@@ -42,7 +61,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_3yd41")
+"texture": ExtResource("5_8kfm8")
 }],
 "loop": 0,
 "name": &"suplies_close",
@@ -55,6 +74,22 @@ animations = [{
 "loop": 0,
 "name": &"suplies_open",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_brfdy")
+}],
+"loop": 1,
+"name": &"women_close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dp30c")
+}],
+"loop": 1,
+"name": &"women_open",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,

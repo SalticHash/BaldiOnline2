@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ke54s3cdrg1i"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ke54s3cdrg1i"]
 
 [ext_resource type="Texture2D" uid="uid://cy1ca3uap28jg" path="res://school/textures/Standard Wall.png" id="1_qfqd6"]
 
