@@ -16,10 +16,10 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	
 	# TESTING code
-	if event is InputEventMouseButton and event.double_click:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED \
-		if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE\
-		 else Input.MOUSE_MODE_VISIBLE
+	#if event is InputEventMouseButton and event.double_click:
+		#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED \
+		#if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE\
+		 #else Input.MOUSE_MODE_VISIBLE
 	if event is not InputEventMouseMotion: return
 			
 	var motion: InputEventMouseMotion = event
