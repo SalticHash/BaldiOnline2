@@ -1,6 +1,7 @@
 extends Node
 var players: Dictionary = {}
 
+var exits: int = 0
 enum TYPE {
 	PLAYER,
 	BALDI

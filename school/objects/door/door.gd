@@ -1,8 +1,8 @@
 extends Area3D
 
 var open: bool = false
-@export_enum("normal", "faculty", "suplies", "wooden", "men", "women") var door_front: String = "normal"
-@export_enum("normal", "faculty", "suplies", "wooden", "men", "women") var door_back: String = "normal"
+@export_enum("normal", "faculty", "suplies", "wooden", "men", "women", "principal", "mystery", "office", "lab", "safe", "doctor") var door_front: String = "normal"
+@export_enum("normal", "faculty", "suplies", "wooden", "men", "women", "principal", "mystery", "office", "lab", "safe", "doctor") var door_back: String = "normal"
 @export var front_material: Material
 @export var back_material: Material
 # Request current door state and connects timer if on authority

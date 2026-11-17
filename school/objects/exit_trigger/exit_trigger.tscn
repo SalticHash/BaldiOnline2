@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://gvqf7t301os"]
+
+[ext_resource type="Script" uid="uid://dlshebk7bqiqs" path="res://school/exit_trigger.gd" id="1_cfe3c"]
+[ext_resource type="AudioStream" uid="uid://bfw1jmfnpi2tq" path="res://school/objects/exit_trigger/BigSwitch.wav" id="2_hynkc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jh3y0"]
+size = Vector3(1.1, 1, 3)
+
+[node name="ExitTrigger" type="Area3D" unique_id=1804688277]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_cfe3c")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1334881723]
+shape = SubResource("BoxShape3D_jh3y0")
+
+[node name="CloseSound" type="AudioStreamPlayer3D" parent="." unique_id=592003946]
+stream = ExtResource("2_hynkc")

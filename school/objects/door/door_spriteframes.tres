@@ -1,16 +1,47 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://cnny8t7fh4cnp"]
 
 [ext_resource type="Texture2D" uid="uid://cmy1efgkvu5rl" path="res://school/textures/Door.png" id="1_3yd41"]
+[ext_resource type="Texture2D" uid="uid://ig8tfvuqhy1" path="res://school/objects/door/textures/DoctorDoor_Closed.png" id="1_46wsr"]
 [ext_resource type="Texture2D" uid="uid://db7wfsoxcnpyw" path="res://school/textures/FacultyDoor.png" id="1_uvq6x"]
+[ext_resource type="Texture2D" uid="uid://jfmqw47ty77a" path="res://school/objects/door/textures/DoctorDoor_Open.png" id="2_854ki"]
 [ext_resource type="Texture2D" uid="uid://dh38avru570j7" path="res://school/textures/ClassStandard_Open.png" id="2_dp30c"]
+[ext_resource type="Texture2D" uid="uid://joa7philacr0" path="res://school/objects/door/textures/FacultyStandard_Open.png" id="2_ofjxx"]
 [ext_resource type="Texture2D" uid="uid://bfi8rvq1fl5ae" path="res://school/textures/Restroom Door M.png" id="3_54i3s"]
+[ext_resource type="Texture2D" uid="uid://bmgi78dmtp7ve" path="res://school/objects/door/textures/BaldisOffice_Open.png" id="4_6jy5j"]
 [ext_resource type="Texture2D" uid="uid://d2eiboqr53t20" path="res://school/textures/WoodDoor.png" id="4_mdfgm"]
 [ext_resource type="Texture2D" uid="uid://dv1h66t505uhu" path="res://school/textures/Supplies Door.png" id="5_8kfm8"]
-[ext_resource type="Texture2D" uid="uid://b4aguvgs72wnr" path="res://school/textures/SwingDoor.png" id="5_rg6jr"]
+[ext_resource type="Texture2D" uid="uid://gdqfw634g3lh" path="res://school/objects/door/textures/BaldisLab_Closed.png" id="5_g13wp"]
 [ext_resource type="Texture2D" uid="uid://clp7grfnlx3ng" path="res://school/textures/Restroom Door W.png" id="6_brfdy"]
+[ext_resource type="Texture2D" uid="uid://dryua3q5v4lmd" path="res://school/objects/door/textures/BaldisLab_Open.png" id="6_owk6f"]
+[ext_resource type="Texture2D" uid="uid://dkjlsrc0mvp25" path="res://school/objects/door/textures/Principal_Closed.png" id="7_a2f1r"]
+[ext_resource type="Texture2D" uid="uid://cyl4lkiw2jai7" path="res://school/objects/door/textures/Principal_Open.png" id="8_7hgd2"]
+[ext_resource type="Texture2D" uid="uid://dp4wpdj2mya2c" path="res://school/objects/door/textures/MysteryDoorShut.png" id="9_eivf2"]
+[ext_resource type="Texture2D" uid="uid://cwfo2xg2qtisq" path="res://school/objects/door/textures/MysteryDoorOpen.png" id="10_v66x5"]
+[ext_resource type="Texture2D" uid="uid://b1jlwo6y3e43p" path="res://school/objects/door/textures/Supplies_Open.png" id="10_wyiib"]
+[ext_resource type="Texture2D" uid="uid://cevh11721xdm2" path="res://school/objects/door/textures/BaldisOffice_Closed.png" id="13_m77f5"]
+[ext_resource type="Texture2D" uid="uid://c5rk6bdhnkdkt" path="res://school/objects/door/textures/WoodDoor_Open.png" id="13_w4umk"]
+[ext_resource type="Texture2D" uid="uid://bpvwoao8vny0q" path="res://school/objects/door/textures/SafeRoomDoor_Closed.png" id="16_0rh3b"]
+[ext_resource type="Texture2D" uid="uid://dpyolu16c3opa" path="res://school/objects/door/textures/SafeRoomDoor_Open.png" id="17_gbf5y"]
+[ext_resource type="Texture2D" uid="uid://xnovn1l7yfh3" path="res://school/objects/door/textures/WoodDoor_Half.png" id="22_854ki"]
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_46wsr")
+}],
+"loop": 1,
+"name": &"doctor_close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_854ki")
+}],
+"loop": 1,
+"name": &"doctor_open",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_uvq6x")
@@ -21,11 +52,27 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dp30c")
+"texture": ExtResource("2_ofjxx")
 }],
 "loop": 0,
 "name": &"faculty_open",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_g13wp")
+}],
+"loop": 1,
+"name": &"lab_close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_owk6f")
+}],
+"loop": 1,
+"name": &"lab_open",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -37,10 +84,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dp30c")
+"texture": ExtResource("4_6jy5j")
 }],
 "loop": 1,
 "name": &"men_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_eivf2")
+}],
+"loop": 1,
+"name": &"mystery_close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_v66x5")
+}],
+"loop": 1,
+"name": &"mystery_open",
 "speed": 5.0
 }, {
 "frames": [{
@@ -61,6 +124,54 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("13_m77f5")
+}],
+"loop": 1,
+"name": &"office_close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6jy5j")
+}],
+"loop": 1,
+"name": &"office_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_a2f1r")
+}],
+"loop": 1,
+"name": &"principal_close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_7hgd2")
+}],
+"loop": 1,
+"name": &"principal_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_0rh3b")
+}],
+"loop": 1,
+"name": &"safe_close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_gbf5y")
+}],
+"loop": 1,
+"name": &"safe_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("5_8kfm8")
 }],
 "loop": 0,
@@ -69,7 +180,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dp30c")
+"texture": ExtResource("10_wyiib")
 }],
 "loop": 0,
 "name": &"suplies_open",
@@ -85,7 +196,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dp30c")
+"texture": ExtResource("4_6jy5j")
 }],
 "loop": 1,
 "name": &"women_open",
@@ -93,17 +204,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("22_854ki")
+}, {
+"duration": 1.0,
 "texture": ExtResource("4_mdfgm")
 }],
 "loop": 0,
 "name": &"wooden_close",
-"speed": 1.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_rg6jr")
+"texture": ExtResource("22_854ki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_w4umk")
 }],
 "loop": 0,
 "name": &"wooden_open",
-"speed": 1.0
+"speed": 24.0
 }]

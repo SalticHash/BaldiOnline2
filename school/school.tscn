@@ -11,6 +11,7 @@
 [ext_resource type="Material" uid="uid://b5nas36ef5pe" path="res://school/materials/Wooden Wall.tres" id="10_nfcfg"]
 [ext_resource type="Material" uid="uid://c2sf2xml0na2x" path="res://school/materials/Electric Box.tres" id="11_u8adr"]
 [ext_resource type="Material" uid="uid://bxi11pil7e7w7" path="res://school/materials/Floor.tres" id="12_1jada"]
+[ext_resource type="PackedScene" uid="uid://gvqf7t301os" path="res://school/objects/exit_trigger/exit_trigger.tscn" id="14_6g8ja"]
 [ext_resource type="PackedScene" uid="uid://dtx1y26nkvi51" path="res://school/objects/swingdoor/swingdoor.tscn" id="14_iypqd"]
 [ext_resource type="Material" uid="uid://c1rjeu8re7ut" path="res://school/materials/Faculty.tres" id="14_vw7cd"]
 [ext_resource type="Material" uid="uid://c4irr81cslv70" path="res://school/materials/Fence.tres" id="16_rsd7n"]
@@ -6101,6 +6102,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98649, 0.145666, 15.0867)
 [node name="Swinging Door" parent="Exits/Exit_001" unique_id=243618768 instance=ExtResource("14_iypqd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98649, 0.145666, 15.0867)
 
+[node name="ExitTrigger" parent="Exits/Exit_001" unique_id=1804688277 node_paths=PackedStringArray("block") instance=ExtResource("14_6g8ja")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.986, 0.146, 14.587)
+block = NodePath("../../Block_001")
+
 [node name="Exit_002" type="Node3D" parent="Exits" unique_id=1554917486]
 
 [node name="Ceyling_170" type="MeshInstance3D" parent="Exits/Exit_002" unique_id=77864012]
@@ -6141,6 +6146,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0135, 0.145666, 3.08673)
 
 [node name="Window2" parent="Exits/Exit_002" unique_id=1441325368 instance=ExtResource("6_kwye5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0135, 0.145666, 3.08673)
+
+[node name="ExitTrigger" parent="Exits/Exit_002" unique_id=1498797613 node_paths=PackedStringArray("block") instance=ExtResource("14_6g8ja")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.014, 0.146, 2.587)
+block = NodePath("../../Block_002")
 
 [node name="Exit_003" type="Node3D" parent="Exits" unique_id=1511320125]
 
@@ -6183,6 +6192,10 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.
 [node name="Swinging Door" parent="Exits/Exit_003" unique_id=73988314 instance=ExtResource("14_iypqd")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.4865, 0.145666, -7.41327)
 
+[node name="ExitTrigger" parent="Exits/Exit_003" unique_id=205005764 node_paths=PackedStringArray("block") instance=ExtResource("14_6g8ja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.986, 0.146, -7.413)
+block = NodePath("../../Block_003")
+
 [node name="Exit_004" type="Node3D" parent="Exits" unique_id=558358224]
 
 [node name="Ceyling_490" type="MeshInstance3D" parent="Exits/Exit_004" unique_id=517141045]
@@ -6223,6 +6236,10 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.9
 
 [node name="Window2" parent="Exits/Exit_004" unique_id=1657475583 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.013509989, 0.145666, -11.9133)
+
+[node name="ExitTrigger" parent="Exits/Exit_004" unique_id=1368345779 node_paths=PackedStringArray("block") instance=ExtResource("14_6g8ja")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.98600006, 0.146, -11.413)
+block = NodePath("../../Block_004")
 
 [node name="Faculty Rooms" type="Node3D" parent="." unique_id=766873794]
 
@@ -7758,8 +7775,8 @@ front_material = ExtResource("14_vw7cd")
 
 [node name="Door" parent="Principal\'s Office" unique_id=946147779 instance=ExtResource("6_svmlk")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.486489, 0.145667, 4.58673)
-door_front = "faculty"
-door_back = "faculty"
+door_front = "principal"
+door_back = "principal"
 back_material = ExtResource("14_vw7cd")
 
 [node name="Supplies" type="Node3D" parent="." unique_id=2083062742]

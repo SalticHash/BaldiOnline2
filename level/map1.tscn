@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://efwjm4hfeqf2"]
 
 [ext_resource type="Script" uid="uid://br42skjk86uqx" path="res://level/skybox.gd" id="3_h7bvd"]
+[ext_resource type="AudioStream" uid="uid://cj55ptvvglqar" path="res://school/Level_1_End.wav" id="5_ap4oy"]
 [ext_resource type="PackedScene" uid="uid://b0agfwaeofre5" path="res://school/school.tscn" id="5_bds5c"]
+[ext_resource type="PackedScene" uid="uid://byl75xlecy6r4" path="res://notebook/notebook.tscn" id="6_agfmf"]
 [ext_resource type="Material" uid="uid://vm5lydct25ju" path="res://school/materials/skybox.tres" id="6_iba72"]
 [ext_resource type="PackedScene" uid="uid://cebq6sn3gt6cu" path="res://item/item.tscn" id="7_agfmf"]
+[ext_resource type="PackedScene" uid="uid://p11nrh3ja2t8" path="res://school/objects/wooden_door/wooden_door.tscn" id="7_jynfq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_agfmf"]
 material = ExtResource("6_iba72")
@@ -29,6 +32,7 @@ spawn_limit = 4
 
 [node name="Item" parent="." unique_id=1310239658 instance=ExtResource("7_agfmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5489756, -17.816593)
+item_id = 2
 
 [node name="Item2" parent="." unique_id=1431064347 instance=ExtResource("7_agfmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66537523, 0.5489756, -18.216902)
@@ -36,6 +40,7 @@ item_id = 2
 
 [node name="Item3" parent="." unique_id=1781380583 instance=ExtResource("7_agfmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7025027, 0.54897547, -18.17952)
+item_id = 2
 
 [node name="Item4" parent="." unique_id=1523977328 instance=ExtResource("7_agfmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5144038, 0.54897535, -17.943748)
@@ -43,9 +48,34 @@ item_id = 2
 
 [node name="Item5" parent="." unique_id=1600806004 instance=ExtResource("7_agfmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1455598, 0.5489752, -17.609905)
+item_id = 2
 
 [node name="Instances" type="Node3D" parent="." unique_id=2140097541]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Instances" unique_id=1915697736]
 _spawnable_scenes = PackedStringArray("uid://bud1fd2ay8cfy")
 spawn_path = NodePath("..")
+
+[node name="EscapeMusic" type="AudioStreamPlayer" parent="." unique_id=1414626487]
+stream = ExtResource("5_ap4oy")
+
+[node name="Notebook" parent="." unique_id=755163842 instance=ExtResource("6_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50111365, -16.666656)
+
+[node name="Notebook2" parent="." unique_id=1208394925 instance=ExtResource("6_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50111365, -16.666656)
+
+[node name="Notebook3" parent="." unique_id=657072614 instance=ExtResource("6_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50111365, -16.666656)
+
+[node name="Notebook4" parent="." unique_id=1722184110 instance=ExtResource("6_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50111365, -16.666656)
+
+[node name="Notebook5" parent="." unique_id=183693448 instance=ExtResource("6_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50111365, -16.666656)
+
+[node name="Notebook6" parent="." unique_id=1137325763 instance=ExtResource("6_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50111365, -16.666656)
+
+[node name="WoodenDoor" parent="." unique_id=1475381490 instance=ExtResource("7_jynfq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5167444, -14.8356495)

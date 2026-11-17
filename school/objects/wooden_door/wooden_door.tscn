@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://p11nrh3ja2t8"]
 
 [ext_resource type="PackedScene" uid="uid://byvqnas55ur6w" path="res://school/objects/door/door.tscn" id="1_s737h"]
-[ext_resource type="SpriteFrames" uid="uid://t2g2si4i5vrc" path="res://school/objects/wooden_door/wooden_door_spriteframes.tres" id="3_c3u7k"]
+[ext_resource type="AudioStream" uid="uid://dogiq7gwmyswc" path="res://school/objects/wooden_door/WoodenOpen.wav" id="2_jqhgh"]
+[ext_resource type="AudioStream" uid="uid://dnj0mfh2xmn3r" path="res://school/objects/wooden_door/WoodenShut.wav" id="3_jqs2g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e1gys"]
 size = Vector3(1, 1, 0.08)
@@ -23,13 +24,21 @@ visible = false
 disabled = true
 
 [node name="DoorSpriteBack" parent="Sprites" parent_id_path=PackedInt32Array(660464182) index="0" unique_id=402630823]
-sprite_frames = ExtResource("3_c3u7k")
+flip_h = true
 animation = &"wooden_close"
-frame_progress = 0.0
+frame = 1
+frame_progress = 1.0
 
 [node name="DoorSpriteFront" parent="Sprites" parent_id_path=PackedInt32Array(660464182) index="1" unique_id=151787535]
-sprite_frames = ExtResource("3_c3u7k")
 animation = &"wooden_close"
+frame = 1
+frame_progress = 1.0
+
+[node name="Open" parent="Sounds" parent_id_path=PackedInt32Array(935550768) index="0" unique_id=410135398]
+stream = ExtResource("2_jqhgh")
+
+[node name="Close" parent="Sounds" parent_id_path=PackedInt32Array(935550768) index="1" unique_id=705405149]
+stream = ExtResource("3_jqs2g")
 
 [node name="Trigger" parent="." index="4" unique_id=392822068]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49012e-08, 0)
