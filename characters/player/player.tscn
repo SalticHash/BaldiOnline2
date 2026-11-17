@@ -421,7 +421,7 @@ offset_right = 139.0
 offset_bottom = 97.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
-text = "0/4"
+text = "0/7"
 
 [node name="PickupSound" type="AudioStreamPlayer" parent="." index="9" unique_id=49951168]
 stream = ExtResource("9_rpf03")

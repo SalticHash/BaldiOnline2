@@ -5473,6 +5473,16 @@ mesh = SubResource("ArrayMesh_vkidl")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_001/Wall_019/StaticBody3D" unique_id=2056859254]
 shape = SubResource("ConcavePolygonShape3D_d7g8y")
 
+[node name="Wall_021" type="MeshInstance3D" parent="Classrooms/Room_001" unique_id=1302027545]
+transform = Transform3D(-2.1855694e-08, 0.5, 2.1855694e-08, 0, -2.1855694e-08, 0.5, 0.5, 2.1855694e-08, 9.553427e-16, -2.48649, 0.145667, 10.5867)
+gi_mode = 0
+mesh = SubResource("ArrayMesh_vkidl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_001/Wall_021" unique_id=1346315230]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_001/Wall_021/StaticBody3D" unique_id=1551845181]
+shape = SubResource("ConcavePolygonShape3D_d7g8y")
+
 [node name="Wall_020" type="MeshInstance3D" parent="Classrooms/Room_001" unique_id=1320954995]
 transform = Transform3D(-0.5, 4.86768e-08, -4.86768e-08, -4.86768e-08, 0, 0.5, 4.86768e-08, 0.5, 0, 0.0135116, 0.145667, 13.0867)
 gi_mode = 0
@@ -5491,6 +5501,16 @@ mesh = SubResource("ArrayMesh_j4x3e")
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_001/Wall_027" unique_id=1942776394]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_001/Wall_027/StaticBody3D" unique_id=65638627]
+shape = SubResource("ConcavePolygonShape3D_c4dj4")
+
+[node name="Wall_028" type="MeshInstance3D" parent="Classrooms/Room_001" unique_id=2002000873]
+transform = Transform3D(-4.371139e-08, 0.5, -2.98023e-08, 2.98023e-08, 0, 0.5, 0.5, 7.351369e-08, -2.6053997e-15, -2.48649, 0.145667, 8.58673)
+gi_mode = 0
+mesh = SubResource("ArrayMesh_j4x3e")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_001/Wall_028" unique_id=2032919141]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_001/Wall_028/StaticBody3D" unique_id=13040234]
 shape = SubResource("ConcavePolygonShape3D_c4dj4")
 
 [node name="Door" parent="Classrooms/Room_001" unique_id=1491193469 instance=ExtResource("6_svmlk")]

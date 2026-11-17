@@ -30,5 +30,6 @@ func pickup() -> void:
 		return
 	sender_inst.notebooks += 1
 	sender_inst.stamina = 1.0
-	Server.get_type_instance(Server.TYPE.BALDI).got_notebook.emit(sender_inst.notebooks)
+	var baldi = Server.get_type_instance(Server.TYPE.BALDI)
+	if baldi: baldi.got_notebook.emit(sender_inst.notebooks)
 	hide()
