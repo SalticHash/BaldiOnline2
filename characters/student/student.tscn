@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://civ8vhnxcx713" path="res://characters/base/base.tscn" id="1_2u6e6"]
 [ext_resource type="Script" uid="uid://de3bj2apdnied" path="res://characters/student/student.gd" id="2_yr61q"]
 [ext_resource type="Script" uid="uid://djbcap3ggr2om" path="res://characters/student/input_sync.gd" id="3_cdqdi"]
+[ext_resource type="Script" uid="uid://cd1owv5eqasf2" path="res://characters/student/sprite.gd" id="4_4jdhl"]
 [ext_resource type="Texture2D" uid="uid://trf58n7cv1fj" path="res://characters/player/CursorSprite.png" id="4_lft8o"]
 [ext_resource type="Texture2D" uid="uid://rgm44vm7qmbx" path="res://characters/player/ItemSlotLeft.png" id="5_jupbe"]
 [ext_resource type="SpriteFrames" uid="uid://by1mdtlm1aavo" path="res://characters/player/items.tres" id="6_jdutl"]
@@ -45,10 +46,6 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath(".:running")
 properties/1/spawn = true
 properties/1/replication_mode = 1
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_jh3y0"]
-radius = 0.111816406
-height = 0.6699219
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_icpky"]
 atlas = ExtResource("12_iajhu")
@@ -164,24 +161,30 @@ collide_with_bodies = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33589804, 0)
 shape = SubResource("CapsuleShape3D_jh3y0")
 
-[node name="NameLabel" parent="." index="2" unique_id=1285109512]
+[node name="Sprite" type="AnimatedSprite3D" parent="." index="2" unique_id=334879170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.384, 0)
+pixel_size = 0.003
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = ExtResource("17_cdqdi")
+animation = &"0_0"
+script = ExtResource("4_4jdhl")
+
+[node name="NameLabel" parent="." index="3" unique_id=1285109512]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7688177, 0)
 
-[node name="OwnerSync" type="MultiplayerSynchronizer" parent="." index="4" unique_id=1385016999]
+[node name="OwnerSync" type="MultiplayerSynchronizer" parent="." index="5" unique_id=1385016999]
 replication_config = SubResource("SceneReplicationConfig_exd8k")
 public_visibility = false
 
-[node name="PeerSync" type="MultiplayerSynchronizer" parent="." index="5" unique_id=951314133]
+[node name="PeerSync" type="MultiplayerSynchronizer" parent="." index="6" unique_id=951314133]
 replication_config = SubResource("SceneReplicationConfig_5dc8e")
 
-[node name="InputSync" type="MultiplayerSynchronizer" parent="." index="6" unique_id=650982977]
+[node name="InputSync" type="MultiplayerSynchronizer" parent="." index="7" unique_id=650982977]
 replication_config = SubResource("SceneReplicationConfig_xxgcw")
 public_visibility = false
 script = ExtResource("3_cdqdi")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="7" unique_id=12711661]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33589804, 0)
-mesh = SubResource("CapsuleMesh_jh3y0")
 
 [node name="UI" type="Control" parent="." index="8" unique_id=1681700583]
 visible = false
@@ -427,11 +430,3 @@ stream = ExtResource("15_0yfhu")
 
 [node name="bsoda" type="AudioStreamPlayer3D" parent="Sounds" index="1" unique_id=945726001]
 stream = ExtResource("16_xu5sv")
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." index="12" unique_id=334879170]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.384, 0)
-pixel_size = 0.003
-alpha_cut = 1
-texture_filter = 0
-sprite_frames = ExtResource("17_cdqdi")
-animation = &"0_60"

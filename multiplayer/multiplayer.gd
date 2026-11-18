@@ -37,7 +37,8 @@ func player_connected(id: int, username: String, type: int):
 
 const entities = [
 	preload("res://characters/player/player.tscn"),
-	preload("res://characters/baldi/baldi.tscn")
+	preload("res://characters/baldi/baldi.tscn"),
+	preload("res://characters/student/student.tscn"),
 ]
 
 func _spawn_player(data) -> Node:

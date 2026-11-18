@@ -7,6 +7,8 @@
 [ext_resource type="Material" uid="uid://vm5lydct25ju" path="res://school/materials/skybox.tres" id="6_iba72"]
 [ext_resource type="PackedScene" uid="uid://cebq6sn3gt6cu" path="res://item/item.tscn" id="7_agfmf"]
 [ext_resource type="PackedScene" uid="uid://p11nrh3ja2t8" path="res://school/objects/wooden_door/wooden_door.tscn" id="7_jynfq"]
+[ext_resource type="SpriteFrames" uid="uid://bw1vctqndifwh" path="res://characters/student/student.tres" id="8_mj44c"]
+[ext_resource type="Script" uid="uid://cd1owv5eqasf2" path="res://characters/student/sprite.gd" id="9_7p0g3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_agfmf"]
 material = ExtResource("6_iba72")
@@ -79,3 +81,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50111365, -16.666656)
 
 [node name="WoodenDoor" parent="." unique_id=1475381490 instance=ExtResource("7_jynfq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5167444, -14.8356495)
+
+[node name="Sprite" type="AnimatedSprite3D" parent="." unique_id=1429684446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89735985, 0.384, -13.481032)
+pixel_size = 0.003
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = ExtResource("8_mj44c")
+animation = &"0_0"
+script = ExtResource("9_7p0g3")
