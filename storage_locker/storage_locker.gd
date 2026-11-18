@@ -21,19 +21,21 @@ func request_state():
 		push_error("REQUEST STATE call should be to AUTHORITY ONLY")
 		return
 	var sender = multiplayer.get_remote_sender_id()
-	change_state.rpc_id(sender, open)
+	change_state.rpc_id(sender, open, true)
 
 
 # ONLY AUTHORITY can change state
 @rpc("authority", "call_local", "reliable")
-func change_state(state: bool):
+func change_state(state: bool, request: bool = false):
 	open = state
 	$Collision.set_deferred("disabled", open)
 	
 	if state == false:
 		$AnimationPlayer.play("close")
+		if !request: $CloseSound.play()
 	if state == true:
 		$AnimationPlayer.play("open")
+		if !request: $OpenSound.play()
 
 # Anyone can try and toggle the locker
 @rpc("any_peer", "call_local", "reliable")
