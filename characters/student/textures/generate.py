@@ -59,7 +59,7 @@ def add_yay(fp, id, anim_name):
     imp = f"{root_path}.import"
 
     with open(imp, "r") as imp_f:
-        uid = imp_f.readlines()[4].replace("uid=", "").replace('"', "")
+        uid = imp_f.readlines()[4].replace('uid="', "").replace('"\n', "")
 
     oid = f"{id}_{gen_id()}"
     ext_resources += f'[ext_resource type="Texture2D" uid="{uid}" path="{path}" id="{oid}"]\n'
