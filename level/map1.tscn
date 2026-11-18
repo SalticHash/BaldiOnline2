@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://p11nrh3ja2t8" path="res://school/objects/wooden_door/wooden_door.tscn" id="7_jynfq"]
 [ext_resource type="SpriteFrames" uid="uid://bw1vctqndifwh" path="res://characters/student/student.tres" id="8_mj44c"]
 [ext_resource type="Script" uid="uid://cd1owv5eqasf2" path="res://characters/student/sprite.gd" id="9_7p0g3"]
+[ext_resource type="PackedScene" uid="uid://bjbyy1bqe8lmu" path="res://storage_locker/storage_locker.tscn" id="10_7p0g3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_agfmf"]
 material = ExtResource("6_iba72")
@@ -91,3 +92,6 @@ texture_filter = 0
 sprite_frames = ExtResource("8_mj44c")
 animation = &"0_0"
 script = ExtResource("9_7p0g3")
+
+[node name="Storage Locker" parent="." unique_id=2087178137 instance=ExtResource("10_7p0g3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3931117, 0, -17.350063)

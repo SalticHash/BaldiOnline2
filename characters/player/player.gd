@@ -66,8 +66,11 @@ func _process(_delta: float) -> void:
 		$UI/Hand.show()
 		if Input.is_action_just_pressed("click"):
 			if obj.is_in_group("door"): obj.open_door.rpc_id(1)
+			if obj.is_in_group("storage_locker"):
+				obj.get_parent().toggle_locker.rpc_id(1)
 			if obj.is_in_group("item"):
-				$PickupSound.play()
+				if !obj.storage_slot or (obj.item_id != 0 or inventory[cursor_pos] != 0):
+					$PickupSound.play()
 				obj.pickup.rpc_id(1, cursor_pos)
 			if obj.is_in_group("notebook"):
 				$NotebookPickupSound.play()

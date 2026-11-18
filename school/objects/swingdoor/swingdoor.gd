@@ -32,5 +32,4 @@ func _on_body_entered(body: Node3D) -> void:
 	if !body.is_in_group("player"): return
 	if open: return
 	
-	var playerPos = body.global_position
-	Server.rpc_type(Server.TYPE.BALDI, "spawn_highlight", playerPos, 10.0)
+	Server.alert_baldi(10)

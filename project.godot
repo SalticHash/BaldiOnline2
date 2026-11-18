@@ -16,6 +16,11 @@ run/main_scene="res://multiplayer/multiplayer.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://dfn8mawx7qioo"
 
+[audio]
+
+buses/default_bus_layout="uid://bqbjdg50qjfq1"
+driver/enable_input=true
+
 [autoload]
 
 Server="*uid://dglbgo6wwftt8"
@@ -109,7 +114,10 @@ use={
 3d_physics/layer_5="Player"
 3d_physics/layer_6="Item"
 3d_physics/layer_7="BSoda"
+3d_physics/layer_8="Locker"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/decals/filter=0
+textures/light_projectors/filter=0

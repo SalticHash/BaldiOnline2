@@ -1,11 +1,13 @@
 extends Area3D
 
+@export var storage_slot: bool = false
 @export var item_id: int = 1 :
 	set(value):
 		item_id = value
 		$Sprite.animation = str(item_id)
 
 func _ready() -> void:
+	if storage_slot: return
 	$AnimationPlayer.play("hover")
 
 func _process(_delta: float) -> void:
@@ -29,6 +31,12 @@ func pickup(cursor_pos) -> void:
 		push_error("Non player picked up")
 		return
 	var inv = sender_inst.inventory
+	if storage_slot:
+		var held_item = inv[cursor_pos]
+		inv[cursor_pos] = item_id
+		item_id = held_item
+		return
+	
 	if inv[cursor_pos] != 0:
 		for i in range(inv.size()):
 			if inv[i] != 0: continue

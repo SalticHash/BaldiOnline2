@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://civ8vhnxcx713"]
 
 [ext_resource type="Script" uid="uid://rytsvsfsc6a6" path="res://characters/base/base.gd" id="1_o12hc"]
+[ext_resource type="Script" uid="uid://jrluwwa4866s" path="res://characters/base/voice_chat.gd" id="2_uatdk"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_6tfhu"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_jh3y0"]
 
 [node name="Base" type="CharacterBody3D" unique_id=991214998]
 script = ExtResource("1_o12hc")
@@ -21,3 +24,20 @@ text = "Plauer"
 
 [node name="ServerSync" type="MultiplayerSynchronizer" parent="." unique_id=491288195]
 replication_config = SubResource("SceneReplicationConfig_6tfhu")
+
+[node name="VoiceChat" type="Node3D" parent="." unique_id=100250905]
+script = ExtResource("2_uatdk")
+
+[node name="Mic" type="AudioStreamPlayer" parent="VoiceChat" unique_id=152942405]
+stream = SubResource("AudioStreamMicrophone_jh3y0")
+autoplay = true
+bus = &"Record"
+
+[node name="Voice" type="AudioStreamPlayer3D" parent="VoiceChat" unique_id=174449784]
+max_distance = 15.0
+max_polyphony = 2
+
+[node name="SendRecordingTimer" type="Timer" parent="VoiceChat" unique_id=1804520090]
+wait_time = 0.5
+
+[connection signal="timeout" from="VoiceChat/SendRecordingTimer" to="VoiceChat" method="_on_send_recording_timer_timeout"]

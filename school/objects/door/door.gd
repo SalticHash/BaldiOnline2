@@ -28,14 +28,16 @@ func request_state():
 func change_state(state: bool, request: bool = false):
 	var old_state = open
 	open = state
-	var spr_state = "_open" if state else "_close"
-	$Sprites/DoorSpriteBack.play(door_back + spr_state)
-	$Sprites/DoorSpriteFront.play(door_front + spr_state)
 	$Collisions/Solid/Collision.set_deferred("disabled", open)
 	
-	if request: return
-	if state == false: $Sounds/Close.play()
-	if state == true && old_state == false: $Sounds/Open.play()
+	if state == false:
+		if !request: $Sounds/Close.play()
+		$Sprites/DoorSpriteFront.play(door_front + "_close")
+		$Sprites/DoorSpriteBack.play(door_back + "_close")
+	if state == true && old_state == false:
+		if !request: $Sounds/Open.play()
+		$Sprites/DoorSpriteFront.play(door_front + "_open")
+		$Sprites/DoorSpriteBack.play(door_front + "_open")
 
 # Anyone can try and open the door
 @rpc("any_peer", "call_local", "reliable")
@@ -51,9 +53,7 @@ func open_door(id: int = -1):
 		push_error("Unreachable door opened")
 		return
 	if is_player and !open:
-		var playerPos = \
-			Server.get_type_instance(Server.TYPE.PLAYER).global_position
-		Server.rpc_type(Server.TYPE.BALDI, "spawn_highlight", playerPos, 10.0)
+		Server.alert_baldi(10)
 	change_state.rpc(true)
 	$Timer.start()
 

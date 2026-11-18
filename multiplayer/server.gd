@@ -22,15 +22,20 @@ func get_type_instance(type: int) -> Node3D:
 
 func get_id_instance(id: int) -> Node3D:
 	if id == -1:
-		push_error("Invalid ID for get_id_instance")
+		push_warning("Invalid ID for get_id_instance")
 		return null
 	return get_node("/root/Game/World/Players").get_node(str(id))
 
 func rpc_type(type: int, method: StringName, ...args: Array) -> void:
 	var id = get_type_id(type)
 	if id == -1:
-		push_error("Invalid ID for rpc_type")
+		push_warning("Invalid ID for rpc_type")
 		return
 	var inst = get_id_instance(id)
 	inst.callv("rpc_id", [id, method] + args)
 	
+
+func alert_baldi(noise: int):
+	var p = get_type_instance(TYPE.PLAYER).global_position
+	
+	rpc_type(Server.TYPE.BALDI, "spawn_highlight", p, noise)

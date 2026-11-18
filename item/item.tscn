@@ -61,8 +61,7 @@ billboard = 2
 alpha_cut = 1
 texture_filter = 0
 sprite_frames = ExtResource("2_6t40p")
-animation = &"1"
-frame_progress = 0.25628948
+animation = &"0"
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1050767804]
 replication_config = SubResource("SceneReplicationConfig_0yflk")

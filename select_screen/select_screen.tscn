@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cukouf10ripje"]
+
+[ext_resource type="Texture2D" uid="uid://bbg8lv8dlq0ix" path="res://select_screen/thumb/player.png" id="1_7mrjn"]
+[ext_resource type="Script" uid="uid://c0gkplw5g3ojq" path="res://select_screen/select_screen.gd" id="1_k31k0"]
+[ext_resource type="Texture2D" uid="uid://dlbb8x088qjsd" path="res://select_screen/thumb/baldi.png" id="2_4vf0k"]
+[ext_resource type="Texture2D" uid="uid://btirfh7bdma2s" path="res://select_screen/thumb/students/0.png" id="3_3pypb"]
+[ext_resource type="Texture2D" uid="uid://npvsquh0o76d" path="res://select_screen/thumb/sweep.png" id="4_3jqfj"]
+[ext_resource type="Texture2D" uid="uid://w3c1oq07dp45" path="res://select_screen/thumb/students/1.png" id="4_uc1v3"]
+[ext_resource type="Texture2D" uid="uid://eqc0omuutaho" path="res://select_screen/thumb/students/2.png" id="5_lyf50"]
+[ext_resource type="Texture2D" uid="uid://cyysjjll4mkja" path="res://select_screen/thumb/students/3.png" id="6_egpk4"]
+[ext_resource type="Texture2D" uid="uid://b4xw5ov4sju23" path="res://select_screen/thumb/students/4.png" id="7_4vf0k"]
+[ext_resource type="Texture2D" uid="uid://dwuukkejjrrp5" path="res://select_screen/thumb/students/5.png" id="8_3jqfj"]
+[ext_resource type="Texture2D" uid="uid://drhdmhf4qqggg" path="res://select_screen/thumb/students/6.png" id="9_4vf0k"]
+[ext_resource type="Texture2D" uid="uid://br8hroncdbc1y" path="res://select_screen/thumb/students/7.png" id="10_3jqfj"]
+[ext_resource type="Texture2D" uid="uid://bub7e511h3gdj" path="res://select_screen/thumb/students/8.png" id="11_k31k0"]
+[ext_resource type="Texture2D" uid="uid://cusiavn77bf6y" path="res://select_screen/thumb/students/9.png" id="12_ddba0"]
+[ext_resource type="Texture2D" uid="uid://dr3uh3hxcjipf" path="res://select_screen/thumb/students/10.png" id="13_5513x"]
+[ext_resource type="Texture2D" uid="uid://d3ki38xlcvee2" path="res://select_screen/thumb/students/11.png" id="14_ekdey"]
+
+[node name="SelectScreen" type="Control" unique_id=403896841]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k31k0")
+
+[node name="Character" type="ItemList" parent="." unique_id=1815475621]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 337.0
+grow_vertical = 2
+auto_width = true
+item_count = 4
+icon_scale = 0.75
+item_0/text = "Player"
+item_0/icon = ExtResource("1_7mrjn")
+item_1/text = "Baldi"
+item_1/icon = ExtResource("2_4vf0k")
+item_2/text = "Student"
+item_2/icon = ExtResource("3_3pypb")
+item_3/text = "Gotta Sweep"
+item_3/icon = ExtResource("4_3jqfj")
+
+[node name="StudentSkin" type="ItemList" parent="." unique_id=1932495336]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.30900002
+offset_left = -800.0
+offset_bottom = -0.23200989
+grow_horizontal = 0
+grow_vertical = 2
+auto_width = true
+item_count = 12
+max_columns = 4
+same_column_width = true
+icon_scale = 0.75
+item_0/icon = ExtResource("3_3pypb")
+item_1/icon = ExtResource("4_uc1v3")
+item_2/icon = ExtResource("13_5513x")
+item_3/icon = ExtResource("14_ekdey")
+item_4/icon = ExtResource("5_lyf50")
+item_5/icon = ExtResource("6_egpk4")
+item_6/icon = ExtResource("11_k31k0")
+item_7/icon = ExtResource("12_ddba0")
+item_8/icon = ExtResource("7_4vf0k")
+item_9/icon = ExtResource("8_3jqfj")
+item_10/icon = ExtResource("9_4vf0k")
+item_11/icon = ExtResource("10_3jqfj")
+
+[node name="Deselect" type="Button" parent="." unique_id=1301222851]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -399.0
+offset_top = -64.0
+offset_right = -31.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+disabled = true
+text = "De-Select"
+
+[connection signal="item_selected" from="Character" to="." method="_on_character_item_selected"]
+[connection signal="pressed" from="Deselect" to="." method="_on_deselect_pressed"]

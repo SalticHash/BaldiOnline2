@@ -166,7 +166,7 @@ mesh = SubResource("SphereMesh_jh3y0")
 
 [node name="InteractRay" type="RayCast3D" parent="Camera" index="1" unique_id=2074744021]
 target_position = Vector3(0, 0, -1)
-collision_mask = 40
+collision_mask = 168
 hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
