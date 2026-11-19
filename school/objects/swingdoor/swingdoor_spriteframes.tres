@@ -1,7 +1,8 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bxf8knvo5fkm7"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://bxf8knvo5fkm7"]
 
 [ext_resource type="Texture2D" uid="uid://dmu2apbtpm8u3" path="res://school/textures/WideDoor.png" id="1_jki2c"]
 [ext_resource type="Texture2D" uid="uid://b4aguvgs72wnr" path="res://school/textures/SwingDoor.png" id="2_pisbo"]
+[ext_resource type="Texture2D" uid="uid://s6sqsqog7kyo" path="res://school/objects/swingdoor/SwingDoor_Locked_Transparent.png" id="2_qf1f0"]
 
 [resource]
 animations = [{
@@ -9,15 +10,23 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_jki2c")
 }],
-"loop": false,
+"loop": 0,
 "name": &"close",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qf1f0")
+}],
+"loop": 0,
+"name": &"lock",
 "speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_pisbo")
 }],
-"loop": false,
+"loop": 0,
 "name": &"open",
 "speed": 1.0
 }]

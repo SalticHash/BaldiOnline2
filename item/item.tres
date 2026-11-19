@@ -1,7 +1,9 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://bdgqjvn5tfq3o"]
 
-[ext_resource type="Texture2D" uid="uid://3qhgwaf4glt0" path="res://item/textures/BsodaIcon_Large.png" id="1_ms8o7"]
-[ext_resource type="Texture2D" uid="uid://ck20c2jlksqn6" path="res://item/textures/ZestyBarIcon_Large.png" id="2_x81q7"]
+[ext_resource type="Texture2D" uid="uid://3qhgwaf4glt0" path="res://item/textures/BsodaIcon_Large.png" id="1_44m42"]
+[ext_resource type="Texture2D" uid="uid://ck20c2jlksqn6" path="res://item/textures/ZestyBarIcon_Large.png" id="2_ordqi"]
+[ext_resource type="Texture2D" uid="uid://ddvlm3ffme3is" path="res://item/textures/SwingingDoorLockIcon_Large.png" id="3_q60qp"]
+[ext_resource type="Texture2D" uid="uid://ci1mwfobbfv73" path="res://item/textures/StretchyGloveIcon_Large.png" id="4_ddeht"]
 
 [resource]
 animations = [{
@@ -15,7 +17,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ms8o7")
+"texture": ExtResource("1_44m42")
 }],
 "loop": 1,
 "name": &"1",
@@ -23,9 +25,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_x81q7")
+"texture": ExtResource("2_ordqi")
 }],
 "loop": 1,
 "name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_q60qp")
+}],
+"loop": 1,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ddeht")
+}],
+"loop": 1,
+"name": &"4",
 "speed": 5.0
 }]

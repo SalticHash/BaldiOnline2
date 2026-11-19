@@ -3,7 +3,8 @@ extends BaseController
 enum ITEM {
 	NONE,
 	BSODA,
-	ZESTY
+	ZESTY,
+	LOCK
 }
 
 var cursor_pos: int = 0
@@ -133,7 +134,6 @@ func _process(_delta: float) -> void:
 func use_item(cursor):
 	if !is_multiplayer_authority(): return
 	var item = inventory[cursor]
-	inventory[cursor] = ITEM.NONE
 	match item:
 		ITEM.NONE: return
 		ITEM.BSODA:
@@ -142,11 +142,20 @@ func use_item(cursor):
 			b.global_position = global_position
 			b.global_rotation = $Camera.global_rotation
 			play_sound.rpc("bsoda")
+			inventory[cursor] = ITEM.NONE
 			return
 		ITEM.ZESTY:
 			play_sound.rpc("zesty")
 			stamina = 1.5
+			inventory[cursor] = ITEM.NONE
 			return
+		ITEM.LOCK:
+			var c = $Camera/InteractRay.get_collider()
+			if !c or !c.is_in_group("swinging_door") or c.locked:
+				$InvalidUse.play()
+				return
+			inventory[cursor] = ITEM.NONE
+			c.lock.rpc()
 
 func reach_squared() -> float:
 	var v = -$Camera/InteractRay.target_position.z

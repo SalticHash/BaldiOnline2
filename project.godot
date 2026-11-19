@@ -116,6 +116,7 @@ use={
 3d_physics/layer_7="BSoda"
 3d_physics/layer_8="Storage Locker"
 3d_physics/layer_9="Blue Locker"
+3d_physics/layer_10="Swinging Door"
 
 [rendering]
 

@@ -4,14 +4,15 @@
 [ext_resource type="Material" uid="uid://ke54s3cdrg1i" path="res://school/materials/Wall.tres" id="2_312y2"]
 [ext_resource type="SpriteFrames" uid="uid://bxf8knvo5fkm7" path="res://school/objects/swingdoor/swingdoor_spriteframes.tres" id="3_s0dfi"]
 [ext_resource type="AudioStream" uid="uid://cllc0u7h65kqg" path="res://school/objects/swingdoor/Doors_Swinging.ogg" id="5_na0vf"]
+[ext_resource type="AudioStream" uid="uid://cxagrociwn7al" path="res://school/objects/swingdoor/SwingDoorLock_use.wav" id="5_tpo1v"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tghp3"]
-properties/0/path = NodePath("Sound:playing")
+properties/0/path = NodePath(".:open")
 properties/0/spawn = false
 properties/0/replication_mode = 2
-properties/1/path = NodePath(".:open")
-properties/1/spawn = false
-properties/1/replication_mode = 2
+properties/1/path = NodePath(".:locked")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ghlmo"]
 data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0)
@@ -68,8 +69,8 @@ shadow_mesh = SubResource("ArrayMesh_bycyo")
 [sub_resource type="BoxShape3D" id="BoxShape3D_cu1xn"]
 size = Vector3(1, 1, 0.25)
 
-[node name="Swinging Door" type="Area3D" unique_id=1266870234]
-collision_layer = 0
+[node name="Swinging Door" type="Area3D" unique_id=1266870234 groups=["swinging_door"]]
+collision_layer = 512
 collision_mask = 20
 script = ExtResource("1_xqugo")
 front_material = ExtResource("2_312y2")
@@ -122,9 +123,18 @@ shape = SubResource("BoxShape3D_cu1xn")
 stream = ExtResource("5_na0vf")
 max_distance = 10.0
 
+[node name="LockSound" type="AudioStreamPlayer3D" parent="." unique_id=1337375703]
+stream = ExtResource("5_tpo1v")
+max_distance = 10.0
+
 [node name="Timer" type="Timer" parent="." unique_id=1881512974]
 wait_time = 1.5
 one_shot = true
 
+[node name="LockTimer" type="Timer" parent="." unique_id=711719476]
+wait_time = 30.0
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="LockTimer" to="." method="_on_lock_timer_timeout"]

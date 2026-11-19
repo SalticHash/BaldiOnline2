@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c70njx84527l" path="res://characters/player/Staminometer.png" id="11_icpky"]
 [ext_resource type="Texture2D" uid="uid://b4nu4m3rm0b6t" path="res://characters/player/NotebookIcon_Sheet.png" id="12_gqopd"]
 [ext_resource type="AudioStream" uid="uid://bnr1df7405ua" path="res://characters/player/NotebookCollect.wav" id="14_icpky"]
+[ext_resource type="AudioStream" uid="uid://bn4r1n3g4rk4y" path="res://characters/player/ErrorMaybe.wav" id="15_4cx7u"]
 [ext_resource type="AudioStream" uid="uid://b1u4pcxfc3q2w" path="res://characters/player/ChipCrunch.wav" id="15_8l73k"]
 [ext_resource type="AudioStream" uid="uid://df3jsjkyi0hyv" path="res://characters/player/BsodaSpray.wav" id="16_aqrcq"]
 [ext_resource type="AudioStream" uid="uid://dlmodd1aeoqp5" path="res://characters/player/sounds/lose/Lose_Buzz.wav" id="17_jgd8i"]
@@ -203,7 +204,7 @@ mesh = SubResource("SphereMesh_jh3y0")
 
 [node name="InteractRay" type="RayCast3D" parent="Camera" index="1" unique_id=2074744021]
 target_position = Vector3(0, 0, -1)
-collision_mask = 424
+collision_mask = 936
 hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
@@ -490,15 +491,19 @@ text = "0/7"
 stream = ExtResource("9_rpf03")
 max_polyphony = 2
 
-[node name="NotebookPickupSound" type="AudioStreamPlayer" parent="." index="11" unique_id=1445260707]
+[node name="InvalidUse" type="AudioStreamPlayer" parent="." index="11" unique_id=1946045071]
+stream = ExtResource("15_4cx7u")
+max_polyphony = 2
+
+[node name="NotebookPickupSound" type="AudioStreamPlayer" parent="." index="12" unique_id=1445260707]
 stream = ExtResource("14_icpky")
 max_polyphony = 2
 
-[node name="Lose" type="AudioStreamPlayer" parent="." index="12" unique_id=738551011]
+[node name="Lose" type="AudioStreamPlayer" parent="." index="13" unique_id=738551011]
 stream = SubResource("AudioStreamRandomizer_jh3y0")
 volume_db = -20.0
 
-[node name="Sounds" type="Node3D" parent="." index="13" unique_id=1469665790]
+[node name="Sounds" type="Node3D" parent="." index="14" unique_id=1469665790]
 
 [node name="zesty" type="AudioStreamPlayer3D" parent="Sounds" index="0" unique_id=387913826]
 stream = ExtResource("15_8l73k")
@@ -506,6 +511,5 @@ stream = ExtResource("15_8l73k")
 [node name="bsoda" type="AudioStreamPlayer3D" parent="Sounds" index="1" unique_id=945726001]
 stream = ExtResource("16_aqrcq")
 
-[node name="locker" type="AudioStreamPlayer3D" parent="Sounds" index="2" unique_id=1831671722]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
+[node name="locker" type="AudioStreamPlayer3D" parent="Sounds" index="2" unique_id=1424258812]
 stream = ExtResource("25_7b6hw")
