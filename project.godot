@@ -114,7 +114,8 @@ use={
 3d_physics/layer_5="Player"
 3d_physics/layer_6="Item"
 3d_physics/layer_7="BSoda"
-3d_physics/layer_8="Locker"
+3d_physics/layer_8="Storage Locker"
+3d_physics/layer_9="Blue Locker"
 
 [rendering]
 

@@ -21,6 +21,11 @@
 radius = 0.10498047
 height = 0.6484375
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_yr61q"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_exd8k"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5dc8e"]
@@ -160,19 +165,22 @@ script = ExtResource("4_4jdhl")
 [node name="NameLabel" parent="." index="3" unique_id=1285109512]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7688177, 0)
 
-[node name="OwnerSync" type="MultiplayerSynchronizer" parent="." index="5" unique_id=1385016999]
+[node name="ServerSync" type="MultiplayerSynchronizer" parent="." index="5" unique_id=1932033064]
+replication_config = SubResource("SceneReplicationConfig_yr61q")
+
+[node name="OwnerSync" type="MultiplayerSynchronizer" parent="." index="6" unique_id=1385016999]
 replication_config = SubResource("SceneReplicationConfig_exd8k")
 public_visibility = false
 
-[node name="PeerSync" type="MultiplayerSynchronizer" parent="." index="6" unique_id=951314133]
+[node name="PeerSync" type="MultiplayerSynchronizer" parent="." index="7" unique_id=951314133]
 replication_config = SubResource("SceneReplicationConfig_5dc8e")
 
-[node name="InputSync" type="MultiplayerSynchronizer" parent="." index="7" unique_id=650982977]
+[node name="InputSync" type="MultiplayerSynchronizer" parent="." index="8" unique_id=650982977]
 replication_config = SubResource("SceneReplicationConfig_xxgcw")
 public_visibility = false
 script = ExtResource("3_cdqdi")
 
-[node name="UI" type="Control" parent="." index="8" unique_id=1681700583]
+[node name="UI" type="Control" parent="." index="9" unique_id=1681700583]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -401,10 +409,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "0/7"
 
-[node name="PickupSound" type="AudioStreamPlayer" parent="." index="9" unique_id=49951168]
+[node name="PickupSound" type="AudioStreamPlayer" parent="." index="10" unique_id=49951168]
 stream = ExtResource("13_m5nl6")
 max_polyphony = 2
 
-[node name="NotebookPickupSound" type="AudioStreamPlayer" parent="." index="10" unique_id=1445260707]
+[node name="NotebookPickupSound" type="AudioStreamPlayer" parent="." index="11" unique_id=1445260707]
 stream = ExtResource("14_gpthi")
 max_polyphony = 2

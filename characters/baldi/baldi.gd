@@ -6,7 +6,7 @@ var slapping: bool = false
 var slap_buffer: float = 0.0
 var slap_interval: float = 0.0
 const SLAP_BUFFER: float = 0.167 #10 frames in a 60fps game
-var SLAP_INTERVAL: float = 1.2
+var SLAP_INTERVAL: float = 0.1#1.2
 
 signal got_notebook(total: int)
 func _ready() -> void:
@@ -19,6 +19,10 @@ func speed_up(_total_notebooks: int):
 func _physics_process(delta: float) -> void:
 	if !is_multiplayer_authority(): return
 
+	if has_node(locker):
+		slap_buffer = 0.0
+		slap_interval = SLAP_INTERVAL
+		return
 	slap_buffer -= delta
 	if slap_interval > 0.0: slap_interval -= delta
 	if slapping and slap_interval <= 0.0:
@@ -33,9 +37,33 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+var locker: NodePath = NodePath("")
+@rpc("any_peer", "call_local", "reliable")
+func inspect_locker(path):
+	if !is_multiplayer_authority(): return
+	if !has_node(path): return
+	if get_node(path).global_position.distance_squared_to(global_position) > 4:
+		return
+	locker = path
+	$InspectLockerTimer.start()
+	check_locker.rpc()
+	await $InspectLockerTimer.timeout
+	var player = Server.get_type_instance(Server.TYPE.PLAYER)
+	if player and player.locker == locker:
+		player.exit_locker.rpc_id(1)
+	locker = NodePath("")
+	slap_effect.rpc(true)
 
 @rpc("authority", "call_local", "reliable")
-func slap_effect():
+func check_locker():
+	$InspectLockerSound.play()
+	$Sprite.play("talk")
+
+@rpc("authority", "call_local", "reliable")
+func slap_effect(ruler: bool = false):
+	if ruler:
+		$Sprite.play("ruler")
+		return
 	$Sprite.play("slap")
 	$SlapSound.play()
 
@@ -47,6 +75,15 @@ func _process(_delta: float) -> void:
 	tween.tween_property($UI/Stamina/Needle, "position", Vector2(v, y), 0.1)
 		
 	$UI.show()
+	
+	var obj = $Camera/InteractRay.get_collider()
+	if obj and obj.is_in_group("interact"):
+		$UI/Hand.show()
+		if Input.is_action_just_pressed("click"):
+			if obj.is_in_group("blue_locker") and !has_node(locker):
+				inspect_locker.rpc_id(1, obj.get_path())
+
+	else: $UI/Hand.hide()
 
 
 @onready var player_hightlight = preload("res://characters/baldi/player_highlight.tscn")

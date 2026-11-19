@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://brqliosrylxfc"]
+
+[ext_resource type="Texture2D" uid="uid://bwqn33d1ge4ic" path="res://blue_locker/LockerBlue.png" id="1_surm7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jh3y0"]
+size = Vector3(0.188, 0.75, 0.188)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1d8oa"]
+shading_mode = 0
+albedo_texture = ExtResource("1_surm7")
+uv1_scale = Vector3(5.25, 1.325, 5.25)
+uv1_offset = Vector3(0.5, -0.5, 1.5)
+uv1_triplanar = true
+texture_filter = 0
+texture_repeat = false
+
+[sub_resource type="BoxMesh" id="BoxMesh_jh3y0"]
+material = SubResource("StandardMaterial3D_1d8oa")
+size = Vector3(0.188, 0.75, 0.188)
+
+[node name="BlueLocker" type="Area3D" unique_id=1893774405 groups=["blue_locker", "interact"]]
+collision_layer = 256
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1717008489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
+shape = SubResource("BoxShape3D_jh3y0")
+
+[node name="Solid" type="StaticBody3D" parent="." unique_id=991897329]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="Solid" unique_id=1550396147]
+shape = SubResource("BoxShape3D_jh3y0")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=510290194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
+mesh = SubResource("BoxMesh_jh3y0")
+
+[node name="Camera" type="Camera3D" parent="." unique_id=1242050236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)

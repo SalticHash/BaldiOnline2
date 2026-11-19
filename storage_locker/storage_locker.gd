@@ -8,9 +8,12 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if !is_multiplayer_authority(): return
-	var player_pos = Server.get_type_instance(Server.TYPE.PLAYER).global_position
+	if !open: return
+	var player = Server.get_type_instance(Server.TYPE.PLAYER)
+	if !player: return
+	var player_pos = player.global_position
 	var d2 = player_pos.distance_squared_to(global_position)
-	if d2 > 4.0 and open:
+	if d2 > 4.0:
 		Server.alert_baldi(78)
 		change_state.rpc(false)
 

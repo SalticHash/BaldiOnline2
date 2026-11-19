@@ -13,7 +13,7 @@ const STAM_LOSS_SPEED: float = 0.25
 const STAM_GAIN_SPEED: float = 0.5
 var running: bool = false
 var inventory: Array[int] = [0, 0, 0, 0, 0]
-
+var locker: NodePath = NodePath("")
 var stamina: float = 1.0 :
 	set(value):
 		stamina = clampf(value, 0.0, 1.5)
@@ -30,23 +30,64 @@ var input_dir: Vector2 = Vector2.ZERO
 func _physics_process(delta: float) -> void:
 	if !is_multiplayer_authority(): return
 	
-	if !input_dir and stamina < 1.0: stamina += delta * STAM_GAIN_SPEED
-	elif running: stamina -= delta * STAM_LOSS_SPEED
+	if (!input_dir or has_node(locker)) and stamina < 1.0:
+		stamina += delta * STAM_GAIN_SPEED
+	elif running:
+		stamina -= delta * STAM_LOSS_SPEED
 	
+	if has_node(locker): return
 	var speed = SPEED_RUN if running and stamina > 0.0 else SPEED_WALK
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	velocity = direction * speed * delta
 
 	move_and_slide()
 
+@rpc("any_peer","call_local","reliable")
+func enter_locker(path):
+	if !is_multiplayer_authority(): return
+	if !has_node(path): return
+	if get_node(path).global_position.distance_squared_to(global_position) > 4:
+		return
+	locker = path
+	Server.alert_baldi(78)
+	play_sound.rpc("locker")
+
+@rpc("any_peer","call_local","reliable")
+func exit_locker():
+	if !is_multiplayer_authority(): return
+	play_sound.rpc("locker")
+	Server.alert_baldi(78)
+	locker = NodePath("")
+	
 func _process(_delta: float) -> void:
+	if has_node(locker):
+		$Mesh.hide()
+		$Collision.disabled = true
+	else:
+		$Mesh.show()
+		$Collision.disabled = false
+		
 	if multiplayer.get_unique_id() != id: return
-	if Input.is_action_just_pressed("use"):
-		use_item.rpc_id(1, cursor_pos)
-	$Camera.rotation.y = PI if Input.is_action_pressed("flip") else 0.0
-	$UI/Stamina/Needle.position.x = \
-		remap(stamina, 0.0, 1.0, $UI/Stamina/Start.position.x, $UI/Stamina/End.position.x)
 	$UI.show()
+	
+	$UI/Stamina/Needle.position.x = \
+	remap(stamina, 0.0, 1.0, $UI/Stamina/Start.position.x, $UI/Stamina/End.position.x)
+
+	if has_node(locker):
+		get_node(locker).get_node("Camera").make_current()
+		$UI/Hand.hide()
+		$UI/Cursor.hide()
+		$UI/LockerOverlay.show()
+		if Input.is_action_just_pressed("click"):
+			exit_locker.rpc_id(1)
+		return
+	else:
+		$UI/Cursor.show()
+		$UI/LockerOverlay.hide()
+		$Camera.make_current()
+	
+	$Camera.rotation.y = PI if Input.is_action_pressed("flip") else 0.0
+
 	if Input.is_action_just_pressed("scroll_up"):
 		cursor_pos -= 1
 	if Input.is_action_just_pressed("scroll_down"):
@@ -61,6 +102,9 @@ func _process(_delta: float) -> void:
 		bg.color = Color.RED if cursor_pos == i else Color.WHITE
 		anim.animation = str(inventory[i])
 	
+	if Input.is_action_just_pressed("use"):
+		use_item.rpc_id(1, cursor_pos)
+	
 	var obj = $Camera/InteractRay.get_collider()
 	if obj and obj.is_in_group("interact"):
 		$UI/Hand.show()
@@ -68,6 +112,9 @@ func _process(_delta: float) -> void:
 			if obj.is_in_group("door"): obj.open_door.rpc_id(1)
 			if obj.is_in_group("storage_locker"):
 				obj.get_parent().toggle_locker.rpc_id(1)
+			if obj.is_in_group("blue_locker"):
+				enter_locker.rpc_id(1, obj.get_path())
+				
 			if obj.is_in_group("item"):
 				if !obj.storage_slot or (obj.item_id != 0 or inventory[cursor_pos] != 0):
 					$PickupSound.play()
