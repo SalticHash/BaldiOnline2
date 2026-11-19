@@ -109,7 +109,7 @@ properties/0/replication_mode = 1
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ae1l2"]
 properties/0/path = NodePath(".:slapping")
 properties/0/spawn = true
-properties/0/replication_mode = 1
+properties/0/replication_mode = 2
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_8fcnu"]
 properties/0/path = NodePath(".:rotation")
@@ -122,7 +122,7 @@ properties/0/spawn = true
 properties/0/replication_mode = 1
 properties/1/path = NodePath(".:SLAP_INTERVAL")
 properties/1/spawn = true
-properties/1/replication_mode = 1
+properties/1/replication_mode = 2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jh3y0"]
 radius = 0.123046875
@@ -138,7 +138,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6397984, 0)
 
 [node name="InteractRay" type="RayCast3D" parent="Camera" index="0" unique_id=454115887]
 target_position = Vector3(0, 0, -0.375)
-collision_mask = 256
+collision_mask = 1280
 hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false

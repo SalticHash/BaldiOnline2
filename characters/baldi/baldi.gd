@@ -87,7 +87,7 @@ func _process(_delta: float) -> void:
 	else: $UI/Hand.hide()
 
 func reach_squared() -> float:
-	var v = -$Camera/InteractRay.target_position.z
+	var v = (-$Camera/InteractRay.target_position.z + 1.0)
 	return v * v
 
 @onready var player_hightlight = preload("res://characters/baldi/player_highlight.tscn")

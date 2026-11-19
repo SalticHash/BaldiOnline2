@@ -5121,6 +5121,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_iw6bw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Art Rooms/ARoom_001/Wall_088" unique_id=30348505]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Art Rooms/ARoom_001/Wall_088/StaticBody3D" unique_id=1961493223]
 shape = SubResource("ConcavePolygonShape3D_e5mqh")
@@ -5131,6 +5132,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_7eefv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Art Rooms/ARoom_001/Wall_095" unique_id=193291835]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Art Rooms/ARoom_001/Wall_095/StaticBody3D" unique_id=1561789374]
 shape = SubResource("ConcavePolygonShape3D_v7qw2")
@@ -5141,6 +5143,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_ghqdg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Art Rooms/ARoom_001/Wall_097" unique_id=590605561]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Art Rooms/ARoom_001/Wall_097/StaticBody3D" unique_id=738920479]
 shape = SubResource("ConcavePolygonShape3D_gbanu")
@@ -5151,6 +5154,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_ltauq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Art Rooms/ARoom_001/Wall_980" unique_id=769550257]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Art Rooms/ARoom_001/Wall_980/StaticBody3D" unique_id=1998148768]
 shape = SubResource("ConcavePolygonShape3D_5w4yn")
@@ -5173,6 +5177,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_nkta5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Art Rooms/ARoom_002/Wall_103" unique_id=780875196]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Art Rooms/ARoom_002/Wall_103/StaticBody3D" unique_id=66668677]
 shape = SubResource("ConcavePolygonShape3D_06viq")
@@ -5183,6 +5188,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_cv0i1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Art Rooms/ARoom_002/Wall_148" unique_id=239167998]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Art Rooms/ARoom_002/Wall_148/StaticBody3D" unique_id=39455856]
 shape = SubResource("ConcavePolygonShape3D_2tvbq")
@@ -5193,6 +5199,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_vig5q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Art Rooms/ARoom_002/Wall_150" unique_id=1046385269]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Art Rooms/ARoom_002/Wall_150/StaticBody3D" unique_id=1012841319]
 shape = SubResource("ConcavePolygonShape3D_mu118")
@@ -5203,6 +5210,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_7hebg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Art Rooms/ARoom_002/Wall_160" unique_id=1815520488]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Art Rooms/ARoom_002/Wall_160/StaticBody3D" unique_id=351893704]
 shape = SubResource("ConcavePolygonShape3D_fbmhf")
@@ -5213,6 +5221,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_ryte4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Art Rooms/ARoom_002/Wall_163" unique_id=226493082]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Art Rooms/ARoom_002/Wall_163/StaticBody3D" unique_id=1744684682]
 shape = SubResource("ConcavePolygonShape3D_65300")
@@ -5237,6 +5246,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_onitx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bathrooms/BRoom_001/Wall_129" unique_id=1315393927]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bathrooms/BRoom_001/Wall_129/StaticBody3D" unique_id=41171334]
 shape = SubResource("ConcavePolygonShape3D_r0gwv")
@@ -5247,6 +5257,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_j8bas")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bathrooms/BRoom_001/Wall_130" unique_id=1040223016]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bathrooms/BRoom_001/Wall_130/StaticBody3D" unique_id=2134840999]
 shape = SubResource("ConcavePolygonShape3D_qx5hm")
@@ -5257,6 +5268,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_0hsxq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bathrooms/BRoom_001/Wall_222" unique_id=322277471]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bathrooms/BRoom_001/Wall_222/StaticBody3D" unique_id=1061370766]
 shape = SubResource("ConcavePolygonShape3D_yjkod")
@@ -5267,6 +5279,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_aiw3w")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bathrooms/BRoom_001/Wall_224" unique_id=243604554]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bathrooms/BRoom_001/Wall_224/StaticBody3D" unique_id=1573620150]
 shape = SubResource("ConcavePolygonShape3D_d4b66")
@@ -5277,6 +5290,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_38wdd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bathrooms/BRoom_001/Wall_230" unique_id=1684814916]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bathrooms/BRoom_001/Wall_230/StaticBody3D" unique_id=2098877419]
 shape = SubResource("ConcavePolygonShape3D_tinum")
@@ -5304,6 +5318,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_6w1ri")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bathrooms/BRoom_002/Wall_001_001" unique_id=1323495474]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bathrooms/BRoom_002/Wall_001_001/StaticBody3D" unique_id=1293008329]
 shape = SubResource("ConcavePolygonShape3D_ocsm4")
@@ -5314,6 +5329,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_imki0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bathrooms/BRoom_002/Wall_002" unique_id=1640108643]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bathrooms/BRoom_002/Wall_002/StaticBody3D" unique_id=437791385]
 shape = SubResource("ConcavePolygonShape3D_om2j1")
@@ -5324,6 +5340,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_op6ff")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bathrooms/BRoom_002/Wall_206" unique_id=1741854535]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bathrooms/BRoom_002/Wall_206/StaticBody3D" unique_id=2051120828]
 shape = SubResource("ConcavePolygonShape3D_6u3bf")
@@ -5334,6 +5351,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_ats3c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bathrooms/BRoom_002/Wall_406" unique_id=790949299]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bathrooms/BRoom_002/Wall_406/StaticBody3D" unique_id=1050576464]
 shape = SubResource("ConcavePolygonShape3D_jnyd5")
@@ -5344,6 +5362,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_jd5wp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bathrooms/BRoom_002/Wall_408" unique_id=314312124]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bathrooms/BRoom_002/Wall_408/StaticBody3D" unique_id=237023741]
 shape = SubResource("ConcavePolygonShape3D_6cacu")
@@ -5354,6 +5373,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_41okp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bathrooms/BRoom_002/Wall_417" unique_id=272570201]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bathrooms/BRoom_002/Wall_417/StaticBody3D" unique_id=1227334934]
 shape = SubResource("ConcavePolygonShape3D_ejkr8")
@@ -5365,6 +5385,7 @@ door_back = "women"
 
 [node name="Window" parent="Bathrooms/BRoom_002" unique_id=1296971378 instance=ExtResource("6_kwye5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.98649, 0.145667, -14.9133)
+collision_layer = 1025
 
 [node name="Cafeteria" type="Node3D" parent="." unique_id=2085375260]
 
@@ -5384,6 +5405,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_tgjnp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cafeteria/Wall_159" unique_id=2941575]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cafeteria/Wall_159/StaticBody3D" unique_id=701750197]
 shape = SubResource("ConcavePolygonShape3D_p334v")
@@ -5394,6 +5416,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_tjgex")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cafeteria/Wall_270" unique_id=1261461642]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cafeteria/Wall_270/StaticBody3D" unique_id=126720426]
 shape = SubResource("ConcavePolygonShape3D_5do1t")
@@ -5404,6 +5427,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_1a4ri")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cafeteria/Wall_271" unique_id=1912680516]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cafeteria/Wall_271/StaticBody3D" unique_id=2064781275]
 shape = SubResource("ConcavePolygonShape3D_2fry1")
@@ -5414,6 +5438,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_mr1x6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cafeteria/Wall_851" unique_id=35047179]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cafeteria/Wall_851/StaticBody3D" unique_id=852030320]
 shape = SubResource("ConcavePolygonShape3D_361dv")
@@ -5426,9 +5451,11 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.4
 
 [node name="Window" parent="Cafeteria" unique_id=1461218664 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -7.98649, 0.145667, -3.91327)
+collision_layer = 1025
 
 [node name="Window2" parent="Cafeteria" unique_id=932565169 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.9864898, 0.145667, -3.91327)
+collision_layer = 1025
 
 [node name="Classrooms" type="Node3D" parent="." unique_id=988079646]
 
@@ -5450,6 +5477,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_mx6p6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_001/Wall_011" unique_id=14193339]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_001/Wall_011/StaticBody3D" unique_id=1892711974]
 shape = SubResource("ConcavePolygonShape3D_5mqg4")
@@ -5460,6 +5488,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_4ge4a")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_001/Wall_017" unique_id=66314053]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_001/Wall_017/StaticBody3D" unique_id=1639776799]
 shape = SubResource("ConcavePolygonShape3D_6jb8i")
@@ -5470,6 +5499,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_vkidl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_001/Wall_019" unique_id=1458203675]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_001/Wall_019/StaticBody3D" unique_id=2056859254]
 shape = SubResource("ConcavePolygonShape3D_d7g8y")
@@ -5480,6 +5510,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_vkidl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_001/Wall_021" unique_id=1346315230]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_001/Wall_021/StaticBody3D" unique_id=1551845181]
 shape = SubResource("ConcavePolygonShape3D_d7g8y")
@@ -5490,6 +5521,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_4iaqf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_001/Wall_020" unique_id=384195878]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_001/Wall_020/StaticBody3D" unique_id=1534325033]
 shape = SubResource("ConcavePolygonShape3D_ksj3q")
@@ -5500,6 +5532,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_j4x3e")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_001/Wall_027" unique_id=1942776394]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_001/Wall_027/StaticBody3D" unique_id=65638627]
 shape = SubResource("ConcavePolygonShape3D_c4dj4")
@@ -5510,6 +5543,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_j4x3e")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_001/Wall_028" unique_id=2032919141]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_001/Wall_028/StaticBody3D" unique_id=13040234]
 shape = SubResource("ConcavePolygonShape3D_c4dj4")
@@ -5538,6 +5572,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_bi46r")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_002/Wall_013" unique_id=2023270260]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_002/Wall_013/StaticBody3D" unique_id=502439386]
 shape = SubResource("ConcavePolygonShape3D_rcidd")
@@ -5548,6 +5583,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_jw3gq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_002/Wall_024" unique_id=519215741]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_002/Wall_024/StaticBody3D" unique_id=117849953]
 shape = SubResource("ConcavePolygonShape3D_cxso6")
@@ -5558,6 +5594,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_axgj3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_002/Wall_026" unique_id=397410836]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_002/Wall_026/StaticBody3D" unique_id=1895097675]
 shape = SubResource("ConcavePolygonShape3D_5r458")
@@ -5568,6 +5605,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_vvaec")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_002/Wall_029" unique_id=55187356]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_002/Wall_029/StaticBody3D" unique_id=2057965458]
 shape = SubResource("ConcavePolygonShape3D_dyyiq")
@@ -5578,6 +5616,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_6j53c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_002/Wall_025" unique_id=946654258]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_002/Wall_025/StaticBody3D" unique_id=124767468]
 shape = SubResource("ConcavePolygonShape3D_xaesq")
@@ -5607,6 +5646,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_yait3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_003/Wall_031" unique_id=1464269938]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_003/Wall_031/StaticBody3D" unique_id=990049511]
 shape = SubResource("ConcavePolygonShape3D_y6nhf")
@@ -5617,6 +5657,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_ykjlp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_003/Wall_033" unique_id=126641954]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_003/Wall_033/StaticBody3D" unique_id=1717451303]
 shape = SubResource("ConcavePolygonShape3D_lmgpe")
@@ -5627,6 +5668,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_k450e")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_003/Wall_034" unique_id=878853502]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_003/Wall_034/StaticBody3D" unique_id=1179907899]
 shape = SubResource("ConcavePolygonShape3D_r4nqd")
@@ -5637,6 +5679,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_mmwxc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_003/Wall_112" unique_id=495334485]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_003/Wall_112/StaticBody3D" unique_id=708970689]
 shape = SubResource("ConcavePolygonShape3D_hqmwa")
@@ -5647,6 +5690,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_oxnku")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_003/Wall_113" unique_id=254105268]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_003/Wall_113/StaticBody3D" unique_id=727118834]
 shape = SubResource("ConcavePolygonShape3D_627o1")
@@ -5657,6 +5701,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_bchse")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_003/Wall_199" unique_id=2105905768]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_003/Wall_199/StaticBody3D" unique_id=1864150965]
 shape = SubResource("ConcavePolygonShape3D_td5s4")
@@ -5666,6 +5711,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.01
 
 [node name="Window" parent="Classrooms/Room_003" unique_id=360777505 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.51351, 0.145667, -1.41327)
+collision_layer = 1025
 back_material = ExtResource("14_vw7cd")
 
 [node name="Notebook" parent="Classrooms/Room_003" unique_id=1615910365 instance=ExtResource("9_3a403")]
@@ -5690,6 +5736,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_t4uje")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_004/Wall_030" unique_id=555971837]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_004/Wall_030/StaticBody3D" unique_id=1905723640]
 shape = SubResource("ConcavePolygonShape3D_7qith")
@@ -5700,6 +5747,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_atdff")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_004/Wall_165" unique_id=1500267293]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_004/Wall_165/StaticBody3D" unique_id=1195205105]
 shape = SubResource("ConcavePolygonShape3D_h534b")
@@ -5710,6 +5758,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_c0t2r")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_004/Wall_171" unique_id=1934305000]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_004/Wall_171/StaticBody3D" unique_id=716277804]
 shape = SubResource("ConcavePolygonShape3D_nd84p")
@@ -5720,6 +5769,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_hevwh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_004/Wall_287" unique_id=26352071]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_004/Wall_287/StaticBody3D" unique_id=1188528102]
 shape = SubResource("ConcavePolygonShape3D_yk86k")
@@ -5730,6 +5780,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_dwdbv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_004/Wall_288" unique_id=888014927]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_004/Wall_288/StaticBody3D" unique_id=1059238269]
 shape = SubResource("ConcavePolygonShape3D_8jwxj")
@@ -5759,6 +5810,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_wjdjg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_005/Wall_081" unique_id=908117814]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_005/Wall_081/StaticBody3D" unique_id=1456264818]
 shape = SubResource("ConcavePolygonShape3D_6huql")
@@ -5769,6 +5821,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_1o0j4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_005/Wall_175" unique_id=1619999401]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_005/Wall_175/StaticBody3D" unique_id=841500703]
 shape = SubResource("ConcavePolygonShape3D_p8ksi")
@@ -5779,6 +5832,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_dsn4n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_005/Wall_181" unique_id=1466405578]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_005/Wall_181/StaticBody3D" unique_id=2035635541]
 shape = SubResource("ConcavePolygonShape3D_g1utu")
@@ -5789,6 +5843,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_ltq4l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_005/Wall_182" unique_id=2146976580]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_005/Wall_182/StaticBody3D" unique_id=320044165]
 shape = SubResource("ConcavePolygonShape3D_fx0yh")
@@ -5799,6 +5854,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_8h4w7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_005/Wall_324" unique_id=2100253234]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_005/Wall_324/StaticBody3D" unique_id=274222637]
 shape = SubResource("ConcavePolygonShape3D_4ac3f")
@@ -5809,6 +5865,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_8pgi2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_005/Wall_325" unique_id=1869027604]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_005/Wall_325/StaticBody3D" unique_id=2136695200]
 shape = SubResource("ConcavePolygonShape3D_0frne")
@@ -5818,6 +5875,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 8.01
 
 [node name="Window" parent="Classrooms/Room_005" unique_id=997527755 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.51351, 0.145667, -6.41327)
+collision_layer = 1025
 window_back = "faculty"
 back_material = ExtResource("14_vw7cd")
 
@@ -5843,6 +5901,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_ge0q2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_006/Wall_076" unique_id=781548315]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_006/Wall_076/StaticBody3D" unique_id=1919540685]
 shape = SubResource("ConcavePolygonShape3D_svcgx")
@@ -5853,6 +5912,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_nv83j")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_006/Wall_187" unique_id=1475103658]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_006/Wall_187/StaticBody3D" unique_id=310035394]
 shape = SubResource("ConcavePolygonShape3D_j4604")
@@ -5863,6 +5923,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_blvuc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_006/Wall_196" unique_id=1670621236]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_006/Wall_196/StaticBody3D" unique_id=551663908]
 shape = SubResource("ConcavePolygonShape3D_oj1t4")
@@ -5873,6 +5934,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_r70x8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_006/Wall_340" unique_id=1545235246]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_006/Wall_340/StaticBody3D" unique_id=568637984]
 shape = SubResource("ConcavePolygonShape3D_kublq")
@@ -5883,6 +5945,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_ykbqk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_006/Wall_395" unique_id=1135005338]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_006/Wall_395/StaticBody3D" unique_id=1148744703]
 shape = SubResource("ConcavePolygonShape3D_lwii3")
@@ -5913,6 +5976,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_eqa8c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_007/Wall_202" unique_id=1099980233]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_007/Wall_202/StaticBody3D" unique_id=1051490357]
 shape = SubResource("ConcavePolygonShape3D_edgo2")
@@ -5923,6 +5987,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_0y5ue")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_007/Wall_208" unique_id=491438043]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_007/Wall_208/StaticBody3D" unique_id=527478499]
 shape = SubResource("ConcavePolygonShape3D_0880l")
@@ -5933,6 +5998,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_ps4s6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_007/Wall_209" unique_id=1764484746]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_007/Wall_209/StaticBody3D" unique_id=346674691]
 shape = SubResource("ConcavePolygonShape3D_y85lq")
@@ -5943,6 +6009,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_83ff0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_007/Wall_403" unique_id=2008082061]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_007/Wall_403/StaticBody3D" unique_id=1796849390]
 shape = SubResource("ConcavePolygonShape3D_sj31t")
@@ -5953,6 +6020,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_6yt1y")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Classrooms/Room_007/Wall_404" unique_id=135233708]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Classrooms/Room_007/Wall_404/StaticBody3D" unique_id=2086802084]
 shape = SubResource("ConcavePolygonShape3D_yjbfp")
@@ -5973,6 +6041,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_6bcxr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Electric Boxes/Cube_001" unique_id=1332241398]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Electric Boxes/Cube_001/StaticBody3D" unique_id=1674605415]
 shape = SubResource("ConcavePolygonShape3D_sykhn")
@@ -5983,6 +6052,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_q0aed")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Electric Boxes/Cube_002" unique_id=665712714]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Electric Boxes/Cube_002/StaticBody3D" unique_id=1900835166]
 shape = SubResource("ConcavePolygonShape3D_fpkje")
@@ -5993,6 +6063,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_i55g7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Electric Boxes/Cube_003" unique_id=747188952]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Electric Boxes/Cube_003/StaticBody3D" unique_id=1661045295]
 shape = SubResource("ConcavePolygonShape3D_g20e0")
@@ -6003,6 +6074,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_5u5k4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Electric Boxes/Cube_004" unique_id=523653524]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Electric Boxes/Cube_004/StaticBody3D" unique_id=386712750]
 shape = SubResource("ConcavePolygonShape3D_3r0by")
@@ -6018,6 +6090,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_sybpd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Exits/Block_001/Wall_032" unique_id=46502499]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exits/Block_001/Wall_032/StaticBody3D" unique_id=1155212364]
 shape = SubResource("ConcavePolygonShape3D_q1fst")
@@ -6031,6 +6104,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_lyjdf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Exits/Block_002/Wall_172" unique_id=220423344]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exits/Block_002/Wall_172/StaticBody3D" unique_id=646595417]
 shape = SubResource("ConcavePolygonShape3D_l7qhe")
@@ -6044,6 +6118,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_wavkh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Exits/Block_003/Wall_303" unique_id=285190265]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exits/Block_003/Wall_303/StaticBody3D" unique_id=614597429]
 shape = SubResource("ConcavePolygonShape3D_r60g8")
@@ -6057,6 +6132,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_pptvg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Exits/Block_004/Wall_220" unique_id=883303002]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exits/Block_004/Wall_220/StaticBody3D" unique_id=792637152]
 shape = SubResource("ConcavePolygonShape3D_lls28")
@@ -6079,6 +6155,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_sol0l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Exits/Exit_001/Wall_004" unique_id=1164055083]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exits/Exit_001/Wall_004/StaticBody3D" unique_id=1674550509]
 shape = SubResource("ConcavePolygonShape3D_pinar")
@@ -6089,15 +6166,18 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_joaej")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Exits/Exit_001/Wall_005" unique_id=1320566964]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exits/Exit_001/Wall_005/StaticBody3D" unique_id=1948196067]
 shape = SubResource("ConcavePolygonShape3D_1lh2s")
 
 [node name="Window" parent="Exits/Exit_001" unique_id=2134901295 instance=ExtResource("6_kwye5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98649, 0.145666, 15.0867)
+collision_layer = 1025
 
 [node name="Window2" parent="Exits/Exit_001" unique_id=246624780 instance=ExtResource("6_kwye5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98649, 0.145666, 15.0867)
+collision_layer = 1025
 
 [node name="Swinging Door" parent="Exits/Exit_001" unique_id=243618768 instance=ExtResource("14_iypqd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98649, 0.145666, 15.0867)
@@ -6124,6 +6204,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_8bnt8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Exits/Exit_002/Wall_180" unique_id=1462952975]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exits/Exit_002/Wall_180/StaticBody3D" unique_id=531741908]
 shape = SubResource("ConcavePolygonShape3D_ixn27")
@@ -6134,6 +6215,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_si3qe")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Exits/Exit_002/Wall_184" unique_id=1948307608]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exits/Exit_002/Wall_184/StaticBody3D" unique_id=2058684248]
 shape = SubResource("ConcavePolygonShape3D_3sad7")
@@ -6143,9 +6225,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0135, 0.145666, 3.08673)
 
 [node name="Window" parent="Exits/Exit_002" unique_id=173058121 instance=ExtResource("6_kwye5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0135, 0.145666, 3.08673)
+collision_layer = 1025
 
 [node name="Window2" parent="Exits/Exit_002" unique_id=1441325368 instance=ExtResource("6_kwye5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0135, 0.145666, 3.08673)
+collision_layer = 1025
 
 [node name="ExitTrigger" parent="Exits/Exit_002" unique_id=1498797613 node_paths=PackedStringArray("block") instance=ExtResource("14_6g8ja")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.014, 0.146, 2.587)
@@ -6169,6 +6253,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_3rjmp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Exits/Exit_003/Wall_300" unique_id=363227459]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exits/Exit_003/Wall_300/StaticBody3D" unique_id=1402030757]
 shape = SubResource("ConcavePolygonShape3D_hkvex")
@@ -6179,15 +6264,18 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_00d6y")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Exits/Exit_003/Wall_302" unique_id=1413670522]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exits/Exit_003/Wall_302/StaticBody3D" unique_id=1158015430]
 shape = SubResource("ConcavePolygonShape3D_ow50w")
 
 [node name="Window" parent="Exits/Exit_003" unique_id=705344005 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.4865, 0.145666, -6.41327)
+collision_layer = 1025
 
 [node name="Window2" parent="Exits/Exit_003" unique_id=1850310481 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.4865, 0.145666, -8.41327)
+collision_layer = 1025
 
 [node name="Swinging Door" parent="Exits/Exit_003" unique_id=73988314 instance=ExtResource("14_iypqd")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.4865, 0.145666, -7.41327)
@@ -6214,6 +6302,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_b0m12")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Exits/Exit_004/Wall_213" unique_id=1814546844]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exits/Exit_004/Wall_213/StaticBody3D" unique_id=564190044]
 shape = SubResource("ConcavePolygonShape3D_ox55o")
@@ -6224,6 +6313,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_63vr7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Exits/Exit_004/Wall_372" unique_id=1631561964]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exits/Exit_004/Wall_372/StaticBody3D" unique_id=1789394640]
 shape = SubResource("ConcavePolygonShape3D_0pap2")
@@ -6233,9 +6323,11 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.9
 
 [node name="Window" parent="Exits/Exit_004" unique_id=1818423065 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.98649, 0.145666, -11.9133)
+collision_layer = 1025
 
 [node name="Window2" parent="Exits/Exit_004" unique_id=1657475583 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.013509989, 0.145666, -11.9133)
+collision_layer = 1025
 
 [node name="ExitTrigger" parent="Exits/Exit_004" unique_id=1368345779 node_paths=PackedStringArray("block") instance=ExtResource("14_6g8ja")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.98600006, 0.146, -11.413)
@@ -6261,6 +6353,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_kia3f")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Faculty Rooms/FRoom_001/Wall_001" unique_id=1108829932]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Faculty Rooms/FRoom_001/Wall_001/StaticBody3D" unique_id=2135672725]
 shape = SubResource("ConcavePolygonShape3D_60uj3")
@@ -6271,6 +6364,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_83hg5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Faculty Rooms/FRoom_001/Wall_023" unique_id=1085341581]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Faculty Rooms/FRoom_001/Wall_023/StaticBody3D" unique_id=1458283987]
 shape = SubResource("ConcavePolygonShape3D_il4fa")
@@ -6281,6 +6375,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_1uasq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Faculty Rooms/FRoom_001/Wall_114" unique_id=1631743745]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Faculty Rooms/FRoom_001/Wall_114/StaticBody3D" unique_id=85476251]
 shape = SubResource("ConcavePolygonShape3D_wip1i")
@@ -6291,6 +6386,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_4n5a1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Faculty Rooms/FRoom_001/Wall_119" unique_id=353338712]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Faculty Rooms/FRoom_001/Wall_119/StaticBody3D" unique_id=633404462]
 shape = SubResource("ConcavePolygonShape3D_bvmis")
@@ -6301,6 +6397,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_lmuh8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Faculty Rooms/FRoom_001/Wall_120" unique_id=2097217096]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Faculty Rooms/FRoom_001/Wall_120/StaticBody3D" unique_id=1028888887]
 shape = SubResource("ConcavePolygonShape3D_bsd20")
@@ -6311,6 +6408,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_sfp3a")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Faculty Rooms/FRoom_001/Wall_123" unique_id=1317827015]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Faculty Rooms/FRoom_001/Wall_123/StaticBody3D" unique_id=64127749]
 shape = SubResource("ConcavePolygonShape3D_svhnn")
@@ -6321,6 +6419,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_ahq0e")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Faculty Rooms/FRoom_001/Wall_212" unique_id=1797266692]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Faculty Rooms/FRoom_001/Wall_212/StaticBody3D" unique_id=1231688125]
 shape = SubResource("ConcavePolygonShape3D_nyas1")
@@ -6331,6 +6430,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_bj8k1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Faculty Rooms/FRoom_001/Wall_214" unique_id=654919235]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Faculty Rooms/FRoom_001/Wall_214/StaticBody3D" unique_id=1280116380]
 shape = SubResource("ConcavePolygonShape3D_mtp2n")
@@ -6341,6 +6441,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_v72lr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Faculty Rooms/FRoom_001/Wall_218" unique_id=1670886398]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Faculty Rooms/FRoom_001/Wall_218/StaticBody3D" unique_id=1690657013]
 shape = SubResource("ConcavePolygonShape3D_xjxxv")
@@ -6351,18 +6452,21 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_1l44g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Faculty Rooms/FRoom_001/Wall_219" unique_id=1440998173]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Faculty Rooms/FRoom_001/Wall_219/StaticBody3D" unique_id=316726549]
 shape = SubResource("ConcavePolygonShape3D_s7p8m")
 
 [node name="Window" parent="Faculty Rooms/FRoom_001" unique_id=1114122279 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 9.01351, 0.145667, -2.91327)
+collision_layer = 1025
 window_front = "faculty"
 window_back = "faculty"
 front_material = ExtResource("14_vw7cd")
 
 [node name="Window2" parent="Faculty Rooms/FRoom_001" unique_id=1413525042 instance=ExtResource("6_kwye5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01351, 0.145667, 1.08673)
+collision_layer = 1025
 window_front = "faculty"
 window_back = "faculty"
 front_material = ExtResource("14_vw7cd")
@@ -6391,6 +6495,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_rub0g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Faculty Rooms/FRoom_002/Wall_183" unique_id=327539851]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Faculty Rooms/FRoom_002/Wall_183/StaticBody3D" unique_id=142017781]
 shape = SubResource("ConcavePolygonShape3D_a6phq")
@@ -6401,6 +6506,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_gcy10")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Faculty Rooms/FRoom_002/Wall_188" unique_id=1062271916]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Faculty Rooms/FRoom_002/Wall_188/StaticBody3D" unique_id=126837598]
 shape = SubResource("ConcavePolygonShape3D_sbh2c")
@@ -6411,6 +6517,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_qxlex")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Faculty Rooms/FRoom_002/Wall_190" unique_id=368108898]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Faculty Rooms/FRoom_002/Wall_190/StaticBody3D" unique_id=247415451]
 shape = SubResource("ConcavePolygonShape3D_ay4bv")
@@ -6421,6 +6528,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_qv6af")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Faculty Rooms/FRoom_002/Wall_326" unique_id=973159181]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Faculty Rooms/FRoom_002/Wall_326/StaticBody3D" unique_id=1153446458]
 shape = SubResource("ConcavePolygonShape3D_y1uwg")
@@ -6431,6 +6539,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_a37um")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Faculty Rooms/FRoom_002/Wall_328" unique_id=910205397]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Faculty Rooms/FRoom_002/Wall_328/StaticBody3D" unique_id=1907281889]
 shape = SubResource("ConcavePolygonShape3D_18msu")
@@ -6441,6 +6550,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_pfygk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Faculty Rooms/FRoom_002/Wall_334" unique_id=552522333]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Faculty Rooms/FRoom_002/Wall_334/StaticBody3D" unique_id=894913379]
 shape = SubResource("ConcavePolygonShape3D_42rmd")
@@ -6475,6 +6585,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_at85p")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0007" unique_id=1659218436]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0007/StaticBody3D" unique_id=569552027]
 shape = SubResource("ConcavePolygonShape3D_o8kp5")
@@ -6485,6 +6596,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_5pv1k")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0010" unique_id=1827613265]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0010/StaticBody3D" unique_id=1813552615]
 shape = SubResource("ConcavePolygonShape3D_qx6vn")
@@ -6495,6 +6607,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_ql30f")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0012" unique_id=2073839758]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0012/StaticBody3D" unique_id=898639682]
 shape = SubResource("ConcavePolygonShape3D_mbcwp")
@@ -6505,6 +6618,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_4rae6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_006" unique_id=789647866]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_006/StaticBody3D" unique_id=624686711]
 shape = SubResource("ConcavePolygonShape3D_4c08m")
@@ -6515,6 +6629,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_lhmua")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0077" unique_id=1933999837]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0077/StaticBody3D" unique_id=941429226]
 shape = SubResource("ConcavePolygonShape3D_gnabo")
@@ -6525,6 +6640,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_17j3s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_007" unique_id=1440720377]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_007/StaticBody3D" unique_id=333314125]
 shape = SubResource("ConcavePolygonShape3D_tn1p8")
@@ -6535,6 +6651,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_d4l56")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0108" unique_id=312476655]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0108/StaticBody3D" unique_id=1527388989]
 shape = SubResource("ConcavePolygonShape3D_tr0no")
@@ -6545,6 +6662,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_x7g0o")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_010" unique_id=1275855178]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_010/StaticBody3D" unique_id=109552461]
 shape = SubResource("ConcavePolygonShape3D_7e8rq")
@@ -6555,6 +6673,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_a78if")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0114" unique_id=226046015]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0114/StaticBody3D" unique_id=482666496]
 shape = SubResource("ConcavePolygonShape3D_7al4x")
@@ -6565,6 +6684,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_2kuf6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_012" unique_id=669345941]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_012/StaticBody3D" unique_id=1136340804]
 shape = SubResource("ConcavePolygonShape3D_bs3jx")
@@ -6575,6 +6695,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_3c61y")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0151" unique_id=1229351530]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0151/StaticBody3D" unique_id=1509752182]
 shape = SubResource("ConcavePolygonShape3D_ksyyy")
@@ -6585,6 +6706,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_b4kpg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0155" unique_id=1426522002]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0155/StaticBody3D" unique_id=268882627]
 shape = SubResource("ConcavePolygonShape3D_yqc2c")
@@ -6595,6 +6717,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_vnw5x")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0177" unique_id=1250144493]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0177/StaticBody3D" unique_id=1244643732]
 shape = SubResource("ConcavePolygonShape3D_yfkeg")
@@ -6605,6 +6728,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_brm33")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0208" unique_id=1260312133]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0208/StaticBody3D" unique_id=1085146143]
 shape = SubResource("ConcavePolygonShape3D_e44tc")
@@ -6615,6 +6739,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_dm375")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0214" unique_id=1863833470]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0214/StaticBody3D" unique_id=1892439721]
 shape = SubResource("ConcavePolygonShape3D_6xraa")
@@ -6625,6 +6750,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_5txcy")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0251" unique_id=2127196028]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0251/StaticBody3D" unique_id=2130161149]
 shape = SubResource("ConcavePolygonShape3D_dg0i5")
@@ -6635,6 +6761,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_77ymq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0255" unique_id=236140330]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0255/StaticBody3D" unique_id=1798972648]
 shape = SubResource("ConcavePolygonShape3D_oycyc")
@@ -6645,6 +6772,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_vglso")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0277" unique_id=1864978286]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0277/StaticBody3D" unique_id=248700634]
 shape = SubResource("ConcavePolygonShape3D_m1hoj")
@@ -6655,6 +6783,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_o7vbo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0314" unique_id=891909227]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0314/StaticBody3D" unique_id=753853427]
 shape = SubResource("ConcavePolygonShape3D_6jjhv")
@@ -6665,6 +6794,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_06xg8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0351" unique_id=1170422300]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0351/StaticBody3D" unique_id=11410456]
 shape = SubResource("ConcavePolygonShape3D_sd23y")
@@ -6675,6 +6805,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_5560n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0355" unique_id=726335701]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0355/StaticBody3D" unique_id=707902196]
 shape = SubResource("ConcavePolygonShape3D_yam0d")
@@ -6685,6 +6816,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_py6yy")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0378" unique_id=1729106485]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0378/StaticBody3D" unique_id=235928539]
 shape = SubResource("ConcavePolygonShape3D_xii4b")
@@ -6695,6 +6827,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_ibkug")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0386" unique_id=382348384]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0386/StaticBody3D" unique_id=1956741112]
 shape = SubResource("ConcavePolygonShape3D_j4q3s")
@@ -6705,6 +6838,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_hat5v")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_040" unique_id=1487221230]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_040/StaticBody3D" unique_id=1623481503]
 shape = SubResource("ConcavePolygonShape3D_1lcg1")
@@ -6715,6 +6849,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_mglgf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0414" unique_id=1113831276]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0414/StaticBody3D" unique_id=419373803]
 shape = SubResource("ConcavePolygonShape3D_xgxs7")
@@ -6725,6 +6860,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_5odgq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0426" unique_id=822408162]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0426/StaticBody3D" unique_id=2109885502]
 shape = SubResource("ConcavePolygonShape3D_ctfii")
@@ -6735,6 +6871,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_q1sga")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0427" unique_id=1919566873]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0427/StaticBody3D" unique_id=1720609413]
 shape = SubResource("ConcavePolygonShape3D_flbpt")
@@ -6745,6 +6882,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_e378i")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0451" unique_id=234720863]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0451/StaticBody3D" unique_id=1918136827]
 shape = SubResource("ConcavePolygonShape3D_xeb13")
@@ -6755,6 +6893,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_d0bau")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0478" unique_id=965142107]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0478/StaticBody3D" unique_id=623696936]
 shape = SubResource("ConcavePolygonShape3D_qt12n")
@@ -6765,6 +6904,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_tqpvo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_051" unique_id=575134431]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_051/StaticBody3D" unique_id=1775448672]
 shape = SubResource("ConcavePolygonShape3D_5v2ol")
@@ -6775,6 +6915,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_h7bm5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0051" unique_id=416755405]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0051/StaticBody3D" unique_id=1582342234]
 shape = SubResource("ConcavePolygonShape3D_js1hy")
@@ -6785,6 +6926,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_svmr5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0526" unique_id=887861357]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0526/StaticBody3D" unique_id=445705258]
 shape = SubResource("ConcavePolygonShape3D_0dvw0")
@@ -6795,6 +6937,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_v64qq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_052" unique_id=1535901980]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_052/StaticBody3D" unique_id=1035621855]
 shape = SubResource("ConcavePolygonShape3D_o3mpw")
@@ -6805,6 +6948,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_1m0if")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_054" unique_id=1776279649]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_054/StaticBody3D" unique_id=205373739]
 shape = SubResource("ConcavePolygonShape3D_joqw6")
@@ -6815,6 +6959,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_jqu40")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0551" unique_id=783755924]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0551/StaticBody3D" unique_id=670383973]
 shape = SubResource("ConcavePolygonShape3D_1qrfm")
@@ -6825,6 +6970,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_o3b7t")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_060" unique_id=1974778573]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_060/StaticBody3D" unique_id=342380968]
 shape = SubResource("ConcavePolygonShape3D_tp6kb")
@@ -6835,6 +6981,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_relwt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0626" unique_id=815164336]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0626/StaticBody3D" unique_id=396671842]
 shape = SubResource("ConcavePolygonShape3D_fsfvx")
@@ -6845,6 +6992,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_31h7p")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_065" unique_id=259910037]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_065/StaticBody3D" unique_id=2077575665]
 shape = SubResource("ConcavePolygonShape3D_p370g")
@@ -6855,6 +7003,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_x04io")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0677" unique_id=1421624075]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0677/StaticBody3D" unique_id=1483975220]
 shape = SubResource("ConcavePolygonShape3D_hmga0")
@@ -6865,6 +7014,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_l1ovn")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_074" unique_id=928809770]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_074/StaticBody3D" unique_id=1132443912]
 shape = SubResource("ConcavePolygonShape3D_s5m0l")
@@ -6875,6 +7025,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_umsyi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0751" unique_id=651328094]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0751/StaticBody3D" unique_id=2075034724]
 shape = SubResource("ConcavePolygonShape3D_o113g")
@@ -6885,6 +7036,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_lg1j5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_075" unique_id=1359001022]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_075/StaticBody3D" unique_id=1217210920]
 shape = SubResource("ConcavePolygonShape3D_5te4f")
@@ -6895,6 +7047,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_bct1e")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_077" unique_id=105972734]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_077/StaticBody3D" unique_id=281481893]
 shape = SubResource("ConcavePolygonShape3D_137cv")
@@ -6905,6 +7058,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_o3j0v")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0810" unique_id=2009478126]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0810/StaticBody3D" unique_id=151122043]
 shape = SubResource("ConcavePolygonShape3D_mx1fm")
@@ -6915,6 +7069,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_lipmd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0812" unique_id=543959977]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0812/StaticBody3D" unique_id=1412742959]
 shape = SubResource("ConcavePolygonShape3D_p5xxp")
@@ -6925,6 +7080,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_was8q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0851" unique_id=1153855961]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0851/StaticBody3D" unique_id=1856191616]
 shape = SubResource("ConcavePolygonShape3D_lgpst")
@@ -6935,6 +7091,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_p0rum")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_089" unique_id=1178635050]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_089/StaticBody3D" unique_id=859102847]
 shape = SubResource("ConcavePolygonShape3D_3omb1")
@@ -6945,6 +7102,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_8afdk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_091" unique_id=1463275596]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_091/StaticBody3D" unique_id=1284455349]
 shape = SubResource("ConcavePolygonShape3D_jng58")
@@ -6955,6 +7113,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_o3il8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_093" unique_id=681027027]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_093/StaticBody3D" unique_id=905131034]
 shape = SubResource("ConcavePolygonShape3D_8tpl5")
@@ -6965,6 +7124,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_f5alp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0951" unique_id=1525783260]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0951/StaticBody3D" unique_id=452468396]
 shape = SubResource("ConcavePolygonShape3D_evq03")
@@ -6975,6 +7135,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_1mwye")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_0981" unique_id=1250144190]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_0981/StaticBody3D" unique_id=1620125514]
 shape = SubResource("ConcavePolygonShape3D_5e6kb")
@@ -6985,6 +7146,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_qxnb7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_108" unique_id=1675705011]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_108/StaticBody3D" unique_id=2135316440]
 shape = SubResource("ConcavePolygonShape3D_mo50d")
@@ -6995,6 +7157,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_jn8bu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_1155" unique_id=1123299815]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_1155/StaticBody3D" unique_id=1034383494]
 shape = SubResource("ConcavePolygonShape3D_vgpac")
@@ -7005,6 +7168,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_0hu1d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_1386" unique_id=2050267982]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_1386/StaticBody3D" unique_id=762322032]
 shape = SubResource("ConcavePolygonShape3D_o70tn")
@@ -7015,6 +7179,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_060ec")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_143" unique_id=1961409818]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_143/StaticBody3D" unique_id=924967199]
 shape = SubResource("ConcavePolygonShape3D_u06j8")
@@ -7025,6 +7190,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_10qsc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_155" unique_id=1119368319]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_155/StaticBody3D" unique_id=2121345457]
 shape = SubResource("ConcavePolygonShape3D_o5g7e")
@@ -7035,6 +7201,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_v3yw0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_158" unique_id=1292823425]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_158/StaticBody3D" unique_id=381442434]
 shape = SubResource("ConcavePolygonShape3D_grl5s")
@@ -7045,6 +7212,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_8cduw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_167" unique_id=1548818097]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_167/StaticBody3D" unique_id=19973506]
 shape = SubResource("ConcavePolygonShape3D_ae16o")
@@ -7055,6 +7223,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_gps1h")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_174" unique_id=1768474063]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_174/StaticBody3D" unique_id=1800348117]
 shape = SubResource("ConcavePolygonShape3D_tlwmy")
@@ -7065,6 +7234,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_fpac1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_198" unique_id=872282043]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_198/StaticBody3D" unique_id=765647195]
 shape = SubResource("ConcavePolygonShape3D_gceh7")
@@ -7075,6 +7245,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_wa03c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_2114" unique_id=1450555483]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_2114/StaticBody3D" unique_id=1883582651]
 shape = SubResource("ConcavePolygonShape3D_tuvaj")
@@ -7085,6 +7256,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_qh0wg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_2155" unique_id=1479495267]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_2155/StaticBody3D" unique_id=742991754]
 shape = SubResource("ConcavePolygonShape3D_xa52r")
@@ -7095,6 +7267,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_jlcg3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_2386" unique_id=1067022408]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_2386/StaticBody3D" unique_id=712465495]
 shape = SubResource("ConcavePolygonShape3D_0t88l")
@@ -7105,6 +7278,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_6p1we")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_3012" unique_id=1822918416]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_3012/StaticBody3D" unique_id=109375766]
 shape = SubResource("ConcavePolygonShape3D_b2jb4")
@@ -7115,6 +7289,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_8t5x6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_3155" unique_id=1965171717]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_3155/StaticBody3D" unique_id=907890810]
 shape = SubResource("ConcavePolygonShape3D_i2ynh")
@@ -7125,6 +7300,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_gkgba")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_331" unique_id=833227887]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_331/StaticBody3D" unique_id=1057670750]
 shape = SubResource("ConcavePolygonShape3D_tvn8j")
@@ -7135,6 +7311,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_hwy8b")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_370" unique_id=114519581]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_370/StaticBody3D" unique_id=1862231842]
 shape = SubResource("ConcavePolygonShape3D_rlv71")
@@ -7145,6 +7322,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_i1chx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_376" unique_id=1375431118]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_376/StaticBody3D" unique_id=1947870028]
 shape = SubResource("ConcavePolygonShape3D_hxe73")
@@ -7155,6 +7333,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_6fg0f")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_378" unique_id=851130952]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_378/StaticBody3D" unique_id=1442446743]
 shape = SubResource("ConcavePolygonShape3D_2mx5v")
@@ -7165,6 +7344,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_ivlmr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_386" unique_id=1824170178]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_386/StaticBody3D" unique_id=1393646807]
 shape = SubResource("ConcavePolygonShape3D_aak22")
@@ -7175,6 +7355,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_dmxx7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_390" unique_id=1098219508]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_390/StaticBody3D" unique_id=1272105398]
 shape = SubResource("ConcavePolygonShape3D_kp4gr")
@@ -7185,6 +7366,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_fs51u")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_4012" unique_id=131168480]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_4012/StaticBody3D" unique_id=331243115]
 shape = SubResource("ConcavePolygonShape3D_u3v2t")
@@ -7195,6 +7377,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_vbytd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_4260" unique_id=1623164947]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_4260/StaticBody3D" unique_id=1757280350]
 shape = SubResource("ConcavePolygonShape3D_2ugc5")
@@ -7205,6 +7388,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_aa5u5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_4261" unique_id=1123428536]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_4261/StaticBody3D" unique_id=255220492]
 shape = SubResource("ConcavePolygonShape3D_qoxu2")
@@ -7215,6 +7399,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_kjqvx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_4262" unique_id=1408631626]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_4262/StaticBody3D" unique_id=455221847]
 shape = SubResource("ConcavePolygonShape3D_5ogir")
@@ -7225,6 +7410,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_6tts4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_426" unique_id=1956393506]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_426/StaticBody3D" unique_id=459543188]
 shape = SubResource("ConcavePolygonShape3D_4ad1a")
@@ -7235,6 +7421,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_fwt6w")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_427" unique_id=1344286113]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_427/StaticBody3D" unique_id=791034920]
 shape = SubResource("ConcavePolygonShape3D_7dl2w")
@@ -7245,6 +7432,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_rswe7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_740" unique_id=1041347479]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_740/StaticBody3D" unique_id=120941975]
 shape = SubResource("ConcavePolygonShape3D_05xaj")
@@ -7255,6 +7443,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_52pa5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_750" unique_id=1014838004]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_750/StaticBody3D" unique_id=259769269]
 shape = SubResource("ConcavePolygonShape3D_q1r5s")
@@ -7265,6 +7454,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_x046c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Halls/Walls/Wall_874" unique_id=1362531611]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Halls/Walls/Wall_874/StaticBody3D" unique_id=658022528]
 shape = SubResource("ConcavePolygonShape3D_106x6")
@@ -7296,6 +7486,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_u6tt5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OFence/Wall_564" unique_id=1208008363]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OFence/Wall_564/StaticBody3D" unique_id=1468291225]
 shape = SubResource("ConcavePolygonShape3D_psqv5")
@@ -7306,6 +7497,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_td6hl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OFence/Wall_587" unique_id=1149204561]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OFence/Wall_587/StaticBody3D" unique_id=1099303937]
 shape = SubResource("ConcavePolygonShape3D_4s1i8")
@@ -7316,6 +7508,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_ueuwg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OFence/Wall_629" unique_id=1318795522]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OFence/Wall_629/StaticBody3D" unique_id=209467646]
 shape = SubResource("ConcavePolygonShape3D_vguad")
@@ -7326,6 +7519,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_2qdbc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OFence/Wall_720" unique_id=738523150]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OFence/Wall_720/StaticBody3D" unique_id=886354729]
 shape = SubResource("ConcavePolygonShape3D_du3to")
@@ -7367,6 +7561,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_4u5ou")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_377" unique_id=918245261]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_377/StaticBody3D" unique_id=1472781066]
 shape = SubResource("ConcavePolygonShape3D_o2wu4")
@@ -7377,6 +7572,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_5inu5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_431" unique_id=1080999331]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_431/StaticBody3D" unique_id=1383421795]
 shape = SubResource("ConcavePolygonShape3D_ccgg1")
@@ -7387,6 +7583,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_okjmd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_432" unique_id=1585566180]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_432/StaticBody3D" unique_id=651516567]
 shape = SubResource("ConcavePolygonShape3D_pofak")
@@ -7397,6 +7594,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_iiy2q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_438" unique_id=910894429]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_438/StaticBody3D" unique_id=704127059]
 shape = SubResource("ConcavePolygonShape3D_aw338")
@@ -7407,6 +7605,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_kku5w")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_454" unique_id=421427417]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_454/StaticBody3D" unique_id=586663317]
 shape = SubResource("ConcavePolygonShape3D_7cvyt")
@@ -7417,6 +7616,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_od813")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_462" unique_id=192818926]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_462/StaticBody3D" unique_id=2089038527]
 shape = SubResource("ConcavePolygonShape3D_6aayc")
@@ -7427,6 +7627,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_bhpcd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_464" unique_id=44148440]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_464/StaticBody3D" unique_id=40489790]
 shape = SubResource("ConcavePolygonShape3D_cg7m1")
@@ -7437,6 +7638,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_6rkkl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_472" unique_id=272849674]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_472/StaticBody3D" unique_id=543882223]
 shape = SubResource("ConcavePolygonShape3D_nt56r")
@@ -7447,6 +7649,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_a34gg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_479" unique_id=665825607]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_479/StaticBody3D" unique_id=450619334]
 shape = SubResource("ConcavePolygonShape3D_p5enw")
@@ -7457,6 +7660,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_uiqe2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_482" unique_id=198676893]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_482/StaticBody3D" unique_id=1088215529]
 shape = SubResource("ConcavePolygonShape3D_cs44a")
@@ -7467,6 +7671,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_w4qj7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_497" unique_id=538027300]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_497/StaticBody3D" unique_id=573361626]
 shape = SubResource("ConcavePolygonShape3D_y8874")
@@ -7477,6 +7682,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_vt55l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_498" unique_id=1357073503]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_498/StaticBody3D" unique_id=1041481548]
 shape = SubResource("ConcavePolygonShape3D_26wjv")
@@ -7487,6 +7693,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_bryxg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_502" unique_id=1368670449]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_502/StaticBody3D" unique_id=243618885]
 shape = SubResource("ConcavePolygonShape3D_jucf4")
@@ -7497,6 +7704,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_8spvh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_523" unique_id=156813930]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_523/StaticBody3D" unique_id=2103061116]
 shape = SubResource("ConcavePolygonShape3D_ewnd6")
@@ -7507,6 +7715,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_6l1dg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_528" unique_id=1541788246]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_528/StaticBody3D" unique_id=433857361]
 shape = SubResource("ConcavePolygonShape3D_2y0xj")
@@ -7517,6 +7726,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_6pia1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_535" unique_id=464781795]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_535/StaticBody3D" unique_id=455450344]
 shape = SubResource("ConcavePolygonShape3D_sf0qc")
@@ -7527,6 +7737,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_nseww")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_542" unique_id=1725451904]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_542/StaticBody3D" unique_id=1692425353]
 shape = SubResource("ConcavePolygonShape3D_qgggb")
@@ -7537,22 +7748,27 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_qk4ip")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWalls/Wall_545" unique_id=143972230]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWalls/Wall_545/StaticBody3D" unique_id=711123748]
 shape = SubResource("ConcavePolygonShape3D_14lw1")
 
 [node name="Window" parent="Outdoor Elements/OWalls" unique_id=1703767155 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.5135, 0.145667, -6.41327)
+collision_layer = 1025
 
 [node name="Window2" parent="Outdoor Elements/OWalls" unique_id=363692758 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.5135, 0.145667, -1.41327)
+collision_layer = 1025
 back_material = ExtResource("14_vw7cd")
 
 [node name="Window3" parent="Outdoor Elements/OWalls" unique_id=859822169 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.5135, 0.145667, 4.58673)
+collision_layer = 1025
 
 [node name="Window4" parent="Outdoor Elements/OWalls" unique_id=612480997 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.5135, 0.145667, 11.58673)
+collision_layer = 1025
 
 [node name="OWFence" type="Node3D" parent="Outdoor Elements" unique_id=334922150]
 
@@ -7562,6 +7778,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_v5otk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWFence/Wall_724" unique_id=1362389484]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWFence/Wall_724/StaticBody3D" unique_id=1255714552]
 shape = SubResource("ConcavePolygonShape3D_wbpqu")
@@ -7572,6 +7789,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_3lwt1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWFence/Wall_724a" unique_id=684877103]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWFence/Wall_724a/StaticBody3D" unique_id=1840653268]
 shape = SubResource("ConcavePolygonShape3D_ros4t")
@@ -7582,6 +7800,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_jwr08")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWFence/Wall_728" unique_id=1195482566]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWFence/Wall_728/StaticBody3D" unique_id=612723203]
 shape = SubResource("ConcavePolygonShape3D_qopbh")
@@ -7592,6 +7811,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_lxkhw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWFence/Wall_728a" unique_id=229341703]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWFence/Wall_728a/StaticBody3D" unique_id=705620892]
 shape = SubResource("ConcavePolygonShape3D_7c7af")
@@ -7602,6 +7822,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_cotie")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWFence/Wall_739" unique_id=284384101]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWFence/Wall_739/StaticBody3D" unique_id=1976654984]
 shape = SubResource("ConcavePolygonShape3D_ye60y")
@@ -7612,6 +7833,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_sf1nq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outdoor Elements/OWFence/Wall_739a" unique_id=1167380329]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outdoor Elements/OWFence/Wall_739a/StaticBody3D" unique_id=831587943]
 shape = SubResource("ConcavePolygonShape3D_uox41")
@@ -7637,6 +7859,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_4rx0r")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Principal\'s Office/Wall_131" unique_id=1350092549]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Principal\'s Office/Wall_131/StaticBody3D" unique_id=367624586]
 shape = SubResource("ConcavePolygonShape3D_wbnqq")
@@ -7647,6 +7870,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_v5ful")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Principal\'s Office/Wall_134" unique_id=462546891]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Principal\'s Office/Wall_134/StaticBody3D" unique_id=1113786370]
 shape = SubResource("ConcavePolygonShape3D_7thxv")
@@ -7657,6 +7881,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_aeelk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Principal\'s Office/Wall_136" unique_id=646001250]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Principal\'s Office/Wall_136/StaticBody3D" unique_id=32270940]
 shape = SubResource("ConcavePolygonShape3D_d163j")
@@ -7667,6 +7892,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_gb0fq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Principal\'s Office/Wall_137" unique_id=253102689]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Principal\'s Office/Wall_137/StaticBody3D" unique_id=1336211055]
 shape = SubResource("ConcavePolygonShape3D_wgt6j")
@@ -7677,6 +7903,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_feu5i")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Principal\'s Office/Wall_138" unique_id=755806904]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Principal\'s Office/Wall_138/StaticBody3D" unique_id=2098859041]
 shape = SubResource("ConcavePolygonShape3D_aw3nf")
@@ -7687,6 +7914,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_f2hmm")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Principal\'s Office/Wall_233" unique_id=1639643863]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Principal\'s Office/Wall_233/StaticBody3D" unique_id=487408314]
 shape = SubResource("ConcavePolygonShape3D_eg5kr")
@@ -7697,6 +7925,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_skmkv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Principal\'s Office/Wall_235" unique_id=1498205506]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Principal\'s Office/Wall_235/StaticBody3D" unique_id=982727893]
 shape = SubResource("ConcavePolygonShape3D_cde4x")
@@ -7707,6 +7936,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_7xk2r")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Principal\'s Office/Wall_237" unique_id=1521457176]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Principal\'s Office/Wall_237/StaticBody3D" unique_id=849876716]
 shape = SubResource("ConcavePolygonShape3D_uxeop")
@@ -7717,6 +7947,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_wj528")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Principal\'s Office/Wall_239" unique_id=141000928]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Principal\'s Office/Wall_239/StaticBody3D" unique_id=1791838459]
 shape = SubResource("ConcavePolygonShape3D_5joaf")
@@ -7727,48 +7958,56 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_vyvtv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Principal\'s Office/Wall_241" unique_id=1499849231]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Principal\'s Office/Wall_241/StaticBody3D" unique_id=1141895261]
 shape = SubResource("ConcavePolygonShape3D_sg5xe")
 
 [node name="Window" parent="Principal\'s Office" unique_id=140409444 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -3.98649, 0.145667, 2.08673)
+collision_layer = 1025
 window_front = "faculty"
 window_back = "faculty"
 front_material = ExtResource("14_vw7cd")
 
 [node name="Window2" parent="Principal\'s Office" unique_id=455219693 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.98649, 0.145667, 2.08673)
+collision_layer = 1025
 window_front = "faculty"
 window_back = "faculty"
 front_material = ExtResource("14_vw7cd")
 
 [node name="Window3" parent="Principal\'s Office" unique_id=139453294 instance=ExtResource("6_kwye5")]
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -1.98649, 0.145667, 7.08673)
+collision_layer = 1025
 window_front = "faculty"
 window_back = "faculty"
 front_material = ExtResource("14_vw7cd")
 
 [node name="Window4" parent="Principal\'s Office" unique_id=1742485098 instance=ExtResource("6_kwye5")]
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -3.98649, 0.145667, 7.08673)
+collision_layer = 1025
 window_front = "faculty"
 window_back = "faculty"
 front_material = ExtResource("14_vw7cd")
 
 [node name="Window5" parent="Principal\'s Office" unique_id=2050211852 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.486489, 0.145667, 3.58673)
+collision_layer = 1025
 window_front = "faculty"
 window_back = "faculty"
 front_material = ExtResource("14_vw7cd")
 
 [node name="Window6" parent="Principal\'s Office" unique_id=336031266 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.486489, 0.145667, 5.58673)
+collision_layer = 1025
 window_front = "faculty"
 window_back = "faculty"
 front_material = ExtResource("14_vw7cd")
 
 [node name="Window7" parent="Principal\'s Office" unique_id=501904875 instance=ExtResource("6_kwye5")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.486489, 0.145667, 4.58673)
+collision_layer = 1025
 window_front = "faculty"
 window_back = "faculty"
 front_material = ExtResource("14_vw7cd")
@@ -7797,6 +8036,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_2h0ju")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Supplies/Wall_290" unique_id=669277538]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Supplies/Wall_290/StaticBody3D" unique_id=1289869417]
 shape = SubResource("ConcavePolygonShape3D_hraoo")
@@ -7807,6 +8047,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_cygcr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Supplies/Wall_291" unique_id=1129418171]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Supplies/Wall_291/StaticBody3D" unique_id=935396759]
 shape = SubResource("ConcavePolygonShape3D_j0ps2")
@@ -7817,6 +8058,7 @@ gi_mode = 0
 mesh = SubResource("ArrayMesh_ns62d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Supplies/Wall_293" unique_id=138108156]
+collision_layer = 1025
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Supplies/Wall_293/StaticBody3D" unique_id=296196079]
 shape = SubResource("ConcavePolygonShape3D_75wqm")

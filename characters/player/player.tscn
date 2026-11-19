@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c70njx84527l" path="res://characters/player/Staminometer.png" id="11_icpky"]
 [ext_resource type="Texture2D" uid="uid://b4nu4m3rm0b6t" path="res://characters/player/NotebookIcon_Sheet.png" id="12_gqopd"]
 [ext_resource type="AudioStream" uid="uid://bnr1df7405ua" path="res://characters/player/NotebookCollect.wav" id="14_icpky"]
+[ext_resource type="Texture2D" uid="uid://cn0pr8dixu5p4" path="res://item/textures/thumb/StretchyGloveIcon_Small.png" id="14_sbttr"]
 [ext_resource type="AudioStream" uid="uid://bn4r1n3g4rk4y" path="res://characters/player/ErrorMaybe.wav" id="15_4cx7u"]
 [ext_resource type="AudioStream" uid="uid://b1u4pcxfc3q2w" path="res://characters/player/ChipCrunch.wav" id="15_8l73k"]
 [ext_resource type="AudioStream" uid="uid://df3jsjkyi0hyv" path="res://characters/player/BsodaSpray.wav" id="16_aqrcq"]
@@ -27,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://nvplv4hnui5c" path="res://characters/player/sounds/lose/Lose_SteamExplode.wav" id="23_6pj1p"]
 [ext_resource type="AudioStream" uid="uid://2tc4wc4ey0iu" path="res://characters/player/sounds/lose/Lose_What.wav" id="24_3a7m8"]
 [ext_resource type="AudioStream" uid="uid://blpj728rp3tv2" path="res://storage_locker/Doors_Locker.wav" id="25_7b6hw"]
+[ext_resource type="AudioStream" uid="uid://cbgxmp8flr2ua" path="res://characters/player/GloveSnapOn.wav" id="28_e0pgg"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jh3y0"]
 radius = 0.111816406
@@ -50,7 +52,7 @@ properties/0/spawn = true
 properties/0/replication_mode = 1
 properties/1/path = NodePath(".:locker")
 properties/1/spawn = true
-properties/1/replication_mode = 1
+properties/1/replication_mode = 2
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_exd8k"]
 properties/0/path = NodePath(".:stamina")
@@ -58,10 +60,13 @@ properties/0/spawn = true
 properties/0/replication_mode = 1
 properties/1/path = NodePath(".:inventory")
 properties/1/spawn = true
-properties/1/replication_mode = 1
+properties/1/replication_mode = 2
 properties/2/path = NodePath(".:notebooks")
 properties/2/spawn = true
-properties/2/replication_mode = 1
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:glove_time")
+properties/3/spawn = true
+properties/3/replication_mode = 1
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5dc8e"]
 properties/0/path = NodePath(".:rotation")
@@ -74,7 +79,7 @@ properties/0/spawn = true
 properties/0/replication_mode = 1
 properties/1/path = NodePath(".:running")
 properties/1/spawn = true
-properties/1/replication_mode = 1
+properties/1/replication_mode = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_icpky"]
 atlas = ExtResource("12_gqopd")
@@ -204,10 +209,9 @@ mesh = SubResource("SphereMesh_jh3y0")
 
 [node name="InteractRay" type="RayCast3D" parent="Camera" index="1" unique_id=2074744021]
 target_position = Vector3(0, 0, -1)
-collision_mask = 936
+collision_mask = 1960
 hit_from_inside = true
 collide_with_areas = true
-collide_with_bodies = false
 
 [node name="NameLabel" parent="." index="3" unique_id=1285109512]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7688177, 0)
@@ -228,7 +232,6 @@ public_visibility = false
 script = ExtResource("3_exd8k")
 
 [node name="UI" type="Control" parent="." index="9" unique_id=1681700583]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -328,7 +331,7 @@ offset_bottom = 34.0
 show_behind_parent = true
 position = Vector2(3, 2)
 sprite_frames = ExtResource("6_rpf03")
-animation = &"0"
+animation = &"4"
 centered = false
 
 [node name="Slot2" type="TextureRect" parent="UI/Inventory" index="1" unique_id=1874736875]
@@ -487,6 +490,35 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "0/7"
 
+[node name="Effects" type="VBoxContainer" parent="UI" index="7" unique_id=143944519]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -206.0
+offset_right = 227.0
+grow_vertical = 0
+
+[node name="Glove" type="HBoxContainer" parent="UI/Effects" index="0" unique_id=1164745656]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Icon" type="TextureRect" parent="UI/Effects/Glove" index="0" unique_id=1246156566]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("14_sbttr")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Time" type="ProgressBar" parent="UI/Effects/Glove" index="1" unique_id=1688845682]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 60.0
+value = 60.0
+show_percentage = false
+
 [node name="PickupSound" type="AudioStreamPlayer" parent="." index="10" unique_id=49951168]
 stream = ExtResource("9_rpf03")
 max_polyphony = 2
@@ -513,3 +545,6 @@ stream = ExtResource("16_aqrcq")
 
 [node name="locker" type="AudioStreamPlayer3D" parent="Sounds" index="2" unique_id=1424258812]
 stream = ExtResource("25_7b6hw")
+
+[node name="glove" type="AudioStreamPlayer3D" parent="Sounds" index="3" unique_id=774181276]
+stream = ExtResource("28_e0pgg")

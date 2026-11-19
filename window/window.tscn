@@ -9,6 +9,7 @@
 points = PackedVector3Array(-0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0)
 
 [node name="Window" type="StaticBody3D" unique_id=1296971378]
+collision_layer = 1025
 script = ExtResource("1_tmt5v")
 front_material = ExtResource("2_u8io4")
 back_material = ExtResource("2_u8io4")

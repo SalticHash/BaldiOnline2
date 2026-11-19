@@ -4,7 +4,8 @@ enum ITEM {
 	NONE,
 	BSODA,
 	ZESTY,
-	LOCK
+	LOCK,
+	GLOVE,
 }
 
 var cursor_pos: int = 0
@@ -15,6 +16,7 @@ const STAM_GAIN_SPEED: float = 0.5
 var running: bool = false
 var inventory: Array[int] = [0, 0, 0, 0, 0]
 var locker: NodePath = NodePath("")
+var glove_time: float = 0.0
 var stamina: float = 1.0 :
 	set(value):
 		stamina = clampf(value, 0.0, 1.5)
@@ -29,8 +31,11 @@ var notebooks: int = 0 :
 		$UI/NotebookAmount.text = str(notebooks) + "/7"
 var input_dir: Vector2 = Vector2.ZERO
 func _physics_process(delta: float) -> void:
-	if !is_multiplayer_authority(): return
+	if is_multiplayer_authority() or multiplayer.get_unique_id() == id:
+		$Camera/InteractRay.target_position.z = -100.0 if glove_time > 0.0 else -1.0
 	
+	if !is_multiplayer_authority(): return
+	if glove_time > 0.0: glove_time -= delta
 	if (!input_dir or has_node(locker)) and stamina < 1.0:
 		stamina += delta * STAM_GAIN_SPEED
 	elif running:
@@ -75,7 +80,13 @@ func _process(_delta: float) -> void:
 	
 	$UI/Stamina/Needle.position.x = \
 	remap(stamina, 0.0, 1.0, $UI/Stamina/Start.position.x, $UI/Stamina/End.position.x)
-
+	
+	if glove_time > 0.0:
+		$UI/Effects/Glove.show()
+		$UI/Effects/Glove/Time.value = glove_time
+	else:
+		$UI/Effects/Glove.hide()
+	
 	if has_node(locker):
 		get_node(locker).get_node("Camera").make_current()
 		$UI/Hand.hide()
@@ -156,9 +167,16 @@ func use_item(cursor):
 				return
 			inventory[cursor] = ITEM.NONE
 			c.lock.rpc()
+			return
+		ITEM.GLOVE:
+			inventory[cursor] = ITEM.NONE
+			play_sound.rpc("glove")
+			glove_time = 60.0
+			return
+			
 
 func reach_squared() -> float:
-	var v = -$Camera/InteractRay.target_position.z
+	var v = (-$Camera/InteractRay.target_position.z + 1.0)
 	return v * v
 
 @rpc("authority", "call_local", "reliable")
