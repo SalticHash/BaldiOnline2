@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5og4yg2k4lcn"
 path.s3tc="res://.godot/imported/Student_0_60_Sheet.png-be42ae18396dc6e080050e0799aa420e.s3tc.ctex"
+path.etc2="res://.godot/imported/Student_0_60_Sheet.png-be42ae18396dc6e080050e0799aa420e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://characters/student/textures/0/Student_0_60_Sheet.png"
-dest_files=["res://.godot/imported/Student_0_60_Sheet.png-be42ae18396dc6e080050e0799aa420e.s3tc.ctex"]
+dest_files=["res://.godot/imported/Student_0_60_Sheet.png-be42ae18396dc6e080050e0799aa420e.s3tc.ctex", "res://.godot/imported/Student_0_60_Sheet.png-be42ae18396dc6e080050e0799aa420e.etc2.ctex"]
 
 [params]
 

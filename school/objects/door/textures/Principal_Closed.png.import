@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkjlsrc0mvp25"
 path.s3tc="res://.godot/imported/Principal_Closed.png-c4f5142ff734c4aec506511124f84ecc.s3tc.ctex"
+path.etc2="res://.godot/imported/Principal_Closed.png-c4f5142ff734c4aec506511124f84ecc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://school/objects/door/textures/Principal_Closed.png"
-dest_files=["res://.godot/imported/Principal_Closed.png-c4f5142ff734c4aec506511124f84ecc.s3tc.ctex"]
+dest_files=["res://.godot/imported/Principal_Closed.png-c4f5142ff734c4aec506511124f84ecc.s3tc.ctex", "res://.godot/imported/Principal_Closed.png-c4f5142ff734c4aec506511124f84ecc.etc2.ctex"]
 
 [params]
 

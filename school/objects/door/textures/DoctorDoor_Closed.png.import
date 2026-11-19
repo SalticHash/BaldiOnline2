@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ig8tfvuqhy1"
 path.s3tc="res://.godot/imported/DoctorDoor_Closed.png-5ac2cfcf410db00e38c97a494e98eccc.s3tc.ctex"
+path.etc2="res://.godot/imported/DoctorDoor_Closed.png-5ac2cfcf410db00e38c97a494e98eccc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://school/objects/door/textures/DoctorDoor_Closed.png"
-dest_files=["res://.godot/imported/DoctorDoor_Closed.png-5ac2cfcf410db00e38c97a494e98eccc.s3tc.ctex"]
+dest_files=["res://.godot/imported/DoctorDoor_Closed.png-5ac2cfcf410db00e38c97a494e98eccc.s3tc.ctex", "res://.godot/imported/DoctorDoor_Closed.png-5ac2cfcf410db00e38c97a494e98eccc.etc2.ctex"]
 
 [params]
 

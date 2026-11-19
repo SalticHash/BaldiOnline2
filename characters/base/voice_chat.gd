@@ -23,9 +23,20 @@ func send_rec_data(rec_data: PackedByteArray):
 
 
 func _on_send_recording_timer_timeout() -> void:
-	if !multiplayer.has_multiplayer_peer() or multiplayer.get_peers().size() == 0:
-		return
+	if !multiplayer.has_multiplayer_peer(): return
 	recording = effect.get_recording()
+	if !recording or recording.data.is_empty():
+		$UI/Wait.modulate = Color.TRANSPARENT
+		$UI/AnimationPlayer.play("show_warning")
+		$SendRecordingTimer.stop()
+		return
 	effect.set_recording_active(false)
 	send_rec_data.rpc(recording.data)
 	effect.set_recording_active(true)
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_key_pressed(KEY_F12) and $SendRecordingTimer.is_stopped():
+		$UI/Warning.modulate = Color.TRANSPARENT
+		$UI/AnimationPlayer.play("wait")
+		$SendRecordingTimer.start()
+		

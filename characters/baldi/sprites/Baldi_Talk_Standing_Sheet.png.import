@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dn4htwh73rbwi"
 path.s3tc="res://.godot/imported/Baldi_Talk_Standing_Sheet.png-ba1bb06c2a9d8d53034472758c83eaee.s3tc.ctex"
+path.etc2="res://.godot/imported/Baldi_Talk_Standing_Sheet.png-ba1bb06c2a9d8d53034472758c83eaee.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://characters/baldi/sprites/Baldi_Talk_Standing_Sheet.png"
-dest_files=["res://.godot/imported/Baldi_Talk_Standing_Sheet.png-ba1bb06c2a9d8d53034472758c83eaee.s3tc.ctex"]
+dest_files=["res://.godot/imported/Baldi_Talk_Standing_Sheet.png-ba1bb06c2a9d8d53034472758c83eaee.s3tc.ctex", "res://.godot/imported/Baldi_Talk_Standing_Sheet.png-ba1bb06c2a9d8d53034472758c83eaee.etc2.ctex"]
 
 [params]
 

@@ -45,6 +45,9 @@ func _process(_delta: float) -> void:
 			if obj.is_in_group("item"): $PickupSound.play()
 	else: $UI/Hand.hide()
 
+func reach_squared() -> float:
+	var v = -$Camera/InteractRay.target_position.z
+	return v * v
 
 @rpc("authority", "call_local", "reliable")
 func play_sound(sound):

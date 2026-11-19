@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ds5n7qeqhbujh"
 path.s3tc="res://.godot/imported/NotebookSheet_3.png-8de903484b39b545c50d9dbd150203f1.s3tc.ctex"
+path.etc2="res://.godot/imported/NotebookSheet_3.png-8de903484b39b545c50d9dbd150203f1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://notebook/NotebookSheet_3.png"
-dest_files=["res://.godot/imported/NotebookSheet_3.png-8de903484b39b545c50d9dbd150203f1.s3tc.ctex"]
+dest_files=["res://.godot/imported/NotebookSheet_3.png-8de903484b39b545c50d9dbd150203f1.s3tc.ctex", "res://.godot/imported/NotebookSheet_3.png-8de903484b39b545c50d9dbd150203f1.etc2.ctex"]
 
 [params]
 

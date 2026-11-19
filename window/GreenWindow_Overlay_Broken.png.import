@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3ef7bnk1pqmj"
 path.s3tc="res://.godot/imported/GreenWindow_Overlay_Broken.png-c1715dc2d7c9b6c84e0d9ba7c42f5306.s3tc.ctex"
+path.etc2="res://.godot/imported/GreenWindow_Overlay_Broken.png-c1715dc2d7c9b6c84e0d9ba7c42f5306.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://window/GreenWindow_Overlay_Broken.png"
-dest_files=["res://.godot/imported/GreenWindow_Overlay_Broken.png-c1715dc2d7c9b6c84e0d9ba7c42f5306.s3tc.ctex"]
+dest_files=["res://.godot/imported/GreenWindow_Overlay_Broken.png-c1715dc2d7c9b6c84e0d9ba7c42f5306.s3tc.ctex", "res://.godot/imported/GreenWindow_Overlay_Broken.png-c1715dc2d7c9b6c84e0d9ba7c42f5306.etc2.ctex"]
 
 [params]
 

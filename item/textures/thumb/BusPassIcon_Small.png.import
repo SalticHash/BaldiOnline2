@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7wk0i2abdwi2"
-path="res://.godot/imported/BsodaIcon_Small.png-7099ad0147b179965034f19baa44387b.ctex"
+uid="uid://bh4grevvmbk3y"
+path="res://.godot/imported/BusPassIcon_Small.png-a81dca359a8ba9a9ae16a48447214d1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/player/BsodaIcon_Small.png"
-dest_files=["res://.godot/imported/BsodaIcon_Small.png-7099ad0147b179965034f19baa44387b.ctex"]
+source_file="res://item/textures/thumb/BusPassIcon_Small.png"
+dest_files=["res://.godot/imported/BusPassIcon_Small.png-a81dca359a8ba9a9ae16a48447214d1b.ctex"]
 
 [params]
 

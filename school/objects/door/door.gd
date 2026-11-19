@@ -49,7 +49,7 @@ func open_door(id: int = -1):
 	var is_player = Server.get_id_type(sender_id) == Server.TYPE.PLAYER
 	var sender_inst = Server.get_id_instance(sender_id)
 	var door_dist = sender_inst.global_position.distance_squared_to(global_position)
-	if door_dist > 4:
+	if door_dist > sender_inst.reach_squared():
 		push_error("Unreachable door opened")
 		return
 	if is_player and !open:

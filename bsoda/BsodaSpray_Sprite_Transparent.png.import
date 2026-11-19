@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://fuddlqjodv50"
 path.s3tc="res://.godot/imported/BsodaSpray_Sprite_Transparent.png-5a2ba242156159ac0923abc85503c9bf.s3tc.ctex"
+path.etc2="res://.godot/imported/BsodaSpray_Sprite_Transparent.png-5a2ba242156159ac0923abc85503c9bf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://bsoda/BsodaSpray_Sprite_Transparent.png"
-dest_files=["res://.godot/imported/BsodaSpray_Sprite_Transparent.png-5a2ba242156159ac0923abc85503c9bf.s3tc.ctex"]
+dest_files=["res://.godot/imported/BsodaSpray_Sprite_Transparent.png-5a2ba242156159ac0923abc85503c9bf.s3tc.ctex", "res://.godot/imported/BsodaSpray_Sprite_Transparent.png-5a2ba242156159ac0923abc85503c9bf.etc2.ctex"]
 
 [params]
 

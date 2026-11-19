@@ -3,8 +3,11 @@ extends Node
 var peer = ENetMultiplayerPeer.new()
 
 func _ready() -> void:
-	$UI/Net/Options/Remote.text = IP.get_local_addresses()[0]
+	$UI/Net/Options/Remote.text = "192.168.50.11"#IP.get_local_addresses()[0]
 	print(IP.get_local_addresses())
+	if OS.get_name() == "Android":
+		OS.request_permissions()
+
 
 func start_game():
 	var game = preload("res://level/map1.tscn").instantiate()

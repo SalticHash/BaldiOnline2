@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dp4wpdj2mya2c"
 path.s3tc="res://.godot/imported/MysteryDoorShut.png-ef76c675df8715ddeb297a5e3c48db09.s3tc.ctex"
+path.etc2="res://.godot/imported/MysteryDoorShut.png-ef76c675df8715ddeb297a5e3c48db09.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://school/objects/door/textures/MysteryDoorShut.png"
-dest_files=["res://.godot/imported/MysteryDoorShut.png-ef76c675df8715ddeb297a5e3c48db09.s3tc.ctex"]
+dest_files=["res://.godot/imported/MysteryDoorShut.png-ef76c675df8715ddeb297a5e3c48db09.s3tc.ctex", "res://.godot/imported/MysteryDoorShut.png-ef76c675df8715ddeb297a5e3c48db09.etc2.ctex"]
 
 [params]
 

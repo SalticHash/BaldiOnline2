@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5rk6bdhnkdkt"
 path.s3tc="res://.godot/imported/WoodDoor_Open.png-d2047da7ed19224e1b1f93d9ca1a4b03.s3tc.ctex"
+path.etc2="res://.godot/imported/WoodDoor_Open.png-d2047da7ed19224e1b1f93d9ca1a4b03.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://school/objects/door/textures/WoodDoor_Open.png"
-dest_files=["res://.godot/imported/WoodDoor_Open.png-d2047da7ed19224e1b1f93d9ca1a4b03.s3tc.ctex"]
+dest_files=["res://.godot/imported/WoodDoor_Open.png-d2047da7ed19224e1b1f93d9ca1a4b03.s3tc.ctex", "res://.godot/imported/WoodDoor_Open.png-d2047da7ed19224e1b1f93d9ca1a4b03.etc2.ctex"]
 
 [params]
 

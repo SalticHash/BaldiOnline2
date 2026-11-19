@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://pahmgwgjtc26"
 path.s3tc="res://.godot/imported/GreenWindow_Mask.png-0572ef88b621323617e6f160c3f8f740.s3tc.ctex"
+path.etc2="res://.godot/imported/GreenWindow_Mask.png-0572ef88b621323617e6f160c3f8f740.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://window/GreenWindow_Mask.png"
-dest_files=["res://.godot/imported/GreenWindow_Mask.png-0572ef88b621323617e6f160c3f8f740.s3tc.ctex"]
+dest_files=["res://.godot/imported/GreenWindow_Mask.png-0572ef88b621323617e6f160c3f8f740.s3tc.ctex", "res://.godot/imported/GreenWindow_Mask.png-0572ef88b621323617e6f160c3f8f740.etc2.ctex"]
 
 [params]
 

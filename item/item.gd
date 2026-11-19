@@ -24,7 +24,7 @@ func pickup(cursor_pos) -> void:
 	var is_player = Server.get_id_type(sender_id) == Server.TYPE.PLAYER
 	var sender_inst = Server.get_id_instance(sender_id)
 	var item_dist = sender_inst.global_position.distance_squared_to(global_position)
-	if item_dist > 4:
+	if item_dist > sender_inst.reach_squared():
 		push_error("Unreachable item picked up")
 		return
 	if !is_player:

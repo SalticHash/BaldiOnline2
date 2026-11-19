@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 	if !player: return
 	var player_pos = player.global_position
 	var d2 = player_pos.distance_squared_to(global_position)
-	if d2 > 4.0:
+	if d2 > player.reach_squared():
 		Server.alert_baldi(78)
 		change_state.rpc(false)
 
@@ -52,7 +52,7 @@ func toggle_locker(id: int = -1):
 	
 	var sender_inst = Server.get_id_instance(sender_id)
 	var locker_dist = sender_inst.global_position.distance_squared_to(global_position)
-	if locker_dist > 4:
+	if locker_dist > sender_inst.reach_squared():
 		push_error("Unreachable locker togled")
 		return
 	

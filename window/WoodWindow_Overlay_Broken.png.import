@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmq1vregqk1g0"
 path.s3tc="res://.godot/imported/WoodWindow_Overlay_Broken.png-60a52e933e09cb3284303e185626d15b.s3tc.ctex"
+path.etc2="res://.godot/imported/WoodWindow_Overlay_Broken.png-60a52e933e09cb3284303e185626d15b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://window/WoodWindow_Overlay_Broken.png"
-dest_files=["res://.godot/imported/WoodWindow_Overlay_Broken.png-60a52e933e09cb3284303e185626d15b.s3tc.ctex"]
+dest_files=["res://.godot/imported/WoodWindow_Overlay_Broken.png-60a52e933e09cb3284303e185626d15b.s3tc.ctex", "res://.godot/imported/WoodWindow_Overlay_Broken.png-60a52e933e09cb3284303e185626d15b.etc2.ctex"]
 
 [params]
 

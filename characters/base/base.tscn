@@ -5,6 +5,72 @@
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_jh3y0"]
 
+[sub_resource type="Animation" id="Animation_uatdk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Warning:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wait:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_px8ho"]
+resource_name = "show_warning"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Warning:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2fb1k"]
+resource_name = "wait"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wait:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2fb1k"]
+_data = {
+&"RESET": SubResource("Animation_uatdk"),
+&"show_warning": SubResource("Animation_px8ho"),
+&"wait": SubResource("Animation_2fb1k")
+}
+
 [node name="Base" type="CharacterBody3D" unique_id=991214998]
 script = ExtResource("1_o12hc")
 
@@ -31,5 +97,56 @@ max_polyphony = 2
 
 [node name="SendRecordingTimer" type="Timer" parent="VoiceChat" unique_id=1804520090]
 wait_time = 0.5
+
+[node name="UI" type="Control" parent="VoiceChat" unique_id=105553557]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Warning" type="RichTextLabel" parent="VoiceChat/UI" unique_id=166817171]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -339.0
+offset_top = -49.0
+offset_right = 339.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "There's been a problem with the voice chat, check your mic input is connected properlly
+[b](Press F12 to try connecting the mic again)[/b]"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Wait" type="RichTextLabel" parent="VoiceChat/UI" unique_id=521171087]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -339.0
+offset_top = -49.0
+offset_right = 339.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "Please wait!
+[b](Retrying mic connection...)[/b]"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VoiceChat/UI" unique_id=606188526]
+libraries/ = SubResource("AnimationLibrary_2fb1k")
 
 [connection signal="timeout" from="VoiceChat/SendRecordingTimer" to="VoiceChat" method="_on_send_recording_timer_timeout"]

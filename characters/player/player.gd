@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 func enter_locker(path):
 	if !is_multiplayer_authority(): return
 	if !has_node(path): return
-	if get_node(path).global_position.distance_squared_to(global_position) > 4:
+	if get_node(path).global_position.distance_squared_to(global_position) > reach_squared():
 		return
 	locker = path
 	Server.alert_baldi(78)
@@ -123,6 +123,7 @@ func _process(_delta: float) -> void:
 				obj.pickup.rpc_id(1, cursor_pos)
 			if obj.is_in_group("notebook"):
 				$NotebookPickupSound.play()
+				$UI/Notebook.stop()
 				$UI/Notebook.play("turn")
 				obj.pickup.rpc_id(1)
 	else: $UI/Hand.hide()
@@ -146,6 +147,10 @@ func use_item(cursor):
 			play_sound.rpc("zesty")
 			stamina = 1.5
 			return
+
+func reach_squared() -> float:
+	var v = -$Camera/InteractRay.target_position.z
+	return v * v
 
 @rpc("authority", "call_local", "reliable")
 func play_sound(sound):

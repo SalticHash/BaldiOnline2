@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvfj7lxbwun1j"
 path.s3tc="res://.godot/imported/Locker_Green_Detailed_Side.png-595257fc01202182280e3060f3577ebb.s3tc.ctex"
+path.etc2="res://.godot/imported/Locker_Green_Detailed_Side.png-595257fc01202182280e3060f3577ebb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://storage_locker/Locker_Green_Detailed_Side.png"
-dest_files=["res://.godot/imported/Locker_Green_Detailed_Side.png-595257fc01202182280e3060f3577ebb.s3tc.ctex"]
+dest_files=["res://.godot/imported/Locker_Green_Detailed_Side.png-595257fc01202182280e3060f3577ebb.s3tc.ctex", "res://.godot/imported/Locker_Green_Detailed_Side.png-595257fc01202182280e3060f3577ebb.etc2.ctex"]
 
 [params]
 

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BaldiOnline2"
-config/tags=PackedStringArray("abandoned", "on_development", "recreation")
+config/tags=PackedStringArray("on_development")
 run/main_scene="res://multiplayer/multiplayer.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://dfn8mawx7qioo"
@@ -120,5 +120,6 @@ use={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true
 textures/decals/filter=0
 textures/light_projectors/filter=0

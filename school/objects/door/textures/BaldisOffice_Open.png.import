@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmgi78dmtp7ve"
 path.s3tc="res://.godot/imported/BaldisOffice_Open.png-6065cfed4270d3a6ce7ea619981d0cff.s3tc.ctex"
+path.etc2="res://.godot/imported/BaldisOffice_Open.png-6065cfed4270d3a6ce7ea619981d0cff.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://school/objects/door/textures/BaldisOffice_Open.png"
-dest_files=["res://.godot/imported/BaldisOffice_Open.png-6065cfed4270d3a6ce7ea619981d0cff.s3tc.ctex"]
+dest_files=["res://.godot/imported/BaldisOffice_Open.png-6065cfed4270d3a6ce7ea619981d0cff.s3tc.ctex", "res://.godot/imported/BaldisOffice_Open.png-6065cfed4270d3a6ce7ea619981d0cff.etc2.ctex"]
 
 [params]
 

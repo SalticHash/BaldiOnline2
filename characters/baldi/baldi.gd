@@ -6,7 +6,7 @@ var slapping: bool = false
 var slap_buffer: float = 0.0
 var slap_interval: float = 0.0
 const SLAP_BUFFER: float = 0.167 #10 frames in a 60fps game
-var SLAP_INTERVAL: float = 0.1#1.2
+var SLAP_INTERVAL: float = 1.2
 
 signal got_notebook(total: int)
 func _ready() -> void:
@@ -43,7 +43,7 @@ func inspect_locker(path):
 	if !is_multiplayer_authority(): return
 	if locker: return
 	if !has_node(path): return
-	if get_node(path).global_position.distance_squared_to(global_position) > 4:
+	if get_node(path).global_position.distance_squared_to(global_position) > reach_squared():
 		return
 	locker = path
 	$InspectLockerTimer.start()
@@ -86,6 +86,9 @@ func _process(_delta: float) -> void:
 
 	else: $UI/Hand.hide()
 
+func reach_squared() -> float:
+	var v = -$Camera/InteractRay.target_position.z
+	return v * v
 
 @onready var player_hightlight = preload("res://characters/baldi/player_highlight.tscn")
 @rpc("authority", "call_local", "reliable")

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dryua3q5v4lmd"
 path.s3tc="res://.godot/imported/BaldisLab_Open.png-7ed3d8da3a095e6153f3d6973312a191.s3tc.ctex"
+path.etc2="res://.godot/imported/BaldisLab_Open.png-7ed3d8da3a095e6153f3d6973312a191.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://school/objects/door/textures/BaldisLab_Open.png"
-dest_files=["res://.godot/imported/BaldisLab_Open.png-7ed3d8da3a095e6153f3d6973312a191.s3tc.ctex"]
+dest_files=["res://.godot/imported/BaldisLab_Open.png-7ed3d8da3a095e6153f3d6973312a191.s3tc.ctex", "res://.godot/imported/BaldisLab_Open.png-7ed3d8da3a095e6153f3d6973312a191.etc2.ctex"]
 
 [params]
 

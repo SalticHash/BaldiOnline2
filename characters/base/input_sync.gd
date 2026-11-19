@@ -5,7 +5,7 @@ class_name BaseInputSync
 const DPI: float = 0.01
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if !is_multiplayer_authority():
 		process_mode = Node.PROCESS_MODE_DISABLED
 		return
@@ -16,6 +16,8 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_F11):
 		get_window().mode = Window.MODE_FULLSCREEN
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		
 	# TESTING code
 	#if event is InputEventMouseButton and event.double_click:
 		#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED \
