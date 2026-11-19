@@ -61,9 +61,11 @@ func exit_locker():
 	
 func _process(_delta: float) -> void:
 	if has_node(locker):
+		$VoiceChat/Voice.bus = &"Muffled"
 		$Mesh.hide()
 		$Collision.disabled = true
 	else:
+		$VoiceChat/Voice.bus = &"Master"
 		$Mesh.show()
 		$Collision.disabled = false
 		

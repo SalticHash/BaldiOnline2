@@ -41,6 +41,7 @@ var locker: NodePath = NodePath("")
 @rpc("any_peer", "call_local", "reliable")
 func inspect_locker(path):
 	if !is_multiplayer_authority(): return
+	if locker: return
 	if !has_node(path): return
 	if get_node(path).global_position.distance_squared_to(global_position) > 4:
 		return
@@ -80,7 +81,7 @@ func _process(_delta: float) -> void:
 	if obj and obj.is_in_group("interact"):
 		$UI/Hand.show()
 		if Input.is_action_just_pressed("click"):
-			if obj.is_in_group("blue_locker") and !has_node(locker):
+			if obj.is_in_group("blue_locker"):
 				inspect_locker.rpc_id(1, obj.get_path())
 
 	else: $UI/Hand.hide()
