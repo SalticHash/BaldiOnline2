@@ -16,6 +16,22 @@
 [ext_resource type="AudioStream" uid="uid://bnr1df7405ua" path="res://characters/player/NotebookCollect.wav" id="14_icpky"]
 [ext_resource type="AudioStream" uid="uid://b1u4pcxfc3q2w" path="res://characters/player/ChipCrunch.wav" id="15_8l73k"]
 [ext_resource type="AudioStream" uid="uid://df3jsjkyi0hyv" path="res://characters/player/BsodaSpray.wav" id="16_aqrcq"]
+[ext_resource type="AudioStream" uid="uid://dlmodd1aeoqp5" path="res://characters/player/sounds/lose/Lose_Buzz.wav" id="17_jgd8i"]
+[ext_resource type="AudioStream" uid="uid://cguh6iiolpr4" path="res://characters/player/sounds/lose/Lose_Corruption2.wav" id="18_7b6hw"]
+[ext_resource type="AudioStream" uid="uid://df6l3pfs36lio" path="res://characters/player/sounds/lose/Lose_Corruption.wav" id="19_4cx7u"]
+[ext_resource type="AudioStream" uid="uid://dv2rrt48w5esi" path="res://characters/player/sounds/lose/Lose_Creepy.wav" id="20_w53g3"]
+[ext_resource type="AudioStream" uid="uid://bkn4nget0e2qm" path="res://characters/player/sounds/lose/Lose_GlassBoom.wav" id="21_e0pgg"]
+[ext_resource type="AudioStream" uid="uid://c20637y6pjura" path="res://characters/player/sounds/lose/Lose_NO.wav" id="22_sbttr"]
+[ext_resource type="AudioStream" uid="uid://nvplv4hnui5c" path="res://characters/player/sounds/lose/Lose_SteamExplode.wav" id="23_6pj1p"]
+[ext_resource type="AudioStream" uid="uid://2tc4wc4ey0iu" path="res://characters/player/sounds/lose/Lose_What.wav" id="24_3a7m8"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jh3y0"]
+radius = 0.111816406
+height = 0.6699219
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jh3y0"]
+radius = 0.10498047
+height = 0.6484375
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1d8oa"]
 albedo_color = Color(1, 0, 0, 1)
@@ -24,10 +40,6 @@ albedo_color = Color(1, 0, 0, 1)
 material = SubResource("StandardMaterial3D_1d8oa")
 radius = 0.029
 height = 0.058
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jh3y0"]
-radius = 0.10498047
-height = 0.6484375
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_exd8k"]
 properties/0/path = NodePath(".:stamina")
@@ -52,10 +64,6 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath(".:running")
 properties/1/spawn = true
 properties/1/replication_mode = 1
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_jh3y0"]
-radius = 0.111816406
-height = 0.6699219
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_icpky"]
 atlas = ExtResource("12_gqopd")
@@ -152,15 +160,34 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jh3y0"]
+streams_count = 8
+stream_0/stream = ExtResource("17_jgd8i")
+stream_1/stream = ExtResource("18_7b6hw")
+stream_2/stream = ExtResource("19_4cx7u")
+stream_3/stream = ExtResource("20_w53g3")
+stream_4/stream = ExtResource("21_e0pgg")
+stream_5/stream = ExtResource("22_sbttr")
+stream_6/stream = ExtResource("23_6pj1p")
+stream_7/stream = ExtResource("24_3a7m8")
+
 [node name="Player" unique_id=991214998 groups=["player"] instance=ExtResource("1_508ok")]
 collision_layer = 16
 collision_mask = 3
 script = ExtResource("2_xxgcw")
 
-[node name="Camera" parent="." index="0" unique_id=1168804949]
+[node name="Mesh" type="MeshInstance3D" parent="." index="0" unique_id=12711661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33589804, 0)
+mesh = SubResource("CapsuleMesh_jh3y0")
+
+[node name="Collision" type="CollisionShape3D" parent="." index="1" unique_id=1306059409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33589804, 0)
+shape = SubResource("CapsuleShape3D_jh3y0")
+
+[node name="Camera" parent="." index="2" unique_id=1168804949]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51873744, 0)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Camera" index="0" unique_id=1823499319]
+[node name="RotationDot" type="MeshInstance3D" parent="Camera" index="0" unique_id=1823499319]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.19785616, -0.14419162)
 mesh = SubResource("SphereMesh_jh3y0")
 
@@ -171,28 +198,20 @@ hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="1" unique_id=1306059409]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33589804, 0)
-shape = SubResource("CapsuleShape3D_jh3y0")
-
-[node name="NameLabel" parent="." index="2" unique_id=1285109512]
+[node name="NameLabel" parent="." index="3" unique_id=1285109512]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7688177, 0)
 
-[node name="OwnerSync" type="MultiplayerSynchronizer" parent="." index="4" unique_id=1385016999]
+[node name="OwnerSync" type="MultiplayerSynchronizer" parent="." index="5" unique_id=1385016999]
 replication_config = SubResource("SceneReplicationConfig_exd8k")
 public_visibility = false
 
-[node name="PeerSync" type="MultiplayerSynchronizer" parent="." index="5" unique_id=951314133]
+[node name="PeerSync" type="MultiplayerSynchronizer" parent="." index="6" unique_id=951314133]
 replication_config = SubResource("SceneReplicationConfig_5dc8e")
 
-[node name="InputSync" type="MultiplayerSynchronizer" parent="." index="6" unique_id=650982977]
+[node name="InputSync" type="MultiplayerSynchronizer" parent="." index="7" unique_id=650982977]
 replication_config = SubResource("SceneReplicationConfig_xxgcw")
 public_visibility = false
 script = ExtResource("3_exd8k")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="7" unique_id=12711661]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33589804, 0)
-mesh = SubResource("CapsuleMesh_jh3y0")
 
 [node name="UI" type="Control" parent="." index="8" unique_id=1681700583]
 visible = false
@@ -431,7 +450,11 @@ max_polyphony = 2
 stream = ExtResource("14_icpky")
 max_polyphony = 2
 
-[node name="Sounds" type="Node3D" parent="." index="11" unique_id=1469665790]
+[node name="Lose" type="AudioStreamPlayer" parent="." index="11" unique_id=738551011]
+stream = SubResource("AudioStreamRandomizer_jh3y0")
+volume_db = -20.0
+
+[node name="Sounds" type="Node3D" parent="." index="12" unique_id=1469665790]
 
 [node name="zesty" type="AudioStreamPlayer3D" parent="Sounds" index="0" unique_id=387913826]
 stream = ExtResource("15_8l73k")
