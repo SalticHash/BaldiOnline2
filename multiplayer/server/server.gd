@@ -1,6 +1,14 @@
 extends Node
 var players: Dictionary = {}
 
+var anti_hearing: float = 0.0 :
+	set(value):
+		anti_hearing = value
+		anti_hearing_active = anti_hearing > 0.0
+
+var anti_hearing_active: bool = false
+
+var notebooks: int = 0
 var exits: int = 0
 enum TYPE {
 	PLAYER,

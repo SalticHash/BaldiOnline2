@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://p77ymadapskh"]
+
+[ext_resource type="Script" uid="uid://b4acjiv2221wm" path="res://tape_player/tape_player.gd" id="1_h0i6t"]
+[ext_resource type="SpriteFrames" uid="uid://c23dhgxrnx2tg" path="res://tape_player/tape_frames.tres" id="2_4t347"]
+[ext_resource type="AudioStream" uid="uid://cndcawne73q84" path="res://tape_player/InsertTape.wav" id="4_hm8ok"]
+[ext_resource type="AudioStream" uid="uid://bm5qnown6j8g5" path="res://tape_player/Funtime_EvenLower.wav" id="5_q4rch"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jh3y0"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_h0i6t"]
+properties/0/path = NodePath(".:open")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
+[node name="TapePlayer" type="Area3D" unique_id=200992389 groups=["tape_player"]]
+script = ExtResource("1_h0i6t")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="." unique_id=1916160530]
+pixel_size = 0.002
+billboard = 2
+texture_filter = 0
+sprite_frames = ExtResource("2_4t347")
+animation = &"open"
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=582755648]
+shape = SubResource("BoxShape3D_jh3y0")
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=329038923]
+stream = ExtResource("4_hm8ok")
+
+[node name="Song" type="AudioStreamPlayer3D" parent="." unique_id=1809342006]
+stream = ExtResource("5_q4rch")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=306288804]
+replication_config = SubResource("SceneReplicationConfig_h0i6t")

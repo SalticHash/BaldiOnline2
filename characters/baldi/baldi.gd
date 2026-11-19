@@ -8,17 +8,10 @@ var slap_interval: float = 0.0
 const SLAP_BUFFER: float = 0.167 #10 frames in a 60fps game
 var SLAP_INTERVAL: float = 1.2
 
-signal got_notebook(total: int)
-func _ready() -> void:
-	if !is_multiplayer_authority(): return
-	got_notebook.connect(speed_up)
-
-func speed_up(_total_notebooks: int):
-	SLAP_INTERVAL -= 0.1
 
 func _physics_process(delta: float) -> void:
 	if !is_multiplayer_authority(): return
-
+	SLAP_INTERVAL = 1.2 - (Server.notebooks * 0.1)
 	if has_node(locker):
 		slap_buffer = 0.0
 		slap_interval = SLAP_INTERVAL
@@ -94,6 +87,7 @@ func reach_squared() -> float:
 @rpc("authority", "call_local", "reliable")
 func spawn_highlight(player_position: Vector3, loudness: float):
 	# Is not baldi owner
+	if Server.anti_hearing_active: return
 	if multiplayer.get_unique_id() != id:
 		push_error("Spawn highlight invoked for non baldi owner")
 		return

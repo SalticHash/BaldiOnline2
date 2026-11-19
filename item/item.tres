@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ck20c2jlksqn6" path="res://item/textures/ZestyBarIcon_Large.png" id="2_ordqi"]
 [ext_resource type="Texture2D" uid="uid://ddvlm3ffme3is" path="res://item/textures/SwingingDoorLockIcon_Large.png" id="3_q60qp"]
 [ext_resource type="Texture2D" uid="uid://ci1mwfobbfv73" path="res://item/textures/StretchyGloveIcon_Large.png" id="4_ddeht"]
+[ext_resource type="Texture2D" uid="uid://ttve7o38d461" path="res://item/textures/TapeIcon_Large.png" id="5_q60qp"]
+[ext_resource type="Texture2D" uid="uid://46penww83jmm" path="res://item/textures/QuarterIcon_Large.png" id="6_ddeht"]
 
 [resource]
 animations = [{
@@ -45,5 +47,21 @@ animations = [{
 }],
 "loop": 1,
 "name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_q60qp")
+}],
+"loop": 1,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ddeht")
+}],
+"loop": 1,
+"name": &"6",
 "speed": 5.0
 }]

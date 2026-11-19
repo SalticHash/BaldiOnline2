@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dusxv7g2ndwbx"]
+
+[ext_resource type="Script" uid="uid://dglbgo6wwftt8" path="res://multiplayer/server/server.gd" id="1_h2aw8"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ihhvw"]
+properties/0/path = NodePath(".:notebooks")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:anti_hearing_active")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+
+[node name="Server" type="MultiplayerSynchronizer" unique_id=626286801]
+root_path = NodePath(".")
+replication_config = SubResource("SceneReplicationConfig_ihhvw")
+script = ExtResource("1_h2aw8")

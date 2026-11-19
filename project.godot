@@ -23,7 +23,7 @@ driver/enable_input=true
 
 [autoload]
 
-Server="*uid://dglbgo6wwftt8"
+Server="*uid://dusxv7g2ndwbx"
 
 [display]
 
@@ -118,6 +118,7 @@ use={
 3d_physics/layer_9="Blue Locker"
 3d_physics/layer_10="Swinging Door"
 3d_physics/layer_11="BlockInteract"
+3d_physics/layer_12="tape"
 
 [rendering]
 

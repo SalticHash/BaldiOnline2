@@ -61,12 +61,12 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath(".:inventory")
 properties/1/spawn = true
 properties/1/replication_mode = 2
-properties/2/path = NodePath(".:notebooks")
+properties/2/path = NodePath(".:glove_time")
 properties/2/spawn = true
-properties/2/replication_mode = 2
-properties/3/path = NodePath(".:glove_time")
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:notebooks")
 properties/3/spawn = true
-properties/3/replication_mode = 1
+properties/3/replication_mode = 2
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5dc8e"]
 properties/0/path = NodePath(".:rotation")
@@ -209,7 +209,7 @@ mesh = SubResource("SphereMesh_jh3y0")
 
 [node name="InteractRay" type="RayCast3D" parent="Camera" index="1" unique_id=2074744021]
 target_position = Vector3(0, 0, -1)
-collision_mask = 1960
+collision_mask = 4008
 hit_from_inside = true
 collide_with_areas = true
 
@@ -232,6 +232,7 @@ public_visibility = false
 script = ExtResource("3_exd8k")
 
 [node name="UI" type="Control" parent="." index="9" unique_id=1681700583]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -350,7 +351,7 @@ offset_bottom = 34.0
 show_behind_parent = true
 position = Vector2(3, 2)
 sprite_frames = ExtResource("6_rpf03")
-animation = &"0"
+animation = &"6"
 centered = false
 
 [node name="Slot3" type="TextureRect" parent="UI/Inventory" index="2" unique_id=1276878444]

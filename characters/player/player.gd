@@ -6,6 +6,8 @@ enum ITEM {
 	ZESTY,
 	LOCK,
 	GLOVE,
+	ANTI_HEARING_TAPE,
+	QUARTER,
 }
 
 var cursor_pos: int = 0
@@ -25,10 +27,6 @@ func _enter_tree() -> void:
 	super()
 	$OwnerSync.set_visibility_for(id, true)
 
-var notebooks: int = 0 :
-	set(value):
-		notebooks = value
-		$UI/NotebookAmount.text = str(notebooks) + "/7"
 var input_dir: Vector2 = Vector2.ZERO
 func _physics_process(delta: float) -> void:
 	if is_multiplayer_authority() or multiplayer.get_unique_id() == id:
@@ -78,6 +76,7 @@ func _process(_delta: float) -> void:
 	if multiplayer.get_unique_id() != id: return
 	$UI.show()
 	
+	$UI/NotebookAmount.text = str(Server.notebooks) + "/7"
 	$UI/Stamina/Needle.position.x = \
 	remap(stamina, 0.0, 1.0, $UI/Stamina/Start.position.x, $UI/Stamina/End.position.x)
 	
@@ -173,6 +172,23 @@ func use_item(cursor):
 			play_sound.rpc("glove")
 			glove_time = 60.0
 			return
+		ITEM.ANTI_HEARING_TAPE:
+			var c = $Camera/InteractRay.get_collider()
+			if !c or !c.is_in_group("tape_player") or c.phone or !c.open:
+				$InvalidUse.play()
+				return
+			inventory[cursor] = ITEM.NONE
+			c.anti_hearing()
+		ITEM.QUARTER:
+			var c = $Camera/InteractRay.get_collider()
+			if !c:
+				$InvalidUse.play()
+				return
+			if c.is_in_group("tape_player") and c.phone:
+				inventory[cursor] = ITEM.NONE
+				c.anti_hearing()
+				return
+			
 			
 
 func reach_squared() -> float:

@@ -28,11 +28,7 @@ func pickup() -> void:
 	if !is_player:
 		push_error("Non player picked up notebook")
 		return
-	sender_inst.notebooks += 1
-	if sender_inst.notebooks == 7:
-		get_node("/root/Game/World/EscapeMusic").play()
+	Server.notebooks += 1
 
 	sender_inst.stamina = 1.0
-	var baldi = Server.get_type_instance(Server.TYPE.BALDI)
-	if baldi: baldi.got_notebook.emit(sender_inst.notebooks)
 	hide()

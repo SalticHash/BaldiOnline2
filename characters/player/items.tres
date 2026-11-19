@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cca7dlhvanqp8" path="res://item/textures/thumb/ZestyBarIcon_Small.png" id="3_f2voh"]
 [ext_resource type="Texture2D" uid="uid://bif1gkopehvow" path="res://item/textures/thumb/SwingingDoorLockIcon_Small.png" id="4_h3mna"]
 [ext_resource type="Texture2D" uid="uid://cn0pr8dixu5p4" path="res://item/textures/thumb/StretchyGloveIcon_Small.png" id="5_4c5gf"]
+[ext_resource type="Texture2D" uid="uid://c8w4ec56lbxw2" path="res://item/textures/thumb/TapeIcon_Small.png" id="6_h3mna"]
+[ext_resource type="Texture2D" uid="uid://b67r4drxo8s6m" path="res://item/textures/thumb/QuarterIcon_Small.png" id="7_4c5gf"]
 
 [resource]
 animations = [{
@@ -46,5 +48,21 @@ animations = [{
 }],
 "loop": 1,
 "name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_h3mna")
+}],
+"loop": 1,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4c5gf")
+}],
+"loop": 1,
+"name": &"6",
 "speed": 5.0
 }]

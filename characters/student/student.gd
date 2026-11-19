@@ -6,7 +6,6 @@ enum ITEM {
 	ZESTY
 }
 
-const SPEED_RUN: float = 180.0
 const SPEED_WALK: float = 80.0
 
 var stamina: float = 1.0 :
@@ -17,10 +16,7 @@ func _enter_tree() -> void:
 	super()
 	$OwnerSync.set_visibility_for(id, true)
 
-var notebooks: int = 0 :
-	set(value):
-		notebooks = value
-		$UI/NotebookAmount.text = str(notebooks) + "/7"
+
 var input_dir: Vector2 = Vector2.ZERO
 func _physics_process(delta: float) -> void:
 	if !is_multiplayer_authority(): return

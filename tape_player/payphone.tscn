@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://211rcoo2ehg7"]
+
+[ext_resource type="PackedScene" uid="uid://p77ymadapskh" path="res://tape_player/TapePlayer.tscn" id="1_mwxky"]
+[ext_resource type="AudioStream" uid="uid://cpc2t68hrn3u1" path="res://item/CoinDrop.wav" id="2_fmxoy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mwxky"]
+size = Vector3(0.25, 1.024, 0.25)
+
+[node name="Payphone" unique_id=200992389 instance=ExtResource("1_mwxky")]
+collision_layer = 2048
+collision_mask = 0
+phone = true
+
+[node name="Sprite" parent="." index="0" unique_id=1916160530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 0)
+pixel_size = 0.004
+animation = &"phone"
+
+[node name="Collision" parent="." index="1" unique_id=582755648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 0)
+shape = SubResource("BoxShape3D_mwxky")
+
+[node name="Sound" parent="." index="2" unique_id=329038923]
+stream = ExtResource("2_fmxoy")

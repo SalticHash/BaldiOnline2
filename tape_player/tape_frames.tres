@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://c23dhgxrnx2tg"]
+
+[ext_resource type="Texture2D" uid="uid://bd6xnrcqvekvr" path="res://tape_player/TapePlayerClosed.png" id="1_hdh4u"]
+[ext_resource type="Texture2D" uid="uid://dhk31djp2c5rh" path="res://tape_player/TapePlayerOpen.png" id="2_f6wop"]
+[ext_resource type="Texture2D" uid="uid://751h2vmaql6d" path="res://tape_player/Phoneog.png" id="3_f6wop"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hdh4u")
+}],
+"loop": 1,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f6wop")
+}],
+"loop": 1,
+"name": &"open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_f6wop")
+}],
+"loop": 1,
+"name": &"phone",
+"speed": 5.0
+}]
