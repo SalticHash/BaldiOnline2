@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bjbyy1bqe8lmu" path="res://storage_locker/storage_locker.tscn" id="10_7p0g3"]
 [ext_resource type="PackedScene" uid="uid://brqliosrylxfc" path="res://blue_locker/blue_locker.tscn" id="11_eckay"]
 [ext_resource type="PackedScene" uid="uid://211rcoo2ehg7" path="res://tape_player/payphone.tscn" id="14_k853c"]
-[ext_resource type="PackedScene" uid="uid://p77ymadapskh" path="res://tape_player/TapePlayer.tscn" id="15_tpro3"]
+[ext_resource type="PackedScene" uid="uid://p77ymadapskh" path="res://tape_player/tape_player.tscn" id="15_tpro3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_agfmf"]
 material = ExtResource("6_iba72")
@@ -140,7 +140,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3931117, 0, -17.350063)
 [node name="BlueLocker" parent="." unique_id=1893774405 instance=ExtResource("11_eckay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032814026, 0, -10.02636)
 
-[node name="Payphone" parent="." unique_id=200992389 instance=ExtResource("14_k853c")]
+[node name="Payphone" parent="." unique_id=200992389 groups=["interact"] instance=ExtResource("14_k853c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9940039, 0, -12.468338)
 
 [node name="TapePlayer" parent="." unique_id=340788121 instance=ExtResource("15_tpro3")]

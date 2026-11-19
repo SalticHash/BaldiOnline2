@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://211rcoo2ehg7"]
 
-[ext_resource type="PackedScene" uid="uid://p77ymadapskh" path="res://tape_player/TapePlayer.tscn" id="1_mwxky"]
+[ext_resource type="PackedScene" uid="uid://p77ymadapskh" path="res://tape_player/tape_player.tscn" id="1_mwxky"]
 [ext_resource type="AudioStream" uid="uid://cpc2t68hrn3u1" path="res://item/CoinDrop.wav" id="2_fmxoy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mwxky"]

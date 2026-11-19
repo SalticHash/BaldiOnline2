@@ -8,6 +8,10 @@ var anti_hearing: float = 0.0 :
 
 var anti_hearing_active: bool = false
 
+func _process(delta: float) -> void:
+	if !is_multiplayer_authority(): return
+	if anti_hearing > 0.0: anti_hearing -= delta
+
 var notebooks: int = 0
 var exits: int = 0
 enum TYPE {
