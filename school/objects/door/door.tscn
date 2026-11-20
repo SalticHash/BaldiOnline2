@@ -7,6 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://dflu630q30eqi" path="res://school/objects/door/Doors_StandardOpen.wav" id="4_rcmh0"]
 [ext_resource type="AudioStream" uid="uid://buhst0717iosj" path="res://school/objects/door/Doors_StandardShut.wav" id="5_iffc6"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_n1w0f"]
+size = Vector3(0.4, 0.88, 0.08)
+
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4uyul"]
 data = PackedVector3Array(-0.396, 0, 0.7487, -1, 0, -1, -0.396, 0, -1, 1, 0, 1, 0.3971, 0, -1, 1, 0, -1, 1, 0, 1, 0.3971, 0, 0.7487, 0.3971, 0, -1, -0.396, 0, 0.7487, -1, 0, 1, -1, 0, -1, 1, 0, 1, -0.396, 0, 0.7487, 0.3971, 0, 0.7487, -0.396, 0, 0.7487, 1, 0, 1, -1, 0, 1)
 
@@ -17,15 +20,16 @@ data = PackedVector3Array(-0.396, 0, 0.7487, -1, 0, -1, -0.396, 0, -1, 1, 0, 1, 
 data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0)
 backface_collision = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_n1w0f"]
-size = Vector3(0.4, 0.88, 0.08)
-
 [node name="Door" type="Area3D" unique_id=1711912784 groups=["door", "interact"]]
-collision_layer = 8
-collision_mask = 4
+collision_layer = 4
+collision_mask = 1024
 script = ExtResource("1_i13wh")
 front_material = ExtResource("2_7h1nw")
 back_material = ExtResource("2_7h1nw")
+
+[node name="Trigger" type="CollisionShape3D" parent="." unique_id=392822068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
+shape = SubResource("BoxShape3D_n1w0f")
 
 [node name="Collisions" type="Node3D" parent="." unique_id=735002324]
 
@@ -86,15 +90,11 @@ max_distance = 10.0
 stream = ExtResource("5_iffc6")
 max_distance = 10.0
 
+[node name="SP" type="Marker3D" parent="." unique_id=1993957429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
 [node name="Timer" type="Timer" parent="." unique_id=998841527]
 wait_time = 1.5
 one_shot = true
-
-[node name="Trigger" type="CollisionShape3D" parent="." unique_id=392822068]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
-shape = SubResource("BoxShape3D_n1w0f")
-
-[node name="SP" type="Marker3D" parent="." unique_id=1993957429]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

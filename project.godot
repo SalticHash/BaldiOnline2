@@ -108,18 +108,14 @@ use={
 [layer_names]
 
 3d_physics/layer_1="World"
-3d_physics/layer_2="World2"
-3d_physics/layer_3="Baldi"
-3d_physics/layer_4="Door"
-3d_physics/layer_5="Player"
-3d_physics/layer_6="Item"
-3d_physics/layer_7="BSoda"
-3d_physics/layer_8="Storage Locker"
-3d_physics/layer_9="Blue Locker"
-3d_physics/layer_10="Swinging Door"
-3d_physics/layer_11="BlockInteract"
-3d_physics/layer_12="tape"
-3d_physics/layer_13="vending machine"
+3d_physics/layer_2="Door Collision"
+3d_physics/layer_3="Interact"
+3d_physics/layer_4="BSoda"
+3d_physics/layer_8="Layer 8"
+3d_physics/layer_9="Character"
+3d_physics/layer_10="Player"
+3d_physics/layer_11="Baldi"
+3d_physics/layer_14="Layer 14"
 
 [rendering]
 

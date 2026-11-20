@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://civ8vhnxcx713" path="res://characters/base/base.tscn" id="1_508ok"]
 [ext_resource type="Script" uid="uid://ie1ve1b0uu2r" path="res://characters/player/player.gd" id="2_xxgcw"]
 [ext_resource type="Script" uid="uid://buj70anysmbbw" path="res://characters/player/input_sync.gd" id="3_exd8k"]
+[ext_resource type="Texture2D" uid="uid://bbg8lv8dlq0ix" path="res://select_screen/thumb/player.png" id="3_sbttr"]
 [ext_resource type="Texture2D" uid="uid://dscjt7viypljf" path="res://characters/player/textures/InsideLocker.png" id="4_4cx7u"]
 [ext_resource type="Texture2D" uid="uid://trf58n7cv1fj" path="res://characters/player/CursorSprite.png" id="4_5dc8e"]
 [ext_resource type="Texture2D" uid="uid://rgm44vm7qmbx" path="res://characters/player/ItemSlotLeft.png" id="5_idpv6"]
@@ -29,21 +30,9 @@
 [ext_resource type="AudioStream" uid="uid://2tc4wc4ey0iu" path="res://characters/player/sounds/lose/Lose_What.wav" id="24_3a7m8"]
 [ext_resource type="AudioStream" uid="uid://cbgxmp8flr2ua" path="res://characters/player/GloveSnapOn.wav" id="28_e0pgg"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_jh3y0"]
-radius = 0.111816406
-height = 0.6699219
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jh3y0"]
 radius = 0.10498047
 height = 0.6484375
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1d8oa"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_jh3y0"]
-material = SubResource("StandardMaterial3D_1d8oa")
-radius = 0.029
-height = 0.058
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4cx7u"]
 properties/0/path = NodePath(".:position")
@@ -71,6 +60,9 @@ properties/3/replication_mode = 2
 properties/0/path = NodePath(".:rotation")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath("Camera:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_xxgcw"]
 properties/0/path = NodePath(".:input_dir")
@@ -190,30 +182,38 @@ stream_6/stream = ExtResource("23_6pj1p")
 stream_7/stream = ExtResource("24_3a7m8")
 
 [node name="Player" unique_id=991214998 groups=["player"] instance=ExtResource("1_508ok")]
-collision_layer = 16
+collision_layer = 768
 collision_mask = 3
 script = ExtResource("2_xxgcw")
 
-[node name="Mesh" type="MeshInstance3D" parent="." index="0" unique_id=12711661]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33589804, 0)
-mesh = SubResource("CapsuleMesh_jh3y0")
-
-[node name="Collision" type="CollisionShape3D" parent="." index="1" unique_id=1306059409]
+[node name="Collision" type="CollisionShape3D" parent="." index="0" unique_id=1306059409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33589804, 0)
 shape = SubResource("CapsuleShape3D_jh3y0")
+
+[node name="Sprite" type="Sprite3D" parent="." index="1" unique_id=279103075]
+transform = Transform3D(0.265, 0, 0, 0, 0.319, 0, 0, 0, 1, 0, 0.318, 0)
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+render_priority = -1
+texture = ExtResource("3_sbttr")
 
 [node name="Camera" parent="." index="2" unique_id=1168804949]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51873744, 0)
 
-[node name="RotationDot" type="MeshInstance3D" parent="Camera" index="0" unique_id=1823499319]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.19785616, -0.14419162)
-mesh = SubResource("SphereMesh_jh3y0")
-
-[node name="InteractRay" type="RayCast3D" parent="Camera" index="1" unique_id=2074744021]
+[node name="InteractRay" type="RayCast3D" parent="Camera" index="0" unique_id=2074744021]
 target_position = Vector3(0, 0, -1)
-collision_mask = 8104
+collision_mask = 4
 hit_from_inside = true
 collide_with_areas = true
+
+[node name="Hand3D" type="Sprite3D" parent="Camera" index="1" unique_id=1821306592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.075, -0.15)
+flip_h = true
+pixel_size = 0.0065
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("4_5dc8e")
 
 [node name="NameLabel" parent="." index="3" unique_id=1285109512]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7688177, 0)

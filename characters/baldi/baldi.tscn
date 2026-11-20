@@ -154,8 +154,8 @@ properties/1/spawn = true
 properties/1/replication_mode = 2
 
 [node name="Baldi" unique_id=991214998 groups=["baldi"] instance=ExtResource("1_pfkde")]
-collision_layer = 4
-collision_mask = 65
+collision_layer = 1280
+collision_mask = 9
 script = ExtResource("2_1rn1s")
 
 [node name="Collision" type="CollisionShape3D" parent="." index="0" unique_id=425641698]
@@ -206,7 +206,7 @@ stream = ExtResource("12_smu0b")
 
 [node name="Area" type="Area3D" parent="." index="10" unique_id=840447406]
 collision_layer = 0
-collision_mask = 16
+collision_mask = 512
 
 [node name="Collision" type="CollisionShape3D" parent="Area" index="0" unique_id=638826122]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36694336, 0)

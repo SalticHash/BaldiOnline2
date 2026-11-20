@@ -72,17 +72,18 @@ func exit_locker():
 func _process(_delta: float) -> void:
 	if has_node(locker):
 		$VoiceChat/Voice.bus = &"Muffled"
-		$Mesh.hide()
+		$Sprite.hide()
 		$Collision.disabled = true
 	else:
 		$VoiceChat/Voice.bus = &"Master"
-		$Mesh.show()
+		$Sprite.show()
 		$Collision.disabled = false
 		
 	if multiplayer.get_unique_id() != id: return
 	if lost: return
 	
 	$UI.show()
+	$Camera/Hand3D.hide()
 	
 	$UI/NotebookAmount.text = str(Server.notebooks) + "/7"
 	$UI/Stamina/Needle.position.x = \

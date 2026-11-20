@@ -14,7 +14,7 @@ properties/0/spawn = true
 properties/0/replication_mode = 2
 
 [node name="TapePlayer" type="Area3D" unique_id=200992389 groups=["tape_player"]]
-collision_layer = 2048
+collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_h0i6t")
 

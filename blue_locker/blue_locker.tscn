@@ -21,7 +21,7 @@ material = SubResource("StandardMaterial3D_1d8oa")
 size = Vector3(0.188, 0.75, 0.188)
 
 [node name="BlueLocker" type="Area3D" unique_id=1893774405 groups=["blue_locker", "interact"]]
-collision_layer = 256
+collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_58nf8")
 

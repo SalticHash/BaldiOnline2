@@ -134,8 +134,7 @@ animations = [{
 }]
 
 [node name="Student" unique_id=991214998 groups=["player"] instance=ExtResource("1_2u6e6")]
-collision_layer = 16
-collision_mask = 3
+collision_mask = 11
 script = ExtResource("2_yr61q")
 
 [node name="Camera" parent="." index="0" unique_id=1168804949]
@@ -181,7 +180,6 @@ public_visibility = false
 script = ExtResource("3_cdqdi")
 
 [node name="UI" type="Control" parent="." index="9" unique_id=1681700583]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

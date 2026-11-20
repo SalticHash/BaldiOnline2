@@ -6,13 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://cllc0u7h65kqg" path="res://school/objects/swingdoor/Doors_Swinging.ogg" id="5_na0vf"]
 [ext_resource type="AudioStream" uid="uid://cxagrociwn7al" path="res://school/objects/swingdoor/SwingDoorLock_use.wav" id="5_tpo1v"]
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tghp3"]
-properties/0/path = NodePath(".:open")
-properties/0/spawn = false
-properties/0/replication_mode = 2
-properties/1/path = NodePath(".:locked")
-properties/1/spawn = true
-properties/1/replication_mode = 1
+[sub_resource type="BoxShape3D" id="BoxShape3D_cu1xn"]
+size = Vector3(1, 1, 0.25)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ghlmo"]
 data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0)
@@ -66,21 +61,25 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bycyo")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cu1xn"]
-size = Vector3(1, 1, 0.25)
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tghp3"]
+properties/0/path = NodePath(".:open")
+properties/0/spawn = false
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:locked")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [node name="Swinging Door" type="Area3D" unique_id=1266870234 groups=["swinging_door"]]
-collision_layer = 512
-collision_mask = 20
+collision_layer = 4
+collision_mask = 256
 script = ExtResource("1_xqugo")
 front_material = ExtResource("2_312y2")
 back_material = ExtResource("2_312y2")
 
-[node name="StateSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=128944431]
-replication_config = SubResource("SceneReplicationConfig_tghp3")
+[node name="Trigger" type="CollisionShape3D" parent="." unique_id=898073428]
+shape = SubResource("BoxShape3D_cu1xn")
 
 [node name="Solid" type="StaticBody3D" parent="." unique_id=433043528]
-collision_mask = 2
 
 [node name="Collision" type="CollisionShape3D" parent="Solid" unique_id=350099837]
 shape = SubResource("ConcavePolygonShape3D_ghlmo")
@@ -116,9 +115,6 @@ texture_filter = 0
 sprite_frames = ExtResource("3_s0dfi")
 animation = &"close"
 
-[node name="Trigger" type="CollisionShape3D" parent="." unique_id=898073428]
-shape = SubResource("BoxShape3D_cu1xn")
-
 [node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=471926141]
 stream = ExtResource("5_na0vf")
 max_distance = 10.0
@@ -126,6 +122,9 @@ max_distance = 10.0
 [node name="LockSound" type="AudioStreamPlayer3D" parent="." unique_id=1337375703]
 stream = ExtResource("5_tpo1v")
 max_distance = 10.0
+
+[node name="StateSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=128944431]
+replication_config = SubResource("SceneReplicationConfig_tghp3")
 
 [node name="Timer" type="Timer" parent="." unique_id=1881512974]
 wait_time = 1.5
