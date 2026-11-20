@@ -24,8 +24,6 @@ func _ready() -> void:
 		"bsoda": $Faceplate.material_override = bsoda_material
 		"zesty": $Faceplate.material_override = zesty_material
 		"diet": $Faceplate.material_override = diet_material
-	
-	(bsoda_material if type == "bsoda" else zesty_material)
 
 func use() -> void:
 	if !is_multiplayer_authority(): return

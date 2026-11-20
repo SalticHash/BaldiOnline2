@@ -11,7 +11,7 @@ func _ready() -> void:
 	if storage_slot: return
 	$AnimationPlayer.play("hover")
 	if present:
-		item_id = randf_range(1, 7) #TODO DFIX WITH MISSING IDS
+		item_id = randi_range(1, 8) #TODO DFIX WITH MISSING IDS
 		$Sprite.animation = "present"
 		
 
