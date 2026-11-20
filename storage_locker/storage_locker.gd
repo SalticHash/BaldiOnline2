@@ -31,7 +31,6 @@ func request_state():
 @rpc("authority", "call_local", "reliable")
 func change_state(state: bool, request: bool = false):
 	open = state
-	$Collision.set_deferred("disabled", open)
 	
 	if state == false:
 		$AnimationPlayer.play("close")

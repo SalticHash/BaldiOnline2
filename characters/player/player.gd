@@ -177,7 +177,6 @@ func use_item(cursor):
 		ITEM.ANTI_HEARING_TAPE:
 			var c = $Camera/InteractRay.get_collider()
 			if !c or !c.is_in_group("tape_player") or c.phone or !c.open:
-				print(c)
 				$InvalidUse.play()
 				return
 			inventory[cursor] = ITEM.NONE
