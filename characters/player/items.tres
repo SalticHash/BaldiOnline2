@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c8w4ec56lbxw2" path="res://item/textures/thumb/TapeIcon_Small.png" id="6_h3mna"]
 [ext_resource type="Texture2D" uid="uid://b67r4drxo8s6m" path="res://item/textures/thumb/QuarterIcon_Small.png" id="7_4c5gf"]
 [ext_resource type="Texture2D" uid="uid://b0vjvsv7kwetp" path="res://item/textures/thumb/AppleIcon_Small.png" id="9_mbvmy"]
+[ext_resource type="Texture2D" uid="uid://dkapr6c6uu4wl" path="res://item/textures/thumb/AlarmClockIcon_Small.png" id="10_k4ryp"]
 
 [resource]
 animations = [{
@@ -82,5 +83,13 @@ animations = [{
 }],
 "loop": 1,
 "name": &"8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_k4ryp")
+}],
+"loop": 1,
+"name": &"9",
 "speed": 5.0
 }]

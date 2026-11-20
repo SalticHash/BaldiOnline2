@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dusmjkacaja8w"]
+
+[ext_resource type="Script" uid="uid://db2endq4lhkjm" path="res://alarm_clock/alarm_clock.gd" id="1_vrjls"]
+[ext_resource type="Texture2D" uid="uid://uxdalfp1ghhi" path="res://alarm_clock/AlarmClock_Sheet_0.png" id="2_agb68"]
+[ext_resource type="Texture2D" uid="uid://ytaps7i5qe05" path="res://alarm_clock/AlarmClock_Sheet_1.png" id="3_dwmdy"]
+[ext_resource type="Texture2D" uid="uid://br3a7rvm31utm" path="res://alarm_clock/AlarmClock_Sheet_2.png" id="4_1owl5"]
+[ext_resource type="Texture2D" uid="uid://d3fv4sbwk4b3" path="res://alarm_clock/AlarmClock_Sheet_3.png" id="5_w8h05"]
+[ext_resource type="AudioStream" uid="uid://8pslb6fk6lgb" path="res://alarm_clock/AlarmClockTick.wav" id="6_v350h"]
+[ext_resource type="AudioStream" uid="uid://1s2lkif0dwpu" path="res://alarm_clock/ClockWind.wav" id="7_1owl5"]
+[ext_resource type="AudioStream" uid="uid://bfgmimamwahxf" path="res://alarm_clock/AlarmClockBell.wav" id="7_dwmdy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dwmdy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jh3y0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_agb68")
+}],
+"loop": 1,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dwmdy")
+}],
+"loop": 1,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1owl5")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_w8h05")
+}],
+"loop": 1,
+"name": &"3",
+"speed": 5.0
+}]
+
+[node name="AlarmClock" type="Area3D" unique_id=1266802504 groups=["alarm_clock", "interact"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_vrjls")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=447683527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_dwmdy")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="." unique_id=438835206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.544, 0)
+pixel_size = 0.0085
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_jh3y0")
+animation = &"1"
+
+[node name="Ticking" type="AudioStreamPlayer3D" parent="." unique_id=1066964836]
+stream = ExtResource("6_v350h")
+autoplay = true
+
+[node name="Wind" type="AudioStreamPlayer3D" parent="." unique_id=335835498]
+stream = ExtResource("7_1owl5")
+
+[node name="Ring" type="AudioStreamPlayer3D" parent="." unique_id=1271181894]
+stream = ExtResource("7_dwmdy")
+
+[node name="SP" type="Marker3D" parent="." unique_id=220693704]
+
+[connection signal="finished" from="Ring" to="." method="_on_ring_finished"]

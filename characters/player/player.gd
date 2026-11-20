@@ -9,7 +9,8 @@ enum ITEM {
 	LOCK,
 	GLOVE,
 	ANTI_HEARING_TAPE,
-	APPLE
+	APPLE,
+	ALARM_CLOCK
 }
 
 var lost: bool = false
@@ -160,10 +161,13 @@ func _process(delta: float) -> void:
 				$UI/Notebook.stop()
 				$UI/Notebook.play("turn")
 				obj.pickup.rpc_id(1)
+			if obj.is_in_group("alarm_clock"):
+				obj.wind.rpc_id(1)
 	else: $UI/Hand.hide()
 
 @onready var bsoda = preload("res://bsoda/bsoda.tscn")
 @onready var diet = preload("res://bsoda/diet.tscn")
+@onready var alarm_clock = preload("res://alarm_clock/alarm_clock.tscn")
 @rpc("any_peer", "call_local", "reliable")
 func use_item(cursor):
 	if !is_multiplayer_authority(): return
@@ -176,6 +180,12 @@ func use_item(cursor):
 			b.global_position = global_position
 			b.global_rotation = $Camera.global_rotation
 			play_sound.rpc("bsoda")
+			inventory[cursor] = ITEM.NONE
+			return
+		ITEM.ALARM_CLOCK:
+			var c = alarm_clock.instantiate()
+			get_parent().get_parent().get_node("Instances").add_child(c, true)
+			c.global_position = global_position
 			inventory[cursor] = ITEM.NONE
 			return
 		ITEM.ZESTY:
@@ -236,6 +246,7 @@ func lose(b):
 func got_by_baldi(path):
 	hide()
 	if multiplayer.get_unique_id() != id: return
+	$VoiceChat.stop()
 	$UI/Baldi.show()
 	$Lose.play()
 	get_node(path).hide()
