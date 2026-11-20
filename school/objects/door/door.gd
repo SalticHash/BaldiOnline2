@@ -53,7 +53,7 @@ func open_door(id: int = -1):
 		push_error("Unreachable door opened")
 		return
 	if is_player and !open:
-		Server.alert_baldi(10)
+		Server.alert_baldi(10, $SP.global_position)
 	change_state.rpc(true)
 	$Timer.start()
 

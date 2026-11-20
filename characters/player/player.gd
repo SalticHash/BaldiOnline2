@@ -11,6 +11,7 @@ enum ITEM {
 	ANTI_HEARING_TAPE,
 }
 
+var lost: bool = false
 var cursor_pos: int = 0
 const SPEED_RUN: float = 180.0
 const SPEED_WALK: float = 80.0
@@ -34,6 +35,7 @@ func _physics_process(delta: float) -> void:
 		$Camera/InteractRay.target_position.z = -100.0 if glove_time > 0.0 else -1.0
 	
 	if !is_multiplayer_authority(): return
+	if lost: return
 	if glove_time > 0.0: glove_time -= delta
 	if (!input_dir or has_node(locker)) and stamina < 1.0:
 		stamina += delta * STAM_GAIN_SPEED
@@ -51,17 +53,19 @@ func _physics_process(delta: float) -> void:
 func enter_locker(path):
 	if !is_multiplayer_authority(): return
 	if !has_node(path): return
-	if get_node(path).global_position.distance_squared_to(global_position) > reach_squared():
+	
+	var locker_inst = get_node(path)
+	var locker_pos = locker_inst.global_position
+	if locker_pos.distance_squared_to(global_position) > reach_squared():
 		return
+	locker_inst.enter_locker.rpc()
 	locker = path
-	Server.alert_baldi(78)
-	play_sound.rpc("locker")
 
 @rpc("any_peer","call_local","reliable")
 func exit_locker():
 	if !is_multiplayer_authority(): return
-	play_sound.rpc("locker")
-	Server.alert_baldi(78)
+	var locker_inst = get_node(locker)
+	locker_inst.enter_locker.rpc()
 	locker = NodePath("")
 	
 func _process(_delta: float) -> void:
@@ -203,3 +207,7 @@ func reach_squared() -> float:
 @rpc("authority", "call_local", "reliable")
 func play_sound(sound):
 	$Sounds.get_node(sound).play()
+
+func lose():
+	if !is_multiplayer_authority(): return
+	lost = true

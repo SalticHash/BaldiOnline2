@@ -94,4 +94,7 @@ one_shot = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
 shape = SubResource("BoxShape3D_n1w0f")
 
+[node name="SP" type="Marker3D" parent="." unique_id=1993957429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

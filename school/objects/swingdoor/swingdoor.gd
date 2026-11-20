@@ -42,7 +42,7 @@ func _on_body_entered(body: Node3D) -> void:
 	if !body.is_in_group("player"): return
 	if open: return
 	
-	Server.alert_baldi(10)
+	Server.alert_baldi(10, body.global_position)
 
 
 func _on_lock_timer_timeout() -> void:

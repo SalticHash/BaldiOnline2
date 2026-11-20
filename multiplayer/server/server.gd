@@ -47,7 +47,8 @@ func rpc_type(type: int, method: StringName, ...args: Array) -> void:
 	inst.callv("rpc_id", [id, method] + args)
 	
 
-func alert_baldi(noise: int):
-	var p = get_type_instance(TYPE.PLAYER).global_position
+func alert_baldi(noise: int, position: Vector3 = Vector3.INF):
+	if position == Vector3.INF:
+		position = get_type_instance(TYPE.PLAYER).global_position
 	
-	rpc_type(Server.TYPE.BALDI, "spawn_highlight", p, noise)
+	rpc_type(Server.TYPE.BALDI, "spawn_highlight", position, noise)

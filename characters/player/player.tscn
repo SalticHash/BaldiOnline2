@@ -27,7 +27,6 @@
 [ext_resource type="AudioStream" uid="uid://c20637y6pjura" path="res://characters/player/sounds/lose/Lose_NO.wav" id="22_sbttr"]
 [ext_resource type="AudioStream" uid="uid://nvplv4hnui5c" path="res://characters/player/sounds/lose/Lose_SteamExplode.wav" id="23_6pj1p"]
 [ext_resource type="AudioStream" uid="uid://2tc4wc4ey0iu" path="res://characters/player/sounds/lose/Lose_What.wav" id="24_3a7m8"]
-[ext_resource type="AudioStream" uid="uid://blpj728rp3tv2" path="res://storage_locker/Doors_Locker.wav" id="25_7b6hw"]
 [ext_resource type="AudioStream" uid="uid://cbgxmp8flr2ua" path="res://characters/player/GloveSnapOn.wav" id="28_e0pgg"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jh3y0"]
@@ -67,6 +66,9 @@ properties/2/replication_mode = 1
 properties/3/path = NodePath(".:notebooks")
 properties/3/spawn = true
 properties/3/replication_mode = 2
+properties/4/path = NodePath(".:lost")
+properties/4/spawn = true
+properties/4/replication_mode = 2
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5dc8e"]
 properties/0/path = NodePath(".:rotation")
@@ -534,7 +536,7 @@ max_polyphony = 2
 
 [node name="Lose" type="AudioStreamPlayer" parent="." index="13" unique_id=738551011]
 stream = SubResource("AudioStreamRandomizer_jh3y0")
-volume_db = -20.0
+volume_db = -15.0
 
 [node name="Sounds" type="Node3D" parent="." index="14" unique_id=1469665790]
 
@@ -544,8 +546,5 @@ stream = ExtResource("15_8l73k")
 [node name="bsoda" type="AudioStreamPlayer3D" parent="Sounds" index="1" unique_id=945726001]
 stream = ExtResource("16_aqrcq")
 
-[node name="locker" type="AudioStreamPlayer3D" parent="Sounds" index="2" unique_id=1424258812]
-stream = ExtResource("25_7b6hw")
-
-[node name="glove" type="AudioStreamPlayer3D" parent="Sounds" index="3" unique_id=774181276]
+[node name="glove" type="AudioStreamPlayer3D" parent="Sounds" index="2" unique_id=774181276]
 stream = ExtResource("28_e0pgg")

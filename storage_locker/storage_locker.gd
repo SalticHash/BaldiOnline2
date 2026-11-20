@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 	var player_pos = player.global_position
 	var d2 = player_pos.distance_squared_to(global_position)
 	if d2 > player.reach_squared():
-		Server.alert_baldi(78)
+		Server.alert_baldi(78, $SP.global_position)
 		change_state.rpc(false)
 
 # Client requests the current state.
@@ -55,5 +55,5 @@ func toggle_locker(id: int = -1):
 		push_error("Unreachable locker togled")
 		return
 	
-	if open: Server.alert_baldi(78)
+	if open: Server.alert_baldi(78, $SP.global_position)
 	change_state.rpc(!open)
