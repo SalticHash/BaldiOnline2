@@ -133,7 +133,7 @@ present = true
 [node name="Instances" type="Node3D" parent="." unique_id=2140097541]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Instances" unique_id=1915697736]
-_spawnable_scenes = PackedStringArray("uid://bud1fd2ay8cfy")
+_spawnable_scenes = PackedStringArray("uid://bud1fd2ay8cfy", "uid://jmcjsp4pabrg")
 spawn_path = NodePath("..")
 
 [node name="EscapeMusic" type="AudioStreamPlayer" parent="." unique_id=1414626487]
