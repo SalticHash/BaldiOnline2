@@ -118,6 +118,18 @@ item_id = 7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.022287, 0.5489751, -17.05837)
 item_id = 7
 
+[node name="Item23" parent="." unique_id=2034598719 instance=ExtResource("7_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3988292, 0.5489751, -16.518867)
+present = true
+
+[node name="Item24" parent="." unique_id=1636774778 instance=ExtResource("7_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7022336, 0.5489751, -16.397804)
+present = true
+
+[node name="Item25" parent="." unique_id=526016391 instance=ExtResource("7_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.855053, 0.5489751, -16.209824)
+present = true
+
 [node name="Instances" type="Node3D" parent="." unique_id=2140097541]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Instances" unique_id=1915697736]

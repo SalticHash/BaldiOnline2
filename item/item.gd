@@ -1,5 +1,6 @@
 extends Area3D
 
+@export var present: bool = false
 @export var storage_slot: bool = false
 @export var item_id: int = 1 :
 	set(value):
@@ -9,6 +10,10 @@ extends Area3D
 func _ready() -> void:
 	if storage_slot: return
 	$AnimationPlayer.play("hover")
+	if present:
+		item_id = randf_range(1, 7) #TODO DFIX WITH MISSING IDS
+		$Sprite.animation = "present"
+		
 
 func _process(_delta: float) -> void:
 	$Collision.disabled = !visible
