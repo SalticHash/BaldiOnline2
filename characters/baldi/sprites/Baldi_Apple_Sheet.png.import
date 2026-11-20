@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d05fn3flifjuj"
-path.s3tc="res://.godot/imported/Slap_Sheet.png-4780ee076f441212bd2d3b04199d46ff.s3tc.ctex"
-path.etc2="res://.godot/imported/Slap_Sheet.png-4780ee076f441212bd2d3b04199d46ff.etc2.ctex"
+uid="uid://cq7u53elsjm46"
+path.s3tc="res://.godot/imported/Baldi_Apple_Sheet.png-d24bc44e11942b294dc8f00176f5b262.s3tc.ctex"
+path.etc2="res://.godot/imported/Baldi_Apple_Sheet.png-d24bc44e11942b294dc8f00176f5b262.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://characters/baldi/sprites/Slap_Sheet.png"
-dest_files=["res://.godot/imported/Slap_Sheet.png-4780ee076f441212bd2d3b04199d46ff.s3tc.ctex", "res://.godot/imported/Slap_Sheet.png-4780ee076f441212bd2d3b04199d46ff.etc2.ctex"]
+source_file="res://characters/baldi/sprites/Baldi_Apple_Sheet.png"
+dest_files=["res://.godot/imported/Baldi_Apple_Sheet.png-d24bc44e11942b294dc8f00176f5b262.s3tc.ctex", "res://.godot/imported/Baldi_Apple_Sheet.png-d24bc44e11942b294dc8f00176f5b262.etc2.ctex"]
 
 [params]
 

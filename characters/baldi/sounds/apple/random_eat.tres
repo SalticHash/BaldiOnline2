@@ -1,0 +1,17 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://cb21p8l15f2rw"]
+
+[ext_resource type="AudioStream" uid="uid://bc3k6ktx402l0" path="res://characters/baldi/sounds/apple/ChipCrunch.wav" id="1_k05s5"]
+[ext_resource type="AudioStream" uid="uid://cfhlbe77bo10s" path="res://characters/baldi/sounds/apple/AppleCrunch.wav" id="2_npfaj"]
+[ext_resource type="AudioStream" uid="uid://kfswhvosk2c0" path="res://characters/baldi/sounds/apple/Run.wav" id="3_6iflr"]
+[ext_resource type="AudioStream" uid="uid://bko8srno72jru" path="res://characters/baldi/sounds/apple/BAL_Yum.wav" id="4_q2snt"]
+
+[resource]
+streams_count = 4
+stream_0/stream = ExtResource("1_k05s5")
+stream_0/weight = 10.0
+stream_1/stream = ExtResource("2_npfaj")
+stream_1/weight = 10.0
+stream_2/stream = ExtResource("3_6iflr")
+stream_2/weight = 0.5
+stream_3/stream = ExtResource("4_q2snt")
+stream_3/weight = 0.5

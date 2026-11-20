@@ -7,12 +7,26 @@ var slap_buffer: float = 0.0
 var slap_interval: float = 0.0
 const SLAP_BUFFER: float = 0.167 #10 frames in a 60fps game
 var SLAP_INTERVAL: float = 1.2
-
+var apple: float = 0.0
 
 func _physics_process(delta: float) -> void:
+
 	if !is_multiplayer_authority(): return
+	if $Area.has_overlapping_bodies() and !has_node(locker) and apple <= 0.0:
+		for b in $Area.get_overlapping_bodies():
+			if b.lost: break
+			if b.has_item(b.ITEM.APPLE):
+				b.set_item(b.ITEM.NONE)
+				apple = 15.0
+				get_apple.rpc()
+				break
+			b.lose()
+	
 	SLAP_INTERVAL = 1.2 - (Server.notebooks * 0.1)
-	if has_node(locker):
+	if apple > 0.0:
+		apple -= delta
+		if apple <= 0.0: slap_effect(true)
+	if has_node(locker) or apple > 0.0:
 		slap_buffer = 0.0
 		slap_interval = SLAP_INTERVAL
 		return
@@ -61,7 +75,19 @@ func slap_effect(ruler: bool = false):
 	$Sprite.play("slap")
 	$SlapSound.play()
 
+@rpc("authority", "call_local", "reliable")
+func get_apple():
+	$Sprite.animation = "apple"
+	$ThankAppleSound.play()
+	
 func _process(_delta: float) -> void:
+	if apple < 10.0 and apple > 0.0: 
+		if $EatSound/Timer.is_stopped():
+			$EatSound/Timer.start()
+		if !$Sprite.is_playing(): $Sprite.play("apple")
+	else:
+		$EatSound/Timer.stop()
+
 	if multiplayer.get_unique_id() != id: return
 	var v = remap(slap_interval, SLAP_INTERVAL, 0.0, $UI/Stamina/Start.position.x - 96.0, $UI/Stamina/End.position.x)
 	var tween = create_tween().set_trans(Tween.TRANS_SINE)
@@ -71,7 +97,7 @@ func _process(_delta: float) -> void:
 	$UI.show()
 	
 	var obj = $Camera/InteractRay.get_collider()
-	if obj and obj.is_in_group("interact"):
+	if  apple <= 0.0 and obj and obj.is_in_group("interact"):
 		$UI/Hand.show()
 		if Input.is_action_just_pressed("click"):
 			if obj.is_in_group("blue_locker"):
@@ -97,3 +123,6 @@ func spawn_highlight(player_position: Vector3, loudness: float):
 	inst.loudness = loudness
 	$Highlights.add_child(inst)
 	inst.global_position = player_position
+
+func _on_eat_sound_timeout() -> void:
+	$EatSound.play()

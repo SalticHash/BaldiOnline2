@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ci1mwfobbfv73" path="res://item/textures/StretchyGloveIcon_Large.png" id="4_ddeht"]
 [ext_resource type="Texture2D" uid="uid://ttve7o38d461" path="res://item/textures/TapeIcon_Large.png" id="5_q60qp"]
 [ext_resource type="Texture2D" uid="uid://46penww83jmm" path="res://item/textures/QuarterIcon_Large.png" id="6_ddeht"]
+[ext_resource type="Texture2D" uid="uid://biyjnubnsenn5" path="res://item/textures/AppleIcon_Large.png" id="8_jt2wj"]
 [ext_resource type="Texture2D" uid="uid://ce6kiwwwy0aec" path="res://item/textures/Present.png" id="8_jx6qj"]
 
 [resource]
@@ -73,6 +74,14 @@ animations = [{
 }],
 "loop": 1,
 "name": &"7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_jt2wj")
+}],
+"loop": 1,
+"name": &"8",
 "speed": 5.0
 }, {
 "frames": [{

@@ -9,5 +9,5 @@ func _process(_delta: float) -> void:
 	player.running = Input.is_action_pressed("run")
 
 func _input(event: InputEvent) -> void:
-	if player.locker: return
+	if player.locker or player.lost: return
 	super(event)

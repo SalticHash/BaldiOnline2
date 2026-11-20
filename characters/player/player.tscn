@@ -63,12 +63,9 @@ properties/1/replication_mode = 2
 properties/2/path = NodePath(".:glove_time")
 properties/2/spawn = true
 properties/2/replication_mode = 1
-properties/3/path = NodePath(".:notebooks")
+properties/3/path = NodePath(".:lost")
 properties/3/spawn = true
 properties/3/replication_mode = 2
-properties/4/path = NodePath(".:lost")
-properties/4/spawn = true
-properties/4/replication_mode = 2
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5dc8e"]
 properties/0/path = NodePath(".:rotation")
@@ -82,6 +79,9 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath(".:running")
 properties/1/spawn = true
 properties/1/replication_mode = 2
+properties/2/path = NodePath(".:cursor_pos")
+properties/2/spawn = true
+properties/2/replication_mode = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_icpky"]
 atlas = ExtResource("12_gqopd")
@@ -334,7 +334,7 @@ offset_bottom = 34.0
 show_behind_parent = true
 position = Vector2(3, 2)
 sprite_frames = ExtResource("6_rpf03")
-animation = &"6"
+animation = &"8"
 centered = false
 
 [node name="Slot2" type="TextureRect" parent="UI/Inventory" index="1" unique_id=1874736875]
@@ -534,17 +534,17 @@ max_polyphony = 2
 stream = ExtResource("14_icpky")
 max_polyphony = 2
 
-[node name="Lose" type="AudioStreamPlayer" parent="." index="13" unique_id=738551011]
+[node name="Sounds" type="Node3D" parent="." index="13" unique_id=1469665790]
+
+[node name="lose" type="AudioStreamPlayer3D" parent="Sounds" index="0" unique_id=1645939927]
 stream = SubResource("AudioStreamRandomizer_jh3y0")
 volume_db = -15.0
 
-[node name="Sounds" type="Node3D" parent="." index="14" unique_id=1469665790]
-
-[node name="zesty" type="AudioStreamPlayer3D" parent="Sounds" index="0" unique_id=387913826]
+[node name="zesty" type="AudioStreamPlayer3D" parent="Sounds" index="1" unique_id=387913826]
 stream = ExtResource("15_8l73k")
 
-[node name="bsoda" type="AudioStreamPlayer3D" parent="Sounds" index="1" unique_id=945726001]
+[node name="bsoda" type="AudioStreamPlayer3D" parent="Sounds" index="2" unique_id=945726001]
 stream = ExtResource("16_aqrcq")
 
-[node name="glove" type="AudioStreamPlayer3D" parent="Sounds" index="2" unique_id=774181276]
+[node name="glove" type="AudioStreamPlayer3D" parent="Sounds" index="3" unique_id=774181276]
 stream = ExtResource("28_e0pgg")

@@ -7,4 +7,5 @@ func _process(delta: float) -> void:
 	position += direction * speed * delta
 
 func _on_despawn_timeout() -> void:
+	if !is_multiplayer_authority(): return
 	queue_free()

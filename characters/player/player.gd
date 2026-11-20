@@ -9,6 +9,7 @@ enum ITEM {
 	LOCK,
 	GLOVE,
 	ANTI_HEARING_TAPE,
+	APPLE
 }
 
 var lost: bool = false
@@ -79,6 +80,8 @@ func _process(_delta: float) -> void:
 		$Collision.disabled = false
 		
 	if multiplayer.get_unique_id() != id: return
+	if lost: return
+	
 	$UI.show()
 	
 	$UI/NotebookAmount.text = str(Server.notebooks) + "/7"
@@ -210,4 +213,18 @@ func play_sound(sound):
 
 func lose():
 	if !is_multiplayer_authority(): return
+	if lost: return
 	lost = true
+	play_sound.rpc("lose")
+
+func has_item(item: ITEM) -> bool:
+	if !is_multiplayer_authority():
+		push_error("Cant check as is not authority")
+		return false
+	return inventory[cursor_pos] == item
+
+func set_item(item: ITEM) -> void:
+	if !is_multiplayer_authority():
+		push_error("Cant set as is not authority")
+		return
+	inventory[cursor_pos] = item

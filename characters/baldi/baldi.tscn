@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://civ8vhnxcx713" path="res://characters/base/base.tscn" id="1_pfkde"]
 [ext_resource type="Script" uid="uid://s5vog24nowk5" path="res://characters/baldi/baldi.gd" id="2_1rn1s"]
+[ext_resource type="Texture2D" uid="uid://cq7u53elsjm46" path="res://characters/baldi/sprites/Baldi_Apple_Sheet.png" id="3_6e1cf"]
 [ext_resource type="Texture2D" uid="uid://diji7xksu00gl" path="res://characters/baldi/sprites/baldiSlap0.png" id="3_ae1l2"]
 [ext_resource type="Texture2D" uid="uid://da2xwlvjny2ci" path="res://characters/baldi/sprites/baldiSlap1.png" id="4_8fcnu"]
 [ext_resource type="Texture2D" uid="uid://cfvqtcx5wqit0" path="res://characters/baldi/sprites/baldiSlap2.png" id="5_suoda"]
@@ -14,7 +15,21 @@
 [ext_resource type="Texture2D" uid="uid://c78xg4h2cgkiy" path="res://characters/player/StaminometerSheet_BG.png" id="10_mgn76"]
 [ext_resource type="Texture2D" uid="uid://bmt4x781xnsvb" path="res://characters/player/StaminometerSheet_Needle.png" id="11_8irye"]
 [ext_resource type="Texture2D" uid="uid://c70njx84527l" path="res://characters/player/Staminometer.png" id="12_7kqed"]
+[ext_resource type="AudioStream" uid="uid://cac1t3hv8fxkh" path="res://characters/baldi/sounds/apple/BAL_Apple.wav" id="12_smu0b"]
 [ext_resource type="Texture2D" uid="uid://trf58n7cv1fj" path="res://characters/player/CursorSprite.png" id="15_hgsi0"]
+[ext_resource type="AudioStream" uid="uid://cb21p8l15f2rw" path="res://characters/baldi/sounds/apple/random_eat.tres" id="16_vfqcy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jh3y0"]
+radius = 0.123046875
+height = 0.7338867
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksrfo"]
+atlas = ExtResource("3_6e1cf")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s10v"]
+atlas = ExtResource("3_6e1cf")
+region = Rect2(128, 0, 128, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hgsi0"]
 atlas = ExtResource("8_7kqed")
@@ -46,6 +61,17 @@ region = Rect2(212, 256, 86, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jh3y0"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksrfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5s10v")
+}],
+"loop": 1,
+"name": &"apple",
+"speed": 25.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("7_mgn76")
@@ -105,6 +131,9 @@ animations = [{
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath(".:apple")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ae1l2"]
 properties/0/path = NodePath(".:slapping")
@@ -124,16 +153,16 @@ properties/1/path = NodePath(".:SLAP_INTERVAL")
 properties/1/spawn = true
 properties/1/replication_mode = 2
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jh3y0"]
-radius = 0.123046875
-height = 0.7338867
-
 [node name="Baldi" unique_id=991214998 groups=["baldi"] instance=ExtResource("1_pfkde")]
 collision_layer = 4
 collision_mask = 65
 script = ExtResource("2_1rn1s")
 
-[node name="Camera" parent="." index="0" unique_id=1168804949]
+[node name="Collision" type="CollisionShape3D" parent="." index="0" unique_id=425641698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36694336, 0)
+shape = SubResource("CapsuleShape3D_jh3y0")
+
+[node name="Camera" parent="." index="1" unique_id=1168804949]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6397984, 0)
 
 [node name="InteractRay" type="RayCast3D" parent="Camera" index="0" unique_id=454115887]
@@ -143,39 +172,43 @@ hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="NameLabel" parent="." index="1" unique_id=1285109512]
+[node name="NameLabel" parent="." index="2" unique_id=1285109512]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84, 0)
 
-[node name="Sprite" type="AnimatedSprite3D" parent="." index="2" unique_id=856986327]
+[node name="Sprite" type="AnimatedSprite3D" parent="." index="3" unique_id=856986327]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.384, 0)
 pixel_size = 0.003
 billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_jh3y0")
-animation = &"talk"
+animation = &"ruler"
+frame_progress = 1.0
 
-[node name="SlapSound" type="AudioStreamPlayer3D" parent="." index="3" unique_id=1249167152]
+[node name="SlapSound" type="AudioStreamPlayer3D" parent="." index="4" unique_id=1249167152]
 stream = ExtResource("8_8irye")
 max_polyphony = 4
 
-[node name="InspectLockerSound" type="AudioStreamPlayer3D" parent="." index="4" unique_id=1357447691]
+[node name="InspectLockerSound" type="AudioStreamPlayer3D" parent="." index="5" unique_id=1357447691]
 stream = ExtResource("10_7kqed")
 
-[node name="ServerSync" type="MultiplayerSynchronizer" parent="." index="6" unique_id=374456494]
-replication_config = SubResource("SceneReplicationConfig_mgn76")
+[node name="EatSound" type="AudioStreamPlayer3D" parent="." index="6" unique_id=1597790600]
+stream = ExtResource("16_vfqcy")
+max_polyphony = 25
 
-[node name="InputSync" type="MultiplayerSynchronizer" parent="." index="7" unique_id=880549000]
-replication_config = SubResource("SceneReplicationConfig_ae1l2")
-public_visibility = false
-script = ExtResource("9_8fcnu")
+[node name="Timer" type="Timer" parent="EatSound" index="0" unique_id=1674889258]
+wait_time = 0.05
+autostart = true
 
-[node name="PeerSync" type="MultiplayerSynchronizer" parent="." index="8" unique_id=52560936]
-replication_config = SubResource("SceneReplicationConfig_8fcnu")
+[node name="ThankAppleSound" type="AudioStreamPlayer3D" parent="." index="7" unique_id=387834567]
+stream = ExtResource("12_smu0b")
 
-[node name="OwnerSync" type="MultiplayerSynchronizer" parent="." index="9" unique_id=540204516]
-replication_config = SubResource("SceneReplicationConfig_suoda")
+[node name="Highlights" type="Node3D" parent="." index="9" unique_id=1429456648]
 
-[node name="Collision" type="CollisionShape3D" parent="." index="10" unique_id=638826122]
+[node name="Area" type="Area3D" parent="." index="10" unique_id=840447406]
+collision_layer = 0
+collision_mask = 16
+
+[node name="Collision" type="CollisionShape3D" parent="Area" index="0" unique_id=638826122]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36694336, 0)
 shape = SubResource("CapsuleShape3D_jh3y0")
 
@@ -284,8 +317,22 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("15_hgsi0")
 
-[node name="Highlights" type="Node3D" parent="." index="12" unique_id=1429456648]
+[node name="ServerSync" type="MultiplayerSynchronizer" parent="." index="12" unique_id=374456494]
+replication_config = SubResource("SceneReplicationConfig_mgn76")
 
-[node name="InspectLockerTimer" type="Timer" parent="." index="13" unique_id=1763981538]
+[node name="InputSync" type="MultiplayerSynchronizer" parent="." index="13" unique_id=880549000]
+replication_config = SubResource("SceneReplicationConfig_ae1l2")
+public_visibility = false
+script = ExtResource("9_8fcnu")
+
+[node name="PeerSync" type="MultiplayerSynchronizer" parent="." index="14" unique_id=52560936]
+replication_config = SubResource("SceneReplicationConfig_8fcnu")
+
+[node name="OwnerSync" type="MultiplayerSynchronizer" parent="." index="15" unique_id=540204516]
+replication_config = SubResource("SceneReplicationConfig_suoda")
+
+[node name="InspectLockerTimer" type="Timer" parent="." index="16" unique_id=1763981538]
 wait_time = 3.5
 one_shot = true
+
+[connection signal="timeout" from="EatSound/Timer" to="." method="_on_eat_sound_timeout"]
