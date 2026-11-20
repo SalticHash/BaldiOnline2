@@ -2,12 +2,13 @@ extends BaseController
 
 enum ITEM {
 	NONE,
+	QUARTER,
 	BSODA,
+	DIET,
 	ZESTY,
 	LOCK,
 	GLOVE,
 	ANTI_HEARING_TAPE,
-	QUARTER,
 }
 
 var cursor_pos: int = 0
@@ -140,14 +141,15 @@ func _process(_delta: float) -> void:
 	else: $UI/Hand.hide()
 
 @onready var bsoda = preload("res://bsoda/bsoda.tscn")
+@onready var diet = preload("res://bsoda/diet.tscn")
 @rpc("any_peer", "call_local", "reliable")
 func use_item(cursor):
 	if !is_multiplayer_authority(): return
 	var item = inventory[cursor]
 	match item:
 		ITEM.NONE: return
-		ITEM.BSODA:
-			var b = bsoda.instantiate()
+		ITEM.BSODA, ITEM.DIET:
+			var b = (bsoda if item == ITEM.BSODA else diet).instantiate()
 			get_parent().get_parent().get_node("Instances").add_child(b, true)
 			b.global_position = global_position
 			b.global_rotation = $Camera.global_rotation

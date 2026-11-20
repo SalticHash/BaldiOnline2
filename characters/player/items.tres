@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://63jwn85hjsc0" path="res://characters/player/BlankItem.png" id="2_3oh8h"]
 [ext_resource type="Texture2D" uid="uid://b7wk0i2abdwi2" path="res://item/textures/thumb/BsodaIcon_Small.png" id="2_50gee"]
 [ext_resource type="Texture2D" uid="uid://cca7dlhvanqp8" path="res://item/textures/thumb/ZestyBarIcon_Small.png" id="3_f2voh"]
+[ext_resource type="Texture2D" uid="uid://b71nircbyaguw" path="res://item/textures/thumb/DietBsodaIcon_Small.png" id="4_4c5gf"]
 [ext_resource type="Texture2D" uid="uid://bif1gkopehvow" path="res://item/textures/thumb/SwingingDoorLockIcon_Small.png" id="4_h3mna"]
 [ext_resource type="Texture2D" uid="uid://cn0pr8dixu5p4" path="res://item/textures/thumb/StretchyGloveIcon_Small.png" id="5_4c5gf"]
 [ext_resource type="Texture2D" uid="uid://c8w4ec56lbxw2" path="res://item/textures/thumb/TapeIcon_Small.png" id="6_h3mna"]
@@ -20,7 +21,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_50gee")
+"texture": ExtResource("7_4c5gf")
 }],
 "loop": 1,
 "name": &"1",
@@ -28,7 +29,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_f2voh")
+"texture": ExtResource("2_50gee")
 }],
 "loop": 1,
 "name": &"2",
@@ -36,7 +37,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_h3mna")
+"texture": ExtResource("4_4c5gf")
 }],
 "loop": 1,
 "name": &"3",
@@ -44,7 +45,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_4c5gf")
+"texture": ExtResource("3_f2voh")
 }],
 "loop": 1,
 "name": &"4",
@@ -52,7 +53,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_h3mna")
+"texture": ExtResource("4_h3mna")
 }],
 "loop": 1,
 "name": &"5",
@@ -60,9 +61,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_4c5gf")
+"texture": ExtResource("5_4c5gf")
 }],
 "loop": 1,
 "name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_h3mna")
+}],
+"loop": 1,
+"name": &"7",
 "speed": 5.0
 }]

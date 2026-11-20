@@ -5,3 +5,6 @@ var speed = 2
 func _process(delta: float) -> void:
 	var direction := (transform.basis * Vector3.FORWARD).normalized()
 	position += direction * speed * delta
+
+func _on_despawn_timeout() -> void:
+	queue_free()

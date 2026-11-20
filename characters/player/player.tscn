@@ -332,7 +332,7 @@ offset_bottom = 34.0
 show_behind_parent = true
 position = Vector2(3, 2)
 sprite_frames = ExtResource("6_rpf03")
-animation = &"4"
+animation = &"6"
 centered = false
 
 [node name="Slot2" type="TextureRect" parent="UI/Inventory" index="1" unique_id=1874736875]
@@ -351,7 +351,7 @@ offset_bottom = 34.0
 show_behind_parent = true
 position = Vector2(3, 2)
 sprite_frames = ExtResource("6_rpf03")
-animation = &"6"
+animation = &"1"
 centered = false
 
 [node name="Slot3" type="TextureRect" parent="UI/Inventory" index="2" unique_id=1276878444]
@@ -408,7 +408,7 @@ offset_bottom = 34.0
 show_behind_parent = true
 position = Vector2(3, 2)
 sprite_frames = ExtResource("6_rpf03")
-animation = &"0"
+animation = &"3"
 centered = false
 
 [node name="Stamina" type="Control" parent="UI" index="4" unique_id=434760097]
