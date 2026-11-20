@@ -189,7 +189,10 @@ func use_item(cursor):
 				inventory[cursor] = ITEM.NONE
 				c.anti_hearing()
 				return
-			
+			if c.is_in_group("vending_machine") and c.uses > 0:
+				inventory[cursor] = c.get_item_id()
+				c.use()
+				return
 			
 
 func reach_squared() -> float:

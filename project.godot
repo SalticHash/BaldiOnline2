@@ -119,6 +119,7 @@ use={
 3d_physics/layer_10="Swinging Door"
 3d_physics/layer_11="BlockInteract"
 3d_physics/layer_12="tape"
+3d_physics/layer_13="vending machine"
 
 [rendering]
 

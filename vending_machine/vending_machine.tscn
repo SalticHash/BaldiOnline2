@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b1a0o5ds5od65"]
+
+[ext_resource type="Material" uid="uid://djerxvf78402h" path="res://vending_machine/bsoda_material.tres" id="1_hbqqw"]
+[ext_resource type="Script" uid="uid://k33ileg6xvw6" path="res://vending_machine/vending_machine.gd" id="1_kjqq5"]
+[ext_resource type="AudioStream" uid="uid://cpc2t68hrn3u1" path="res://item/CoinDrop.wav" id="3_87xg8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_52ubq"]
+size = Vector3(0.5, 0.875, 0.25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87xg8"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kjqq5"]
+material = SubResource("StandardMaterial3D_87xg8")
+size = Vector3(0.5, 0.875, 0.25)
+
+[sub_resource type="QuadMesh" id="QuadMesh_52ubq"]
+size = Vector2(0.5, 0.875)
+center_offset = Vector3(0, 0, 0.001)
+
+[node name="VendingMachine" type="Area3D" unique_id=1422243428 groups=["vending_machine"]]
+collision_layer = 4096
+collision_mask = 0
+script = ExtResource("1_kjqq5")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=631804882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.438, 0.125)
+shape = SubResource("BoxShape3D_52ubq")
+
+[node name="Box" type="MeshInstance3D" parent="." unique_id=455337625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.438, 0.125)
+mesh = SubResource("BoxMesh_kjqq5")
+
+[node name="Faceplate" type="MeshInstance3D" parent="." unique_id=933455657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.438, 0.25)
+material_override = ExtResource("1_hbqqw")
+mesh = SubResource("QuadMesh_52ubq")
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=905097303]
+stream = ExtResource("3_87xg8")
+
+[node name="Solic" type="StaticBody3D" parent="." unique_id=1449095015]
+
+[node name="Collision" type="CollisionShape3D" parent="Solic" unique_id=2142879538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.438, 0.125)
+shape = SubResource("BoxShape3D_52ubq")

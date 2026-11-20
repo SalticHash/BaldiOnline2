@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://01heuk6o5srd"]
+
+[ext_resource type="Texture2D" uid="uid://ctn40wcpwr75j" path="res://vending_machine/ZestyMachine_Out.png" id="1_un5t0"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_un5t0")
+uv1_scale = Vector3(2, 1.143, 1)
+uv1_offset = Vector3(0.5, -0.5, 0)
+uv1_triplanar = true
+texture_filter = 0
+texture_repeat = false
