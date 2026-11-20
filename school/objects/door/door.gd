@@ -29,6 +29,7 @@ func change_state(state: bool, request: bool = false):
 	var old_state = open
 	open = state
 	$Collisions/Solid/Collision.set_deferred("disabled", open)
+	$DoorFrame.set_deferred("disabled", open)
 	
 	if state == false:
 		if !request: $Sounds/Close.play()

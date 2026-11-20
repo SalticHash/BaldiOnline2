@@ -84,7 +84,7 @@ func _process(_delta: float) -> void:
 	
 	$UI.show()
 	$Camera/Hand3D.hide()
-	
+	$Camera/Darkness.global_position = $Camera.global_position
 	$UI/NotebookAmount.text = str(Server.notebooks) + "/7"
 	$UI/Stamina/Needle.position.x = \
 	remap(stamina, 0.0, 1.0, $UI/Stamina/Start.position.x, $UI/Stamina/End.position.x)

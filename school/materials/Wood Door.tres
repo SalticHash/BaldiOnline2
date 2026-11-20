@@ -1,6 +1,6 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d1buc50qw4ra0"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d1buc50qw4ra0"]
 
-[ext_resource type="Texture2D" uid="uid://d2eiboqr53t20" path="res://school/textures/WoodDoor.png" id="1_5juaj"]
+[ext_resource type="Texture2D" uid="uid://d2eiboqr53t20" path="res://school/objects/door/textures/back/WoodDoor.png" id="1_5juaj"]
 
 [resource]
 resource_name = "Wood Door"

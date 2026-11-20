@@ -1,12 +1,9 @@
 extends Area3D
 
-@export var color: int = 0 :
-	set(value):
-		color = value
-		$Sprite.animation = str(color)
-
+@export var color: int = 0
 func _ready() -> void:
 	$AnimationPlayer.play("hover")
+	$Sprite.play(str(color))
 
 func _process(_delta: float) -> void:
 	$Collision.disabled = !visible

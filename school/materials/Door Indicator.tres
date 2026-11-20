@@ -1,6 +1,6 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b48e5jm3daxin"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b48e5jm3daxin"]
 
-[ext_resource type="Texture2D" uid="uid://cmy1efgkvu5rl" path="res://school/textures/Door.png" id="1_1lty8"]
+[ext_resource type="Texture2D" uid="uid://cmy1efgkvu5rl" path="res://school/objects/door/textures/front/Door.png" id="1_1lty8"]
 
 [resource]
 resource_name = "Door Indicator"

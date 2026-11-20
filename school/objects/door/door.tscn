@@ -4,11 +4,15 @@
 [ext_resource type="Material" uid="uid://ke54s3cdrg1i" path="res://school/materials/Wall.tres" id="2_7h1nw"]
 [ext_resource type="ArrayMesh" uid="uid://fqct0au6b7rt" path="res://school/objects/door/door_mesh.tres" id="2_gk5ps"]
 [ext_resource type="SpriteFrames" uid="uid://cnny8t7fh4cnp" path="res://school/objects/door/door_spriteframes.tres" id="2_h85xk"]
+[ext_resource type="SpriteFrames" uid="uid://baavpwx5doab4" path="res://school/objects/door/door_back_spriteframes.tres" id="4_il1vu"]
 [ext_resource type="AudioStream" uid="uid://dflu630q30eqi" path="res://school/objects/door/Doors_StandardOpen.wav" id="4_rcmh0"]
 [ext_resource type="AudioStream" uid="uid://buhst0717iosj" path="res://school/objects/door/Doors_StandardShut.wav" id="5_iffc6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n1w0f"]
-size = Vector3(0.4, 0.88, 0.08)
+size = Vector3(0.31730956, 0.88, 0.08)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_il1vu"]
+size = Vector3(0.084301755, 0.88, 0.08)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4uyul"]
 data = PackedVector3Array(-0.396, 0, 0.7487, -1, 0, -1, -0.396, 0, -1, 1, 0, 1, 0.3971, 0, -1, 1, 0, -1, 1, 0, 1, 0.3971, 0, 0.7487, 0.3971, 0, -1, -0.396, 0, 0.7487, -1, 0, 1, -1, 0, -1, 1, 0, 1, -0.396, 0, 0.7487, 0.3971, 0, 0.7487, -0.396, 0, 0.7487, 1, 0, 1, -1, 0, 1)
@@ -27,9 +31,13 @@ script = ExtResource("1_i13wh")
 front_material = ExtResource("2_7h1nw")
 back_material = ExtResource("2_7h1nw")
 
-[node name="Trigger" type="CollisionShape3D" parent="." unique_id=392822068]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
+[node name="DoorFrame" type="CollisionShape3D" parent="." unique_id=392822068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041345224, -0.06, 0)
 shape = SubResource("BoxShape3D_n1w0f")
+
+[node name="Hinge" type="CollisionShape3D" parent="." unique_id=1880402942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15784912, -0.06, 0)
+shape = SubResource("BoxShape3D_il1vu")
 
 [node name="Collisions" type="Node3D" parent="." unique_id=735002324]
 
@@ -68,7 +76,7 @@ pixel_size = 0.0078
 double_sided = false
 alpha_cut = 1
 texture_filter = 0
-sprite_frames = ExtResource("2_h85xk")
+sprite_frames = ExtResource("4_il1vu")
 animation = &"normal_close"
 
 [node name="DoorSpriteFront" type="AnimatedSprite3D" parent="Sprites" unique_id=151787535]
@@ -78,7 +86,7 @@ double_sided = false
 alpha_cut = 1
 texture_filter = 0
 sprite_frames = ExtResource("2_h85xk")
-animation = &"faculty_close"
+animation = &"normal_close"
 
 [node name="Sounds" type="Node3D" parent="." unique_id=935550768]
 

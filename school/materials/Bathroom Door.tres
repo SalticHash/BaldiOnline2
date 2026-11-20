@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://c4rcnhh076wcj"]
 
-[ext_resource type="Texture2D" uid="uid://bfi8rvq1fl5ae" path="res://school/textures/Restroom Door M.png" id="1_i8822"]
+[ext_resource type="Texture2D" uid="uid://bfi8rvq1fl5ae" path="res://school/objects/door/textures/front/Restroom Door M.png" id="1_i8822"]
 
 [resource]
 resource_name = "Bathroom Door"
