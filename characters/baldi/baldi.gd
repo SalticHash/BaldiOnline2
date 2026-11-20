@@ -15,12 +15,13 @@ func _physics_process(delta: float) -> void:
 	if $Area.has_overlapping_bodies() and !has_node(locker) and apple <= 0.0:
 		for b in $Area.get_overlapping_bodies():
 			if b.lost: break
-			if b.has_item(b.ITEM.APPLE):
-				b.set_item(b.ITEM.NONE)
+			var i = b.has_item(b.ITEM.APPLE)
+			if i != -1:
+				b.set_item(i, b.ITEM.NONE)
 				apple = 15.0
 				get_apple.rpc()
 				break
-			b.lose()
+			b.lose(self)
 	
 	SLAP_INTERVAL = 1.2 - (Server.notebooks * 0.1)
 	if apple > 0.0:
@@ -29,6 +30,8 @@ func _physics_process(delta: float) -> void:
 	if has_node(locker) or apple > 0.0:
 		slap_buffer = 0.0
 		slap_interval = SLAP_INTERVAL
+		velocity = Vector3.ZERO
+		move_and_slide()
 		return
 	slap_buffer -= delta
 	if slap_interval > 0.0: slap_interval -= delta
@@ -81,12 +84,16 @@ func get_apple():
 	$ThankAppleSound.play()
 	
 func _process(_delta: float) -> void:
-	if apple < 10.0 and apple > 0.0: 
-		if $EatSound/Timer.is_stopped():
-			$EatSound/Timer.start()
-		if !$Sprite.is_playing(): $Sprite.play("apple")
+	if apple > 0.0:
+		if apple <= 10.0:
+			if $EatSound/Timer.is_stopped():
+				$EatSound/Timer.start()
+			if !$Sprite.is_playing(): $Sprite.play("apple")
+		else:
+			$Sprite.animation = "apple"
 	else:
 		$EatSound/Timer.stop()
+
 
 	if multiplayer.get_unique_id() != id: return
 	var v = remap(slap_interval, SLAP_INTERVAL, 0.0, $UI/Stamina/Start.position.x - 96.0, $UI/Stamina/End.position.x)

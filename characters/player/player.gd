@@ -61,6 +61,13 @@ func enter_locker(path):
 		return
 	locker_inst.enter_locker.rpc()
 	locker = path
+	entered_locker.rpc()
+
+@rpc("authority","call_local","reliable")
+func entered_locker():
+	$VoiceChat/Voice.bus = &"Muffled"
+	hide()
+	$Collision.disabled = true
 
 @rpc("any_peer","call_local","reliable")
 func exit_locker():
@@ -68,21 +75,28 @@ func exit_locker():
 	var locker_inst = get_node(locker)
 	locker_inst.enter_locker.rpc()
 	locker = NodePath("")
-	
-func _process(_delta: float) -> void:
-	if has_node(locker):
-		$VoiceChat/Voice.bus = &"Muffled"
-		$Sprite.hide()
-		$Collision.disabled = true
-	else:
-		$VoiceChat/Voice.bus = &"Master"
-		$Sprite.show()
-		$Collision.disabled = false
-		
+	exited_locker.rpc()
+
+@rpc("authority","call_local","reliable")
+func exited_locker():
+	$VoiceChat/Voice.bus = &"Master"
+	show()
+	$Collision.disabled = false
+
+func _process(delta: float) -> void:
 	if multiplayer.get_unique_id() != id: return
-	if lost: return
+	if lost:
+		var s = $Camera/Darkness.mesh.size.x
+		var l = 0.5
+		if s <= l:
+			$UI/Darkness.show()
+			$Lose.stop()
+			return
+		s = clampf(s - (delta * 80 / 1.2), l, 80.5)
+		$Camera/Darkness.mesh.size = Vector3(s, 80.5, s)
 	
 	$UI.show()
+	$Camera/Darkness.show()
 	$Camera/Hand3D.hide()
 	$Camera/Darkness.global_position = $Camera.global_position
 	$UI/NotebookAmount.text = str(Server.notebooks) + "/7"
@@ -212,20 +226,28 @@ func reach_squared() -> float:
 func play_sound(sound):
 	$Sounds.get_node(sound).play()
 
-func lose():
+func lose(b):
 	if !is_multiplayer_authority(): return
 	if lost: return
 	lost = true
-	play_sound.rpc("lose")
+	got_by_baldi.rpc(b.get_path())
 
-func has_item(item: ITEM) -> bool:
+@rpc("authority", "call_local", "reliable")
+func got_by_baldi(path):
+	hide()
+	if multiplayer.get_unique_id() != id: return
+	$UI/Baldi.show()
+	$Lose.play()
+	get_node(path).hide()
+
+func has_item(item: ITEM) -> int:
 	if !is_multiplayer_authority():
 		push_error("Cant check as is not authority")
 		return false
-	return inventory[cursor_pos] == item
+	return inventory.find(item)
 
-func set_item(item: ITEM) -> void:
+func set_item(slot: int, item: ITEM) -> void:
 	if !is_multiplayer_authority():
 		push_error("Cant set as is not authority")
 		return
-	inventory[cursor_pos] = item
+	inventory[slot] = item
