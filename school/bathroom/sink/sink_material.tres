@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bj7rr2qbbow0o"]
+
+[ext_resource type="Texture2D" uid="uid://cdjkxx61gnwlq" path="res://school/bathroom/sink/Triple Bowl Pot Sink Texture.png" id="1_rg0tf"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_texture = ExtResource("1_rg0tf")
+texture_filter = 0

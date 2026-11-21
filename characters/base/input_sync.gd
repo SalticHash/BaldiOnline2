@@ -5,7 +5,7 @@ class_name BaseInputSync
 const DPI: float = 0.01
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if !is_multiplayer_authority():
 		process_mode = Node.PROCESS_MODE_DISABLED
 		return

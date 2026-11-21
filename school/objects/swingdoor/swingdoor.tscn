@@ -69,12 +69,13 @@ properties/1/path = NodePath(".:locked")
 properties/1/spawn = true
 properties/1/replication_mode = 1
 
-[node name="Swinging Door" type="Area3D" unique_id=1266870234 groups=["swinging_door"]]
+[node name="Swinging Door" type="Area3D" unique_id=1266870234 groups=["interact"]]
 collision_layer = 4
 collision_mask = 256
 script = ExtResource("1_xqugo")
 front_material = ExtResource("2_312y2")
 back_material = ExtResource("2_312y2")
+metadata/interact_id = &"swingdoor"
 
 [node name="Trigger" type="CollisionShape3D" parent="." unique_id=898073428]
 shape = SubResource("BoxShape3D_cu1xn")

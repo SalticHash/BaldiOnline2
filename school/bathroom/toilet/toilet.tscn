@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cwyb64r7bm2k"]
+
+[ext_resource type="ArrayMesh" uid="uid://lso6vxqvum81" path="res://school/bathroom/toilet/toilet_mesh.tres" id="1_v60dx"]
+
+[node name="Toilet" type="Node3D" unique_id=1209896241]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=79649736]
+transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("1_v60dx")

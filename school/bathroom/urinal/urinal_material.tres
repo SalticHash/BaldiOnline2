@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://vwolsqq4o440"]
+
+[ext_resource type="Texture2D" uid="uid://clt2fxgh8nngq" path="res://school/bathroom/urinal/Standard Urinal Texture.png" id="1_5ev6w"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_5ev6w")
+texture_filter = 0

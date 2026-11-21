@@ -47,10 +47,11 @@ _data = {
 &"hover": SubResource("Animation_qlib2")
 }
 
-[node name="Item" type="Area3D" unique_id=1310239658 groups=["interact", "item"]]
+[node name="Item" type="Area3D" unique_id=1310239658 groups=["interact"]]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_0yflk")
+metadata/interact_id = &"item"
 
 [node name="Collision" type="CollisionShape3D" parent="." unique_id=1670937426]
 shape = SubResource("BoxShape3D_1d8oa")

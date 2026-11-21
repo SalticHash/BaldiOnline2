@@ -24,12 +24,13 @@ data = PackedVector3Array(-0.396, 0, 0.7487, -1, 0, -1, -0.396, 0, -1, 1, 0, 1, 
 data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0)
 backface_collision = true
 
-[node name="Door" type="Area3D" unique_id=1711912784 groups=["door", "interact"]]
+[node name="Door" type="Area3D" unique_id=1711912784 groups=["interact"]]
 collision_layer = 4
 collision_mask = 1024
 script = ExtResource("1_i13wh")
 front_material = ExtResource("2_7h1nw")
 back_material = ExtResource("2_7h1nw")
+metadata/interact_id = &"door"
 
 [node name="DoorFrame" type="CollisionShape3D" parent="." unique_id=392822068]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041345224, -0.06, 0)

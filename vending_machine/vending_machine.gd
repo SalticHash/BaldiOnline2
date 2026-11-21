@@ -46,4 +46,8 @@ func use_sound() -> void:
 
 func get_item_id() -> int:
 	if crazy: return randi_range(2, 6) #TODO FIX WITH MISSING IDs
-	return 2 if type == "bsoda" else 3
+	match type:
+		"bsoda": return 2
+		"diet": return 3
+		"zesty": return 4
+	return 0

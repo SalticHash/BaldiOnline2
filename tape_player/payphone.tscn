@@ -7,8 +7,8 @@
 size = Vector3(0.25, 1.024, 0.25)
 
 [node name="Payphone" unique_id=200992389 instance=ExtResource("1_mwxky")]
-collision_layer = 4
 phone = true
+metadata/interact_id = &"payphone"
 
 [node name="Sprite" parent="." index="0" unique_id=1916160530]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 0)

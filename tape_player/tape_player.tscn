@@ -13,10 +13,11 @@ properties/0/path = NodePath(".:open")
 properties/0/spawn = true
 properties/0/replication_mode = 2
 
-[node name="TapePlayer" type="Area3D" unique_id=200992389 groups=["tape_player"]]
+[node name="TapePlayer" type="Area3D" unique_id=200992389 groups=["interact"]]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_h0i6t")
+metadata/interact_id = &"tape_player"
 
 [node name="Sprite" type="AnimatedSprite3D" parent="." unique_id=1916160530]
 pixel_size = 0.002

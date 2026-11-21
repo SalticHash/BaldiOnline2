@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ba23ectqgvm8h"]
+
+[ext_resource type="Texture2D" uid="uid://cqgdo252805xo" path="res://school/bathroom/toilet/Toilet Texture.png" id="1_v5jhw"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_v5jhw")
+texture_filter = 0

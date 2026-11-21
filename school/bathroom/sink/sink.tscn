@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ci2q6l3uljvrk"]
+
+[ext_resource type="ArrayMesh" uid="uid://b2f2tfk03ogyx" path="res://school/bathroom/sink/sink_mesh.tres" id="1_66bvh"]
+
+[node name="Sink" type="Node3D" unique_id=188927285]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=2025337777]
+transform = Transform3D(1.12442e-08, 0.1489334, -6.51009e-09, 6.51009e-09, -6.51009e-09, -0.1489334, -0.1489334, 1.12442e-08, -6.51009e-09, -0.8, 0.1252457, -2.324028)
+mesh = ExtResource("1_66bvh")

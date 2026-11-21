@@ -6,7 +6,7 @@ var slapping: bool = false
 var slap_buffer: float = 0.0
 var slap_interval: float = 0.0
 const SLAP_BUFFER: float = 0.167 #10 frames in a 60fps game
-var SLAP_INTERVAL: float = 1.0
+var SLAP_INTERVAL: float = 2.0
 var apple: float = 0.0
 
 func _physics_process(delta: float) -> void:
@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 				break
 			b.lose(self)
 	
-	SLAP_INTERVAL = 1.2 - (Server.notebooks * 0.1)
+	SLAP_INTERVAL = 1.0 - (Server.notebooks * 0.1)
 	if apple > 0.0:
 		apple -= delta
 		if apple <= 0.0: slap_effect(true)
@@ -104,12 +104,10 @@ func _process(_delta: float) -> void:
 	$UI.show()
 	
 	var obj = $Camera/InteractRay.get_collider()
-	if  apple <= 0.0 and obj and obj.is_in_group("interact"):
+	if  apple <= 0.0 and obj and obj.is_in_group("interact") and obj.get_meta(&"interact_id") == &"blue_locker":
 		$UI/Hand.show()
 		if Input.is_action_just_pressed("click"):
-			if obj.is_in_group("blue_locker"):
-				inspect_locker.rpc_id(1, obj.get_path())
-
+			inspect_locker.rpc_id(1, obj.get_path())
 	else: $UI/Hand.hide()
 
 func reach_squared() -> float:

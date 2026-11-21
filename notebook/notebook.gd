@@ -27,5 +27,5 @@ func pickup() -> void:
 		return
 	Server.notebooks += 1
 
-	sender_inst.stamina = 1.0
+	if sender_inst.stamina < 1.0: sender_inst.stamina = 1.0
 	hide()

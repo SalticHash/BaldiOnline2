@@ -34,9 +34,12 @@ var running: bool = false
 var inventory: Array[int] = [0, 0, 0, 0, 0]
 var locker: NodePath = NodePath("")
 var glove_time: float = 0.0
-var stamina: float = 0.0 :
+var stamina: float = 1.0 :
 	set(value):
 		stamina = clampf(value, 0.0, 2.0)
+
+func can_interact() -> bool:
+	return !lost and !has_node(locker)
 
 # Pasto
 # Duracion regenerar (descansando): 3.3s
@@ -123,8 +126,14 @@ func _process(delta: float) -> void:
 	$Camera/Hand3D.hide()
 	$Camera/Darkness.global_position = $Camera.global_position
 	$UI/NotebookAmount.text = str(Server.notebooks) + "/7"
-	$UI/Stamina/Needle.position.x = \
-	snappedi(remap(stamina, 0.0, 1.0, $UI/Stamina/Start.position.x, $UI/Stamina/End.position.x), 2)
+	
+	var pos = $UI/Stamina/Needle.position.x
+	var npos = \
+		remap(stamina, 1.0, 2.0, $UI/Stamina/End.position.x, $UI/Stamina/EndMaxed.position.x) \
+		if stamina > 1.0 else \
+		remap(stamina, 0.0, 1.0, $UI/Stamina/Start.position.x, $UI/Stamina/End.position.x)
+	var tpos = snappedi(npos, 2)
+	$UI/Stamina/Needle.position.x += sign(tpos - pos) * 120 * delta
 	
 	if glove_time > 0.0:
 		$UI/Effects/Glove.show()
@@ -147,49 +156,60 @@ func _process(delta: float) -> void:
 	
 	$Camera.rotation.y = PI if Input.is_action_pressed("flip") else 0.0
 
-	if Input.is_action_just_pressed("scroll_up"):
-		cursor_pos -= 1
-	if Input.is_action_just_pressed("scroll_down"):
-		cursor_pos += 1
-	cursor_pos = wrapi(cursor_pos, 0, inventory.size())
+
 	
 	# Update inventory
+	update_inventory()
+	
+	interact()
+	if Input.is_action_just_pressed("use"):
+		use_item.rpc_id(1, cursor_pos)
+
+func update_inventory():
 	for i in range(inventory.size()):
 		var slot = $UI/Inventory.get_child(i)
+		
 		var bg: ColorRect = slot.get_node("BG")
-		var anim: AnimatedSprite2D = slot.get_node("Item")
 		bg.color = Color.RED if cursor_pos == i else Color.WHITE
+		
+		var anim: AnimatedSprite2D = slot.get_node("Item")
 		var it = inventory[i]
 		var lost_i = it > 9
 		var rid = it - 10 if lost_i else it
 		anim.animation = ("l" if lost_i else "") + str(rid)
 	
-	if Input.is_action_just_pressed("use"):
-		use_item.rpc_id(1, cursor_pos)
-	
-	var obj = $Camera/InteractRay.get_collider()
-	if obj and obj.is_in_group("interact"):
-		$UI/Hand.show()
-		if Input.is_action_just_pressed("click"):
-			if obj.is_in_group("door"): obj.open_door.rpc_id(1)
-			if obj.is_in_group("storage_locker"):
-				obj.get_parent().toggle_locker.rpc_id(1)
-			if obj.is_in_group("blue_locker"):
-				enter_locker.rpc_id(1, obj.get_path())
-				
-			if obj.is_in_group("item"):
-				if !obj.storage_slot or (obj.item_id != 0 or inventory[cursor_pos] != 0):
-					$PickupSound.play()
-				obj.pickup.rpc_id(1, cursor_pos)
-			if obj.is_in_group("notebook"):
-				$NotebookPickupSound.play()
-				$UI/Notebook.stop()
-				$UI/Notebook.play("turn")
-				obj.pickup.rpc_id(1)
-			if obj.is_in_group("alarm_clock"):
-				obj.wind.rpc_id(1)
-	else: $UI/Hand.hide()
+	if !can_interact(): return
+	if Input.is_action_just_pressed("scroll_up"): cursor_pos -= 1
+	if Input.is_action_just_pressed("scroll_down"): cursor_pos += 1
+	cursor_pos = wrapi(cursor_pos, 0, inventory.size())
 
+var interactions = [&"door", &"storage_locker", &"blue_locker", &"alarm_clock", &"item", &"notebook"]
+func interact() -> void:
+	var obj: Node3D = $Camera/InteractRay.get_collider()
+	var interact_id = obj.get_meta(&"interact_id", null) if obj and obj.is_in_group("interact") else null
+	if !interact_id \
+		or interact_id not in interactions \
+		or !can_interact():
+		$UI/Hand.hide()
+		return
+	$UI/Hand.show()
+
+	if !Input.is_action_just_pressed("click"): return
+	match interact_id:
+		&"door": obj.open_door.rpc_id(1)
+		&"storage_locker": obj.get_parent().toggle_locker.rpc_id(1)
+		&"blue_locker": enter_locker.rpc_id(1, obj.get_path())
+		&"alarm_clock": obj.wind.rpc_id(1)
+		&"item":
+			var empty = obj.item_id == 0 and inventory[cursor_pos] == 0
+			if !obj.storage_slot or !empty: $PickupSound.play()
+			obj.pickup.rpc_id(1, cursor_pos)
+		&"notebook":
+			$NotebookPickupSound.play()
+			$UI/Notebook.stop()
+			$UI/Notebook.play("turn")
+			obj.pickup.rpc_id(1)
+	
 @onready var bsoda = preload("res://bsoda/bsoda.tscn")
 @onready var diet = preload("res://bsoda/diet.tscn")
 @onready var alarm_clock = preload("res://alarm_clock/alarm_clock.tscn")
@@ -197,6 +217,8 @@ func _process(delta: float) -> void:
 func use_item(cursor):
 	if !is_multiplayer_authority(): return
 	var item = inventory[cursor]
+	var c = $Camera/InteractRay.get_collider()
+	var interact_id = c.get_meta(&"interact_id") if c and c.is_in_group("interact") else null
 	match item:
 		ITEM.NONE: return
 		ITEM.BSODA, ITEM.DIET:
@@ -208,9 +230,9 @@ func use_item(cursor):
 			inventory[cursor] = ITEM.NONE
 			return
 		ITEM.ALARM_CLOCK:
-			var c = alarm_clock.instantiate()
-			get_parent().get_parent().get_node("Instances").add_child(c, true)
-			c.global_position = global_position
+			var cl = alarm_clock.instantiate()
+			get_parent().get_parent().get_node("Instances").add_child(cl, true)
+			cl.global_position = global_position
 			inventory[cursor] = ITEM.NONE
 			return
 		ITEM.ZESTY:
@@ -219,8 +241,7 @@ func use_item(cursor):
 			inventory[cursor] = ITEM.NONE
 			return
 		ITEM.LOCK:
-			var c = $Camera/InteractRay.get_collider()
-			if !c or !c.is_in_group("swinging_door") or c.locked:
+			if interact_id != &"swinging_door" or c.locked:
 				$InvalidUse.play()
 				return
 			inventory[cursor] = ITEM.NONE
@@ -231,28 +252,22 @@ func use_item(cursor):
 			play_sound.rpc("glove")
 			glove_time = 60.0
 			return
-		ITEM.ANTI_HEARING_TAPE:
-			var c = $Camera/InteractRay.get_collider()
-			if !c or !c.is_in_group("tape_player") or c.phone or !c.open:
+		ITEM.ANTI_HEARING_TAPE, ITEM.LOST_TAPE:
+			if c.interact_id != &"tape_player" or c.phone or !c.open:
 				$InvalidUse.play()
 				return
 			inventory[cursor] = ITEM.NONE
-			c.anti_hearing()
-		ITEM.LOST_TAPE:
-			var c = $Camera/InteractRay.get_collider()
-			if !c or !c.is_in_group("tape_player") or c.phone or !c.open: return
-			inventory[cursor] = ITEM.NONE
-			c.funtime()
+			if item == ITEM.ANTI_HEARING_TAPE: c.anti_hearing()
+			else: c.funtime()
 		ITEM.QUARTER:
-			var c = $Camera/InteractRay.get_collider()
-			if !c:
+			if !interact_id:
 				$InvalidUse.play()
 				return
-			if c.is_in_group("tape_player") and c.phone:
+			if interact_id == &"payphone":
 				inventory[cursor] = ITEM.NONE
 				c.anti_hearing()
 				return
-			if c.is_in_group("vending_machine") and c.uses > 0:
+			if interact_id == &"vending_machine" and c.uses > 0:
 				inventory[cursor] = c.get_item_id()
 				c.use()
 				return
