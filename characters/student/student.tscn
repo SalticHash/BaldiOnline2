@@ -184,6 +184,7 @@ public_visibility = false
 script = ExtResource("3_cdqdi")
 
 [node name="UI" type="Control" parent="." index="9" unique_id=1681700583]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -201,8 +202,6 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -4.0
 offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
