@@ -1,5 +1,6 @@
 extends Area3D
 
+@export var lost: bool = false
 @export var present: bool = false
 @export var storage_slot: bool = false
 @export var item_id: int = 1 :
