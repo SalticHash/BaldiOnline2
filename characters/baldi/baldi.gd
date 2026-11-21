@@ -6,7 +6,7 @@ var slapping: bool = false
 var slap_buffer: float = 0.0
 var slap_interval: float = 0.0
 const SLAP_BUFFER: float = 0.167 #10 frames in a 60fps game
-var SLAP_INTERVAL: float = 1.2
+var SLAP_INTERVAL: float = 1.0
 var apple: float = 0.0
 
 func _physics_process(delta: float) -> void:
