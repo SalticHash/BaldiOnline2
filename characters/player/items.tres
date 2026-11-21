@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cdsyx0gvg8ntc" path="res://item/textures/lost/thumb/Lost_Plush_Icon_Small.png" id="17_6ihea"]
 [ext_resource type="Texture2D" uid="uid://dm24tal1w8kno" path="res://item/textures/lost/thumb/Lost_Puppet_Icon_Small.png" id="18_v6h5l"]
 [ext_resource type="Texture2D" uid="uid://cgqqjhsd5nhi6" path="res://item/textures/lost/thumb/Lost_Tape_Icon_Small.png" id="19_55hho"]
+[ext_resource type="Texture2D" uid="uid://bcib5igu6xfco" path="res://item/textures/lost/thumb/Lost_Train_Icon_Small.png" id="20_c40oj"]
 
 [resource]
 animations = [{
@@ -174,8 +175,11 @@ animations = [{
 "name": &"l8",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_c40oj")
+}],
 "loop": 1,
-"name": &"new_animation",
+"name": &"l9",
 "speed": 5.0
 }]

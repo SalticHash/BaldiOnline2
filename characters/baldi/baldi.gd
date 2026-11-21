@@ -1,6 +1,6 @@
 extends BaseController
 
-const SPEED: float = 450.0
+const SPEED: float = 7.5
 
 var slapping: bool = false
 var slap_buffer: float = 0.0
@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 		slap_effect.rpc()
 	if slap_buffer > 0.0:
 		var direction := (transform.basis * Vector3.FORWARD).normalized()
-		velocity = direction * SPEED * delta
+		velocity = direction * SPEED
 	else:
 		velocity = Vector3.ZERO
 

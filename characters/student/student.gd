@@ -7,24 +7,28 @@ enum ITEM {
 	ZESTY
 }
 
-const SPEED_WALK: float = 80.0
+const SPEED_WALK: float = 1.67
 var walking: bool = false
 var stamina: float = 1.0 :
 	set(value):
 		stamina = clampf(value, 0.0, 1.5)
+var item: int = -1
 
 func _enter_tree() -> void:
 	super()
 	$OwnerSync.set_visibility_for(id, true)
 	$Sprite.skin = skin
 
+func _ready() -> void:
+	if !is_multiplayer_authority(): return
+	item = randi_range(10, 19)
 
 var input_dir: Vector2 = Vector2.ZERO
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if !is_multiplayer_authority(): return
 
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	velocity = direction * SPEED_WALK * delta
+	velocity = direction * SPEED_WALK
 	walking = direction != Vector3.ZERO
 	move_and_slide()
 

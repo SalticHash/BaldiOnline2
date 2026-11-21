@@ -5,14 +5,9 @@
 [ext_resource type="Script" uid="uid://djbcap3ggr2om" path="res://characters/student/input_sync.gd" id="3_cdqdi"]
 [ext_resource type="Script" uid="uid://cd1owv5eqasf2" path="res://characters/student/sprite.gd" id="4_4jdhl"]
 [ext_resource type="Texture2D" uid="uid://trf58n7cv1fj" path="res://characters/player/CursorSprite.png" id="4_lft8o"]
-[ext_resource type="Texture2D" uid="uid://rgm44vm7qmbx" path="res://characters/player/ItemSlotLeft.png" id="5_jupbe"]
-[ext_resource type="SpriteFrames" uid="uid://by1mdtlm1aavo" path="res://characters/player/items.tres" id="6_jdutl"]
-[ext_resource type="Texture2D" uid="uid://0iq5jvqurwn5" path="res://characters/player/ItemSlotMiddle.png" id="7_vi7x3"]
-[ext_resource type="Texture2D" uid="uid://ue3cjeqybias" path="res://characters/player/ItemSlotRight.png" id="8_lxgdn"]
-[ext_resource type="Texture2D" uid="uid://c78xg4h2cgkiy" path="res://characters/player/StaminometerSheet_BG.png" id="9_y4rd7"]
-[ext_resource type="Texture2D" uid="uid://bmt4x781xnsvb" path="res://characters/player/StaminometerSheet_Needle.png" id="10_45vtx"]
-[ext_resource type="Texture2D" uid="uid://c70njx84527l" path="res://characters/player/Staminometer.png" id="11_agqm7"]
-[ext_resource type="Texture2D" uid="uid://b4nu4m3rm0b6t" path="res://characters/player/NotebookIcon_Sheet.png" id="12_iajhu"]
+[ext_resource type="Texture2D" uid="uid://d3xew3irrc6xn" path="res://characters/student/textures/Cloud_Sprite_Large.png" id="7_5du2e"]
+[ext_resource type="SpriteFrames" uid="uid://bdgqjvn5tfq3o" path="res://item/item.tres" id="8_emmfn"]
+[ext_resource type="Texture2D" uid="uid://c0as5bwvav8c6" path="res://characters/student/textures/Cloud_Sprite_Small.png" id="9_tpk6k"]
 [ext_resource type="AudioStream" uid="uid://c5khv4abga2ld" path="res://item/ItemPickup.wav" id="13_m5nl6"]
 [ext_resource type="AudioStream" uid="uid://bnr1df7405ua" path="res://characters/player/NotebookCollect.wav" id="14_gpthi"]
 [ext_resource type="SpriteFrames" uid="uid://bw1vctqndifwh" path="res://characters/student/student.tres" id="17_cdqdi"]
@@ -28,6 +23,9 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath(".:walking")
 properties/1/spawn = true
 properties/1/replication_mode = 2
+properties/2/path = NodePath(".:item")
+properties/2/spawn = true
+properties/2/replication_mode = 2
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_exd8k"]
 
@@ -40,101 +38,6 @@ properties/0/replication_mode = 1
 properties/0/path = NodePath(".:input_dir")
 properties/0/spawn = true
 properties/0/replication_mode = 1
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_icpky"]
-atlas = ExtResource("12_iajhu")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_58jvb"]
-atlas = ExtResource("12_iajhu")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8l73k"]
-atlas = ExtResource("12_iajhu")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aqrcq"]
-atlas = ExtResource("12_iajhu")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d2agh"]
-atlas = ExtResource("12_iajhu")
-region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fpo3a"]
-atlas = ExtResource("12_iajhu")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kyfeq"]
-atlas = ExtResource("12_iajhu")
-region = Rect2(128, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5mkjs"]
-atlas = ExtResource("12_iajhu")
-region = Rect2(192, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yybc7"]
-atlas = ExtResource("12_iajhu")
-region = Rect2(0, 128, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lv4bx"]
-atlas = ExtResource("12_iajhu")
-region = Rect2(64, 128, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jgd8i"]
-atlas = ExtResource("12_iajhu")
-region = Rect2(128, 128, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7b6hw"]
-atlas = ExtResource("12_iajhu")
-region = Rect2(192, 128, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jh3y0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_icpky")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_58jvb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8l73k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aqrcq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d2agh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fpo3a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kyfeq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5mkjs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yybc7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lv4bx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jgd8i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7b6hw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_icpky")
-}],
-"loop": 0,
-"name": &"turn",
-"speed": 24.0
-}]
 
 [node name="Student" unique_id=991214998 groups=["player"] instance=ExtResource("1_2u6e6")]
 collision_mask = 11
@@ -150,7 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51873744, 0)
 
 [node name="InteractRay" type="RayCast3D" parent="Camera" index="0" unique_id=2074744021]
 target_position = Vector3(0, 0, -1)
-collision_mask = 1064
+collision_mask = 4
 hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
@@ -184,7 +87,6 @@ public_visibility = false
 script = ExtResource("3_cdqdi")
 
 [node name="UI" type="Control" parent="." index="9" unique_id=1681700583]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -222,194 +124,41 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_lft8o")
 
-[node name="Inventory" type="HBoxContainer" parent="UI" index="2" unique_id=1917340847]
+[node name="Slot" type="TextureRect" parent="UI" index="2" unique_id=1263946013]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -212.0
-offset_top = 12.0
-offset_right = -12.0
-offset_bottom = 47.0
+offset_left = -71.99988
+offset_top = 7.9999995
+offset_right = -7.999878
+offset_bottom = 72.0
 grow_horizontal = 0
-scale = Vector2(2, 2)
+scale = Vector2(2.5, 2.5)
 pivot_offset_ratio = Vector2(1, 0)
-theme_override_constants/separation = 0
+texture = ExtResource("7_5du2e")
+flip_h = true
 
-[node name="Slot1" type="TextureRect" parent="UI/Inventory" index="0" unique_id=1263946013]
-layout_mode = 2
-texture = ExtResource("5_jupbe")
-
-[node name="BG" type="ColorRect" parent="UI/Inventory/Slot1" index="0" unique_id=1408770380]
-show_behind_parent = true
-layout_mode = 0
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 35.0
-offset_bottom = 34.0
-
-[node name="Item" type="AnimatedSprite2D" parent="UI/Inventory/Slot1" index="1" unique_id=177683670]
-show_behind_parent = true
-position = Vector2(3, 2)
-sprite_frames = ExtResource("6_jdutl")
-animation = &"0"
+[node name="Item" type="AnimatedSprite2D" parent="UI/Slot" index="0" unique_id=177683670]
+position = Vector2(15.199982, 13.2)
+scale = Vector2(0.6, 0.6)
+sprite_frames = ExtResource("8_emmfn")
+animation = &"l0"
 centered = false
 
-[node name="Slot2" type="TextureRect" parent="UI/Inventory" index="1" unique_id=1874736875]
-layout_mode = 2
-texture = ExtResource("7_vi7x3")
-
-[node name="BG" type="ColorRect" parent="UI/Inventory/Slot2" index="0" unique_id=1110042566]
-show_behind_parent = true
-layout_mode = 0
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 35.0
-offset_bottom = 34.0
-
-[node name="Item" type="AnimatedSprite2D" parent="UI/Inventory/Slot2" index="1" unique_id=1670418124]
-show_behind_parent = true
-position = Vector2(3, 2)
-sprite_frames = ExtResource("6_jdutl")
-animation = &"0"
-centered = false
-
-[node name="Slot3" type="TextureRect" parent="UI/Inventory" index="2" unique_id=1276878444]
-layout_mode = 2
-texture = ExtResource("7_vi7x3")
-
-[node name="BG" type="ColorRect" parent="UI/Inventory/Slot3" index="0" unique_id=984280767]
-show_behind_parent = true
-layout_mode = 0
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 35.0
-offset_bottom = 34.0
-
-[node name="Item" type="AnimatedSprite2D" parent="UI/Inventory/Slot3" index="1" unique_id=1815190814]
-show_behind_parent = true
-position = Vector2(3, 2)
-sprite_frames = ExtResource("6_jdutl")
-animation = &"0"
-centered = false
-
-[node name="Slot4" type="TextureRect" parent="UI/Inventory" index="3" unique_id=689759864]
-layout_mode = 2
-texture = ExtResource("7_vi7x3")
-
-[node name="BG" type="ColorRect" parent="UI/Inventory/Slot4" index="0" unique_id=487496629]
-show_behind_parent = true
-layout_mode = 0
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 35.0
-offset_bottom = 34.0
-
-[node name="Item" type="AnimatedSprite2D" parent="UI/Inventory/Slot4" index="1" unique_id=228922274]
-show_behind_parent = true
-position = Vector2(3, 2)
-sprite_frames = ExtResource("6_jdutl")
-animation = &"0"
-centered = false
-
-[node name="Slot5" type="TextureRect" parent="UI/Inventory" index="4" unique_id=1380591096]
-layout_mode = 2
-texture = ExtResource("8_lxgdn")
-
-[node name="BG" type="ColorRect" parent="UI/Inventory/Slot5" index="0" unique_id=1431627700]
-show_behind_parent = true
-layout_mode = 0
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 35.0
-offset_bottom = 34.0
-
-[node name="Item" type="AnimatedSprite2D" parent="UI/Inventory/Slot5" index="1" unique_id=709535841]
-show_behind_parent = true
-position = Vector2(3, 2)
-sprite_frames = ExtResource("6_jdutl")
-animation = &"0"
-centered = false
-
-[node name="Stamina" type="Control" parent="UI" index="3" unique_id=434760097]
+[node name="SmallCloud" type="TextureRect" parent="UI/Slot" index="1" unique_id=715054228]
 layout_mode = 1
-anchors_preset = 3
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -396.0
-offset_top = -176.0
-offset_right = -12.0
-offset_bottom = 16.0
+offset_left = -76.8
+offset_top = 53.600006
+offset_right = -44.8
+offset_bottom = 85.600006
 grow_horizontal = 0
-grow_vertical = 0
-
-[node name="BG" type="TextureRect" parent="UI/Stamina" index="0" unique_id=1072735111]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -328.0
-offset_top = -118.0
-offset_right = -54.0
-offset_bottom = -74.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("9_y4rd7")
-
-[node name="Needle" type="TextureRect" parent="UI/Stamina" index="1" unique_id=2133080298]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 70.0
-offset_right = 62.0
-offset_bottom = 134.0
-texture = ExtResource("10_45vtx")
-
-[node name="FG" type="TextureRect" parent="UI/Stamina" index="2" unique_id=397646860]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -384.0
-offset_top = -192.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("11_agqm7")
-
-[node name="Start" type="Control" parent="UI/Stamina" index="3" unique_id=1193803125]
-anchors_preset = 0
-offset_left = 46.0
-offset_top = 70.0
-offset_right = 46.0
-offset_bottom = 70.0
-
-[node name="End" type="Control" parent="UI/Stamina" index="4" unique_id=1977582400]
-anchors_preset = 0
-offset_left = 324.0
-offset_top = 70.0
-offset_right = 324.0
-offset_bottom = 70.0
-
-[node name="Notebook" type="AnimatedSprite2D" parent="UI" index="4" unique_id=861266042]
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_jh3y0")
-animation = &"turn"
-centered = false
-
-[node name="NotebookAmount" type="Label" parent="UI" index="5" unique_id=1571053740]
-layout_mode = 0
-offset_left = 65.0
-offset_top = 30.0
-offset_right = 139.0
-offset_bottom = 97.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
-text = "0/7"
+scale = Vector2(0.807, 0.807)
+texture = ExtResource("9_tpk6k")
+flip_h = true
 
 [node name="PickupSound" type="AudioStreamPlayer" parent="." index="10" unique_id=49951168]
 stream = ExtResource("13_m5nl6")

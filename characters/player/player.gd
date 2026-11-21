@@ -26,17 +26,27 @@ enum ITEM {
 
 var lost: bool = false
 var cursor_pos: int = 0
-const SPEED_RUN: float = 100.0
-const SPEED_WALK: float = 80.0
-const STAM_LOSS_SPEED: float = 0.25
-const STAM_GAIN_SPEED: float = 0.5
+const SPEED_RUN: float = 2.5
+const SPEED_WALK: float = 1.67
+const STAM_LOSS_SPEED: float = 0.1
+const STAM_GAIN_SPEED: float = 0.2
 var running: bool = false
 var inventory: Array[int] = [0, 0, 0, 0, 0]
 var locker: NodePath = NodePath("")
 var glove_time: float = 0.0
-var stamina: float = 1.0 :
+var stamina: float = 0.0 :
 	set(value):
-		stamina = clampf(value, 0.0, 1.5)
+		stamina = clampf(value, 0.0, 2.0)
+
+# Pasto
+# Duracion regenerar (descansando): 3.3s
+# Duracion regenerar (caminando): 10s
+# Uso al correr: 0
+
+# El resto
+#Duracion regenerar (descansando): 5s
+#Duracion usar (corriendo): 10s
+# Uso al caminar: 0
 
 func _enter_tree() -> void:
 	super()
@@ -58,7 +68,7 @@ func _physics_process(delta: float) -> void:
 	if has_node(locker): return
 	var speed = SPEED_RUN if running and stamina > 0.0 else SPEED_WALK
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	velocity = direction * speed * delta
+	velocity = direction * speed
 
 	move_and_slide()
 
@@ -98,6 +108,7 @@ func exited_locker():
 func _process(delta: float) -> void:
 	if multiplayer.get_unique_id() != id: return
 	if lost:
+		get_node("/root/Game/World/Skybox").hide()
 		var s = $Camera/Darkness.mesh.size.x
 		var l = 0.5
 		if s <= l:
@@ -113,7 +124,7 @@ func _process(delta: float) -> void:
 	$Camera/Darkness.global_position = $Camera.global_position
 	$UI/NotebookAmount.text = str(Server.notebooks) + "/7"
 	$UI/Stamina/Needle.position.x = \
-	remap(stamina, 0.0, 1.0, $UI/Stamina/Start.position.x, $UI/Stamina/End.position.x)
+	snappedi(remap(stamina, 0.0, 1.0, $UI/Stamina/Start.position.x, $UI/Stamina/End.position.x), 2)
 	
 	if glove_time > 0.0:
 		$UI/Effects/Glove.show()
@@ -204,7 +215,7 @@ func use_item(cursor):
 			return
 		ITEM.ZESTY:
 			play_sound.rpc("zesty")
-			stamina = 1.5
+			stamina = 2.0
 			inventory[cursor] = ITEM.NONE
 			return
 		ITEM.LOCK:
@@ -263,8 +274,9 @@ func lose(b):
 
 @rpc("authority", "call_local", "reliable")
 func got_by_baldi(path):
-	hide()
-	if multiplayer.get_unique_id() != id: return
+	if multiplayer.get_unique_id() != id:
+		hide()
+		return
 	$VoiceChat.stop()
 	$UI/Baldi.show()
 	$Lose.play()
