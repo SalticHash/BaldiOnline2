@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://b4nu4m3rm0b6t" path="res://characters/player/NotebookIcon_Sheet.png" id="12_gqopd"]
 [ext_resource type="AudioStream" uid="uid://bnr1df7405ua" path="res://characters/player/NotebookCollect.wav" id="14_icpky"]
 [ext_resource type="Texture2D" uid="uid://cn0pr8dixu5p4" path="res://item/textures/thumb/StretchyGloveIcon_Small.png" id="14_sbttr"]
-[ext_resource type="AudioStream" uid="uid://bn4r1n3g4rk4y" path="res://characters/player/ErrorMaybe.wav" id="15_4cx7u"]
+[ext_resource type="AudioStream" uid="uid://bn4r1n3g4rk4y" path="res://item/ErrorMaybe.wav" id="15_4cx7u"]
 [ext_resource type="AudioStream" uid="uid://b1u4pcxfc3q2w" path="res://characters/player/ChipCrunch.wav" id="15_8l73k"]
 [ext_resource type="AudioStream" uid="uid://df3jsjkyi0hyv" path="res://characters/player/BsodaSpray.wav" id="16_aqrcq"]
 [ext_resource type="AudioStream" uid="uid://dlmodd1aeoqp5" path="res://characters/player/sounds/lose/Lose_Buzz.wav" id="17_jgd8i"]
@@ -359,7 +359,7 @@ offset_bottom = 34.0
 show_behind_parent = true
 position = Vector2(3, 2)
 sprite_frames = ExtResource("6_rpf03")
-animation = &"new_animation"
+animation = &"0"
 centered = false
 
 [node name="Slot2" type="TextureRect" parent="UI/Inventory" index="1" unique_id=1874736875]
@@ -502,6 +502,13 @@ anchors_preset = 0
 offset_left = 314.0
 offset_top = 72.0
 offset_right = 314.0
+offset_bottom = 72.0
+
+[node name="EndMaxed" type="Control" parent="UI/Stamina" index="5" unique_id=272269048]
+anchors_preset = 0
+offset_left = 328.0
+offset_top = 72.0
+offset_right = 328.0
 offset_bottom = 72.0
 
 [node name="Effects" type="VBoxContainer" parent="UI" index="8" unique_id=143944519]

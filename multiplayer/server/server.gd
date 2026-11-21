@@ -16,7 +16,8 @@ var notebooks: int = 0
 var exits: int = 0
 enum TYPE {
 	PLAYER,
-	BALDI
+	BALDI,
+	STUDENT
 }
 func get_type_id(type: int) -> int:
 	for player_id in players.keys():

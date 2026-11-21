@@ -33,19 +33,26 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _process(_delta: float) -> void:
+	$Sprite.yay = $Sounds/yay.playing
 	$Sprite.walking = walking
 	if multiplayer.get_unique_id() != id: return
 
-	$Camera.rotation.y = PI if Input.is_action_pressed("flip") else 0.0
 	$UI.show()
-
+	$UI/Slot/Item.animation = "l" + str(item - 10)
 	
 	var obj = $Camera/InteractRay.get_collider()
 	if obj and obj.is_in_group("interact"):
-		$UI/Hand.show()
+		if obj.is_in_group("door"): $UI/Hand.show()
+		elif obj.is_in_group("item") and obj.item_id > 9: $UI/Hand.show()
+		else: $UI/Hand.hide()
 		if Input.is_action_just_pressed("click"):
 			if obj.is_in_group("door"): obj.open_door.rpc_id(1)
-			if obj.is_in_group("item"): $PickupSound.play()
+			if obj.is_in_group("item") and obj.item_id > 9:
+				if obj.item_id == item:
+					$PickupSound.play()
+					obj.pickup.rpc_id(1)
+				else:
+					$ErrorSound.play()
 	else: $UI/Hand.hide()
 
 func reach_squared() -> float:
@@ -55,3 +62,10 @@ func reach_squared() -> float:
 @rpc("authority", "call_local", "reliable")
 func play_sound(sound):
 	$Sounds.get_node(sound).play()
+
+func got_item():
+	if !is_multiplayer_authority(): return
+	play_sound.rpc("yay")
+	var litem = item
+	item = randi_range(10, 19)
+	if item == litem: item = wrapi(litem - 1, 10, 19)

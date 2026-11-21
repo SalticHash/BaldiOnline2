@@ -8,8 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://d3xew3irrc6xn" path="res://characters/student/textures/Cloud_Sprite_Large.png" id="7_5du2e"]
 [ext_resource type="SpriteFrames" uid="uid://bdgqjvn5tfq3o" path="res://item/item.tres" id="8_emmfn"]
 [ext_resource type="Texture2D" uid="uid://c0as5bwvav8c6" path="res://characters/student/textures/Cloud_Sprite_Small.png" id="9_tpk6k"]
-[ext_resource type="AudioStream" uid="uid://c5khv4abga2ld" path="res://item/ItemPickup.wav" id="13_m5nl6"]
-[ext_resource type="AudioStream" uid="uid://bnr1df7405ua" path="res://characters/player/NotebookCollect.wav" id="14_gpthi"]
+[ext_resource type="AudioStream" uid="uid://cpc2t68hrn3u1" path="res://item/CoinDrop.wav" id="10_emmfn"]
+[ext_resource type="AudioStream" uid="uid://bn4r1n3g4rk4y" path="res://item/ErrorMaybe.wav" id="11_5du2e"]
+[ext_resource type="AudioStream" uid="uid://b7w2cdusir1go" path="res://characters/student/Student_Yay.wav" id="12_emmfn"]
 [ext_resource type="SpriteFrames" uid="uid://bw1vctqndifwh" path="res://characters/student/student.tres" id="17_cdqdi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jh3y0"]
@@ -87,6 +88,7 @@ public_visibility = false
 script = ExtResource("3_cdqdi")
 
 [node name="UI" type="Control" parent="." index="9" unique_id=1681700583]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -161,9 +163,14 @@ texture = ExtResource("9_tpk6k")
 flip_h = true
 
 [node name="PickupSound" type="AudioStreamPlayer" parent="." index="10" unique_id=49951168]
-stream = ExtResource("13_m5nl6")
+stream = ExtResource("10_emmfn")
 max_polyphony = 2
 
-[node name="NotebookPickupSound" type="AudioStreamPlayer" parent="." index="11" unique_id=1445260707]
-stream = ExtResource("14_gpthi")
+[node name="ErrorSound" type="AudioStreamPlayer" parent="." index="11" unique_id=1143442546]
+stream = ExtResource("11_5du2e")
 max_polyphony = 2
+
+[node name="Sounds" type="Node3D" parent="." index="12" unique_id=1235062783]
+
+[node name="yay" type="AudioStreamPlayer3D" parent="Sounds" index="0" unique_id=1456863394]
+stream = ExtResource("12_emmfn")

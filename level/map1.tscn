@@ -46,6 +46,46 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9986928, -0.4510249, -17.0
 [node name="Item2" parent="." unique_id=849496682 instance=ExtResource("7_agfmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9986928, -0.4510249, -17.05837)
 
+[node name="Item29" parent="." unique_id=584718817 instance=ExtResource("7_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9986928, 0.5489751, -13.058371)
+item_id = 10
+
+[node name="Item30" parent="." unique_id=560869356 instance=ExtResource("7_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9986928, 0.5489751, -13.421177)
+item_id = 11
+
+[node name="Item31" parent="." unique_id=684050980 instance=ExtResource("7_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9986928, 0.5489751, -13.810754)
+item_id = 12
+
+[node name="Item32" parent="." unique_id=1164339503 instance=ExtResource("7_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9986928, 0.5489751, -14.280032)
+item_id = 13
+
+[node name="Item33" parent="." unique_id=534001950 instance=ExtResource("7_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9986928, 0.5489751, -14.749204)
+item_id = 14
+
+[node name="Item34" parent="." unique_id=295302429 instance=ExtResource("7_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9986928, 0.5489751, -15.221383)
+item_id = 15
+
+[node name="Item35" parent="." unique_id=1415978435 instance=ExtResource("7_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9986928, 0.5489751, -15.818974)
+item_id = 16
+
+[node name="Item36" parent="." unique_id=1186146501 instance=ExtResource("7_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9986928, 0.5489751, -16.305832)
+item_id = 17
+
+[node name="Item37" parent="." unique_id=1221577337 instance=ExtResource("7_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9986928, 0.5489751, -16.805748)
+item_id = 18
+
+[node name="Item38" parent="." unique_id=1190698051 instance=ExtResource("7_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9986928, 0.5489751, -17.34628)
+item_id = 19
+
 [node name="Item3" parent="." unique_id=1962657859 instance=ExtResource("7_agfmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9986928, -0.4510249, -17.05837)
 

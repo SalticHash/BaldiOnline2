@@ -235,71 +235,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Stamina" type="Control" parent="UI" index="1" unique_id=1876167471]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -396.0
-offset_top = -176.0
-offset_right = -12.0
-offset_bottom = 16.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="BG" type="TextureRect" parent="UI/Stamina" index="0" unique_id=710896578]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -328.0
-offset_top = -118.0
-offset_right = -54.0
-offset_bottom = -74.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("10_mgn76")
-
-[node name="Needle" type="TextureRect" parent="UI/Stamina" index="1" unique_id=2000081450]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 70.0
-offset_right = 62.0
-offset_bottom = 134.0
-texture = ExtResource("11_8irye")
-
-[node name="FG" type="TextureRect" parent="UI/Stamina" index="2" unique_id=1750033020]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -384.0
-offset_top = -192.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("12_7kqed")
-
-[node name="Start" type="Control" parent="UI/Stamina" index="3" unique_id=956579344]
-anchors_preset = 0
-offset_left = 46.0
-offset_top = 70.0
-offset_right = 46.0
-offset_bottom = 70.0
-
-[node name="End" type="Control" parent="UI/Stamina" index="4" unique_id=430399737]
-anchors_preset = 0
-offset_left = 324.0
-offset_top = 70.0
-offset_right = 324.0
-offset_bottom = 70.0
-
-[node name="Hand" type="TextureRect" parent="UI" index="2" unique_id=2030419307]
+[node name="Hand" type="TextureRect" parent="UI" index="1" unique_id=2030419307]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -314,6 +250,56 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("15_hgsi0")
+
+[node name="Stamina" type="Control" parent="UI" index="2" unique_id=1477189079]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -164.0
+offset_right = 382.0
+offset_bottom = 28.0
+grow_vertical = 0
+
+[node name="BG" type="TextureRect" parent="UI/Stamina" index="0" unique_id=148496715]
+layout_mode = 1
+offset_left = 56.0
+offset_top = 74.0
+offset_right = 330.0
+offset_bottom = 118.0
+texture = ExtResource("10_mgn76")
+
+[node name="Needle" type="TextureRect" parent="UI/Stamina" index="1" unique_id=186079483]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 72.0
+offset_right = 330.0
+offset_bottom = 136.0
+texture = ExtResource("11_8irye")
+
+[node name="FG" type="TextureRect" parent="UI/Stamina" index="2" unique_id=775012365]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_7kqed")
+
+[node name="Start" type="Control" parent="UI/Stamina" index="3" unique_id=1577520890]
+anchors_preset = 0
+offset_left = 48.0
+offset_top = 72.0
+offset_right = 48.0
+offset_bottom = 72.0
+
+[node name="End" type="Control" parent="UI/Stamina" index="4" unique_id=1451740409]
+anchors_preset = 0
+offset_left = 314.0
+offset_top = 72.0
+offset_right = 314.0
+offset_bottom = 72.0
 
 [node name="ServerSync" type="MultiplayerSynchronizer" parent="." index="12" unique_id=374456494]
 replication_config = SubResource("SceneReplicationConfig_mgn76")

@@ -21,21 +21,25 @@ func _process(_delta: float) -> void:
 	$Collision.disabled = !visible
 
 @rpc("any_peer", "call_local", "reliable")
-func pickup(cursor_pos) -> void:
+func pickup(cursor_pos: int = -1) -> void:
 	if !visible: return
 	
 	if !is_multiplayer_authority():
 		push_error("Not received by authority")
 		return
 	var sender_id = multiplayer.get_remote_sender_id()
-	var is_player = Server.get_id_type(sender_id) == Server.TYPE.PLAYER
+	var type = Server.get_id_type(sender_id) as Server.TYPE
 	var sender_inst = Server.get_id_instance(sender_id)
 	var item_dist = sender_inst.global_position.distance_squared_to(global_position)
 	if item_dist > sender_inst.reach_squared():
 		push_error("Unreachable item picked up")
 		return
-	if !is_player:
-		push_error("Non player picked up")
+	if type == Server.TYPE.STUDENT:
+		sender_inst.got_item()
+		hide()
+		return
+	if type != Server.TYPE.PLAYER and type != Server.TYPE.STUDENT:
+		push_error("Non player or student picked up")
 		return
 	var inv = sender_inst.inventory
 	if storage_slot:
