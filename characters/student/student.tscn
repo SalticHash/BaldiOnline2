@@ -25,6 +25,9 @@ height = 0.6484375
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath(".:walking")
+properties/1/spawn = true
+properties/1/replication_mode = 2
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_exd8k"]
 
@@ -136,8 +139,13 @@ animations = [{
 [node name="Student" unique_id=991214998 groups=["player"] instance=ExtResource("1_2u6e6")]
 collision_mask = 11
 script = ExtResource("2_yr61q")
+skin = 0
 
-[node name="Camera" parent="." index="0" unique_id=1168804949]
+[node name="Collision" type="CollisionShape3D" parent="." index="0" unique_id=1306059409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33589804, 0)
+shape = SubResource("CapsuleShape3D_jh3y0")
+
+[node name="Camera" parent="." index="1" unique_id=1168804949]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51873744, 0)
 
 [node name="InteractRay" type="RayCast3D" parent="Camera" index="0" unique_id=2074744021]
@@ -146,10 +154,6 @@ collision_mask = 1064
 hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="1" unique_id=1306059409]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33589804, 0)
-shape = SubResource("CapsuleShape3D_jh3y0")
 
 [node name="Sprite" type="AnimatedSprite3D" parent="." index="2" unique_id=334879170]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.384, 0)

@@ -1,5 +1,6 @@
 extends BaseController
 
+@export var skin: int = 0
 enum ITEM {
 	NONE,
 	BSODA,
@@ -7,7 +8,7 @@ enum ITEM {
 }
 
 const SPEED_WALK: float = 80.0
-
+var walking: bool = false
 var stamina: float = 1.0 :
 	set(value):
 		stamina = clampf(value, 0.0, 1.5)
@@ -15,6 +16,7 @@ var stamina: float = 1.0 :
 func _enter_tree() -> void:
 	super()
 	$OwnerSync.set_visibility_for(id, true)
+	$Sprite.skin = skin
 
 
 var input_dir: Vector2 = Vector2.ZERO
@@ -23,10 +25,11 @@ func _physics_process(delta: float) -> void:
 
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	velocity = direction * SPEED_WALK * delta
-
+	walking = direction != Vector3.ZERO
 	move_and_slide()
 
 func _process(_delta: float) -> void:
+	$Sprite.walking = walking
 	if multiplayer.get_unique_id() != id: return
 
 	$Camera.rotation.y = PI if Input.is_action_pressed("flip") else 0.0

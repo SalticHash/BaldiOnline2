@@ -10,7 +10,18 @@ enum ITEM {
 	GLOVE,
 	ANTI_HEARING_TAPE,
 	APPLE,
-	ALARM_CLOCK
+	ALARM_CLOCK, #9
+	
+	LOST_BOOK,
+	LOST_CARDS,
+	LOST_CONTROLLER,
+	LOST_FIGURE,
+	LOST_FLOPPY,
+	LOST_MARKER,
+	LOST_PLUSH,
+	LOST_PUPPET,
+	LOST_TAPE,
+	LOST_TRAIN,
 }
 
 var lost: bool = false
@@ -137,7 +148,10 @@ func _process(delta: float) -> void:
 		var bg: ColorRect = slot.get_node("BG")
 		var anim: AnimatedSprite2D = slot.get_node("Item")
 		bg.color = Color.RED if cursor_pos == i else Color.WHITE
-		anim.animation = str(inventory[i])
+		var it = inventory[i]
+		var lost_i = it > 9
+		var rid = it - 10 if lost_i else it
+		anim.animation = ("l" if lost_i else "") + str(rid)
 	
 	if Input.is_action_just_pressed("use"):
 		use_item.rpc_id(1, cursor_pos)
@@ -213,6 +227,11 @@ func use_item(cursor):
 				return
 			inventory[cursor] = ITEM.NONE
 			c.anti_hearing()
+		ITEM.LOST_TAPE:
+			var c = $Camera/InteractRay.get_collider()
+			if !c or !c.is_in_group("tape_player") or c.phone or !c.open: return
+			inventory[cursor] = ITEM.NONE
+			c.funtime()
 		ITEM.QUARTER:
 			var c = $Camera/InteractRay.get_collider()
 			if !c:

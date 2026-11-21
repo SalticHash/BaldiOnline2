@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://cdsyx0gvg8ntc" path="res://item/textures/lost/thumb/Lost_Plush_Icon_Small.png" id="17_6ihea"]
 [ext_resource type="Texture2D" uid="uid://dm24tal1w8kno" path="res://item/textures/lost/thumb/Lost_Puppet_Icon_Small.png" id="18_v6h5l"]
 [ext_resource type="Texture2D" uid="uid://cgqqjhsd5nhi6" path="res://item/textures/lost/thumb/Lost_Tape_Icon_Small.png" id="19_55hho"]
-[ext_resource type="Texture2D" uid="uid://bcib5igu6xfco" path="res://item/textures/lost/thumb/Lost_Train_Icon_Small.png" id="20_brbvr"]
 
 [resource]
 animations = [{
@@ -108,15 +107,7 @@ animations = [{
 "texture": ExtResource("11_c40oj")
 }],
 "loop": 1,
-"name": &"l1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("20_brbvr")
-}],
-"loop": 1,
-"name": &"l10",
+"name": &"l0",
 "speed": 5.0
 }, {
 "frames": [{
@@ -124,7 +115,7 @@ animations = [{
 "texture": ExtResource("12_06syi")
 }],
 "loop": 1,
-"name": &"l2",
+"name": &"l1",
 "speed": 5.0
 }, {
 "frames": [{
@@ -132,7 +123,7 @@ animations = [{
 "texture": ExtResource("13_yo6fy")
 }],
 "loop": 1,
-"name": &"l3",
+"name": &"l2",
 "speed": 5.0
 }, {
 "frames": [{
@@ -140,7 +131,7 @@ animations = [{
 "texture": ExtResource("14_0hjd1")
 }],
 "loop": 1,
-"name": &"l4",
+"name": &"l3",
 "speed": 5.0
 }, {
 "frames": [{
@@ -148,7 +139,7 @@ animations = [{
 "texture": ExtResource("15_a1bju")
 }],
 "loop": 1,
-"name": &"l5",
+"name": &"l4",
 "speed": 5.0
 }, {
 "frames": [{
@@ -156,7 +147,7 @@ animations = [{
 "texture": ExtResource("16_eu1du")
 }],
 "loop": 1,
-"name": &"l6",
+"name": &"l5",
 "speed": 5.0
 }, {
 "frames": [{
@@ -164,7 +155,7 @@ animations = [{
 "texture": ExtResource("17_6ihea")
 }],
 "loop": 1,
-"name": &"l7",
+"name": &"l6",
 "speed": 5.0
 }, {
 "frames": [{
@@ -172,7 +163,7 @@ animations = [{
 "texture": ExtResource("18_v6h5l")
 }],
 "loop": 1,
-"name": &"l8",
+"name": &"l7",
 "speed": 5.0
 }, {
 "frames": [{
@@ -180,6 +171,11 @@ animations = [{
 "texture": ExtResource("19_55hho")
 }],
 "loop": 1,
-"name": &"l9",
+"name": &"l8",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"new_animation",
 "speed": 5.0
 }]

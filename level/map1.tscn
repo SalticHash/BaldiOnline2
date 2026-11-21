@@ -126,6 +126,11 @@ item_id = 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0072045, 0.54897535, -16.518744)
 item_id = 9
 
+[node name="Item28" parent="." unique_id=1849411318 instance=ExtResource("7_agfmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0290313, 0.54897535, -15.791561)
+lost = true
+item_id = 18
+
 [node name="Item23" parent="." unique_id=2034598719 instance=ExtResource("7_agfmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3988292, 0.5489751, -16.518867)
 present = true

@@ -26,16 +26,16 @@ func _on_host_pressed() -> void:
 	multiplayer.multiplayer_peer = peer
 	$UI.hide()
 	start_game()
-	player_connected(1, %Username.text, int(%Type.text))
+	player_connected(1, %Username.text, int(%Type.text), randi_range(0, 11))
 
 
 @rpc("any_peer", "call_local", "reliable")
-func player_connected(id: int, username: String, type: int):
+func player_connected(id: int, username: String, type: int, skin: int = 0):
 	if !is_multiplayer_authority():
 		push_error("CONNECT should be called by AUTHORITY ONLY")
 		return
 	Server.players[id] = {"name": username, "type": type}
-	playerSpawner.spawn({"id": id, "name": username, "type": type})
+	playerSpawner.spawn({"id": id, "name": username, "type": type, "skin": skin})
 
 
 const entities = [
@@ -45,10 +45,12 @@ const entities = [
 ]
 
 func _spawn_player(data) -> Node:
-	var player = entities[data.get("type")].instantiate()
+	var type = data.get("type")
+	var player = entities[type].instantiate()
 	player.id = data.get("id")
 	player.name = str(data.get("id"))
 	player.username = data.get("name")
+	if type == 2: player.skin = data.get("skin")
 	return player
 
 
@@ -65,6 +67,6 @@ func _on_connect_pressed() -> void:
 	await multiplayer.connected_to_server
 	start_game()
 	
-	player_connected.rpc_id(1, multiplayer.get_unique_id(), %Username.text, int(%Type.text))
+	player_connected.rpc_id(1, multiplayer.get_unique_id(), %Username.text, int(%Type.text), randi_range(0, 11))
 	
 	multiplayer.server_disconnected.connect(get_tree().quit)

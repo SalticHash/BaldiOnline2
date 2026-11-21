@@ -1,12 +1,13 @@
 extends Area3D
 
-@export var lost: bool = false
 @export var present: bool = false
 @export var storage_slot: bool = false
 @export var item_id: int = 1 :
 	set(value):
 		item_id = value
-		$Sprite.animation = str(item_id)
+		var lost_i = item_id > 9
+		var rid = item_id - 10 if lost_i else item_id
+		$Sprite.animation = ("l" if lost_i else "") + str(rid)
 
 func _ready() -> void:
 	if storage_slot: return

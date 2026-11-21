@@ -361,7 +361,7 @@ offset_bottom = 34.0
 show_behind_parent = true
 position = Vector2(3, 2)
 sprite_frames = ExtResource("6_rpf03")
-animation = &"0"
+animation = &"new_animation"
 centered = false
 
 [node name="Slot2" type="TextureRect" parent="UI/Inventory" index="1" unique_id=1874736875]
