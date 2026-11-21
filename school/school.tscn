@@ -18,6 +18,12 @@
 [ext_resource type="Material" uid="uid://dtt54smk4dy0m" path="res://school/materials/Grass.tres" id="17_4wclx"]
 [ext_resource type="PackedScene" uid="uid://p11nrh3ja2t8" path="res://school/objects/wooden_door/wooden_door.tscn" id="17_kwye5"]
 [ext_resource type="Material" uid="uid://bmiijxlt2j0xa" path="res://school/materials/Wood Fence.tres" id="18_28008"]
+[ext_resource type="PackedScene" uid="uid://p77ymadapskh" path="res://tape_player/tape_player.tscn" id="19_0avlu"]
+[ext_resource type="PackedScene" uid="uid://brqliosrylxfc" path="res://blue_locker/blue_locker.tscn" id="20_kx2s4"]
+[ext_resource type="PackedScene" uid="uid://b1a0o5ds5od65" path="res://vending_machine/vending_machine.tscn" id="21_1w42d"]
+[ext_resource type="PackedScene" uid="uid://211rcoo2ehg7" path="res://tape_player/payphone.tscn" id="22_m7pcb"]
+[ext_resource type="PackedScene" uid="uid://cebq6sn3gt6cu" path="res://item/item.tscn" id="23_s82pv"]
+[ext_resource type="PackedScene" uid="uid://bjbyy1bqe8lmu" path="res://storage_locker/storage_locker.tscn" id="24_ac773"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_lx6sp"]
 resource_name = "school_Plane_450"
@@ -8041,3 +8047,102 @@ shape = SubResource("ConcavePolygonShape3D_75wqm")
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6.01351, 0.145667, 1.08673)
 door_front = "suplies"
 door_back = "suplies"
+
+[node name="Instances" type="Node3D" parent="." unique_id=1708869834]
+
+[node name="TapePlayer" parent="Instances" unique_id=200992389 instance=ExtResource("19_0avlu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.503134, 0.16620749, 4.977585)
+
+[node name="BlueLocker" parent="Instances" unique_id=1893774405 instance=ExtResource("20_kx2s4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.38099313, -0.29414082, 3.3355107)
+
+[node name="BlueLocker2" parent="Instances" unique_id=1064403308 instance=ExtResource("20_kx2s4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.38099292, -0.29414082, -1.4992242)
+
+[node name="BlueLocker3" parent="Instances" unique_id=2040814448 instance=ExtResource("20_kx2s4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.297517, -0.29414082, -7.703347)
+
+[node name="BlueLocker4" parent="Instances" unique_id=725426101 instance=ExtResource("20_kx2s4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.3727045, -0.29414082, -9.972221)
+
+[node name="BlueLocker5" parent="Instances" unique_id=1817146121 instance=ExtResource("20_kx2s4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.3727045, -0.29414082, -2.3379154)
+
+[node name="BlueLocker6" parent="Instances" unique_id=339508084 instance=ExtResource("20_kx2s4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.3727045, -0.29414082, -0.7729664)
+
+[node name="BlueLocker7" parent="Instances" unique_id=623363032 instance=ExtResource("20_kx2s4")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -7.7296324, -0.29414082, 5.8988895)
+
+[node name="BlueLocker8" parent="Instances" unique_id=256872377 instance=ExtResource("20_kx2s4")]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 12.269652, -0.29414082, 1.1917886)
+
+[node name="VendingMachine" parent="Instances" unique_id=1422243428 instance=ExtResource("21_1w42d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6501045, -0.30914998, -3.809321)
+
+[node name="VendingMachine2" parent="Instances" unique_id=1250146836 instance=ExtResource("21_1w42d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4774628, -0.30914998, -3.806374)
+type = "zesty"
+
+[node name="VendingMachine3" parent="Instances" unique_id=602308029 instance=ExtResource("21_1w42d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15461731, -0.30914998, -7.833587)
+type = "zesty"
+crazy = true
+
+[node name="Payphone" parent="Instances" unique_id=995483553 instance=ExtResource("22_m7pcb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70237255, 0, -7.0910473)
+
+[node name="Item" parent="Instances" unique_id=1203400086 instance=ExtResource("23_s82pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7106786, 0.17581889, -4.8787975)
+present = true
+
+[node name="Item2" parent="Instances" unique_id=189842933 instance=ExtResource("23_s82pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6773214, 0.17581889, -4.9890366)
+present = true
+
+[node name="Item3" parent="Instances" unique_id=574463411 instance=ExtResource("23_s82pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2425833, 0.17581889, -2.2218096)
+present = true
+
+[node name="Item4" parent="Instances" unique_id=1457466467 instance=ExtResource("23_s82pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.499504, 0.17581889, 0.44582748)
+present = true
+
+[node name="Item5" parent="Instances" unique_id=174441414 instance=ExtResource("23_s82pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.554545, 0.17581889, 0.4074024)
+present = true
+
+[node name="Item6" parent="Instances" unique_id=2006156359 instance=ExtResource("23_s82pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.4203825, 0.17581984, -11.792606)
+present = true
+
+[node name="Item7" parent="Instances" unique_id=1039309188 instance=ExtResource("23_s82pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3328032, 0.17581794, -12.77483)
+present = true
+
+[node name="Item8" parent="Instances" unique_id=1382156096 instance=ExtResource("23_s82pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.27529, 0.17581794, -1.0966368)
+present = true
+
+[node name="Item9" parent="Instances" unique_id=587661439 instance=ExtResource("23_s82pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0784826, 0.17581794, -1.2195408)
+present = true
+
+[node name="Item10" parent="Instances" unique_id=1769008582 instance=ExtResource("23_s82pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7356863, 0.17581889, -1.3392837)
+present = true
+
+[node name="Item11" parent="Instances" unique_id=835619546 instance=ExtResource("23_s82pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9678745, 0.17581984, -6.3292503)
+present = true
+
+[node name="Item12" parent="Instances" unique_id=1843431276 instance=ExtResource("23_s82pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.086473, 0.17581984, -13.371025)
+present = true
+
+[node name="Item13" parent="Instances" unique_id=1659645306 instance=ExtResource("23_s82pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4820433, 0.17581984, 11.63287)
+present = true
+
+[node name="Storage Locker" parent="Instances" unique_id=231120480 instance=ExtResource("24_ac773")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.425046, -0.3440745, 13.347285)

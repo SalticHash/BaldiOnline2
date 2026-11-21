@@ -26,7 +26,7 @@ enum ITEM {
 
 var lost: bool = false
 var cursor_pos: int = 0
-const SPEED_RUN: float = 180.0
+const SPEED_RUN: float = 100.0
 const SPEED_WALK: float = 80.0
 const STAM_LOSS_SPEED: float = 0.25
 const STAM_GAIN_SPEED: float = 0.5
