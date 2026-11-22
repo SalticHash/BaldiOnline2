@@ -1,0 +1,242 @@
+[gd_scene format=3 uid="uid://dhxqg7j8648q7"]
+
+[ext_resource type="PackedScene" uid="uid://civ8vhnxcx713" path="res://characters/base/base.tscn" id="1_03p66"]
+[ext_resource type="Script" uid="uid://c4kr0m38og5jw" path="res://characters/playtime/playtime.gd" id="2_3fjq7"]
+[ext_resource type="Texture2D" uid="uid://b7ksf5kqoywbg" path="res://characters/sweep/broom.png" id="3_mn2od"]
+[ext_resource type="Texture2D" uid="uid://bht34lvb3rwvd" path="res://characters/sweep/riding.png" id="4_erimn"]
+[ext_resource type="Script" uid="uid://djbcap3ggr2om" path="res://characters/student/input_sync.gd" id="5_deudc"]
+[ext_resource type="Texture2D" uid="uid://trf58n7cv1fj" path="res://characters/player/CursorSprite.png" id="6_a43dg"]
+[ext_resource type="Texture2D" uid="uid://d3xew3irrc6xn" path="res://characters/student/textures/Cloud_Sprite_Large.png" id="7_saxmy"]
+[ext_resource type="SpriteFrames" uid="uid://bdgqjvn5tfq3o" path="res://item/item.tres" id="8_ngje8"]
+[ext_resource type="Texture2D" uid="uid://c0as5bwvav8c6" path="res://characters/student/textures/Cloud_Sprite_Small.png" id="9_tqjgk"]
+[ext_resource type="AudioStream" uid="uid://cpc2t68hrn3u1" path="res://item/CoinDrop.wav" id="10_578nf"]
+[ext_resource type="AudioStream" uid="uid://bn4r1n3g4rk4y" path="res://item/ErrorMaybe.wav" id="11_ob37t"]
+[ext_resource type="AudioStream" uid="uid://dj0vs40v2gkd3" path="res://characters/playtime/sounds/Mus_Playtime.wav" id="12_5s8wd"]
+[ext_resource type="AudioStream" uid="uid://h71ooppyxiyg" path="res://characters/playtime/sounds/PT_Sad.wav" id="13_cuy42"]
+[ext_resource type="AudioStream" uid="uid://d3agotdltfuxd" path="res://characters/playtime/sounds/PT_Oops.wav" id="14_eryyl"]
+[ext_resource type="AudioStream" uid="uid://bhs32prbks5x7" path="res://characters/playtime/sounds/PT_Laugh.wav" id="15_anqqp"]
+[ext_resource type="AudioStream" uid="uid://dgw5wdh43c0yu" path="res://characters/playtime/sounds/PT_ReadyGo.wav" id="16_ckunm"]
+[ext_resource type="AudioStream" uid="uid://mruanunptabh" path="res://characters/playtime/sounds/PT_Congrats.wav" id="17_p0eyy"]
+[ext_resource type="AudioStream" uid="uid://dou3ea52gyrxm" path="res://characters/playtime/sounds/PT_LetsPlay.wav" id="18_ptidq"]
+[ext_resource type="AudioStream" uid="uid://dgc2s41rcjpxf" path="res://characters/playtime/sounds/PT_WannaPlay.wav" id="19_ibpxe"]
+[ext_resource type="AudioStream" uid="uid://brb4lmmkoyhsq" path="res://characters/playtime/sounds/PT_1.wav" id="20_e15sg"]
+[ext_resource type="AudioStream" uid="uid://naiwkqy2to5q" path="res://characters/playtime/sounds/PT_2.wav" id="21_ckvhy"]
+[ext_resource type="AudioStream" uid="uid://dj8sagmm86aba" path="res://characters/playtime/sounds/PT_3.wav" id="22_ruqev"]
+[ext_resource type="AudioStream" uid="uid://clfn2yly3f062" path="res://characters/playtime/sounds/PT_4.wav" id="23_cwyn8"]
+[ext_resource type="AudioStream" uid="uid://dqb6t256yaugn" path="res://characters/playtime/sounds/PT_5.wav" id="24_h3m6b"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jh3y0"]
+radius = 0.10498047
+height = 0.53125
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jspg8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mn2od")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_erimn")
+}],
+"loop": 1,
+"name": &"ride",
+"speed": 5.0
+}]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_yr61q"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:walking")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:item")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_exd8k"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5dc8e"]
+properties/0/path = NodePath(".:rotation")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_xxgcw"]
+properties/0/path = NodePath(".:input_dir")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Sweep" unique_id=991214998 groups=["playtime"] instance=ExtResource("1_03p66")]
+collision_mask = 11
+script = ExtResource("2_3fjq7")
+skin = 0
+
+[node name="Collision" type="CollisionShape3D" parent="." index="0" unique_id=1306059409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2773043, 0)
+shape = SubResource("CapsuleShape3D_jh3y0")
+
+[node name="Camera" parent="." index="1" unique_id=1168804949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4219647, 0)
+
+[node name="InteractRay" type="RayCast3D" parent="Camera" index="0" unique_id=2074744021]
+target_position = Vector3(0, 0, -1)
+collision_mask = 4
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Sprite" type="AnimatedSprite3D" parent="." index="2" unique_id=334879170]
+transform = Transform3D(0.103, 0, 0, 0, 0.103, 0, 0, 0, 0.103, 0, 0.34649694, 0)
+pixel_size = 0.0265625
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_jspg8")
+animation = &"ride"
+
+[node name="NameLabel" parent="." index="3" unique_id=1285109512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7688177, 0)
+
+[node name="ServerSync" type="MultiplayerSynchronizer" parent="." index="5" unique_id=1932033064]
+replication_config = SubResource("SceneReplicationConfig_yr61q")
+
+[node name="OwnerSync" type="MultiplayerSynchronizer" parent="." index="6" unique_id=1385016999]
+replication_config = SubResource("SceneReplicationConfig_exd8k")
+public_visibility = false
+
+[node name="PeerSync" type="MultiplayerSynchronizer" parent="." index="7" unique_id=951314133]
+replication_config = SubResource("SceneReplicationConfig_5dc8e")
+
+[node name="InputSync" type="MultiplayerSynchronizer" parent="." index="8" unique_id=650982977]
+replication_config = SubResource("SceneReplicationConfig_xxgcw")
+public_visibility = false
+script = ExtResource("5_deudc")
+
+[node name="UI" type="Control" parent="." index="9" unique_id=1681700583]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Cursor" type="ColorRect" parent="UI" index="0" unique_id=1540905466]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Hand" type="TextureRect" parent="UI" index="1" unique_id=494472546]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_a43dg")
+
+[node name="Slot" type="TextureRect" parent="UI" index="2" unique_id=1263946013]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -71.99988
+offset_top = 7.9999995
+offset_right = -7.999878
+offset_bottom = 72.0
+grow_horizontal = 0
+scale = Vector2(2.5, 2.5)
+pivot_offset_ratio = Vector2(1, 0)
+texture = ExtResource("7_saxmy")
+flip_h = true
+
+[node name="Item" type="AnimatedSprite2D" parent="UI/Slot" index="0" unique_id=177683670]
+position = Vector2(15.199982, 13.2)
+scale = Vector2(0.6, 0.6)
+sprite_frames = ExtResource("8_ngje8")
+animation = &"l0"
+centered = false
+
+[node name="SmallCloud" type="TextureRect" parent="UI/Slot" index="1" unique_id=715054228]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -76.8
+offset_top = 53.600006
+offset_right = -44.8
+offset_bottom = 85.600006
+grow_horizontal = 0
+scale = Vector2(0.807, 0.807)
+texture = ExtResource("9_tqjgk")
+flip_h = true
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="." index="10" unique_id=49951168]
+stream = ExtResource("10_578nf")
+max_polyphony = 2
+
+[node name="ErrorSound" type="AudioStreamPlayer" parent="." index="11" unique_id=1143442546]
+stream = ExtResource("11_ob37t")
+max_polyphony = 2
+
+[node name="Music" type="AudioStreamPlayer3D" parent="." index="12" unique_id=1448333397]
+stream = ExtResource("12_5s8wd")
+autoplay = true
+
+[node name="Sounds" type="Node3D" parent="." index="13" unique_id=1235062783]
+
+[node name="sad" type="AudioStreamPlayer3D" parent="Sounds" index="0" unique_id=1456863394]
+stream = ExtResource("13_cuy42")
+
+[node name="oops" type="AudioStreamPlayer3D" parent="Sounds" index="1" unique_id=2056471229]
+stream = ExtResource("14_eryyl")
+
+[node name="laugh" type="AudioStreamPlayer3D" parent="Sounds" index="2" unique_id=1225053893]
+stream = ExtResource("15_anqqp")
+
+[node name="ready" type="AudioStreamPlayer3D" parent="Sounds" index="3" unique_id=1624428990]
+stream = ExtResource("16_ckunm")
+
+[node name="congrats" type="AudioStreamPlayer3D" parent="Sounds" index="4" unique_id=1619323881]
+stream = ExtResource("17_p0eyy")
+
+[node name="lets_play" type="AudioStreamPlayer3D" parent="Sounds" index="5" unique_id=648249816]
+stream = ExtResource("18_ptidq")
+
+[node name="wanna_play" type="AudioStreamPlayer3D" parent="Sounds" index="6" unique_id=777232397]
+stream = ExtResource("19_ibpxe")
+
+[node name="1" type="AudioStreamPlayer3D" parent="Sounds" index="7" unique_id=593802163]
+stream = ExtResource("20_e15sg")
+
+[node name="2" type="AudioStreamPlayer3D" parent="Sounds" index="8" unique_id=1011490864]
+stream = ExtResource("21_ckvhy")
+
+[node name="3" type="AudioStreamPlayer3D" parent="Sounds" index="9" unique_id=2126601557]
+stream = ExtResource("22_ruqev")
+
+[node name="4" type="AudioStreamPlayer3D" parent="Sounds" index="10" unique_id=226299529]
+stream = ExtResource("23_cwyn8")
+
+[node name="5" type="AudioStreamPlayer3D" parent="Sounds" index="11" unique_id=919204051]
+stream = ExtResource("24_h3m6b")

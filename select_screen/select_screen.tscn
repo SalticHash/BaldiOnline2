@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://btirfh7bdma2s" path="res://select_screen/thumb/students/0.png" id="3_3pypb"]
 [ext_resource type="Texture2D" uid="uid://npvsquh0o76d" path="res://select_screen/thumb/sweep.png" id="4_3jqfj"]
 [ext_resource type="Texture2D" uid="uid://w3c1oq07dp45" path="res://select_screen/thumb/students/1.png" id="4_uc1v3"]
+[ext_resource type="Texture2D" uid="uid://c15tuvdhnym3n" path="res://select_screen/thumb/playtime.png" id="5_ddba0"]
 [ext_resource type="Texture2D" uid="uid://eqc0omuutaho" path="res://select_screen/thumb/students/2.png" id="5_lyf50"]
 [ext_resource type="Texture2D" uid="uid://cyysjjll4mkja" path="res://select_screen/thumb/students/3.png" id="6_egpk4"]
 [ext_resource type="Texture2D" uid="uid://b4xw5ov4sju23" path="res://select_screen/thumb/students/4.png" id="7_4vf0k"]
@@ -17,8 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dr3uh3hxcjipf" path="res://select_screen/thumb/students/10.png" id="13_5513x"]
 [ext_resource type="Texture2D" uid="uid://d3ki38xlcvee2" path="res://select_screen/thumb/students/11.png" id="14_ekdey"]
 
-[node name="SelectScreen" type="Control" unique_id=403896841]
-layout_mode = 3
+[node name="SelectScreen" type="HBoxContainer" unique_id=138034390]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -27,39 +27,68 @@ grow_vertical = 2
 script = ExtResource("1_k31k0")
 
 [node name="Character" type="ItemList" parent="." unique_id=1815475621]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 337.0
-grow_vertical = 2
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
 auto_width = true
-item_count = 4
-icon_scale = 0.75
+item_count = 5
+fixed_icon_size = Vector2i(192, 192)
 item_0/text = "Player"
 item_0/icon = ExtResource("1_7mrjn")
 item_1/text = "Baldi"
 item_1/icon = ExtResource("2_4vf0k")
 item_2/text = "Student"
 item_2/icon = ExtResource("3_3pypb")
-item_3/text = "Gotta Sweep"
-item_3/icon = ExtResource("4_3jqfj")
+item_3/text = "Playtime"
+item_3/icon = ExtResource("5_ddba0")
+item_4/text = "Gotta Sweep"
+item_4/icon = ExtResource("4_3jqfj")
+item_4/selectable = false
+item_4/disabled = true
 
-[node name="StudentSkin" type="ItemList" parent="." unique_id=1932495336]
+[node name="Left" type="VBoxContainer" parent="." unique_id=740086614]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+
+[node name="Username" type="LineEdit" parent="Left" unique_id=830418023]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Player #0"
+placeholder_text = "Player Name"
+
+[node name="PlayerList" type="ItemList" parent="Left" unique_id=921865388]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+item_count = 1
+fixed_icon_size = Vector2i(48, 48)
+item_0/text = "Ignacio Carmiol (Baldi) (Host)"
+item_0/icon = ExtResource("2_4vf0k")
+item_0/selectable = false
+
+[node name="Start" type="Button" parent="Left" unique_id=153007221]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Start"
+
+[node name="Deselect" type="Button" parent="Left" unique_id=284780371]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "De-select"
+
+[node name="StudentSkin" type="ItemList" parent="Left" unique_id=1932495336]
+unique_name_in_owner = true
 visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 0.30900002
-offset_left = -800.0
-offset_bottom = -0.23200989
-grow_horizontal = 0
-grow_vertical = 2
+custom_minimum_size = Vector2(0, 192)
+layout_mode = 2
 auto_width = true
 item_count = 12
 max_columns = 4
-same_column_width = true
+icon_mode = 0
 icon_scale = 0.75
+fixed_icon_size = Vector2i(256, 0)
 item_0/icon = ExtResource("3_3pypb")
 item_1/icon = ExtResource("4_uc1v3")
 item_2/icon = ExtResource("13_5513x")
@@ -73,21 +102,7 @@ item_9/icon = ExtResource("8_3jqfj")
 item_10/icon = ExtResource("9_4vf0k")
 item_11/icon = ExtResource("10_3jqfj")
 
-[node name="Deselect" type="Button" parent="." unique_id=1301222851]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -399.0
-offset_top = -64.0
-offset_right = -31.0
-offset_bottom = -25.0
-grow_horizontal = 0
-grow_vertical = 0
-disabled = true
-text = "De-Select"
-
 [connection signal="item_selected" from="Character" to="." method="_on_character_item_selected"]
-[connection signal="pressed" from="Deselect" to="." method="_on_deselect_pressed"]
+[connection signal="text_submitted" from="Left/Username" to="." method="_on_username_text_submitted"]
+[connection signal="pressed" from="Left/Deselect" to="." method="_on_deselect_pressed"]
+[connection signal="item_selected" from="Left/StudentSkin" to="." method="_on_student_skin_item_selected"]

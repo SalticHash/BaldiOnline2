@@ -40,7 +40,7 @@ properties/0/path = NodePath(".:input_dir")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
-[node name="Student" unique_id=991214998 groups=["player"] instance=ExtResource("1_2u6e6")]
+[node name="Student" unique_id=991214998 groups=["student"] instance=ExtResource("1_2u6e6")]
 collision_mask = 11
 script = ExtResource("2_yr61q")
 skin = 0

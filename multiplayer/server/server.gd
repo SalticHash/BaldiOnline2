@@ -14,10 +14,12 @@ func _process(delta: float) -> void:
 
 var notebooks: int = 0
 var exits: int = 0
+const GROUPS: Array[StringName] = [&"player", &"baldi", &"student", &"playtime"]
 enum TYPE {
 	PLAYER,
 	BALDI,
-	STUDENT
+	STUDENT,
+	PLAYTIME
 }
 func get_type_id(type: int) -> int:
 	for player_id in players.keys():
@@ -39,14 +41,26 @@ func get_id_instance(id: int) -> Node3D:
 		return null
 	return get_node("/root/Game/World/Players").get_node(str(id))
 
-func rpc_type(type: int, method: StringName, ...args: Array) -> void:
-	var id = get_type_id(type)
-	if id == -1:
-		push_warning("Invalid ID for rpc_type")
-		return
-	var inst = get_id_instance(id)
-	inst.callv("rpc_id", [id, method] + args)
-	
+func rpc_type(type: TYPE, method: StringName, ...args: Array) -> void:
+	for g in get_tree().get_nodes_in_group(GROUPS[type]):
+		g.callv(&"rpc_id", [g.id, method] + args)
+
+func get_closest(type: TYPE, pos: Vector3) -> Array:
+	var closest: Node3D = null
+	var dist: float = INF
+	for g: Node3D in get_tree().get_nodes_in_group(GROUPS[type]):
+		var d = g.global_position.distance_squared_to(pos)
+		if d < dist:
+			dist = d
+			closest = g
+	return [closest, dist]
+
+func get_player_reach() -> float:
+	var longest: float = 0.0
+	for g: Node3D in get_tree().get_nodes_in_group(&"player"):
+		longest = max(g.reach_squared(), longest)
+	return longest
+
 
 func alert_baldi(noise: int, position: Vector3 = Vector3.INF):
 	if position == Vector3.INF:

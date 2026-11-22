@@ -9,11 +9,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if !is_multiplayer_authority(): return
 	if !open: return
-	var player = Server.get_type_instance(Server.TYPE.PLAYER)
-	if !player: return
-	var player_pos = player.global_position
-	var d2 = player_pos.distance_squared_to(global_position)
-	if d2 > player.reach_squared():
+	var d2 = Server.get_closest(Server.TYPE.PLAYER, global_position)[1]
+	if d2 > Server.get_player_reach():
 		Server.alert_baldi(78, $SP.global_position)
 		change_state.rpc(false)
 

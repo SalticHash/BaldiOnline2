@@ -8,6 +8,9 @@ func _ready() -> void:
 	if OS.get_name() == "Android":
 		OS.request_permissions()
 
+func select_screen():
+	var game = preload("res://select_screen/select_screen.tscn").instantiate()
+	add_child(game)
 
 func start_game():
 	var game = preload("res://level/map1.tscn").instantiate()
@@ -25,8 +28,8 @@ func _on_host_pressed() -> void:
 	peer.create_server(8080, 4)
 	multiplayer.multiplayer_peer = peer
 	$UI.hide()
-	start_game()
-	player_connected(1, %Username.text, int(%Type.text), randi_range(0, 11))
+	select_screen()
+	#player_connected(1, %Username.text, int(%Type.text), randi_range(0, 11))
 
 
 @rpc("any_peer", "call_local", "reliable")
@@ -42,6 +45,7 @@ const entities = [
 	preload("res://characters/player/player.tscn"),
 	preload("res://characters/baldi/baldi.tscn"),
 	preload("res://characters/student/student.tscn"),
+	preload("res://characters/playtime/playtime.tscn"),
 ]
 
 func _spawn_player(data) -> Node:
@@ -65,8 +69,8 @@ func _on_connect_pressed() -> void:
 	multiplayer.multiplayer_peer = peer
 	$UI.hide()
 	await multiplayer.connected_to_server
-	start_game()
+	select_screen()
 	
-	player_connected.rpc_id(1, multiplayer.get_unique_id(), %Username.text, int(%Type.text), randi_range(0, 11))
+	#player_connected.rpc_id(1, multiplayer.get_unique_id(), %Username.text, int(%Type.text), randi_range(0, 11))
 	
 	multiplayer.server_disconnected.connect(get_tree().quit)

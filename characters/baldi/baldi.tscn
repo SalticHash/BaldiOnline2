@@ -314,6 +314,7 @@ replication_config = SubResource("SceneReplicationConfig_8fcnu")
 
 [node name="OwnerSync" type="MultiplayerSynchronizer" parent="." index="15" unique_id=540204516]
 replication_config = SubResource("SceneReplicationConfig_suoda")
+public_visibility = false
 
 [node name="InspectLockerTimer" type="Timer" parent="." index="16" unique_id=1763981538]
 wait_time = 3.5

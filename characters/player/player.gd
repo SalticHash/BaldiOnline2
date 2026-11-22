@@ -227,7 +227,7 @@ func use_item(cursor):
 			b.global_position = global_position
 			b.global_rotation = $Camera.global_rotation
 			play_sound.rpc("bsoda")
-			inventory[cursor] = ITEM.NONE
+			inventory[cursor] = ITEM.BSODA
 			return
 		ITEM.ALARM_CLOCK:
 			var cl = alarm_clock.instantiate()
@@ -241,7 +241,7 @@ func use_item(cursor):
 			inventory[cursor] = ITEM.NONE
 			return
 		ITEM.LOCK:
-			if interact_id != &"swinging_door" or c.locked:
+			if interact_id != &"swingdoor" or c.locked:
 				$InvalidUse.play()
 				return
 			inventory[cursor] = ITEM.NONE
@@ -253,7 +253,7 @@ func use_item(cursor):
 			glove_time = 60.0
 			return
 		ITEM.ANTI_HEARING_TAPE, ITEM.LOST_TAPE:
-			if c.interact_id != &"tape_player" or c.phone or !c.open:
+			if interact_id != &"tape_player" or c.phone or !c.open:
 				$InvalidUse.play()
 				return
 			inventory[cursor] = ITEM.NONE
