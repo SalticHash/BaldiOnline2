@@ -3,7 +3,7 @@ extends Node
 var peer = ENetMultiplayerPeer.new()
 
 func _ready() -> void:
-	$UI/Net/Options/Remote.text = "192.168.50.11"#IP.get_local_addresses()[0]
+	$UI/Remote.text = "192.168.50.11"#IP.get_local_addresses()[0]
 	print(IP.get_local_addresses())
 	if OS.get_name() == "Android":
 		OS.request_permissions()
@@ -53,7 +53,7 @@ func _spawn_player(data) -> Node:
 	var player = entities[type].instantiate()
 	player.id = data.get("id")
 	player.name = str(data.get("id"))
-	player.username = data.get("name")
+	player.username = data.get("username")
 	if type == 2: player.skin = data.get("skin")
 	return player
 
@@ -65,7 +65,7 @@ func _on_connect_pressed() -> void:
 	get_window().size = Vector2(716, 698)
 	get_window().position = Vector2(1844, 810)
 	
-	peer.create_client($UI/Net/Options/Remote.text, 8080)
+	peer.create_client($UI/Remote.text, 8080)
 	multiplayer.multiplayer_peer = peer
 	$UI.hide()
 	await multiplayer.connected_to_server

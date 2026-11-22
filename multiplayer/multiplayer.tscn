@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bvnwjpd0f3oa0"]
 
 [ext_resource type="Script" uid="uid://b4qtvrrr8kdou" path="res://multiplayer/multiplayer.gd" id="1_jiv4u"]
+[ext_resource type="Texture2D" uid="uid://dpo8qfntyypp8" path="res://ForYouBrudah/Textures/Room Selection Screen.png" id="2_nhdnw"]
 
 [node name="Game" type="Node" unique_id=1826616497]
 script = ExtResource("1_jiv4u")
@@ -15,63 +16,44 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Net" type="VBoxContainer" parent="UI" unique_id=2113210344]
+[node name="TextureRect" type="TextureRect" parent="UI" unique_id=290508300]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_nhdnw")
 
-[node name="Options" type="HBoxContainer" parent="UI/Net" unique_id=936315301]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="UI/Net/Options" unique_id=305443328]
-layout_mode = 2
-text = "Direct:"
-
-[node name="Host" type="Button" parent="UI/Net/Options" unique_id=903466371]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Host"
-
-[node name="Connect" type="Button" parent="UI/Net/Options" unique_id=84532377]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Connect"
-
-[node name="Remote" type="LineEdit" parent="UI/Net/Options" unique_id=849003175]
-layout_mode = 2
+[node name="Remote" type="LineEdit" parent="UI" unique_id=849003175]
+layout_mode = 1
+offset_left = 386.0
+offset_top = 617.0
+offset_right = 1006.0
+offset_bottom = 648.0
 size_flags_horizontal = 3
 text = "127.0.0.1"
 placeholder_text = "Remote Host"
 caret_blink = true
 caret_blink_interval = 0.5
 
-[node name="Options2" type="HBoxContainer" parent="UI/Net" unique_id=1567114473]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="UI/Net/Options2" unique_id=841930663]
-layout_mode = 2
-text = "Custom Config:"
-
-[node name="Username" type="LineEdit" parent="UI/Net/Options2" unique_id=1735005906]
+[node name="Host" type="Button" parent="UI" unique_id=903466371]
 unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Player"
-placeholder_text = "Username"
-caret_blink = true
-caret_blink_interval = 0.5
+layout_mode = 0
+offset_left = 511.0
+offset_top = 64.0
+offset_right = 638.0
+offset_bottom = 352.0
+text = "Host"
 
-[node name="Type" type="LineEdit" parent="UI/Net/Options2" unique_id=372782228]
+[node name="Connect" type="Button" parent="UI" unique_id=84532377]
 unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-text = "0"
-placeholder_text = "Character"
-caret_blink = true
-caret_blink_interval = 0.5
+layout_mode = 0
+offset_left = 225.0
+offset_top = 67.0
+offset_right = 353.0
+offset_bottom = 354.0
+text = "Connect"
 
-[connection signal="pressed" from="UI/Net/Options/Host" to="." method="_on_host_pressed"]
-[connection signal="pressed" from="UI/Net/Options/Connect" to="." method="_on_connect_pressed"]
+[connection signal="pressed" from="UI/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="UI/Connect" to="." method="_on_connect_pressed"]

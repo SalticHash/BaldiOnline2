@@ -68,8 +68,8 @@ item_0/selectable = false
 
 [node name="Start" type="Button" parent="Left" unique_id=153007221]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
-disabled = true
 text = "Start"
 
 [node name="Deselect" type="Button" parent="Left" unique_id=284780371]
@@ -104,5 +104,6 @@ item_11/icon = ExtResource("10_3jqfj")
 
 [connection signal="item_selected" from="Character" to="." method="_on_character_item_selected"]
 [connection signal="text_submitted" from="Left/Username" to="." method="_on_username_text_submitted"]
+[connection signal="pressed" from="Left/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Left/Deselect" to="." method="_on_deselect_pressed"]
 [connection signal="item_selected" from="Left/StudentSkin" to="." method="_on_student_skin_item_selected"]

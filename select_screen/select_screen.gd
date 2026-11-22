@@ -20,10 +20,12 @@ var players: Dictionary[int, Dictionary]
 func player_list_changed(up_players: Dictionary[int, Dictionary]):
 	%PlayerList.clear()
 	for player in up_players.values():
+		var id = player.get("id")
 		var username = player.get("username")
 		var character = player.get("type")
 		var skin = player.get("skin")
 		var text = "%s (%s)" % [username, characters[character]]
+		if id == 1: text += " (HOST)"
 		var icon: Texture2D = null
 		if character == 2:
 			icon = load("res://select_screen/thumb/students/%d.png" % skin)
@@ -35,6 +37,8 @@ func _ready() -> void:
 	%StudentSkin.select(0)
 	%Username.text = "Player #" + str(multiplayer.get_unique_id())
 	connected.rpc_id(1)
+	if is_multiplayer_authority():
+		%Start.show()
 
 func _on_character_item_selected(index: int) -> void:
 	%StudentSkin.visible = index == 2
@@ -46,6 +50,7 @@ func _on_deselect_pressed() -> void:
 	
 	%Character.deselect_all()
 	%StudentSkin.hide()
+	selected_character.rpc_id(1, -1)
 
 func _on_student_skin_item_selected(index: int) -> void:
 	var icon = %StudentSkin.get_item_icon(index)
@@ -68,9 +73,10 @@ func connected():
 	if !is_multiplayer_authority(): return
 	var sender_id = multiplayer.get_remote_sender_id()
 	players[sender_id] = {
+		"id": sender_id,
 		"username": "Player #" + str(sender_id),
 		"type": -1,
-		"skin": -1,
+		"skin": -1
 	}
 	player_list_changed.rpc(players)
 	
@@ -90,4 +96,15 @@ func selected_character(type: int, skin: int = -1):
 	players[sender_id]["type"] = type
 	players[sender_id]["skin"] = skin
 	player_list_changed.rpc(players)
-	
+
+@rpc("authority", "call_local", "reliable")
+func started() -> void:
+	hide()
+	get_parent().start_game()
+
+func _on_start_pressed() -> void:
+	if !is_multiplayer_authority(): return
+	started.rpc()
+	Server.players = players
+	for player in players.values():
+		get_parent().playerSpawner.spawn(player)
