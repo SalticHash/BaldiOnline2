@@ -151,4 +151,20 @@ vertical_alignment = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VoiceChat/UI" unique_id=606188526]
 libraries/ = SubResource("AnimationLibrary_2fb1k")
 
+[node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=1014430495]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 260.0
+grow_vertical = 2
+joystick_mode = 1
+joystick_size = 200.0
+tip_size = 100.0
+initial_offset_ratio = Vector2(0.5, 0.75)
+action_left = &"left"
+action_right = &"right"
+action_up = &"forward"
+action_down = &"backward"
+
 [connection signal="timeout" from="VoiceChat/SendRecordingTimer" to="VoiceChat" method="_on_send_recording_timer_timeout"]

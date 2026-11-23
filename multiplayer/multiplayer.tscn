@@ -1,7 +1,24 @@
 [gd_scene format=3 uid="uid://bvnwjpd0f3oa0"]
 
 [ext_resource type="Script" uid="uid://b4qtvrrr8kdou" path="res://multiplayer/multiplayer.gd" id="1_jiv4u"]
-[ext_resource type="Texture2D" uid="uid://dpo8qfntyypp8" path="res://ForYouBrudah/Textures/Room Selection Screen.png" id="2_nhdnw"]
+[ext_resource type="Texture2D" uid="uid://dpo8qfntyypp8" path="res://select_screen/Room Selection Screen.png" id="2_nhdnw"]
+[ext_resource type="Texture2D" uid="uid://cb8cpxqcgf4m3" path="res://select_screen/Room Selection Screen (Opened).png" id="3_uwdxy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwdxy"]
+atlas = ExtResource("2_nhdnw")
+region = Rect2(283, 21, 114, 193)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw2oe"]
+atlas = ExtResource("3_uwdxy")
+region = Rect2(283, 21, 114, 193)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50t2w"]
+atlas = ExtResource("2_nhdnw")
+region = Rect2(123, 22, 105, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0u810"]
+atlas = ExtResource("3_uwdxy")
+region = Rect2(123, 22, 105, 189)
 
 [node name="Game" type="Node" unique_id=1826616497]
 script = ExtResource("1_jiv4u")
@@ -24,6 +41,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_nhdnw")
+stretch_mode = 4
 
 [node name="Remote" type="LineEdit" parent="UI" unique_id=849003175]
 layout_mode = 1
@@ -37,23 +55,31 @@ placeholder_text = "Remote Host"
 caret_blink = true
 caret_blink_interval = 0.5
 
-[node name="Host" type="Button" parent="UI" unique_id=903466371]
+[node name="Host" type="TextureButton" parent="UI" unique_id=1137681370]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 511.0
-offset_top = 64.0
-offset_right = 638.0
-offset_bottom = 352.0
-text = "Host"
+offset_left = 509.0
+offset_top = 41.0
+offset_right = 754.0
+offset_bottom = 382.0
+texture_normal = SubResource("AtlasTexture_uwdxy")
+texture_pressed = SubResource("AtlasTexture_rw2oe")
+texture_hover = SubResource("AtlasTexture_rw2oe")
+texture_focused = SubResource("AtlasTexture_rw2oe")
+stretch_mode = 4
 
-[node name="Connect" type="Button" parent="UI" unique_id=84532377]
+[node name="Connect" type="TextureButton" parent="UI" unique_id=231251671]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 225.0
-offset_top = 67.0
-offset_right = 353.0
-offset_bottom = 354.0
-text = "Connect"
+offset_left = 221.0
+offset_top = 41.0
+offset_right = 414.0
+offset_bottom = 376.0
+texture_normal = SubResource("AtlasTexture_50t2w")
+texture_pressed = SubResource("AtlasTexture_0u810")
+texture_hover = SubResource("AtlasTexture_0u810")
+texture_focused = SubResource("AtlasTexture_0u810")
+stretch_mode = 4
 
 [connection signal="pressed" from="UI/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="UI/Connect" to="." method="_on_connect_pressed"]

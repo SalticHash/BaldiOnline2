@@ -181,6 +181,11 @@ func update_inventory():
 	if !can_interact(): return
 	if Input.is_action_just_pressed("scroll_up"): cursor_pos -= 1
 	if Input.is_action_just_pressed("scroll_down"): cursor_pos += 1
+	if Input.is_action_just_pressed("slot_1"): cursor_pos = 0
+	if Input.is_action_just_pressed("slot_2"): cursor_pos = 1
+	if Input.is_action_just_pressed("slot_3"): cursor_pos = 2
+	if Input.is_action_just_pressed("slot_4"): cursor_pos = 3
+	if Input.is_action_just_pressed("slot_5"): cursor_pos = 4
 	cursor_pos = wrapi(cursor_pos, 0, inventory.size())
 
 var interactions = [&"door", &"storage_locker", &"blue_locker", &"alarm_clock", &"item", &"notebook"]
