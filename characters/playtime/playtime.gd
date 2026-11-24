@@ -62,3 +62,17 @@ func got_item():
 	var litem = item
 	item = randi_range(10, 19)
 	if item == litem: item = wrapi(litem - 1, 10, 19)
+
+var played: bool = false
+func _on_area_body_entered(body: Node3D) -> void:
+	if !is_multiplayer_authority(): return
+	if body == self: return
+	if played: return
+	if body.jumping_rope: return
+	played = true
+	body.start_jumping_rope(self)
+	play_sound.rpc("ready")
+
+func finished():
+	await $"Sounds/5".finished
+	play_sound.rpc("congrats")

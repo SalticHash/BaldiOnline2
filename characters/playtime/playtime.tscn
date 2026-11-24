@@ -321,3 +321,13 @@ stream = ExtResource("21_4y27u")
 
 [node name="5" type="AudioStreamPlayer3D" parent="Sounds" index="11" unique_id=919204051]
 stream = ExtResource("22_8yyib")
+
+[node name="Area" type="Area3D" parent="." index="16" unique_id=1342422180]
+collision_layer = 0
+collision_mask = 256
+
+[node name="Collision" type="CollisionShape3D" parent="Area" index="0" unique_id=842794016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2773043, 0)
+shape = SubResource("CapsuleShape3D_jh3y0")
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]

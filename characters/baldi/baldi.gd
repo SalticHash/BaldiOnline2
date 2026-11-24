@@ -12,6 +12,7 @@ var apple: float = 0.0
 func _physics_process(delta: float) -> void:
 
 	if !is_multiplayer_authority(): return
+	super(delta)
 	if $Area.has_overlapping_bodies() and !has_node(locker) and apple <= 0.0:
 		for b in $Area.get_overlapping_bodies():
 			if b.lost: break
@@ -30,7 +31,8 @@ func _physics_process(delta: float) -> void:
 	if has_node(locker) or apple > 0.0:
 		slap_buffer = 0.0
 		slap_interval = SLAP_INTERVAL
-		velocity = Vector3.ZERO
+		velocity.x = 0
+		velocity.z = 0
 		move_and_slide()
 		return
 	slap_buffer -= delta
@@ -41,11 +43,15 @@ func _physics_process(delta: float) -> void:
 		slap_effect.rpc()
 	if slap_buffer > 0.0:
 		var direction := (transform.basis * Vector3.FORWARD).normalized()
-		velocity = direction * SPEED
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
 	else:
-		velocity = Vector3.ZERO
+		velocity.x = 0
+		velocity.z = 0
 
 	move_and_slide()
+	global_position.y = max(global_position.y, 0.0)
+
 
 var locker: NodePath = NodePath("")
 @rpc("any_peer", "call_local", "reliable")

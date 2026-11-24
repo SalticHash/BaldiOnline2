@@ -18,8 +18,6 @@
 [ext_resource type="AudioStream" uid="uid://cac1t3hv8fxkh" path="res://characters/baldi/sounds/apple/BAL_Apple.wav" id="12_smu0b"]
 [ext_resource type="Texture2D" uid="uid://trf58n7cv1fj" path="res://characters/player/CursorSprite.png" id="15_hgsi0"]
 [ext_resource type="AudioStream" uid="uid://cb21p8l15f2rw" path="res://characters/baldi/sounds/apple/random_eat.tres" id="16_vfqcy"]
-[ext_resource type="Texture2D" uid="uid://bktm2aklgo540" path="res://characters/player/textures/UI/hand_non.png" id="18_02s1v"]
-[ext_resource type="Texture2D" uid="uid://pevf8rtqkrps" path="res://characters/player/textures/UI/hand_press.png" id="19_prnt8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jh3y0"]
 radius = 0.123046875
@@ -128,9 +126,6 @@ animations = [{
 "name": &"talk",
 "speed": 20.0
 }]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ksrfo"]
-radius = 71.0
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_mgn76"]
 properties/0/path = NodePath(".:position")
@@ -304,16 +299,6 @@ offset_left = 314.0
 offset_top = 72.0
 offset_right = 314.0
 offset_bottom = 72.0
-
-[node name="InteractButton" type="TouchScreenButton" parent="UI" index="3" unique_id=196179376]
-position = Vector2(1019, 511)
-scale = Vector2(0.716, 0.716)
-texture_normal = ExtResource("18_02s1v")
-texture_pressed = ExtResource("19_prnt8")
-shape = SubResource("CircleShape2D_ksrfo")
-shape_visible = false
-action = "click"
-visibility_mode = 1
 
 [node name="ServerSync" type="MultiplayerSynchronizer" parent="." index="12" unique_id=374456494]
 replication_config = SubResource("SceneReplicationConfig_mgn76")

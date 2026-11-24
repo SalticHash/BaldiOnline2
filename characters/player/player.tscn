@@ -29,9 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://cpbb8trm053s" path="res://characters/player/textures/UI/run_non.png" id="19_5rrwf"]
 [ext_resource type="Texture2D" uid="uid://jrruauh6hr8a" path="res://characters/player/textures/UI/run_press.png" id="20_gro5v"]
 [ext_resource type="AudioStream" uid="uid://dv2rrt48w5esi" path="res://characters/player/sounds/lose/Lose_Creepy.wav" id="20_w53g3"]
-[ext_resource type="Texture2D" uid="uid://bktm2aklgo540" path="res://characters/player/textures/UI/hand_non.png" id="21_dwr0q"]
 [ext_resource type="AudioStream" uid="uid://bkn4nget0e2qm" path="res://characters/player/sounds/lose/Lose_GlassBoom.wav" id="21_e0pgg"]
-[ext_resource type="Texture2D" uid="uid://pevf8rtqkrps" path="res://characters/player/textures/UI/hand_press.png" id="22_cosaq"]
 [ext_resource type="AudioStream" uid="uid://c20637y6pjura" path="res://characters/player/sounds/lose/Lose_NO.wav" id="22_sbttr"]
 [ext_resource type="AudioStream" uid="uid://nvplv4hnui5c" path="res://characters/player/sounds/lose/Lose_SteamExplode.wav" id="23_6pj1p"]
 [ext_resource type="Texture2D" uid="uid://cge4oppnem641" path="res://characters/player/textures/UI/item_non.png" id="23_bakn2"]
@@ -622,18 +620,8 @@ shape_visible = false
 action = "run"
 visibility_mode = 1
 
-[node name="InteractButton" type="TouchScreenButton" parent="UI" index="12" unique_id=290629241]
-position = Vector2(1019, 511)
-scale = Vector2(0.716, 0.716)
-texture_normal = ExtResource("21_dwr0q")
-texture_pressed = ExtResource("22_cosaq")
-shape = SubResource("CircleShape2D_jh3y0")
-shape_visible = false
-action = "click"
-visibility_mode = 1
-
-[node name="UseButton" type="TouchScreenButton" parent="UI" index="13" unique_id=231205043]
-position = Vector2(1017, 390)
+[node name="UseButton" type="TouchScreenButton" parent="UI" index="12" unique_id=231205043]
+position = Vector2(1017.00006, 502.00003)
 scale = Vector2(0.716, 0.716)
 texture_normal = ExtResource("23_bakn2")
 texture_pressed = ExtResource("24_2xk8k")

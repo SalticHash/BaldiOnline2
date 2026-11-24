@@ -22,8 +22,6 @@ func start_game():
 #################### HOST ######################
 var playerSpawner: MultiplayerSpawner
 func _on_host_pressed() -> void:
-	get_window().size = Vector2(716, 698)
-	get_window().position = Vector2(1844, 54)
 	
 	peer.create_server(8080, 4)
 	multiplayer.multiplayer_peer = peer
@@ -62,8 +60,6 @@ func _spawn_player(data) -> Node:
 
 
 func _on_connect_pressed() -> void:
-	get_window().size = Vector2(716, 698)
-	get_window().position = Vector2(1844, 810)
 	
 	peer.create_client($UI/Remote.text, 8080)
 	multiplayer.multiplayer_peer = peer

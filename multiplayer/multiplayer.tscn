@@ -43,18 +43,6 @@ grow_vertical = 2
 texture = ExtResource("2_nhdnw")
 stretch_mode = 4
 
-[node name="Remote" type="LineEdit" parent="UI" unique_id=849003175]
-layout_mode = 1
-offset_left = 386.0
-offset_top = 617.0
-offset_right = 1006.0
-offset_bottom = 648.0
-size_flags_horizontal = 3
-text = "127.0.0.1"
-placeholder_text = "Remote Host"
-caret_blink = true
-caret_blink_interval = 0.5
-
 [node name="Host" type="TextureButton" parent="UI" unique_id=1137681370]
 unique_name_in_owner = true
 layout_mode = 0
@@ -80,6 +68,18 @@ texture_pressed = SubResource("AtlasTexture_0u810")
 texture_hover = SubResource("AtlasTexture_0u810")
 texture_focused = SubResource("AtlasTexture_0u810")
 stretch_mode = 4
+
+[node name="Remote" type="LineEdit" parent="UI" unique_id=849003175]
+layout_mode = 1
+offset_left = 205.0
+offset_top = 354.0
+offset_right = 359.0
+offset_bottom = 385.0
+size_flags_horizontal = 3
+text = "127.0.0.1"
+placeholder_text = "Remote Host"
+caret_blink = true
+caret_blink_interval = 0.5
 
 [connection signal="pressed" from="UI/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="UI/Connect" to="." method="_on_connect_pressed"]

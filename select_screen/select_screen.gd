@@ -75,7 +75,7 @@ func connected():
 	players[sender_id] = {
 		"id": sender_id,
 		"username": "Player #" + str(sender_id),
-		"type": -1,
+		"type": 0,
 		"skin": -1
 	}
 	player_list_changed.rpc(players)

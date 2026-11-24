@@ -3,9 +3,11 @@ extends Area3D
 var time: float = 30.0
 var rang: bool = false
 func _process(delta: float) -> void:
-	$Sprite.animation = str(get_frame())
 	if !is_multiplayer_authority(): return
-	if rang: return
+	if rang:
+		$Sprite.animation = "3"
+		return
+	$Sprite.animation = str(get_frame())
 	if time <= 0.0:
 		rang = true
 		play_sound.rpc()
@@ -38,6 +40,7 @@ func wind() -> void:
 
 @rpc("authority", "call_local", "reliable")
 func play_sound(ring: bool = true):
+	if rang: return
 	if ring:
 		$Ring.play()
 		$Ticking.stop()

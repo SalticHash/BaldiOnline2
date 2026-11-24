@@ -61,19 +61,22 @@ func _physics_process(delta: float) -> void:
 		$Camera/InteractRay.target_position.z = -100.0 if glove_time > 0.0 else -1.0
 	
 	if !is_multiplayer_authority(): return
+	super(delta)
 	if lost: return
 	if glove_time > 0.0: glove_time -= delta
 	if (!input_dir or has_node(locker)) and stamina < 1.0:
 		stamina += delta * STAM_GAIN_SPEED
-	elif running:
+	elif running and input_dir:
 		stamina -= delta * STAM_LOSS_SPEED
 	
-	if has_node(locker): return
+	if has_node(locker) or (jumping_rope and !jumping): return
 	var speed = SPEED_RUN if running and stamina > 0.0 else SPEED_WALK
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	velocity = direction * speed
+	velocity.x = direction.x * speed
+	velocity.z = direction.z * speed
 
 	move_and_slide()
+	global_position.y = max(global_position.y, 0.0)
 
 @rpc("any_peer","call_local","reliable")
 func enter_locker(path):
@@ -110,6 +113,7 @@ func exited_locker():
 
 func _process(delta: float) -> void:
 	if multiplayer.get_unique_id() != id: return
+	super(delta)
 	if lost:
 		get_node("/root/Game/World/Skybox").hide()
 		var s = $Camera/Darkness.mesh.size.x
