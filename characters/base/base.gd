@@ -78,10 +78,12 @@ func start_jumping_rope(inst): # Called by auth
 	jumping_rope = true
 	$Jumprope/Rope.play()
 	jump_rope.rpc_id(id)
+	jump_count = 0
 
 func finish_jumping_rope(): # Called by auth
 	playtime_inst.finished()
 	jumping_rope = false
+	jump_count = 0
 	$Jumprope/Rope.stop()
 	playtime_inst = null
 

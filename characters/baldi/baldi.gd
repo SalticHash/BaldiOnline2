@@ -35,6 +35,13 @@ func _physics_process(delta: float) -> void:
 		velocity.z = 0
 		move_and_slide()
 		return
+	if !jumping_rope: move(delta)
+	else: velocity = Vector3(0, velocity.y, 0)
+
+	move_and_slide()
+	global_position.y = max(global_position.y, 0.0)
+
+func move(delta: float):
 	slap_buffer -= delta
 	if slap_interval > 0.0: slap_interval -= delta
 	if slapping and slap_interval <= 0.0:
@@ -48,10 +55,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = 0
 		velocity.z = 0
-
-	move_and_slide()
-	global_position.y = max(global_position.y, 0.0)
-
 
 var locker: NodePath = NodePath("")
 @rpc("any_peer", "call_local", "reliable")
@@ -89,7 +92,8 @@ func get_apple():
 	$Sprite.animation = "apple"
 	$ThankAppleSound.play()
 	
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	super(delta)
 	if apple > 0.0:
 		if apple <= 10.0:
 			if $EatSound/Timer.is_stopped():
@@ -102,11 +106,7 @@ func _process(_delta: float) -> void:
 
 
 	if multiplayer.get_unique_id() != id: return
-	var v = remap(slap_interval, SLAP_INTERVAL, 0.0, $UI/Stamina/Start.position.x - 96.0, $UI/Stamina/End.position.x)
-	var tween = create_tween().set_trans(Tween.TRANS_SINE)
-	var y = $UI/Stamina/Needle.position.y
-	tween.tween_property($UI/Stamina/Needle, "position", Vector2(v, y), 0.1)
-		
+	$UI/Stamina.value = remap(slap_interval, 0.0, SLAP_INTERVAL, 1.0, 0.0)
 	$UI.show()
 	
 	var obj = $Camera/InteractRay.get_collider()

@@ -131,13 +131,7 @@ func _process(delta: float) -> void:
 	$Camera/Darkness.global_position = $Camera.global_position
 	$UI/NotebookAmount.text = str(Server.notebooks) + "/7"
 	
-	var pos = $UI/Stamina/Needle.position.x
-	var npos = \
-		remap(stamina, 1.0, 2.0, $UI/Stamina/End.position.x, $UI/Stamina/EndMaxed.position.x) \
-		if stamina > 1.0 else \
-		remap(stamina, 0.0, 1.0, $UI/Stamina/Start.position.x, $UI/Stamina/End.position.x)
-	var tpos = snappedi(npos, 2)
-	$UI/Stamina/Needle.position.x += sign(tpos - pos) * 120 * delta
+	$UI/Stamina.value = stamina
 	
 	if glove_time > 0.0:
 		$UI/Effects/Glove.show()

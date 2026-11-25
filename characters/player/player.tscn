@@ -11,11 +11,9 @@
 [ext_resource type="SpriteFrames" uid="uid://by1mdtlm1aavo" path="res://characters/player/items.tres" id="6_rpf03"]
 [ext_resource type="Texture2D" uid="uid://0iq5jvqurwn5" path="res://characters/player/ItemSlotMiddle.png" id="7_x5dtk"]
 [ext_resource type="Texture2D" uid="uid://ue3cjeqybias" path="res://characters/player/ItemSlotRight.png" id="8_3t07l"]
-[ext_resource type="Texture2D" uid="uid://c78xg4h2cgkiy" path="res://characters/player/StaminometerSheet_BG.png" id="9_on558"]
 [ext_resource type="AudioStream" uid="uid://c5khv4abga2ld" path="res://item/ItemPickup.wav" id="9_rpf03"]
-[ext_resource type="Texture2D" uid="uid://bmt4x781xnsvb" path="res://characters/player/StaminometerSheet_Needle.png" id="10_gqopd"]
-[ext_resource type="Texture2D" uid="uid://c70njx84527l" path="res://characters/player/Staminometer.png" id="11_icpky"]
 [ext_resource type="Texture2D" uid="uid://b4nu4m3rm0b6t" path="res://characters/player/NotebookIcon_Sheet.png" id="12_gqopd"]
+[ext_resource type="PackedScene" uid="uid://cae78tmpqm2rq" path="res://characters/base/MeterProgressBar/MeterProgressBar.tscn" id="13_8v65i"]
 [ext_resource type="AudioStream" uid="uid://bnr1df7405ua" path="res://characters/player/NotebookCollect.wav" id="14_icpky"]
 [ext_resource type="Texture2D" uid="uid://cn0pr8dixu5p4" path="res://item/textures/thumb/StretchyGloveIcon_Small.png" id="14_sbttr"]
 [ext_resource type="AudioStream" uid="uid://bn4r1n3g4rk4y" path="res://item/ErrorMaybe.wav" id="15_4cx7u"]
@@ -262,6 +260,7 @@ public_visibility = false
 script = ExtResource("3_exd8k")
 
 [node name="UI" type="Control" parent="." index="9" unique_id=1681700583]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -490,7 +489,12 @@ sprite_frames = SubResource("SpriteFrames_jh3y0")
 animation = &"turn"
 centered = false
 
-[node name="NotebookAmount" type="Label" parent="UI" index="6" unique_id=1571053740]
+[node name="Stamina" parent="UI" index="6" unique_id=1606940395 instance=ExtResource("13_8v65i")]
+position = Vector2(-2, 484)
+scale = Vector2(2, 2)
+smooth_needle = true
+
+[node name="NotebookAmount" type="Label" parent="UI" index="7" unique_id=1571053740]
 layout_mode = 0
 offset_left = 65.0
 offset_top = 30.0
@@ -499,63 +503,6 @@ offset_bottom = 97.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "0/7"
-
-[node name="Stamina" type="Control" parent="UI" index="7" unique_id=1189722259]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = -164.0
-offset_right = 382.0
-offset_bottom = 28.0
-grow_vertical = 0
-
-[node name="BG" type="TextureRect" parent="UI/Stamina" index="0" unique_id=1255444675]
-layout_mode = 1
-offset_left = 56.0
-offset_top = 74.0
-offset_right = 330.0
-offset_bottom = 118.0
-texture = ExtResource("9_on558")
-
-[node name="Needle" type="TextureRect" parent="UI/Stamina" index="1" unique_id=655713752]
-layout_mode = 0
-offset_left = 314.0
-offset_top = 72.0
-offset_right = 330.0
-offset_bottom = 136.0
-texture = ExtResource("10_gqopd")
-
-[node name="FG" type="TextureRect" parent="UI/Stamina" index="2" unique_id=426068405]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_icpky")
-
-[node name="Start" type="Control" parent="UI/Stamina" index="3" unique_id=1135300226]
-anchors_preset = 0
-offset_left = 48.0
-offset_top = 72.0
-offset_right = 48.0
-offset_bottom = 72.0
-
-[node name="End" type="Control" parent="UI/Stamina" index="4" unique_id=2121945372]
-anchors_preset = 0
-offset_left = 314.0
-offset_top = 72.0
-offset_right = 314.0
-offset_bottom = 72.0
-
-[node name="EndMaxed" type="Control" parent="UI/Stamina" index="5" unique_id=272269048]
-anchors_preset = 0
-offset_left = 328.0
-offset_top = 72.0
-offset_right = 328.0
-offset_bottom = 72.0
 
 [node name="Effects" type="VBoxContainer" parent="UI" index="8" unique_id=143944519]
 layout_mode = 1

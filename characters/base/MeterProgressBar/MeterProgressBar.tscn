@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cae78tmpqm2rq"]
+
+[ext_resource type="Script" uid="uid://bmpgr6u8x2xn0" path="res://characters/base/MeterProgressBar/MeterProgressBar.gd" id="1_5k6wk"]
+[ext_resource type="Texture2D" uid="uid://c78xg4h2cgkiy" path="res://characters/base/MeterProgressBar/tex/bg.png" id="2_5k6wk"]
+[ext_resource type="Texture2D" uid="uid://bmt4x781xnsvb" path="res://characters/base/MeterProgressBar/tex/needle.png" id="3_7hxvs"]
+[ext_resource type="Texture2D" uid="uid://c70njx84527l" path="res://characters/base/MeterProgressBar/tex/fg.png" id="4_jyohk"]
+
+[node name="MeterProgressBar" type="Node2D" unique_id=1606940395]
+script = ExtResource("1_5k6wk")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=444485357]
+position = Vector2(28, 37)
+texture = ExtResource("2_5k6wk")
+centered = false
+
+[node name="Needle" type="Sprite2D" parent="." unique_id=349548002]
+position = Vector2(157, 36)
+texture = ExtResource("3_7hxvs")
+centered = false
+
+[node name="FG" type="Sprite2D" parent="." unique_id=259590800]
+texture = ExtResource("4_jyohk")
+centered = false
+
+[node name="Min" type="Marker2D" parent="." unique_id=625564727]
+position = Vector2(24, 36)
+
+[node name="Max" type="Marker2D" parent="." unique_id=408698063]
+position = Vector2(157, 36)
+
+[node name="Overflow" type="Marker2D" parent="." unique_id=341132869]
+position = Vector2(164, 36)

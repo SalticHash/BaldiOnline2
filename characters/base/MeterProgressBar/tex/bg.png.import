@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c70njx84527l"
-path="res://.godot/imported/Staminometer.png-a0ea6086c50d594b32837046a009c51c.ctex"
+uid="uid://c78xg4h2cgkiy"
+path="res://.godot/imported/bg.png-55598fc81fc98626988db1b116011e1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/player/Staminometer.png"
-dest_files=["res://.godot/imported/Staminometer.png-a0ea6086c50d594b32837046a009c51c.ctex"]
+source_file="res://characters/base/MeterProgressBar/tex/bg.png"
+dest_files=["res://.godot/imported/bg.png-55598fc81fc98626988db1b116011e1a.ctex"]
 
 [params]
 

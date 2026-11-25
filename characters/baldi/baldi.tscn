@@ -12,11 +12,9 @@
 [ext_resource type="AudioStream" uid="uid://ctanpaq6wh7n6" path="res://characters/baldi/slap.wav" id="8_8irye"]
 [ext_resource type="Script" uid="uid://dc4r27qbo58jf" path="res://characters/baldi/input_sync.gd" id="9_8fcnu"]
 [ext_resource type="AudioStream" uid="uid://c11rejkve11mc" path="res://characters/baldi/sounds/BAL_FoundLocker.wav" id="10_7kqed"]
-[ext_resource type="Texture2D" uid="uid://c78xg4h2cgkiy" path="res://characters/player/StaminometerSheet_BG.png" id="10_mgn76"]
-[ext_resource type="Texture2D" uid="uid://bmt4x781xnsvb" path="res://characters/player/StaminometerSheet_Needle.png" id="11_8irye"]
-[ext_resource type="Texture2D" uid="uid://c70njx84527l" path="res://characters/player/Staminometer.png" id="12_7kqed"]
 [ext_resource type="AudioStream" uid="uid://cac1t3hv8fxkh" path="res://characters/baldi/sounds/apple/BAL_Apple.wav" id="12_smu0b"]
 [ext_resource type="Texture2D" uid="uid://trf58n7cv1fj" path="res://characters/player/CursorSprite.png" id="15_hgsi0"]
+[ext_resource type="PackedScene" uid="uid://cae78tmpqm2rq" path="res://characters/base/MeterProgressBar/MeterProgressBar.tscn" id="15_vfqcy"]
 [ext_resource type="AudioStream" uid="uid://cb21p8l15f2rw" path="res://characters/baldi/sounds/apple/random_eat.tres" id="16_vfqcy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jh3y0"]
@@ -213,6 +211,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36694336, 0)
 shape = SubResource("CapsuleShape3D_jh3y0")
 
 [node name="UI" type="Control" parent="." index="11" unique_id=1409917834]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -250,55 +249,10 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("15_hgsi0")
 
-[node name="Stamina" type="Control" parent="UI" index="2" unique_id=1477189079]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = -164.0
-offset_right = 382.0
-offset_bottom = 28.0
-grow_vertical = 0
-
-[node name="BG" type="TextureRect" parent="UI/Stamina" index="0" unique_id=148496715]
-layout_mode = 1
-offset_left = 56.0
-offset_top = 74.0
-offset_right = 330.0
-offset_bottom = 118.0
-texture = ExtResource("10_mgn76")
-
-[node name="Needle" type="TextureRect" parent="UI/Stamina" index="1" unique_id=186079483]
-layout_mode = 0
-offset_left = 314.0
-offset_top = 72.0
-offset_right = 330.0
-offset_bottom = 136.0
-texture = ExtResource("11_8irye")
-
-[node name="FG" type="TextureRect" parent="UI/Stamina" index="2" unique_id=775012365]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_7kqed")
-
-[node name="Start" type="Control" parent="UI/Stamina" index="3" unique_id=1577520890]
-anchors_preset = 0
-offset_left = 48.0
-offset_top = 72.0
-offset_right = 48.0
-offset_bottom = 72.0
-
-[node name="End" type="Control" parent="UI/Stamina" index="4" unique_id=1451740409]
-anchors_preset = 0
-offset_left = 314.0
-offset_top = 72.0
-offset_right = 314.0
-offset_bottom = 72.0
+[node name="Stamina" parent="UI" index="2" unique_id=1606940395 instance=ExtResource("15_vfqcy")]
+position = Vector2(-2, 484)
+scale = Vector2(2, 2)
+overflow_max = 1.0
 
 [node name="ServerSync" type="MultiplayerSynchronizer" parent="." index="12" unique_id=374456494]
 replication_config = SubResource("SceneReplicationConfig_mgn76")
