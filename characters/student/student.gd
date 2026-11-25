@@ -30,6 +30,13 @@ func set_item() -> void:
 var input_dir: Vector2 = Vector2.ZERO
 func _physics_process(delta: float) -> void:
 	if !is_multiplayer_authority(): return
+	var d2 = Server.get_closest(Server.TYPE.PLAYER, global_position)[1]
+	if d2 < 1.0 and !$Sounds/yay.playing:
+		if !$Cloud.visible: play_sound.rpc("ask")
+		$Cloud.show()
+	else:
+		$Cloud.hide()
+	
 	super(delta)
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	velocity = Vector3(direction.x * SPEED_WALK, velocity.y, direction.z * SPEED_WALK)
@@ -44,11 +51,14 @@ func _physics_process(delta: float) -> void:
 var interactions: Array[StringName] = [&"door", &"item"]
 func _process(delta: float) -> void:
 	$Sprite.yay = $Sounds/yay.playing
+	if !$Sounds/yay.playing: $AnimationPlayer.play("RESET")
 	$Sprite.walking = walking
+	var anim = "l" + str(item - (Server.MAX_ITEM + 1))
+	$Cloud/Item.animation = anim
 	if multiplayer.get_unique_id() != id: return
 	super(delta)
 	$UI.show()
-	$UI/Slot/Item.animation = "l" + str(item - (Server.MAX_ITEM + 1))
+	$UI/Slot/Item.animation = anim
 	
 	var obj = $Camera/InteractRay.get_collider()
 	if obj and obj.is_in_group("interact"):
@@ -70,6 +80,9 @@ func _process(delta: float) -> void:
 
 @rpc("authority", "call_local", "reliable")
 func play_sound(sound):
+	if sound == "yay":
+		$Sounds/ask.stop()
+		$AnimationPlayer.play("yay")
 	$Sounds.get_node(sound).play()
 
 func got_item():

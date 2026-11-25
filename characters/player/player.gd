@@ -284,7 +284,7 @@ func use_item(cursor):
 		_:
 			if item <= Server.MAX_ITEM: return
 			if interact_id == &"student" and c.item == item:
-				play_sound.rpc(&"quarter")
+				play_sound.rpc("quarter")
 				c.got_item()
 				inventory[cursor] = ITEM.NONE
 			elif interact_id == &"tape_player" and c.open and item == ITEM.LOST_TAPE:
