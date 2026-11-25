@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://63jwn85hjsc0" path="res://characters/player/BlankItem.png" id="2_3oh8h"]
 [ext_resource type="Texture2D" uid="uid://b7wk0i2abdwi2" path="res://item/textures/thumb/BsodaIcon_Small.png" id="2_50gee"]
+[ext_resource type="Texture2D" uid="uid://bb2emutkai1f1" path="res://item/textures/thumb/SafetyScissorsIcon_Small.png" id="3_06syi"]
 [ext_resource type="Texture2D" uid="uid://cca7dlhvanqp8" path="res://item/textures/thumb/ZestyBarIcon_Small.png" id="3_f2voh"]
 [ext_resource type="Texture2D" uid="uid://b71nircbyaguw" path="res://item/textures/thumb/DietBsodaIcon_Small.png" id="4_4c5gf"]
 [ext_resource type="Texture2D" uid="uid://bif1gkopehvow" path="res://item/textures/thumb/SwingingDoorLockIcon_Small.png" id="4_h3mna"]
@@ -37,6 +38,14 @@ animations = [{
 }],
 "loop": 1,
 "name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_06syi")
+}],
+"loop": 1,
+"name": &"10",
 "speed": 5.0
 }, {
 "frames": [{

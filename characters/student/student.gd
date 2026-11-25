@@ -18,7 +18,14 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	if !is_multiplayer_authority(): return
-	item = randi_range(10, 19)
+	set_item()
+
+func set_item() -> void:
+	var last_item = item
+	var lost = randi_range(1, 10)
+	item = Server.MAX_ITEM + lost
+	if item == last_item:
+		item = wrapi(item - lost, 0, 9) + Server.MAX_ITEM + 1
 
 var input_dir: Vector2 = Vector2.ZERO
 func _physics_process(_delta: float) -> void:
@@ -55,9 +62,6 @@ func _process(_delta: float) -> void:
 						$ErrorSound.play()
 	else: $UI/Hand.hide()
 
-func reach_squared() -> float:
-	var v = (-$Camera/InteractRay.target_position.z + 1.0)
-	return v * v
 
 @rpc("authority", "call_local", "reliable")
 func play_sound(sound):
@@ -66,6 +70,4 @@ func play_sound(sound):
 func got_item():
 	if !is_multiplayer_authority(): return
 	play_sound.rpc("yay")
-	var litem = item
-	item = randi_range(10, 19)
-	if item == litem: item = wrapi(litem - 1, 10, 19)
+	set_item()

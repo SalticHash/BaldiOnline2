@@ -5,7 +5,7 @@ extends Area3D
 @export var item_id: int = 1 :
 	set(value):
 		item_id = value
-		var lost_i = item_id > 9
+		var lost_i = item_id > Server.MAX_ITEM
 		var rid = item_id - 10 if lost_i else item_id
 		$Sprite.animation = ("l" if lost_i else "") + str(rid)
 
@@ -13,7 +13,7 @@ func _ready() -> void:
 	if storage_slot: return
 	$AnimationPlayer.play("hover")
 	if present:
-		item_id = randi_range(1, 8) #TODO DFIX WITH MISSING IDS
+		item_id = randi_range(1, Server.MAX_ITEM)
 		$Sprite.animation = "present"
 		
 

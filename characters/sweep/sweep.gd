@@ -13,7 +13,7 @@ var item: int = -1
 
 func _ready() -> void:
 	if !is_multiplayer_authority(): return
-	item = randi_range(10, 19)
+	item = Server.MAX_ITEM + randi_range(1, 10)
 
 var input_dir: Vector2 = Vector2.ZERO
 func _physics_process(_delta: float) -> void:
@@ -47,10 +47,6 @@ func _process(_delta: float) -> void:
 					#else:
 						#$ErrorSound.play()
 	#else: $UI/Hand.hide()
-
-func reach_squared() -> float:
-	var v = (-$Camera/InteractRay.target_position.z + 1.0)
-	return v * v
 
 @rpc("authority", "call_local", "reliable")
 func play_sound(sound):

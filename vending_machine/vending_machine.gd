@@ -45,7 +45,7 @@ func use_sound() -> void:
 	$Sound.play()
 
 func get_item_id() -> int:
-	if crazy: return randi_range(2, 6) #TODO FIX WITH MISSING IDs
+	if crazy: return randi_range(2, Server.MAX_ITEM)
 	match type:
 		"bsoda": return 2
 		"diet": return 3

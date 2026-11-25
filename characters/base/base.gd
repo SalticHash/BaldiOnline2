@@ -88,3 +88,7 @@ func finish_jumping_rope(): # Called by auth
 	playtime_inst = null
 
 #endregion
+
+func reach_squared() -> float:
+	var v = (-$Camera/InteractRay.target_position.z + 1.0)
+	return v * v

@@ -10,7 +10,8 @@ enum ITEM {
 	GLOVE,
 	ANTI_HEARING_TAPE,
 	APPLE,
-	ALARM_CLOCK, #9
+	ALARM_CLOCK,
+	SCISSORS, #10
 	
 	LOST_BOOK,
 	LOST_CARDS,
@@ -31,7 +32,7 @@ const SPEED_WALK: float = 1.67
 const STAM_LOSS_SPEED: float = 0.1
 const STAM_GAIN_SPEED: float = 0.2
 var running: bool = false
-var inventory: Array[int] = [0, 0, 0, 0, 0]
+var inventory: Array[int] = [10, 10, 0, 0, 0]
 var locker: NodePath = NodePath("")
 var glove_time: float = 0.0
 var stamina: float = 1.0 :
@@ -172,7 +173,7 @@ func update_inventory():
 		
 		var anim: AnimatedSprite2D = slot.get_node("Item")
 		var it = inventory[i]
-		var lost_i = it > 9
+		var lost_i = it > Server.MAX_ITEM
 		var rid = it - 10 if lost_i else it
 		anim.animation = ("l" if lost_i else "") + str(rid)
 	
@@ -230,7 +231,7 @@ func use_item(cursor):
 			b.global_position = global_position
 			b.global_rotation = $Camera.global_rotation
 			play_sound.rpc("bsoda")
-			inventory[cursor] = ITEM.BSODA
+			inventory[cursor] = ITEM.NONE
 			return
 		ITEM.ALARM_CLOCK:
 			var cl = alarm_clock.instantiate()
@@ -255,13 +256,12 @@ func use_item(cursor):
 			play_sound.rpc("glove")
 			glove_time = 60.0
 			return
-		ITEM.ANTI_HEARING_TAPE, ITEM.LOST_TAPE:
-			if interact_id != &"tape_player" or c.phone or !c.open:
+		ITEM.ANTI_HEARING_TAPE:
+			if interact_id != &"tape_player" or !c.open:
 				$InvalidUse.play()
 				return
 			inventory[cursor] = ITEM.NONE
-			if item == ITEM.ANTI_HEARING_TAPE: c.anti_hearing()
-			else: c.funtime()
+			c.anti_hearing()
 		ITEM.QUARTER:
 			if !interact_id:
 				$InvalidUse.play()
@@ -274,11 +274,27 @@ func use_item(cursor):
 				inventory[cursor] = c.get_item_id()
 				c.use()
 				return
+		ITEM.SCISSORS:
+			if interact_id != &"playtime" or (c.play_cooldown > 0.0 and !c.playing):
+				$InvalidUse.play()
+				return
+			play_sound.rpc("scissors")
+			c.cut_rope()
+			inventory[cursor] = ITEM.NONE
+		_:
+			if item <= Server.MAX_ITEM: return
+			if interact_id == &"student" and c.item == item:
+				play_sound.rpc(&"quarter")
+				c.got_item()
+				inventory[cursor] = ITEM.NONE
+			elif interact_id == &"tape_player" and !c.open and item == ITEM.LOST_TAPE:
+				c.funtime()
+				inventory[cursor] = ITEM.NONE
+				return
+			else:
+				$InvalidUse.play()
+				
 			
-
-func reach_squared() -> float:
-	var v = (-$Camera/InteractRay.target_position.z + 1.0)
-	return v * v
 
 @rpc("authority", "call_local", "reliable")
 func play_sound(sound):

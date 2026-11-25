@@ -116,10 +116,6 @@ func _process(delta: float) -> void:
 			inspect_locker.rpc_id(1, obj.get_path())
 	else: $UI/Hand.hide()
 
-func reach_squared() -> float:
-	var v = (-$Camera/InteractRay.target_position.z + 1.0)
-	return v * v
-
 @onready var player_hightlight = preload("res://characters/baldi/player_highlight.tscn")
 @rpc("authority", "call_local", "reliable")
 func spawn_highlight(player_position: Vector3, loudness: float):

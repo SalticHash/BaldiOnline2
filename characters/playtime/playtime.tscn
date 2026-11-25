@@ -23,7 +23,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jh3y0"]
 radius = 0.10498047
-height = 0.53125
+height = 0.72509766
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mh7w7"]
 atlas = ExtResource("3_80mf8")
@@ -145,24 +145,19 @@ properties/0/path = NodePath(".:input_dir")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
-[node name="Playtime" unique_id=991214998 groups=["playtime"] instance=ExtResource("1_we0at")]
+[node name="Playtime" unique_id=991214998 groups=["interact", "playtime"] instance=ExtResource("1_we0at")]
+collision_layer = 4352
 collision_mask = 11
 script = ExtResource("2_o1gp0")
 skin = 0
+metadata/interact_id = &"playtime"
 
 [node name="Collision" type="CollisionShape3D" parent="." index="0" unique_id=1306059409]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2773043, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37422812, 0)
 shape = SubResource("CapsuleShape3D_jh3y0")
 
 [node name="Camera" parent="." index="1" unique_id=1168804949]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4219647, 0)
-
-[node name="InteractRay" type="RayCast3D" parent="Camera" index="0" unique_id=2074744021]
-target_position = Vector3(0, 0, -1)
-collision_mask = 4
-hit_from_inside = true
-collide_with_areas = true
-collide_with_bodies = false
 
 [node name="Sprite" type="AnimatedSprite3D" parent="." index="2" unique_id=334879170]
 transform = Transform3D(0.103, 0, 0, 0, 0.103, 0, 0, 0, 0.103, 0, 0.28883916, 0)
@@ -170,8 +165,7 @@ billboard = 2
 alpha_cut = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_jh3y0")
-animation = &"sad"
-frame_progress = 0.11212802
+autoplay = "default"
 
 [node name="NameLabel" parent="." index="3" unique_id=1285109512]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7688177, 0)
@@ -233,7 +227,7 @@ texture = ExtResource("6_tepko")
 [node name="Stamina" parent="UI" index="2" unique_id=1606940395 instance=ExtResource("7_pjaxm")]
 position = Vector2(-2, 484)
 scale = Vector2(2, 2)
-value = 15.0
+value = 2.0
 max_value = 15.0
 overflow_max = 15.0
 

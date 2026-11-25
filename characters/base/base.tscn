@@ -203,6 +203,13 @@ script = ExtResource("1_o12hc")
 [node name="Camera" type="Camera3D" parent="." unique_id=1168804949]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1828394, 0)
 
+[node name="InteractRay" type="RayCast3D" parent="Camera" unique_id=395788229]
+target_position = Vector3(0, 0, -1)
+collision_mask = 4
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
 [node name="NameLabel" type="Label3D" parent="." unique_id=1285109512]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43291968, 0)
 visible = false
@@ -311,7 +318,8 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -846.0
-offset_top = -520.0
+offset_top = -555.0
+offset_bottom = -154.0
 grow_horizontal = 0
 grow_vertical = 0
 

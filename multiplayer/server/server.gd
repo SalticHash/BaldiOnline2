@@ -1,6 +1,7 @@
 extends Node
 var players: Dictionary = {}
 
+const MAX_ITEM = 10
 var anti_hearing: float = 0.0 :
 	set(value):
 		anti_hearing = value
