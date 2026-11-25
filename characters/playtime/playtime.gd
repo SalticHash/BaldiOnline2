@@ -24,6 +24,8 @@ func _physics_process(delta: float) -> void:
 	if playing: speed = 0.0
 	velocity = Vector3(direction.x * speed, velocity.y, direction.z * speed)
 	move_and_slide()
+	global_position.y = max(global_position.y, 0.0)
+
 
 var interactions: Array[StringName] = [&"door", &"item"]
 func _process(delta: float) -> void:

@@ -28,20 +28,25 @@ func set_item() -> void:
 		item = wrapi(item - lost, 0, 9) + Server.MAX_ITEM + 1
 
 var input_dir: Vector2 = Vector2.ZERO
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if !is_multiplayer_authority(): return
-
+	super(delta)
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	velocity = direction * SPEED_WALK
+	velocity = Vector3(direction.x * SPEED_WALK, velocity.y, direction.z * SPEED_WALK)
+	if jumping_rope:
+		velocity.x = 0
+		velocity.z = 0
 	walking = direction != Vector3.ZERO
 	move_and_slide()
+	global_position.y = max(global_position.y, 0.0)
+
 
 var interactions: Array[StringName] = [&"door", &"item"]
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	$Sprite.yay = $Sounds/yay.playing
 	$Sprite.walking = walking
 	if multiplayer.get_unique_id() != id: return
-
+	super(delta)
 	$UI.show()
 	$UI/Slot/Item.animation = "l" + str(item - 10)
 	
