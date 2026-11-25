@@ -6,7 +6,7 @@ extends Area3D
 	set(value):
 		item_id = value
 		var lost_i = item_id > Server.MAX_ITEM
-		var rid = item_id - 10 if lost_i else item_id
+		var rid = item_id - (Server.MAX_ITEM + 1) if lost_i else item_id
 		$Sprite.animation = ("l" if lost_i else "") + str(rid)
 
 func _ready() -> void:

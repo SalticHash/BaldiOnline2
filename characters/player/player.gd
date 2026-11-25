@@ -174,7 +174,7 @@ func update_inventory():
 		var anim: AnimatedSprite2D = slot.get_node("Item")
 		var it = inventory[i]
 		var lost_i = it > Server.MAX_ITEM
-		var rid = it - 10 if lost_i else it
+		var rid = it - (Server.MAX_ITEM + 1) if lost_i else it
 		anim.animation = ("l" if lost_i else "") + str(rid)
 	
 	if !can_interact(): return
@@ -287,7 +287,7 @@ func use_item(cursor):
 				play_sound.rpc(&"quarter")
 				c.got_item()
 				inventory[cursor] = ITEM.NONE
-			elif interact_id == &"tape_player" and !c.open and item == ITEM.LOST_TAPE:
+			elif interact_id == &"tape_player" and c.open and item == ITEM.LOST_TAPE:
 				c.funtime()
 				inventory[cursor] = ITEM.NONE
 				return

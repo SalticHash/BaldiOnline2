@@ -48,7 +48,7 @@ func _process(delta: float) -> void:
 	if multiplayer.get_unique_id() != id: return
 	super(delta)
 	$UI.show()
-	$UI/Slot/Item.animation = "l" + str(item - 10)
+	$UI/Slot/Item.animation = "l" + str(item - (Server.MAX_ITEM + 1))
 	
 	var obj = $Camera/InteractRay.get_collider()
 	if obj and obj.is_in_group("interact"):

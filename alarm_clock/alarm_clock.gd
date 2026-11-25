@@ -21,6 +21,7 @@ func get_frame() -> int:
 @rpc("authority", "call_local", "reliable")
 func wind() -> void:
 	if !is_multiplayer_authority(): return
+	if rang: return
 	var sender_id = multiplayer.get_remote_sender_id()
 	var is_player = Server.get_id_type(sender_id) == Server.TYPE.PLAYER
 	var sender_inst = Server.get_id_instance(sender_id)
@@ -40,7 +41,6 @@ func wind() -> void:
 
 @rpc("authority", "call_local", "reliable")
 func play_sound(ring: bool = true):
-	if rang: return
 	if ring:
 		$Ring.play()
 		$Ticking.stop()
