@@ -44,6 +44,7 @@ const entities = [
 	preload("res://characters/baldi/baldi.tscn"),
 	preload("res://characters/student/student.tscn"),
 	preload("res://characters/playtime/playtime.tscn"),
+	preload("res://characters/sweep/sweep.tscn"),
 ]
 
 func _spawn_player(data) -> Node:

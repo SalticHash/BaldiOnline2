@@ -2,14 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://civ8vhnxcx713" path="res://characters/base/base.tscn" id="1_03p66"]
 [ext_resource type="Script" uid="uid://c4kr0m38og5jw" path="res://characters/playtime/playtime.gd" id="2_3fjq7"]
-[ext_resource type="Texture2D" uid="uid://b7ksf5kqoywbg" path="res://characters/sweep/broom.png" id="3_mn2od"]
-[ext_resource type="Texture2D" uid="uid://bht34lvb3rwvd" path="res://characters/sweep/riding.png" id="4_erimn"]
+[ext_resource type="Texture2D" uid="uid://coiaab54ti03q" path="res://characters/sweep/broom_filled.png" id="3_mn2od"]
+[ext_resource type="Texture2D" uid="uid://d1dche16ewejm" path="res://characters/sweep/riding_filled.png" id="4_erimn"]
 [ext_resource type="Script" uid="uid://djbcap3ggr2om" path="res://characters/student/input_sync.gd" id="5_deudc"]
 [ext_resource type="Texture2D" uid="uid://trf58n7cv1fj" path="res://characters/player/CursorSprite.png" id="6_a43dg"]
 [ext_resource type="Texture2D" uid="uid://d3xew3irrc6xn" path="res://characters/student/textures/Cloud_Sprite_Large.png" id="7_saxmy"]
 [ext_resource type="SpriteFrames" uid="uid://bdgqjvn5tfq3o" path="res://item/item.tres" id="8_ngje8"]
 [ext_resource type="Texture2D" uid="uid://c0as5bwvav8c6" path="res://characters/student/textures/Cloud_Sprite_Small.png" id="9_tqjgk"]
 [ext_resource type="AudioStream" uid="uid://cpc2t68hrn3u1" path="res://item/CoinDrop.wav" id="10_578nf"]
+[ext_resource type="PackedScene" uid="uid://cae78tmpqm2rq" path="res://characters/base/MeterProgressBar/MeterProgressBar.tscn" id="10_erimn"]
 [ext_resource type="AudioStream" uid="uid://bn4r1n3g4rk4y" path="res://item/ErrorMaybe.wav" id="11_ob37t"]
 [ext_resource type="AudioStream" uid="uid://dj0vs40v2gkd3" path="res://characters/playtime/sounds/Mus_Playtime.wav" id="12_5s8wd"]
 [ext_resource type="AudioStream" uid="uid://h71ooppyxiyg" path="res://characters/playtime/sounds/PT_Sad.wav" id="13_cuy42"]
@@ -28,25 +29,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jh3y0"]
 radius = 0.10498047
 height = 0.53125
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jspg8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_mn2od")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_erimn")
-}],
-"loop": 1,
-"name": &"ride",
-"speed": 5.0
-}]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_yr61q"]
 properties/0/path = NodePath(".:position")
@@ -83,34 +65,41 @@ shape = SubResource("CapsuleShape3D_jh3y0")
 [node name="Camera" parent="." index="1" unique_id=1168804949]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4219647, 0)
 
-[node name="Sprite" type="AnimatedSprite3D" parent="." index="2" unique_id=334879170]
-transform = Transform3D(0.103, 0, 0, 0, 0.103, 0, 0, 0, 0.103, 0, 0.34649694, 0)
-pixel_size = 0.0265625
+[node name="Sprite" type="Sprite3D" parent="." index="2" unique_id=1696744588]
+transform = Transform3D(0.275, 0, 0, 0, 0.275, 0, 0, 0, 0.275, 0, 0.35436994, 0)
+visibility_parent = NodePath("../Riding")
 billboard = 2
 alpha_cut = 1
 texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_jspg8")
-animation = &"ride"
+texture = ExtResource("3_mn2od")
 
-[node name="NameLabel" parent="." index="3" unique_id=1285109512]
+[node name="Riding" type="Sprite3D" parent="." index="3" unique_id=1385538683]
+transform = Transform3D(0.38, 0, 0, 0, 0.38, 0, 0, 0, 0.38, 0, 0.48641214, 0)
+visible = false
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("4_erimn")
+
+[node name="NameLabel" parent="." index="4" unique_id=1285109512]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7688177, 0)
 
-[node name="ServerSync" type="MultiplayerSynchronizer" parent="." index="5" unique_id=1932033064]
+[node name="ServerSync" type="MultiplayerSynchronizer" parent="." index="6" unique_id=1932033064]
 replication_config = SubResource("SceneReplicationConfig_yr61q")
 
-[node name="OwnerSync" type="MultiplayerSynchronizer" parent="." index="6" unique_id=1385016999]
+[node name="OwnerSync" type="MultiplayerSynchronizer" parent="." index="7" unique_id=1385016999]
 replication_config = SubResource("SceneReplicationConfig_exd8k")
 public_visibility = false
 
-[node name="PeerSync" type="MultiplayerSynchronizer" parent="." index="7" unique_id=951314133]
+[node name="PeerSync" type="MultiplayerSynchronizer" parent="." index="8" unique_id=951314133]
 replication_config = SubResource("SceneReplicationConfig_5dc8e")
 
-[node name="InputSync" type="MultiplayerSynchronizer" parent="." index="8" unique_id=650982977]
+[node name="InputSync" type="MultiplayerSynchronizer" parent="." index="9" unique_id=650982977]
 replication_config = SubResource("SceneReplicationConfig_xxgcw")
 public_visibility = false
 script = ExtResource("5_deudc")
 
-[node name="UI" type="Control" parent="." index="9" unique_id=1681700583]
+[node name="UI" type="Control" parent="." index="10" unique_id=1681700583]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -184,19 +173,24 @@ scale = Vector2(0.807, 0.807)
 texture = ExtResource("9_tqjgk")
 flip_h = true
 
-[node name="PickupSound" type="AudioStreamPlayer" parent="." index="10" unique_id=49951168]
+[node name="Stamina" parent="UI" index="3" unique_id=1606940395 instance=ExtResource("10_erimn")]
+position = Vector2(-2, 484)
+scale = Vector2(2, 2)
+smooth_needle = true
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="." index="11" unique_id=49951168]
 stream = ExtResource("10_578nf")
 max_polyphony = 2
 
-[node name="ErrorSound" type="AudioStreamPlayer" parent="." index="11" unique_id=1143442546]
+[node name="ErrorSound" type="AudioStreamPlayer" parent="." index="12" unique_id=1143442546]
 stream = ExtResource("11_ob37t")
 max_polyphony = 2
 
-[node name="Music" type="AudioStreamPlayer3D" parent="." index="12" unique_id=1448333397]
+[node name="Music" type="AudioStreamPlayer3D" parent="." index="13" unique_id=1448333397]
 stream = ExtResource("12_5s8wd")
 autoplay = true
 
-[node name="Sounds" type="Node3D" parent="." index="13" unique_id=1235062783]
+[node name="Sounds" type="Node3D" parent="." index="14" unique_id=1235062783]
 
 [node name="sad" type="AudioStreamPlayer3D" parent="Sounds" index="0" unique_id=1456863394]
 stream = ExtResource("13_cuy42")

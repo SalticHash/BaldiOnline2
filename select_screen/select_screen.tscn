@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://eqc0omuutaho" path="res://select_screen/thumb/students/2.png" id="5_lyf50"]
 [ext_resource type="Texture2D" uid="uid://cyysjjll4mkja" path="res://select_screen/thumb/students/3.png" id="6_egpk4"]
 [ext_resource type="Texture2D" uid="uid://b4xw5ov4sju23" path="res://select_screen/thumb/students/4.png" id="7_4vf0k"]
+[ext_resource type="Script" uid="uid://by6a43f414ugt" path="res://helper_scripts/scroll_mobile.gd" id="7_5513x"]
 [ext_resource type="Texture2D" uid="uid://dwuukkejjrrp5" path="res://select_screen/thumb/students/5.png" id="8_3jqfj"]
 [ext_resource type="Texture2D" uid="uid://drhdmhf4qqggg" path="res://select_screen/thumb/students/6.png" id="9_4vf0k"]
 [ext_resource type="Texture2D" uid="uid://br8hroncdbc1y" path="res://select_screen/thumb/students/7.png" id="10_3jqfj"]
@@ -51,8 +52,10 @@ item_3/text = "Playtime"
 item_3/icon = ExtResource("5_ddba0")
 item_4/text = "Gotta Sweep"
 item_4/icon = ExtResource("4_3jqfj")
-item_4/selectable = false
-item_4/disabled = true
+
+[node name="ScrollMobile" type="Node" parent="Character" unique_id=1129583439]
+script = ExtResource("7_5513x")
+metadata/_custom_type_script = "uid://by6a43f414ugt"
 
 [node name="Left" type="VBoxContainer" parent="." unique_id=740086614]
 custom_minimum_size = Vector2(800, 0)
@@ -73,6 +76,10 @@ fixed_icon_size = Vector2i(48, 48)
 item_0/text = "Ignacio Carmiol (Baldi) (Host)"
 item_0/icon = ExtResource("2_4vf0k")
 item_0/selectable = false
+
+[node name="ScrollMobile" type="Node" parent="Left/PlayerList" unique_id=671973272]
+script = ExtResource("7_5513x")
+metadata/_custom_type_script = "uid://by6a43f414ugt"
 
 [node name="Start" type="Button" parent="Left" unique_id=153007221]
 unique_name_in_owner = true
@@ -109,6 +116,10 @@ item_8/icon = ExtResource("7_4vf0k")
 item_9/icon = ExtResource("8_3jqfj")
 item_10/icon = ExtResource("9_4vf0k")
 item_11/icon = ExtResource("10_3jqfj")
+
+[node name="ScrollMobile" type="Node" parent="Left/StudentSkin" unique_id=1535715141]
+script = ExtResource("7_5513x")
+metadata/_custom_type_script = "uid://by6a43f414ugt"
 
 [connection signal="item_selected" from="Character" to="." method="_on_character_item_selected"]
 [connection signal="text_submitted" from="Left/Username" to="." method="_on_username_text_submitted"]

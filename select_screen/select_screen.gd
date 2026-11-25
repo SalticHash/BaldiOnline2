@@ -5,7 +5,8 @@ const characters: Dictionary[int, String] = {
 	0: "Player",
 	1: "Baldi",
 	2: "Student",
-	3: "Playtime"
+	3: "Playtime",
+	4: "Gotta Sweep"
 }
 
 const icons = {
@@ -13,6 +14,7 @@ const icons = {
 	0: "res://select_screen/thumb/player.png",
 	1: "res://select_screen/thumb/baldi.png",
 	3: "res://select_screen/thumb/playtime.png",
+	4: "res://select_screen/thumb/sweep.png",
 }
 var players: Dictionary[int, Dictionary]
 

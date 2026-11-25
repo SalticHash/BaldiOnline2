@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://djbcap3ggr2om" path="res://characters/student/input_sync.gd" id="3_cdqdi"]
 [ext_resource type="Script" uid="uid://cd1owv5eqasf2" path="res://characters/student/sprite.gd" id="4_4jdhl"]
 [ext_resource type="Texture2D" uid="uid://trf58n7cv1fj" path="res://characters/player/CursorSprite.png" id="4_lft8o"]
-[ext_resource type="Script" uid="uid://cnu8kdy23f1gd" path="res://sprite/billboard.gd" id="6_tpk6k"]
+[ext_resource type="Script" uid="uid://cnu8kdy23f1gd" path="res://helper_scripts/billboard.gd" id="6_tpk6k"]
 [ext_resource type="Texture2D" uid="uid://d3xew3irrc6xn" path="res://characters/student/textures/Cloud_Sprite_Large.png" id="7_5du2e"]
 [ext_resource type="SpriteFrames" uid="uid://bdgqjvn5tfq3o" path="res://item/item.tres" id="8_emmfn"]
 [ext_resource type="Texture2D" uid="uid://c0as5bwvav8c6" path="res://characters/student/textures/Cloud_Sprite_Small.png" id="9_tpk6k"]
