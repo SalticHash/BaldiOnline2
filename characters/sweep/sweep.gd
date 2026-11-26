@@ -2,7 +2,7 @@ extends BaseController
 
 @export var skin: int = 0
 
-const SPEED_SWEEP: float = 10.67
+const SPEED_SWEEP: float = 8.35
 const SPEED_WALK: float = 1.67
 @onready var follower: PathFollow3D = $Follower
 @onready var sweep_origin: Path3D = get_node("/root/Game/World/School/Travel/SweepOrigin")
@@ -15,7 +15,7 @@ var path_dir: float = 1.0
 var direction: Vector3 = Vector3.ZERO
 var last_direction: Vector3 = Vector3.ZERO
 var target_sweep_angle: float = 0.0
-var sweeping: bool = false
+var sweeping: bool = true
 func _physics_process(delta: float) -> void:
 	if !is_multiplayer_authority(): return
 	#if direction:
@@ -103,16 +103,20 @@ func _process(delta: float) -> void:
 	if sweeping:
 		$TopCamera.global_position = global_position + Vector3(.0, 4.5, .0)
 		$TopCamera.make_current()
-		$TopSprite.show()
+		$TopCamera/Sprite.show()
 		$Sprite.hide()
 		target_sweep_angle = atan2(last_direction.x, last_direction.z)
-		$TopSprite.rotation.y = lerp_angle(
-			$TopSprite.rotation.y, target_sweep_angle, delta * 20.0
+		$TopCamera/Sprite.rotation.z = lerp_angle(
+			$TopCamera/Sprite.rotation.z, target_sweep_angle, delta * 20.0
 		)
 	else:
 		$Camera.make_current()
 		$Sprite.show()
-		$TopSprite.hide()
+		$TopCamera/Sprite.hide()
+	
+	if OS.has_feature("mobile"):
+		%VirtualJoystick.visible = !sweeping
+		%Arrows.visible = sweeping
 
 	$UI.show()
 

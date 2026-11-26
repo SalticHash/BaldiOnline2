@@ -39,6 +39,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0
 		velocity.z = 0
 	walking = direction != Vector3.ZERO
+	if override_velocity:
+		var keep = 0.5
+		velocity = velocity * keep + override_velocity
 	move_and_slide()
 	global_position.y = max(global_position.y, 0.0)
 

@@ -12,6 +12,9 @@ func _ready() -> void:
 		return
 	await player.ready
 	player.camera.make_current()
+	if OS.has_feature("mobile"):
+		%VirtualJoystick.show()
+		%TouchArea.gui_input.connect(_touch_input)
 
 
 func _input(event: InputEvent) -> void:
@@ -40,11 +43,8 @@ func _input(event: InputEvent) -> void:
 
 var last_touch_idx: int = -1
 var last_touch_epoch: int = 0 
-func _unhandled_input(event: InputEvent) -> void:
+func _touch_input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
-		var inside_touch_area: bool = %TouchArea.get_global_rect().has_point(event.position)
-		if !inside_touch_area:
-			return
 		if event.is_pressed():
 			last_touch_idx = event.index
 			last_touch_epoch = Time.get_ticks_msec()

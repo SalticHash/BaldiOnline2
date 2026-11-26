@@ -35,7 +35,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_1g21h"]
 resource_name = "yay"
-length = 1.8299999999999998
+length = 1.83
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -84,7 +84,7 @@ properties/0/replication_mode = 1
 collision_layer = 2304
 collision_mask = 11
 script = ExtResource("2_yr61q")
-skin = 0
+skin = null
 metadata/interact_id = &"student"
 
 [node name="Collision" type="CollisionShape3D" parent="." index="0" unique_id=1306059409]
@@ -97,7 +97,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51873744, 0)
 [node name="Sprite" type="AnimatedSprite3D" parent="." index="2" unique_id=334879170]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.384, 0)
 pixel_size = 0.003
-billboard = 2
+billboard = 1
 alpha_cut = 1
 texture_filter = 0
 sprite_frames = ExtResource("17_cdqdi")

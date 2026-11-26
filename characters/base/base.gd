@@ -9,7 +9,8 @@ func is_owner() -> bool:
 	return id == multiplayer.get_unique_id()
 #endregion
 
-var id: int = 1 #TODO FIX
+var override_velocity: Vector3 = Vector3.ZERO
+var id: int = 0
 var username: String = ""
 @onready var camera: Camera3D = $Camera
 func _enter_tree() -> void:
@@ -18,8 +19,6 @@ func _enter_tree() -> void:
 	$InputSync.set_visibility_for(1, true)
 	$OwnerSync.set_visibility_for(id, true)
 	$Jumprope/RopeSync.set_visibility_for(id, true)
-	if OS.has_feature("mobile") and multiplayer.get_unique_id() == id:
-		%VirtualJoystick.show()
 	$NameLabel.text = username
 	
 	if !is_multiplayer_authority(): return
