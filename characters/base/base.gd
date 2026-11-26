@@ -9,7 +9,7 @@ func is_owner() -> bool:
 	return id == multiplayer.get_unique_id()
 #endregion
 
-var id: int = 0
+var id: int = 1 #TODO FIX
 var username: String = ""
 @onready var camera: Camera3D = $Camera
 func _enter_tree() -> void:

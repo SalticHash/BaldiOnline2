@@ -65,5 +65,5 @@ func close_door():
 
 func _on_body_entered(body: Node3D) -> void:
 	if !is_multiplayer_authority(): return
-	if body.is_in_group(&"baldi"):
+	if body.is_in_group(&"baldi") or body.is_in_group(&"sweep"):
 		open_door(body.id)

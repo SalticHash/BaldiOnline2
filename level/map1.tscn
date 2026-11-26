@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dqcgklta3udcs" path="res://level/world.gd" id="1_8h20c"]
 [ext_resource type="Script" uid="uid://br42skjk86uqx" path="res://level/skybox.gd" id="3_h7bvd"]
-[ext_resource type="PackedScene" uid="uid://bvxejammqemr5" path="res://characters/playtime/playtime.tscn" id="4_uqr5s"]
 [ext_resource type="AudioStream" uid="uid://cj55ptvvglqar" path="res://school/Level_1_End.wav" id="5_ap4oy"]
 [ext_resource type="PackedScene" uid="uid://b0agfwaeofre5" path="res://school/school.tscn" id="5_bds5c"]
-[ext_resource type="PackedScene" uid="uid://bvqi0hkx868fo" path="res://characters/student/student.tscn" id="5_k853c"]
 [ext_resource type="Material" uid="uid://vm5lydct25ju" path="res://school/materials/skybox.tres" id="6_iba72"]
 [ext_resource type="PackedScene" uid="uid://cebq6sn3gt6cu" path="res://item/item.tscn" id="7_agfmf"]
 [ext_resource type="AudioStream" uid="uid://be60tjn667u4m" path="res://tape_player/AntiHearing.wav" id="7_tjhul"]
@@ -37,12 +35,6 @@ script = ExtResource("3_h7bvd")
 
 [node name="Players" type="Node3D" parent="." unique_id=1679894982]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -16)
-
-[node name="Playtime" parent="Players" unique_id=991214998 instance=ExtResource("4_uqr5s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.6604271)
-
-[node name="Student" parent="Players" unique_id=236553311 instance=ExtResource("5_k853c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1290597, 1.1920929e-07, 1.8760176)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=218090769]
 spawn_path = NodePath("../Players")

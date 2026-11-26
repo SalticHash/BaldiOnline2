@@ -1,11 +1,6 @@
 extends BaseController
 
 @export var skin: int = 0
-enum ITEM {
-	NONE,
-	BSODA,
-	ZESTY
-}
 
 const SPEED_WALK: float = 1.3
 const SPEED_RUN: float = 2.6

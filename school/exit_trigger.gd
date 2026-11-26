@@ -16,5 +16,5 @@ func pulldown():
 	if pulled_down or Server.exits == 3 or Server.notebooks < 7: return
 	Server.exits += 1
 	pulled_down = true
-	block.position.y -= 1
+	block.position.y += 1
 	$CloseSound.play()

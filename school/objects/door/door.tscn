@@ -26,7 +26,7 @@ backface_collision = true
 
 [node name="Door" type="Area3D" unique_id=1711912784 groups=["interact"]]
 collision_layer = 4
-collision_mask = 1024
+collision_mask = 9216
 script = ExtResource("1_i13wh")
 front_material = ExtResource("2_7h1nw")
 back_material = ExtResource("2_7h1nw")
