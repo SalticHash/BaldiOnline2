@@ -30,14 +30,14 @@ height = 0.53125
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
-properties/1/path = NodePath(".:walking")
+properties/1/path = NodePath(".:sweeping")
 properties/1/spawn = true
 properties/1/replication_mode = 2
-properties/2/path = NodePath(".:item")
-properties/2/spawn = true
-properties/2/replication_mode = 2
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_exd8k"]
+properties/0/path = NodePath(".:last_direction")
+properties/0/spawn = true
+properties/0/replication_mode = 2
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5dc8e"]
 properties/0/path = NodePath(".:rotation")
@@ -55,20 +55,19 @@ collision_mask = 9
 script = ExtResource("2_eh4ew")
 skin = 0
 
-[node name="Camera3D" type="Camera3D" parent="." index="0" unique_id=1948724165]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.5370903, 0)
-
-[node name="Collision" type="CollisionShape3D" parent="." index="1" unique_id=1306059409]
+[node name="Collision" type="CollisionShape3D" parent="." index="0" unique_id=1306059409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2773043, 0)
 shape = SubResource("CapsuleShape3D_jh3y0")
 
-[node name="Camera" parent="." index="2" unique_id=1168804949]
+[node name="Camera" parent="." index="1" unique_id=1168804949]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4219647, 0)
+
+[node name="TopCamera" type="Camera3D" parent="." index="2" unique_id=1948724165]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.5, 0)
+top_level = true
 
 [node name="Sprite" type="Sprite3D" parent="." index="3" unique_id=1696744588]
 transform = Transform3D(0.275, 0, 0, 0, 0.275, 0, 0, 0, 0.275, 0, 0.35436994, 0)
-visible = false
-visibility_parent = NodePath("../Riding")
 billboard = 2
 alpha_cut = 1
 texture_filter = 0
@@ -82,11 +81,9 @@ alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("4_erimn")
 
-[node name="Node3D" type="Node3D" parent="." index="5" unique_id=1383786355]
-transform = Transform3D(0.38, 0, 0, 0, 0.38, 0, 0, 0, 0.38, 0, 0, 0)
-
-[node name="Riding2" type="Sprite3D" parent="Node3D" index="0" unique_id=669911584]
-transform = Transform3D(1.0000001, 0, 0, 0, 0.3939419, -0.9191354, 0, 0.9191354, 0.3939419, 0, 1.280032, 0)
+[node name="TopSprite" type="Sprite3D" parent="." index="5" unique_id=669911584]
+transform = Transform3D(0.38, 0, 0, 0, 0.38, 0, 0, 0, 0.225, 0, 0.5, 0)
+visible = false
 axis = 1
 alpha_cut = 1
 texture_filter = 0

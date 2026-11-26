@@ -5266,19 +5266,19 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve3D" id="Curve3D_dqahw"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -11, 0, 13, 0, 0, 0, 0, 0, 0, -3, 0, 13),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
-
 [sub_resource type="Curve3D" id="Curve3D_qrl6v"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, -3, 0, 11, 0, 0, 0, 0, 0, 0, -3, 0, 13),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_g5cs3"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -11, 0, 7, 0, 0, 0, 0, 0, 0, -11, 0, 13, 0, 0, 0, 0, 0, 0, -3, 0, 13),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [sub_resource type="Curve3D" id="Curve3D_00xf5"]
 _data = {
@@ -5364,13 +5364,6 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
-
-[sub_resource type="Curve3D" id="Curve3D_g5cs3"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -11, 0, 7, 0, 0, 0, 0, 0, 0, -11, 0, 13),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_kx2s4"]
 _data = {
@@ -8458,7 +8451,6 @@ door_back = "suplies"
 
 [node name="Instances" type="Node3D" parent="." unique_id=1708869834]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014, 0.354, -0.587)
-visible = false
 
 [node name="TapePlayer" parent="Instances" unique_id=200992389 instance=ExtResource("19_0avlu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.503134, 0.16620749, 4.977585)
@@ -8631,11 +8623,11 @@ curve = SubResource("Curve3D_sefu6")
 [node name="Hallway23" type="Path3D" parent="Travel" unique_id=970061777]
 curve = SubResource("Curve3D_hym0m")
 
-[node name="Hallway24" type="Path3D" parent="Travel" unique_id=2047397046]
-curve = SubResource("Curve3D_dqahw")
-
 [node name="Hallway25" type="Path3D" parent="Travel" unique_id=345384186]
 curve = SubResource("Curve3D_qrl6v")
+
+[node name="Hallway24" type="Path3D" parent="Travel" unique_id=1235696250]
+curve = SubResource("Curve3D_g5cs3")
 
 [node name="Hallway26" type="Path3D" parent="Travel" unique_id=488737545]
 curve = SubResource("Curve3D_00xf5")
@@ -8672,9 +8664,6 @@ curve = SubResource("Curve3D_3giy4")
 
 [node name="Hallway37" type="Path3D" parent="Travel" unique_id=1960777052]
 curve = SubResource("Curve3D_onhk4")
-
-[node name="Hallway38" type="Path3D" parent="Travel" unique_id=1235696250]
-curve = SubResource("Curve3D_g5cs3")
 
 [node name="Hallway39" type="Path3D" parent="Travel" unique_id=1710287321]
 curve = SubResource("Curve3D_kx2s4")
