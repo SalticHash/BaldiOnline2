@@ -8024,7 +8024,7 @@ collision_layer = 5
 shape = SubResource("ConcavePolygonShape3D_pofak")
 
 [node name="Wall_438" type="MeshInstance3D" parent="Outdoor Elements/OWalls" unique_id=1803608046]
-transform = Transform3D(0, 0.5, 0, 0, 0, 0.5, 0.5, 0, 0, 2.51351, 0.14566693, -14.4133)
+transform = Transform3D(0, 0.5, 0, 0, 0, 0.5, 0.5, 0, 0, 2.51351, 1.145667, -14.4133)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_iiy2q")
 

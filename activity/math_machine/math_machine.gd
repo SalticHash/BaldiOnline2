@@ -22,10 +22,14 @@ func generate(is_sum: bool) -> void:
 		result = max(t1, t2)
 		a = min(t1, t2)
 		b = result - a
+		if (a + b) != result:
+			push_error("%d + %d = %d" % [a, b, result])
 	else:
-		result = min(t1, t2)
 		a = max(t1, t2)
-		b = a - result
+		b = min(t1, t2)
+		result = a - b
+		if (a - b) != result:
+			push_error("%d - %d = %d" % [a, b, result])
 
 var solved: bool = false
 func solve(balloon: Node3D) -> void:

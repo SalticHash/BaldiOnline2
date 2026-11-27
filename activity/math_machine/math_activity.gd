@@ -7,7 +7,7 @@ func _ready() -> void:
 		b.position = random_pos()
 
 func balloon_exited(body: Node3D):
-	if body.popped: return
+	if body.popped or body.removed or !body.can_grab: return
 	body.pop(random_pos())
 
 func random_pos() -> Vector3:
