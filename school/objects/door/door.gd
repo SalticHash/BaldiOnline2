@@ -65,6 +65,5 @@ func close_door():
 
 
 func _on_body_entered(body: Node3D) -> void:
-	print(body)
 	if body.is_in_group(&"baldi") or body.is_in_group(&"sweep"):
 		open_door(body.id)

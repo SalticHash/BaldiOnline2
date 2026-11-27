@@ -113,7 +113,6 @@ func _process(delta: float) -> void:
 	super(delta)
 	if praise_time > 0.0:
 		if !$Sprite.is_playing(): $Sprite.play("talk")
-	print(apple)
 	if apple > 0.0 and praise_time <= 0.0:
 		if apple <= 10.0:
 			if $EatSound/Timer.is_stopped():
