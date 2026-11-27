@@ -13,6 +13,7 @@ func _ready() -> void:
 	$Num1.text = str(a)
 	$Num2.text = str(b)
 	$Op.text = "+" if sum else "-"
+	$Result.text = str(result)
 
 func generate(is_sum: bool) -> void:
 	sum = is_sum
@@ -38,13 +39,14 @@ func solve(balloon: Node3D) -> void:
 	if solved: return
 	solved = true
 	if balloon.value == result:
+		print(balloon.value)
 		var player = balloon.player
 		if player.stamina < 1.0: player.stamina = 1.0
-		get_tree().call_group(&"baldi", &"praise", &"math")
+		get_tree().call_group(&"baldi", &"bad_math")
 		set_state.rpc(true)
 	else:
 		set_state.rpc(false)
-		get_tree().call_group(&"baldi", &"bad_math")
+		get_tree().call_group(&"baldi", &"praise", &"math")
 		Server.alert_baldi(126, $SP.global_position)
 	balloon.remove()
 	var inst = notebook.instantiate()

@@ -101,6 +101,8 @@ func praise_effect(num: int):
 	$PraiseSounds.get_child(num).play()
 	$Sprite.play("talk")
 
+func bad_math():
+	SLAP_INTERVAL -= 0.5
 func praise(activity: StringName):
 	if !is_multiplayer_authority(): return
 	match activity:
