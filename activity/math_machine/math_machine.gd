@@ -42,11 +42,11 @@ func solve(balloon: Node3D) -> void:
 		print(balloon.value)
 		var player = balloon.player
 		if player.stamina < 1.0: player.stamina = 1.0
-		get_tree().call_group(&"baldi", &"bad_math")
+		get_tree().call_group(&"baldi", &"praise", &"math")
 		set_state.rpc(true)
 	else:
 		set_state.rpc(false)
-		get_tree().call_group(&"baldi", &"praise", &"math")
+		get_tree().call_group(&"baldi", &"bad_math")
 		Server.alert_baldi(126, $SP.global_position)
 	balloon.remove()
 	var inst = notebook.instantiate()

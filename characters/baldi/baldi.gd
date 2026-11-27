@@ -9,10 +9,12 @@ const SLAP_BUFFER: float = 0.167 #10 frames in a 60fps game
 var SLAP_INTERVAL: float = 2.0
 var apple: float = 0.0
 var praise_time: float = 5.0
+var anger: float = 0.0
 func _physics_process(delta: float) -> void:
 
 	if !is_multiplayer_authority(): return
 	super(delta)
+	anger -= delta
 	if $Area.has_overlapping_bodies() and !has_node(locker) and apple <= 0.0 and praise_time <= 0.0:
 		for b in $Area.get_overlapping_bodies():
 			if b.lost: break
@@ -24,7 +26,7 @@ func _physics_process(delta: float) -> void:
 				break
 			b.lose(self)
 	
-	SLAP_INTERVAL = 1.0 - (Server.notebooks * 0.1)
+	SLAP_INTERVAL = 1.0 - (Server.notebooks * 0.1) - remap(anger, 0.0, 1.0, 0.0, 0.5)
 	if apple > 0.0 and praise_time < 0.0:
 		apple -= delta
 		if apple <= 0.0: slap_effect.rpc(true)
@@ -102,7 +104,8 @@ func praise_effect(num: int):
 	$Sprite.play("talk")
 
 func bad_math():
-	SLAP_INTERVAL -= 0.5
+	anger += 1.0
+
 func praise(activity: StringName):
 	if !is_multiplayer_authority(): return
 	match activity:

@@ -16,6 +16,7 @@ var dir: Vector3 = Vector3.ZERO
 var hovered: bool = false
 
 func _ready() -> void:
+	$Label3D.text = str(value)
 	if !is_multiplayer_authority(): return
 	$Bounce.area_entered.connect(bounce)
 
