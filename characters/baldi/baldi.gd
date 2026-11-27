@@ -14,7 +14,7 @@ func _physics_process(delta: float) -> void:
 
 	if !is_multiplayer_authority(): return
 	super(delta)
-	anger -= delta
+	if anger > 0.0: anger -= delta / 8.0
 	if $Area.has_overlapping_bodies() and !has_node(locker) and apple <= 0.0 and praise_time <= 0.0:
 		for b in $Area.get_overlapping_bodies():
 			if b.lost: break
@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 				break
 			b.lose(self)
 	
-	SLAP_INTERVAL = 1.0 - (Server.notebooks * 0.1) - remap(anger, 0.0, 1.0, 0.0, 0.5)
+	SLAP_INTERVAL = 1.0 - (Server.notebooks * 0.1) / remap(anger, 0.0, 1.0, 0.0, 2.0)
 	if apple > 0.0 and praise_time < 0.0:
 		apple -= delta
 		if apple <= 0.0: slap_effect.rpc(true)
@@ -105,6 +105,7 @@ func praise_effect(num: int):
 
 func bad_math():
 	anger += 1.0
+	print("ANGRY")
 
 func praise(activity: StringName):
 	if !is_multiplayer_authority(): return

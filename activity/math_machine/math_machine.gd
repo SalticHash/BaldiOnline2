@@ -9,7 +9,9 @@ var b: int = -1
 var sum: bool = false
 var result: int = -1
 func _ready() -> void:
-	generate(randf() > 0.5)
+	if is_multiplayer_authority(): generate(randf() > 0.5)
+
+func _process(_delta: float) -> void:
 	$Num1.text = str(a)
 	$Num2.text = str(b)
 	$Op.text = "+" if sum else "-"
@@ -38,8 +40,8 @@ func solve(balloon: Node3D) -> void:
 	if balloon.get_node_or_null(^"../..") != get_parent(): return
 	if solved: return
 	solved = true
+	print(balloon.value, result)
 	if balloon.value == result:
-		print(balloon.value)
 		var player = balloon.player
 		if player.stamina < 1.0: player.stamina = 1.0
 		get_tree().call_group(&"baldi", &"praise", &"math")
