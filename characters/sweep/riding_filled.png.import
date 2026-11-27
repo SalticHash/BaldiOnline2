@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1dche16ewejm"
-path.s3tc="res://.godot/imported/riding_filled.png-5d3ca8c04aff882a2abeef95f82aa498.s3tc.ctex"
-path.etc2="res://.godot/imported/riding_filled.png-5d3ca8c04aff882a2abeef95f82aa498.etc2.ctex"
+path="res://.godot/imported/riding_filled.png-5d3ca8c04aff882a2abeef95f82aa498.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://characters/sweep/riding_filled.png"
-dest_files=["res://.godot/imported/riding_filled.png-5d3ca8c04aff882a2abeef95f82aa498.s3tc.ctex", "res://.godot/imported/riding_filled.png-5d3ca8c04aff882a2abeef95f82aa498.etc2.ctex"]
+dest_files=["res://.godot/imported/riding_filled.png-5d3ca8c04aff882a2abeef95f82aa498.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://joa7philacr0" path="res://school/objects/door/textures/front/FacultyStandard_Open.png" id="2_ofjxx"]
 [ext_resource type="Texture2D" uid="uid://bfi8rvq1fl5ae" path="res://school/objects/door/textures/front/Restroom Door M.png" id="3_54i3s"]
 [ext_resource type="Texture2D" uid="uid://bmgi78dmtp7ve" path="res://school/objects/door/textures/front/BaldisOffice_Open.png" id="4_6jy5j"]
-[ext_resource type="Texture2D" uid="uid://dv1h66t505uhu" path="res://school/textures/Supplies Door.png" id="5_8kfm8"]
 [ext_resource type="Texture2D" uid="uid://gdqfw634g3lh" path="res://school/objects/door/textures/front/BaldisLab_Closed.png" id="5_g13wp"]
 [ext_resource type="Texture2D" uid="uid://clp7grfnlx3ng" path="res://school/objects/door/textures/front/Restroom Door W.png" id="6_brfdy"]
 [ext_resource type="Texture2D" uid="uid://dryua3q5v4lmd" path="res://school/objects/door/textures/front/BaldisLab_Open.png" id="6_owk6f"]
@@ -20,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cevh11721xdm2" path="res://school/objects/door/textures/front/BaldisOffice_Closed.png" id="13_m77f5"]
 [ext_resource type="Texture2D" uid="uid://bpvwoao8vny0q" path="res://school/objects/door/textures/front/SafeRoomDoor_Closed.png" id="16_0rh3b"]
 [ext_resource type="Texture2D" uid="uid://dpyolu16c3opa" path="res://school/objects/door/textures/front/SafeRoomDoor_Open.png" id="17_gbf5y"]
+[ext_resource type="Texture2D" uid="uid://dq5tpp08ml8mi" path="res://school/objects/door/textures/front/Supplies_Closed.png" id="18_854ki"]
 [ext_resource type="Texture2D" uid="uid://dkvljhum8ppyv" path="res://school/objects/door/textures/front/WoodDoor_Half.png" id="21_g13wp"]
 [ext_resource type="Texture2D" uid="uid://d1tkqneycywrd" path="res://school/objects/door/textures/front/WoodDoor.png" id="22_owk6f"]
 [ext_resource type="Texture2D" uid="uid://cird07alsofwr" path="res://school/objects/door/textures/front/WoodDoor_Open.png" id="23_eivf2"]
@@ -172,7 +172,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_8kfm8")
+"texture": ExtResource("18_854ki")
 }],
 "loop": 0,
 "name": &"suplies_close",

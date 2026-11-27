@@ -7,5 +7,5 @@ func _process(_delta: float) -> void:
 	
 	var target_pos = camera.global_position
 	target_pos.y = global_position.y
-	if target_pos == global_position: return
+	if target_pos.is_equal_approx(global_position): return
 	look_at(target_pos, Vector3.UP, true)

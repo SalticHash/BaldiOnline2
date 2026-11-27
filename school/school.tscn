@@ -6,7 +6,6 @@
 [ext_resource type="Material" uid="uid://d0w7xaxqnt2hs" path="res://school/materials/Nasty Floor.tres" id="5_562ey"]
 [ext_resource type="PackedScene" uid="uid://7oebi5ia8eap" path="res://window/window.tscn" id="6_kwye5"]
 [ext_resource type="PackedScene" uid="uid://byvqnas55ur6w" path="res://school/objects/door/door.tscn" id="6_svmlk"]
-[ext_resource type="PackedScene" uid="uid://byl75xlecy6r4" path="res://notebook/notebook.tscn" id="9_3a403"]
 [ext_resource type="Material" uid="uid://cfbxevjdidmtx" path="res://school/materials/Carpet.tres" id="9_uy2x7"]
 [ext_resource type="Material" uid="uid://b5nas36ef5pe" path="res://school/materials/Wooden Wall.tres" id="10_nfcfg"]
 [ext_resource type="Material" uid="uid://c2sf2xml0na2x" path="res://school/materials/Electric Box.tres" id="11_u8adr"]
@@ -19,11 +18,14 @@
 [ext_resource type="PackedScene" uid="uid://p11nrh3ja2t8" path="res://school/objects/wooden_door/wooden_door.tscn" id="17_kwye5"]
 [ext_resource type="Material" uid="uid://bmiijxlt2j0xa" path="res://school/materials/Wood Fence.tres" id="18_28008"]
 [ext_resource type="PackedScene" uid="uid://p77ymadapskh" path="res://tape_player/tape_player.tscn" id="19_0avlu"]
+[ext_resource type="PackedScene" uid="uid://0tt12vdek8u2" path="res://school/objects/sweep_trigger/sweep_trigger.tscn" id="19_m7pcb"]
 [ext_resource type="PackedScene" uid="uid://brqliosrylxfc" path="res://blue_locker/blue_locker.tscn" id="20_kx2s4"]
 [ext_resource type="PackedScene" uid="uid://b1a0o5ds5od65" path="res://vending_machine/vending_machine.tscn" id="21_1w42d"]
 [ext_resource type="PackedScene" uid="uid://211rcoo2ehg7" path="res://tape_player/payphone.tscn" id="22_m7pcb"]
 [ext_resource type="PackedScene" uid="uid://cebq6sn3gt6cu" path="res://item/item.tscn" id="23_s82pv"]
 [ext_resource type="PackedScene" uid="uid://bjbyy1bqe8lmu" path="res://storage_locker/storage_locker.tscn" id="24_ac773"]
+[ext_resource type="Script" uid="uid://7gqtkpo0c8oc" path="res://school/travel_paths_line.gd" id="25_1w42d"]
+[ext_resource type="PackedScene" uid="uid://cbdcr8rgqnj2m" path="res://activity/math_machine/math_activity.tscn" id="26_m7pcb"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_lx6sp"]
 resource_name = "school_Plane_450"
@@ -5105,6 +5107,13 @@ blend_shape_mode = 0
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_75wqm"]
 data = PackedVector3Array(-1, -6.3573e-08, -1, 3, 3.97233e-08, 1, 3, 2.14569e-07, -1, -1, -6.3573e-08, -1, -1, -2.38419e-07, 1, 3, 3.97233e-08, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7pcb"]
+transparency = 3
+alpha_hash_scale = 2.0
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 0.25100002)
+
 [sub_resource type="Curve3D" id="Curve3D_c2mw2"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6, 0, -1, 0, 0, 0, 0, 0, 0, 6, 0, 1),
@@ -5489,9 +5498,73 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_jh3y0"]
+size = Vector3(7, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1w42d"]
+size = Vector3(4, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m7pcb"]
+size = Vector3(5, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s82pv"]
+size = Vector3(5, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ac773"]
+size = Vector3(4, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_55gev"]
+size = Vector3(5, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8dxa1"]
+size = Vector3(5, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y5xsh"]
+size = Vector3(6, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ve5oe"]
+size = Vector3(1, 1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gtebe"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qfkec"]
+size = Vector3(10, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7xc12"]
+size = Vector3(4, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bdttr"]
+size = Vector3(5, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_01x1i"]
+size = Vector3(3, 1, 5)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jh3y0"]
 shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jh3y0"]
+material = SubResource("StandardMaterial3D_m7pcb")
+top_radius = 0.25
+bottom_radius = 0.25
+height = 0.1
+radial_segments = 8
+rings = 1
+cap_bottom = false
+
+[sub_resource type="Curve3D" id="Curve3D_dqahw"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.984, 0, 0, 0, 0, 0, 0, 0, 0, 0, -7.262, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jrxnj"]
+size = Vector3(4, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ebij6"]
+size = Vector3(3, 1, 5)
 
 [node name="School" type="Node3D" unique_id=1728031441]
 
@@ -5946,9 +6019,6 @@ shape = SubResource("ConcavePolygonShape3D_c4dj4")
 [node name="Door" parent="Classrooms/Room_001" unique_id=1491193469 instance=ExtResource("6_svmlk")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.48649, 0.145667, 9.58673)
 
-[node name="Notebook" parent="Classrooms/Room_001" unique_id=1310239658 instance=ExtResource("9_3a403")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33161616, 0.165, 10.125777)
-
 [node name="Room_002" type="Node3D" parent="Classrooms" unique_id=332630121]
 
 [node name="Ceyling_045" type="MeshInstance3D" parent="Classrooms/Room_002" unique_id=90950567]
@@ -6018,10 +6088,6 @@ shape = SubResource("ConcavePolygonShape3D_xaesq")
 
 [node name="Door" parent="Classrooms/Room_002" unique_id=1452395772 instance=ExtResource("6_svmlk")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.48649, 0.145667, 11.5867)
-
-[node name="Notebook" parent="Classrooms/Room_002" unique_id=982070001 instance=ExtResource("9_3a403")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6400733, 0.165, 11.4842415)
-color = 1
 
 [node name="Room_003" type="Node3D" parent="Classrooms" unique_id=934235736]
 
@@ -6108,10 +6174,6 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.01
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.51351, 0.145667, -1.41327)
 back_material = ExtResource("14_vw7cd")
 
-[node name="Notebook" parent="Classrooms/Room_003" unique_id=1615910365 instance=ExtResource("9_3a403")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.393597, 0.165, -2.1265154)
-color = 2
-
 [node name="Room_004" type="Node3D" parent="Classrooms" unique_id=1990060334]
 
 [node name="Ceyling_339" type="MeshInstance3D" parent="Classrooms/Room_004" unique_id=2067849483]
@@ -6181,10 +6243,6 @@ shape = SubResource("ConcavePolygonShape3D_8jwxj")
 
 [node name="Door" parent="Classrooms/Room_004" unique_id=1338872975 instance=ExtResource("6_svmlk")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -8.98649, 0.145667, -4.91327)
-
-[node name="Notebook" parent="Classrooms/Room_004" unique_id=866415302 instance=ExtResource("9_3a403")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8474903, 0.165, -8.007425)
-color = 3
 
 [node name="Room_005" type="Node3D" parent="Classrooms" unique_id=1529397765]
 
@@ -6272,10 +6330,6 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.51
 window_back = "faculty"
 back_material = ExtResource("14_vw7cd")
 
-[node name="Notebook" parent="Classrooms/Room_005" unique_id=625762739 instance=ExtResource("9_3a403")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.188402, 0.16499999, -6.9085207)
-color = 4
-
 [node name="Room_006" type="Node3D" parent="Classrooms" unique_id=269568264]
 
 [node name="Ceyling_418" type="MeshInstance3D" parent="Classrooms/Room_006" unique_id=793149303]
@@ -6347,10 +6401,6 @@ shape = SubResource("ConcavePolygonShape3D_lwii3")
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 9.01351, 0.145667, -8.91327)
 back_material = ExtResource("10_nfcfg")
 
-[node name="Notebook" parent="Classrooms/Room_006" unique_id=1726204842 instance=ExtResource("9_3a403")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.164535, 0.165, -12.028916)
-color = 5
-
 [node name="Room_007" type="Node3D" parent="Classrooms" unique_id=166251189]
 
 [node name="Ceyling_436" type="MeshInstance3D" parent="Classrooms/Room_007" unique_id=325008852]
@@ -6421,10 +6471,6 @@ shape = SubResource("ConcavePolygonShape3D_yjbfp")
 [node name="Door" parent="Classrooms/Room_007" unique_id=957853317 instance=ExtResource("6_svmlk")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.01351, 0.145667, -8.91327)
 back_material = ExtResource("10_nfcfg")
-
-[node name="Notebook" parent="Classrooms/Room_007" unique_id=9249207 instance=ExtResource("9_3a403")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.121914, 0.16499998, -13.275692)
-color = 6
 
 [node name="Electric Boxes" type="Node3D" parent="." unique_id=419591521]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014, 0.354, -0.587)
@@ -7978,7 +8024,7 @@ collision_layer = 5
 shape = SubResource("ConcavePolygonShape3D_pofak")
 
 [node name="Wall_438" type="MeshInstance3D" parent="Outdoor Elements/OWalls" unique_id=1803608046]
-transform = Transform3D(0, 0.5, 0, 0, 0, 0.5, 0.5, 0, 0, 2.51351, 0.145667, -14.4133)
+transform = Transform3D(0, 0.5, 0, 0, 0, 0.5, 0.5, 0, 0, 2.51351, 0.14566693, -14.4133)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_iiy2q")
 
@@ -8224,8 +8270,7 @@ collision_layer = 5
 shape = SubResource("ConcavePolygonShape3D_uox41")
 
 [node name="WoodenDoor" parent="Outdoor Elements/OWFence" unique_id=1475381490 instance=ExtResource("17_kwye5")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.5135, 0.145667, 5.58673)
-collision_mask = 1024
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.5135, 0.14566699, 5.58673)
 
 [node name="Principal\'s Office" type="Node3D" parent="." unique_id=1874457851]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014, 0.354, -0.587)
@@ -8449,11 +8494,14 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6.01
 door_front = "suplies"
 door_back = "suplies"
 
+[node name="SweepTrigger" parent="Supplies" unique_id=481440116 instance=ExtResource("19_m7pcb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.014, -0.354, -0.413)
+
 [node name="Instances" type="Node3D" parent="." unique_id=1708869834]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014, 0.354, -0.587)
 
 [node name="TapePlayer" parent="Instances" unique_id=200992389 instance=ExtResource("19_0avlu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.503134, 0.16620749, 4.977585)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.166, 5)
 
 [node name="BlueLocker" parent="Instances" unique_id=1893774405 instance=ExtResource("20_kx2s4")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.38099313, -0.29414082, 3.3355107)
@@ -8552,7 +8600,10 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.
 [node name="BlueLocker9" parent="Instances" unique_id=535964040 instance=ExtResource("20_kx2s4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032814026, -0.35295895, -10.02636)
 
-[node name="Travel" type="Node3D" parent="." unique_id=2062082777]
+[node name="Travel" type="Node3D" parent="." unique_id=2062082777 node_paths=PackedStringArray("mesh")]
+script = ExtResource("25_1w42d")
+mat1 = SubResource("StandardMaterial3D_m7pcb")
+mesh = NodePath("../Intersection")
 
 [node name="SweepOrigin" type="Path3D" parent="Travel" unique_id=4909590]
 curve = SubResource("Curve3D_c2mw2")
@@ -8713,89 +8764,256 @@ curve = SubResource("Curve3D_b8rm8")
 [node name="Room14" type="Path3D" parent="Travel" unique_id=1871888029]
 curve = SubResource("Curve3D_pq2rk")
 
-[node name="Node3D" type="CSGCombiner3D" parent="." unique_id=2007903830]
+[node name="SweepRooms" type="Node3D" parent="." unique_id=723073780]
+
+[node name="Area3D" type="Area3D" parent="SweepRooms" unique_id=692947993]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SweepRooms/Area3D" unique_id=454906009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.5, -13.5)
+shape = SubResource("BoxShape3D_jh3y0")
+
+[node name="Area3D2" type="Area3D" parent="SweepRooms" unique_id=1843978535]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SweepRooms/Area3D2" unique_id=476378057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, -12)
+shape = SubResource("BoxShape3D_1w42d")
+
+[node name="Area3D3" type="Area3D" parent="SweepRooms" unique_id=2067785374]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SweepRooms/Area3D3" unique_id=832925090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.5, -11.5)
+shape = SubResource("BoxShape3D_m7pcb")
+
+[node name="Area3D13" type="Area3D" parent="SweepRooms" unique_id=1139399441]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SweepRooms/Area3D13" unique_id=1657562702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.5, -7.5)
+shape = SubResource("BoxShape3D_s82pv")
+
+[node name="Area3D4" type="Area3D" parent="SweepRooms" unique_id=1803034684]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SweepRooms/Area3D4" unique_id=1670861749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, -6.5)
+shape = SubResource("BoxShape3D_ac773")
+
+[node name="Area3D5" type="Area3D" parent="SweepRooms" unique_id=960998854]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SweepRooms/Area3D5" unique_id=1474829301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.5, -6.5)
+shape = SubResource("BoxShape3D_55gev")
+
+[node name="Area3D6" type="Area3D" parent="SweepRooms" unique_id=93550389]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SweepRooms/Area3D6" unique_id=2002427543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, -1.5)
+shape = SubResource("BoxShape3D_8dxa1")
+
+[node name="Area3D7" type="Area3D" parent="SweepRooms" unique_id=1654638684]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SweepRooms/Area3D7" unique_id=442990631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0.5, -1.5)
+shape = SubResource("BoxShape3D_y5xsh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="SweepRooms/Area3D7" unique_id=297764170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -2.5)
+shape = SubResource("BoxShape3D_ve5oe")
+
+[node name="Area3D8" type="Area3D" parent="SweepRooms" unique_id=1780609232]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SweepRooms/Area3D8" unique_id=1224710521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, 4)
+shape = SubResource("BoxShape3D_gtebe")
+
+[node name="Area3D9" type="Area3D" parent="SweepRooms" unique_id=1383821557]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SweepRooms/Area3D9" unique_id=2121314846]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.5, -2)
+shape = SubResource("BoxShape3D_qfkec")
+
+[node name="Area3D10" type="Area3D" parent="SweepRooms" unique_id=2110469172]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SweepRooms/Area3D10" unique_id=1689313261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 10)
+shape = SubResource("BoxShape3D_7xc12")
+
+[node name="Area3D11" type="Area3D" parent="SweepRooms" unique_id=758082337]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SweepRooms/Area3D11" unique_id=1374785661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.5, 10.5)
+shape = SubResource("BoxShape3D_bdttr")
+
+[node name="Area3D12" type="Area3D" parent="SweepRooms" unique_id=436796148]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SweepRooms/Area3D12" unique_id=1843258762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 10)
+shape = SubResource("BoxShape3D_01x1i")
+
+[node name="BlackCeiling" type="CSGCombiner3D" parent="." unique_id=2007903830]
 material_override = SubResource("StandardMaterial3D_jh3y0")
 
-[node name="CSGMesh3D" type="CSGBox3D" parent="Node3D" unique_id=1293632533]
+[node name="CSGMesh3D" type="CSGBox3D" parent="BlackCeiling" unique_id=1293632533]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.99950004, 4)
 size = Vector3(4, 0.001, 5)
 
-[node name="CSGMesh3D4" type="CSGBox3D" parent="Node3D" unique_id=264343382]
+[node name="CSGMesh3D4" type="CSGBox3D" parent="BlackCeiling" unique_id=264343382]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0.99950004, 3)
 size = Vector3(2, 0.001, 3)
 
-[node name="CSGMesh3D5" type="CSGBox3D" parent="Node3D" unique_id=1143158075]
+[node name="CSGMesh3D5" type="CSGBox3D" parent="BlackCeiling" unique_id=1143158075]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.99950004, 4)
 size = Vector3(1, 0.001, 5)
 
-[node name="CSGMesh3D6" type="CSGBox3D" parent="Node3D" unique_id=445112306]
+[node name="CSGMesh3D6" type="CSGBox3D" parent="BlackCeiling" unique_id=445112306]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.99950004, 6)
 size = Vector3(3, 0.001, 1)
 
-[node name="CSGMesh3D7" type="CSGBox3D" parent="Node3D" unique_id=389404548]
+[node name="CSGMesh3D7" type="CSGBox3D" parent="BlackCeiling" unique_id=389404548]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.99950004, 2)
 size = Vector3(4, 0.001, 1)
 
-[node name="CSGMesh3D8" type="CSGBox3D" parent="Node3D" unique_id=1043397228]
+[node name="CSGMesh3D8" type="CSGBox3D" parent="BlackCeiling" unique_id=1043397228]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.99950004, -5.5)
 size = Vector3(4, 0.001, 2)
 
-[node name="CSGMesh3D10" type="CSGBox3D" parent="Node3D" unique_id=1613262515]
+[node name="CSGMesh3D10" type="CSGBox3D" parent="BlackCeiling" unique_id=1613262515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.99950004, -9.5)
 size = Vector3(5, 0.001, 2)
 
-[node name="CSGMesh3D9" type="CSGBox3D" parent="Node3D" unique_id=2127564357]
+[node name="CSGMesh3D9" type="CSGBox3D" parent="BlackCeiling" unique_id=2127564357]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.99950004, -8.5)
 size = Vector3(2, 0.001, 4)
 
-[node name="CSGMesh3D11" type="CSGBox3D" parent="Node3D" unique_id=1672672871]
+[node name="CSGMesh3D11" type="CSGBox3D" parent="BlackCeiling" unique_id=1672672871]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.99950004, -7)
 size = Vector3(2, 0.001, 3)
 
-[node name="CSGMesh3D12" type="CSGBox3D" parent="Node3D" unique_id=238287963]
+[node name="CSGMesh3D12" type="CSGBox3D" parent="BlackCeiling" unique_id=238287963]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.99950004, -10)
 size = Vector3(5, 0.001, 1)
 
-[node name="CSGMesh3D13" type="CSGBox3D" parent="Node3D" unique_id=1921575529]
+[node name="CSGMesh3D13" type="CSGBox3D" parent="BlackCeiling" unique_id=1921575529]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.99950004, -12.5)
 size = Vector3(1, 0.001, 6)
 
-[node name="CSGMesh3D14" type="CSGBox3D" parent="Node3D" unique_id=482867103]
+[node name="CSGMesh3D14" type="CSGBox3D" parent="BlackCeiling" unique_id=482867103]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.99950004, 4)
 size = Vector3(1, 0.001, 21)
 
-[node name="CSGMesh3D15" type="CSGBox3D" parent="Node3D" unique_id=1852087606]
+[node name="CSGMesh3D15" type="CSGBox3D" parent="BlackCeiling" unique_id=1852087606]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.99950004, 14)
 size = Vector3(7, 0.001, 1)
 
-[node name="CSGMesh3D16" type="CSGBox3D" parent="Node3D" unique_id=316273908]
+[node name="CSGMesh3D16" type="CSGBox3D" parent="BlackCeiling" unique_id=316273908]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.99950004, 14)
 size = Vector3(7, 0.001, 1)
 
-[node name="CSGMesh3D17" type="CSGBox3D" parent="Node3D" unique_id=313278534]
+[node name="CSGMesh3D17" type="CSGBox3D" parent="BlackCeiling" unique_id=313278534]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.99950004, -12)
 size = Vector3(2, 0.001, 1)
 
-[node name="CSGMesh3D18" type="CSGBox3D" parent="Node3D" unique_id=488901761]
+[node name="CSGMesh3D18" type="CSGBox3D" parent="BlackCeiling" unique_id=488901761]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.99950004, -12)
 size = Vector3(3, 0.001, 1)
 
-[node name="CSGMesh3D20" type="CSGBox3D" parent="Node3D" unique_id=180583623]
+[node name="CSGMesh3D20" type="CSGBox3D" parent="BlackCeiling" unique_id=180583623]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.99950004, -15)
 size = Vector3(4, 0.001, 1)
 
-[node name="CSGMesh3D21" type="CSGBox3D" parent="Node3D" unique_id=2041708518]
+[node name="CSGMesh3D21" type="CSGBox3D" parent="BlackCeiling" unique_id=2041708518]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.99950004, -14.5)
 size = Vector3(5, 0.001, 2)
 
-[node name="CSGMesh3D19" type="CSGBox3D" parent="Node3D" unique_id=523445680]
+[node name="CSGMesh3D19" type="CSGBox3D" parent="BlackCeiling" unique_id=523445680]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.99950004, -14)
 size = Vector3(1, 0.001, 3)
 
-[node name="CSGMesh3D2" type="CSGBox3D" parent="Node3D" unique_id=861787370]
+[node name="CSGMesh3D2" type="CSGBox3D" parent="BlackCeiling" unique_id=861787370]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0.99950004, 10)
 size = Vector3(2, 0.001, 5)
 
-[node name="CSGMesh3D3" type="CSGBox3D" parent="Node3D" unique_id=1473824986]
+[node name="CSGMesh3D3" type="CSGBox3D" parent="BlackCeiling" unique_id=1473824986]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.99950004, 8)
 size = Vector3(5, 0.001, 1)
+
+[node name="Intersection" type="MeshInstance3D" parent="." unique_id=1889260507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+visible = false
+mesh = SubResource("CylinderMesh_jh3y0")
+
+[node name="Cleaned" type="Path3D" parent="." unique_id=1976229937]
+visible = false
+curve = SubResource("Curve3D_dqahw")
+
+[node name="Line" type="CSGPolygon3D" parent="Cleaned" unique_id=660559081]
+polygon = PackedVector2Array(-0.5, 0, 0.5, 0, 0.5, -0.05, -0.5, -0.05)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.5
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_m7pcb")
+
+[node name="MathMachine" type="Node3D" parent="." unique_id=1988438834]
+
+[node name="MathActivity1" parent="MathMachine" unique_id=788833514 instance=ExtResource("26_m7pcb")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6, 0, -14)
+
+[node name="Collision" parent="MathMachine/MathActivity1" index="0" unique_id=1342687283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49999666, 0.5, -2)
+shape = SubResource("BoxShape3D_jrxnj")
+
+[node name="MathActivity2" parent="MathMachine" unique_id=1153844805 instance=ExtResource("26_m7pcb")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 12, 0, -11)
+
+[node name="Collision" parent="MathMachine/MathActivity2" index="0" unique_id=1342687283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49999666, 0.5, -2)
+shape = SubResource("BoxShape3D_jrxnj")
+
+[node name="MathActivity3" parent="MathMachine" unique_id=1393830182 instance=ExtResource("26_m7pcb")]
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, -8, 0, 10)
+
+[node name="Collision" parent="MathMachine/MathActivity3" index="0" unique_id=1342687283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49999666, 0.5, -2)
+shape = SubResource("BoxShape3D_jrxnj")
+
+[node name="MathActivity4" parent="MathMachine" unique_id=675649390 instance=ExtResource("26_m7pcb")]
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -1, 0, 12)
+
+[node name="Collision" parent="MathMachine/MathActivity4" index="0" unique_id=1342687283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33786e-06, 0.5, -2)
+shape = SubResource("BoxShape3D_ebij6")
+
+[node name="MathActivity5" parent="MathMachine" unique_id=2102742907 instance=ExtResource("26_m7pcb")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 5, 0, -1)
+
+[node name="Collision" parent="MathMachine/MathActivity5" index="0" unique_id=1342687283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49999666, 0.5, -2)
+shape = SubResource("BoxShape3D_jrxnj")
+
+[node name="MathActivity6" parent="MathMachine" unique_id=832969642 instance=ExtResource("26_m7pcb")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -6, 0, -7)
+
+[node name="Collision" parent="MathMachine/MathActivity6" index="0" unique_id=1342687283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49999666, 0.5, -2)
+shape = SubResource("BoxShape3D_jrxnj")
+
+[node name="MathActivity7" parent="MathMachine" unique_id=2124220845 instance=ExtResource("26_m7pcb")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 11, 0, -6)
+
+[node name="Collision" parent="MathMachine/MathActivity7" index="0" unique_id=1342687283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49999666, 0.5, -2)
+shape = SubResource("BoxShape3D_jrxnj")
+
+[editable path="MathMachine/MathActivity1"]
+[editable path="MathMachine/MathActivity2"]
+[editable path="MathMachine/MathActivity3"]
+[editable path="MathMachine/MathActivity4"]
+[editable path="MathMachine/MathActivity5"]
+[editable path="MathMachine/MathActivity6"]
+[editable path="MathMachine/MathActivity7"]

@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://s1oslmvk51as" path="res://characters/sweep/textures/ui/left_press.png" id="27_csuyt"]
 [ext_resource type="Texture2D" uid="uid://c278ar8w1sx0f" path="res://characters/sweep/textures/ui/right_nopress.png" id="28_is2vj"]
 [ext_resource type="Texture2D" uid="uid://iuu0fk21lwht" path="res://characters/sweep/textures/ui/right_press.png" id="29_atcxp"]
+[ext_resource type="AudioStream" uid="uid://doivd2pe8p6sa" path="res://characters/sweep/GS_GottaSweep.wav" id="31_wi7a8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jh3y0"]
 radius = 0.10498047
@@ -121,7 +122,6 @@ public_visibility = false
 script = ExtResource("5_d6syc")
 
 [node name="UI" type="Control" parent="." index="11" unique_id=1681700583]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -273,3 +273,6 @@ script = ExtResource("22_d6syc")
 [node name="Collision" type="CollisionShape3D" parent="PushArea" index="0" unique_id=925111408]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_jh3y0")
+
+[node name="gotta_sweep" type="AudioStreamPlayer3D" parent="PushArea" index="1" unique_id=1775522418]
+stream = ExtResource("31_wi7a8")

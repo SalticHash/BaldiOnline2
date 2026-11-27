@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://0tt12vdek8u2"]
+
+[ext_resource type="Texture2D" uid="uid://b4illle6uuafc" path="res://characters/sweep/unused/sweep_broom.png" id="1_32von"]
+[ext_resource type="Script" uid="uid://b5u15v2vfuicy" path="res://school/objects/sweep_trigger/sweep_trigger.gd" id="1_h7040"]
+[ext_resource type="AudioStream" uid="uid://dqlgtg1uglo1v" path="res://characters/sweep/GS_Intro.wav" id="3_g72a2"]
+[ext_resource type="Script" uid="uid://xld4c0ibmsg" path="res://characters/sweep/push_area.gd" id="4_trsal"]
+[ext_resource type="AudioStream" uid="uid://doivd2pe8p6sa" path="res://characters/sweep/GS_GottaSweep.wav" id="5_5ggrs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1d8oa"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_gjl7u"]
+properties/0/path = NodePath(".:visible")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="SweepTrigger" type="Area3D" unique_id=481440116]
+collision_layer = 0
+collision_mask = 256
+script = ExtResource("1_h7040")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1572406577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_1d8oa")
+
+[node name="Sprite" type="Sprite3D" parent="." unique_id=499056757]
+transform = Transform3D(0.38, 0, 0, 0, 0.38, 0, 0, 0, 0.38, 0, 0.5, 0)
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("1_32von")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=535373236]
+replication_config = SubResource("SceneReplicationConfig_gjl7u")
+
+[node name="sweepin_time" type="AudioStreamPlayer3D" parent="." unique_id=1757272168]
+stream = ExtResource("3_g72a2")
+
+[node name="PushArea" type="Area3D" parent="." unique_id=332577467]
+collision_layer = 0
+collision_mask = 256
+script = ExtResource("4_trsal")
+
+[node name="Collision" type="CollisionShape3D" parent="PushArea" unique_id=2001016438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_1d8oa")
+
+[node name="gotta_sweep" type="AudioStreamPlayer3D" parent="PushArea" unique_id=471473813]
+stream = ExtResource("5_5ggrs")

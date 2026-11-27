@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://cmmd7nf0kmdgy"]
+
+[ext_resource type="Texture2D" uid="uid://boou436n2llki" path="res://activity/math_machine/balloons/NumBall_0.png" id="1_h6hax"]
+[ext_resource type="Script" uid="uid://c6bs6npspyeb0" path="res://activity/math_machine/balloons/number_balloon.gd" id="1_y3m1o"]
+[ext_resource type="Texture2D" uid="uid://byqbbsegyovjd" path="res://activity/math_machine/balloons/NumBall_1.png" id="2_y3m1o"]
+[ext_resource type="Texture2D" uid="uid://ct8h824bpgoq8" path="res://activity/math_machine/balloons/NumBall_2.png" id="3_bdmkd"]
+[ext_resource type="Texture2D" uid="uid://t33fmphv2ojo" path="res://activity/math_machine/balloons/NumBall_3.png" id="4_m2lrt"]
+[ext_resource type="Texture2D" uid="uid://ds4s2h3n0shq4" path="res://activity/math_machine/balloons/NumBall_4.png" id="5_iorwe"]
+[ext_resource type="Texture2D" uid="uid://c4tyv1okkb6su" path="res://activity/math_machine/balloons/NumBall_5.png" id="6_7dgni"]
+[ext_resource type="Texture2D" uid="uid://c0gkovlw1tai6" path="res://activity/math_machine/balloons/NumBall_6.png" id="7_ah6u8"]
+[ext_resource type="Texture2D" uid="uid://jttom5j8t3a8" path="res://activity/math_machine/balloons/NumBall_7.png" id="8_oucgi"]
+[ext_resource type="Texture2D" uid="uid://n4fwkemrmbwv" path="res://activity/math_machine/balloons/NumBall_8.png" id="9_cy5j8"]
+[ext_resource type="Texture2D" uid="uid://muy6dxw0onvb" path="res://activity/math_machine/balloons/NumBall_9.png" id="10_580yy"]
+[ext_resource type="Texture2D" uid="uid://bnoapi47h87qg" path="res://activity/BalloonPop_Sheet.png" id="12_m2lrt"]
+[ext_resource type="AudioStream" uid="uid://cvgifgs34a3t5" path="res://activity/Gen_Pop.wav" id="13_iorwe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jh3y0"]
+size = Vector3(0.461, 0.922, 0.461)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dgni"]
+atlas = ExtResource("12_m2lrt")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah6u8"]
+atlas = ExtResource("12_m2lrt")
+region = Rect2(128, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oucgi"]
+atlas = ExtResource("12_m2lrt")
+region = Rect2(256, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy5j8"]
+atlas = ExtResource("12_m2lrt")
+region = Rect2(384, 0, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jh3y0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_h6hax")
+}],
+"loop": 1,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y3m1o")
+}],
+"loop": 1,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bdmkd")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_m2lrt")
+}],
+"loop": 1,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_iorwe")
+}],
+"loop": 1,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7dgni")
+}],
+"loop": 1,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ah6u8")
+}],
+"loop": 1,
+"name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_oucgi")
+}],
+"loop": 1,
+"name": &"7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_cy5j8")
+}],
+"loop": 1,
+"name": &"8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_580yy")
+}],
+"loop": 1,
+"name": &"9",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dgni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ah6u8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oucgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy5j8")
+}],
+"loop": 0,
+"name": &"pop",
+"speed": 15.0
+}]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_m2lrt"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="NumberBalloon" type="CharacterBody3D" unique_id=2026888385 groups=["interact"]]
+collision_layer = 20
+collision_mask = 11
+script = ExtResource("1_y3m1o")
+metadata/interact_id = &"number_balloon"
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1016698681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.461, 0)
+shape = SubResource("BoxShape3D_jh3y0")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="." unique_id=1382901626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.461, 0)
+pixel_size = 0.0036
+billboard = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_jh3y0")
+animation = &"0"
+
+[node name="Pop" type="AudioStreamPlayer3D" parent="." unique_id=1669822417]
+stream = ExtResource("13_iorwe")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1476681292]
+replication_config = SubResource("SceneReplicationConfig_m2lrt")
+
+[node name="Bounce" type="Area3D" parent="." unique_id=850073567]
+collision_layer = 32
+collision_mask = 32
+
+[node name="Collision" type="CollisionShape3D" parent="Bounce" unique_id=529148358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.461, 0)
+shape = SubResource("BoxShape3D_jh3y0")
+
+[node name="PopTimer" type="Timer" parent="." unique_id=869465984]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="PopTimer" to="." method="_on_pop_timer_timeout"]

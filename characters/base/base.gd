@@ -9,7 +9,7 @@ func is_owner() -> bool:
 	return id == multiplayer.get_unique_id()
 #endregion
 
-var override_velocity: Vector3 = Vector3.ZERO
+var override_velocity: Node3D = null
 var id: int = 0
 var username: String = ""
 @onready var camera: Camera3D = $Camera

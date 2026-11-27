@@ -12,6 +12,7 @@ func _ready() -> void:
 	request_state.rpc_id(1)
 	if is_multiplayer_authority():
 		$Timer.timeout.connect(close_door)
+		body_entered.connect(_on_body_entered)
 
 # Client requests the current state.
 @rpc("any_peer", "call_local", "reliable")
@@ -64,6 +65,6 @@ func close_door():
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if !is_multiplayer_authority(): return
+	print(body)
 	if body.is_in_group(&"baldi") or body.is_in_group(&"sweep"):
 		open_door(body.id)

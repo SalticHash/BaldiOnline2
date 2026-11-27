@@ -6,6 +6,7 @@ const SPEED_SWEEP: float = 8.35
 const SPEED_WALK: float = 1.67
 @onready var follower: PathFollow3D = $Follower
 @onready var sweep_origin: Path3D = get_node("/root/Game/World/School/Travel/SweepOrigin")
+@onready var cleaned_path: Path3D = get_node("/root/Game/World/School/Cleaned")
 func _ready() -> void:
 	if !is_multiplayer_authority(): return
 	follower.reparent(sweep_origin)
@@ -15,18 +16,18 @@ var path_dir: float = 1.0
 var direction: Vector3 = Vector3.ZERO
 var last_direction: Vector3 = Vector3.ZERO
 var target_sweep_angle: float = 0.0
-var sweeping: bool = true
+var sweeping: bool = false
 func _physics_process(delta: float) -> void:
 	if !is_multiplayer_authority(): return
-	#if direction:
-		#velocity = direction * SPEED_WALK
 	super(delta)
-	if sweeping: sweep_move(delta)
+	$PushArea.monitoring = sweeping
+	if sweeping:sweep_move(delta)
 	else: move()
 
 func move():
+	var speed = SPEED_WALK
 	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	velocity = Vector3(direction.x * SPEED_WALK, velocity.y, direction.z * SPEED_WALK)
+	velocity = Vector3(direction.x * speed, velocity.y, direction.z * speed)
 	if jumping_rope:
 		velocity.x = 0
 		velocity.z = 0
@@ -34,6 +35,13 @@ func move():
 	global_position.y = max(global_position.y, 0.0)
 
 #region SWEEP
+func start_sweeping():
+	follower.reparent(sweep_origin)
+	follower.progress_ratio = 0.0
+	sweeping = true
+
+func stop_sweeping():
+	sweeping = false
 func sweep_move(delta):
 	follower.progress += delta * SPEED_SWEEP * path_dir
 	if follower.progress_ratio == 0.0 or follower.progress_ratio == 1.0:
@@ -41,16 +49,35 @@ func sweep_move(delta):
 		global_position.z = snapped(global_position.z, 1.0)
 		var p = get_directed_path()
 		if p:
-			follower.reparent(p[0])
-			follower.progress_ratio = p[1]
-			path_dir = -1.0 if p[1] == 1.0 else 1.0
-
+			var path: Path3D = p[0]
+			var offset: float = p[1]
+			follower.reparent(path)
+			follower.progress_ratio = offset
+			path_dir = -1.0 if offset == 1.0 else 1.0
+	
 	var lpos = global_position
 	global_position = follower.global_position
 	direction = global_position - lpos
+	velocity = direction.normalized() * SPEED_SWEEP
 	if direction:
 		last_direction = direction
 
+func get_nearest_path() -> Array:
+	var pos: Vector3 = global_position
+	var p1: Node3D = get_node("/root/Game/World/School/Travel")
+	var closest: float = INF
+	var nearest: Path3D = null
+	var offset: float = -1.0
+	for travel_path: Path3D in p1.get_children():
+		var c = travel_path.curve
+		var lp = travel_path.to_local(pos)
+		var point = c.get_closest_point(lp)
+		var dist = travel_path.to_global(point).distance_squared_to(pos)
+		if dist < closest:
+			closest = dist
+			nearest = travel_path
+			offset = c.get_closest_offset(lp)
+	return [nearest, offset, closest]
 
 func get_all_connected_paths() -> Array[Array]:
 	var pos: Vector3 = follower.global_position
@@ -68,7 +95,7 @@ func get_all_connected_paths() -> Array[Array]:
 	return connected
 
 ## Returns null or [Path3D, float]
-func get_directed_path(ignore_press: bool = false) -> Variant:
+func get_directed_path(ignore_press: bool = false):
 	var pressed_direction: Vector3 = Vector3(input_dir.x, 0, input_dir.y)
 	if last_direction.x and pressed_direction.z: pressed_direction.x = 0.0
 	if last_direction.z and pressed_direction.x: pressed_direction.z = 0.0
@@ -109,10 +136,12 @@ func _process(delta: float) -> void:
 		$TopCamera/Sprite.rotation.z = lerp_angle(
 			$TopCamera/Sprite.rotation.z, target_sweep_angle, delta * 20.0
 		)
+		$UI/Cursor.hide()
 	else:
 		$Camera.make_current()
 		$Sprite.show()
 		$TopCamera/Sprite.hide()
+		$UI/Cursor.show()
 	
 	if OS.has_feature("mobile"):
 		%VirtualJoystick.visible = !sweeping

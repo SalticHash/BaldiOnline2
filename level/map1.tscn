@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cebq6sn3gt6cu" path="res://item/item.tscn" id="7_agfmf"]
 [ext_resource type="AudioStream" uid="uid://be60tjn667u4m" path="res://tape_player/AntiHearing.wav" id="7_tjhul"]
 [ext_resource type="PackedScene" uid="uid://bjbyy1bqe8lmu" path="res://storage_locker/storage_locker.tscn" id="10_7p0g3"]
+[ext_resource type="PackedScene" uid="uid://0tt12vdek8u2" path="res://school/objects/sweep_trigger/sweep_trigger.tscn" id="13_tjhul"]
 [ext_resource type="PackedScene" uid="uid://211rcoo2ehg7" path="res://tape_player/payphone.tscn" id="14_k853c"]
 [ext_resource type="PackedScene" uid="uid://p77ymadapskh" path="res://tape_player/tape_player.tscn" id="15_tpro3"]
 [ext_resource type="PackedScene" uid="uid://b1a0o5ds5od65" path="res://vending_machine/vending_machine.tscn" id="16_tpro3"]
@@ -227,3 +228,6 @@ type = "zesty"
 [node name="VendingMachine3" parent="Test" unique_id=468948555 instance=ExtResource("16_tpro3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.510518, 0, -12.614269)
 crazy = true
+
+[node name="SweepTrigger" parent="." unique_id=481440116 instance=ExtResource("13_tjhul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)

@@ -8,12 +8,12 @@ var slap_interval: float = 0.0
 const SLAP_BUFFER: float = 0.167 #10 frames in a 60fps game
 var SLAP_INTERVAL: float = 2.0
 var apple: float = 0.0
-
+var praise_time: float = 5.0
 func _physics_process(delta: float) -> void:
 
 	if !is_multiplayer_authority(): return
 	super(delta)
-	if $Area.has_overlapping_bodies() and !has_node(locker) and apple <= 0.0:
+	if $Area.has_overlapping_bodies() and !has_node(locker) and apple <= 0.0 and praise_time <= 0.0:
 		for b in $Area.get_overlapping_bodies():
 			if b.lost: break
 			var i = b.has_item(b.ITEM.APPLE)
@@ -25,10 +25,14 @@ func _physics_process(delta: float) -> void:
 			b.lose(self)
 	
 	SLAP_INTERVAL = 1.0 - (Server.notebooks * 0.1)
-	if apple > 0.0:
+	if apple > 0.0 and praise_time < 0.0:
 		apple -= delta
-		if apple <= 0.0: slap_effect(true)
-	if has_node(locker) or apple > 0.0:
+		if apple <= 0.0: slap_effect.rpc(true)
+	if praise_time > 0.0:
+		praise_time -= delta
+		if praise_time <= 0.0:
+			slap_effect.rpc(true)
+	if has_node(locker) or apple > 0.0 or praise_time > 0.0:
 		slap_buffer = 0.0
 		slap_interval = SLAP_INTERVAL
 		velocity.x = 0
@@ -91,10 +95,24 @@ func slap_effect(ruler: bool = false):
 func get_apple():
 	$Sprite.animation = "apple"
 	$ThankAppleSound.play()
-	
+
+@rpc("authority", "call_local", "reliable")
+func praise_effect(num: int):
+	$PraiseSounds.get_child(num).play()
+	$Sprite.play("talk")
+
+func praise(activity: StringName):
+	if !is_multiplayer_authority(): return
+	match activity:
+		&"math":
+			praise_effect.rpc(randi_range(0, 5))
+			praise_time += 5.0
 func _process(delta: float) -> void:
 	super(delta)
-	if apple > 0.0:
+	if praise_time > 0.0:
+		if !$Sprite.is_playing(): $Sprite.play("talk")
+	print(apple)
+	if apple > 0.0 and praise_time <= 0.0:
 		if apple <= 10.0:
 			if $EatSound/Timer.is_stopped():
 				$EatSound/Timer.start()
@@ -110,7 +128,7 @@ func _process(delta: float) -> void:
 	$UI.show()
 	
 	var obj = $Camera/InteractRay.get_collider()
-	if  apple <= 0.0 and obj and obj.is_in_group("interact") and obj.get_meta(&"interact_id") == &"blue_locker":
+	if  apple <= 0.0 and praise_time <= 0.0 and obj and obj.is_in_group("interact") and obj.get_meta(&"interact_id") == &"blue_locker":
 		$UI/Hand.show()
 		if Input.is_action_just_pressed("click"):
 			inspect_locker.rpc_id(1, obj.get_path())

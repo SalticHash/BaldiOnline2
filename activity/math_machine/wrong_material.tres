@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dqh4gm53mvxis"]
+
+[ext_resource type="Texture2D" uid="uid://dobddipfbhxgi" path="res://activity/math_machine/MM_Wrong.png" id="1_rel6k"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_rel6k")
+texture_filter = 0

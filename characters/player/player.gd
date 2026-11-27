@@ -77,11 +77,11 @@ func _physics_process(delta: float) -> void:
 	velocity.z = direction.z * speed
 
 	if override_velocity:
-		var keep = 0.5
-		velocity = override_velocity + velocity * 0.3
+		velocity = override_velocity.velocity * 0.99 + velocity * 0.3
 	move_and_slide()
 	global_position.y = max(global_position.y, 0.0)
 
+#region LOCKER
 @rpc("any_peer","call_local","reliable")
 func enter_locker(path):
 	if !is_multiplayer_authority(): return
@@ -114,6 +114,8 @@ func exited_locker():
 	$VoiceChat/Voice.bus = &"Master"
 	show()
 	$Collision.disabled = false
+
+#endregion
 
 func _process(delta: float) -> void:
 	if multiplayer.get_unique_id() != id: return
@@ -164,6 +166,7 @@ func _process(delta: float) -> void:
 	update_inventory()
 	
 	interact()
+	
 	if Input.is_action_just_pressed("use"):
 		use_item.rpc_id(1, cursor_pos)
 
@@ -190,7 +193,8 @@ func update_inventory():
 	if Input.is_action_just_pressed("slot_5"): cursor_pos = 4
 	cursor_pos = wrapi(cursor_pos, 0, inventory.size())
 
-var interactions = [&"door", &"storage_locker", &"blue_locker", &"alarm_clock", &"item", &"notebook"]
+var hovered_balloon: Node3D = null
+var interactions = [&"door", &"storage_locker", &"blue_locker", &"alarm_clock", &"item", &"notebook", &"number_balloon", &"math_machine"]
 func interact() -> void:
 	var obj: Node3D = $Camera/InteractRay.get_collider()
 	var interact_id = obj.get_meta(&"interact_id", null) if obj and obj.is_in_group("interact") else null
@@ -198,9 +202,21 @@ func interact() -> void:
 		or interact_id not in interactions \
 		or !can_interact():
 		$UI/Hand.hide()
+		
+		if hovered_balloon:
+			hovered_balloon.hovered = false
+			hovered_balloon = null
 		return
 	$UI/Hand.show()
-
+	if interact_id == &"number_balloon":
+		if hovered_balloon and hovered_balloon != obj:
+			hovered_balloon.hovered = false
+			hovered_balloon = null
+		hovered_balloon = obj
+		hovered_balloon.hovered = true
+	elif hovered_balloon:
+		hovered_balloon.hovered = false
+		hovered_balloon = null
 	if !Input.is_action_just_pressed("click"): return
 	match interact_id:
 		&"door": obj.open_door.rpc_id(1)
@@ -216,6 +232,35 @@ func interact() -> void:
 			$UI/Notebook.stop()
 			$UI/Notebook.play("turn")
 			obj.pickup.rpc_id(1)
+		&"number_balloon":
+			grab.rpc_id(1)
+		&"math_machine":
+			give_balloon.rpc_id(1)
+
+var balloon: Node3D = null
+@rpc("any_peer", "call_local", "reliable")
+func grab():
+	if !is_multiplayer_authority(): return
+	var obj: Node3D = $Camera/InteractRay.get_collider()
+	var interact_id = obj.get_meta(&"interact_id", null) if obj and obj.is_in_group("interact") else null
+	if interact_id != &"number_balloon": return
+	
+	var new_balloon = obj
+	if new_balloon.player: return
+	if balloon:
+		balloon.release()
+	balloon = new_balloon
+	if !balloon: return
+	balloon.grab(self)
+
+@rpc("any_peer", "call_local", "reliable")
+func give_balloon():
+	if !is_multiplayer_authority(): return
+	var obj: Node3D = $Camera/InteractRay.get_collider()
+	var interact_id = obj.get_meta(&"interact_id", null) if obj and obj.is_in_group("interact") else null
+	if interact_id != &"math_machine": return
+	
+	obj.solve(balloon)
 	
 @onready var bsoda = preload("res://bsoda/bsoda.tscn")
 @onready var diet = preload("res://bsoda/diet.tscn")

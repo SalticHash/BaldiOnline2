@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://cbdcr8rgqnj2m"]
+
+[ext_resource type="Script" uid="uid://cpw1w6amt13a1" path="res://activity/math_machine/math_activity.gd" id="1_mej2f"]
+[ext_resource type="Script" uid="uid://ca0iptq0ow0dc" path="res://activity/math_machine/math_machine.gd" id="1_sncx5"]
+[ext_resource type="Material" uid="uid://bf2q6iu302asy" path="res://activity/math_machine/default_material.tres" id="2_61fv6"]
+[ext_resource type="AudioStream" uid="uid://cqmoy8t27lngx" path="res://activity/Activity_Correct.wav" id="3_mej2f"]
+[ext_resource type="AudioStream" uid="uid://bp3c65d6pc4w6" path="res://activity/Activity_Incorrect.wav" id="4_7qd8x"]
+[ext_resource type="PackedScene" uid="uid://cmmd7nf0kmdgy" path="res://activity/math_machine/balloons/number_balloon.tscn" id="6_7qd8x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jh3y0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1d8oa"]
+size = Vector3(1, 1, 0.492)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jh3y0"]
+size = Vector3(1, 1, 0.492)
+
+[node name="MathActivity" type="Area3D" unique_id=788833514]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_mej2f")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1342687283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_jh3y0")
+
+[node name="MathMachine" type="Area3D" parent="." unique_id=51746221 groups=["interact"]]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_sncx5")
+metadata/interact_id = &"math_machine"
+
+[node name="Collision" type="CollisionShape3D" parent="MathMachine" unique_id=313452461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_1d8oa")
+
+[node name="Solid" type="StaticBody3D" parent="MathMachine" unique_id=1064823490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="MathMachine/Solid" unique_id=538060293]
+shape = SubResource("BoxShape3D_1d8oa")
+
+[node name="Mesh" type="MeshInstance3D" parent="MathMachine" unique_id=615138286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = ExtResource("2_61fv6")
+mesh = SubResource("BoxMesh_jh3y0")
+
+[node name="Num1" type="Label3D" parent="MathMachine" unique_id=1071013989]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1, 0.36497185, 0.364, -0.247)
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+modulate = Color(0, 0, 0, 1)
+text = "X"
+outline_size = 0
+
+[node name="Op" type="Label3D" parent="MathMachine" unique_id=373757481]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1, 0.20046096, 0.364, -0.247)
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+modulate = Color(0, 0, 0, 1)
+text = "+"
+outline_size = 0
+
+[node name="Num2" type="Label3D" parent="MathMachine" unique_id=1627085987]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1, 0.03041486, 0.364, -0.247)
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+modulate = Color(0, 0, 0, 1)
+text = "Y"
+outline_size = 0
+
+[node name="Result" type="Label3D" parent="MathMachine" unique_id=394390894]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1, -0.35286507, 0.364, -0.24700001)
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+text = "?"
+outline_size = 0
+
+[node name="Correct" type="AudioStreamPlayer3D" parent="MathMachine" unique_id=1820570075]
+transform = Transform3D(1.1111112, 0, 0, 0, 1.1111112, 0, 0, 0, 1.1111112, 0, 0, 0)
+stream = ExtResource("3_mej2f")
+
+[node name="Incorrect" type="AudioStreamPlayer3D" parent="MathMachine" unique_id=1469730976]
+transform = Transform3D(1.1111112, 0, 0, 0, 1.1111112, 0, 0, 0, 1.1111112, 0, 0, 0)
+stream = ExtResource("4_7qd8x")
+
+[node name="SP" type="Marker3D" parent="MathMachine" unique_id=140668744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.55)
+
+[node name="NotebookSpawn" type="Marker3D" parent="MathMachine" unique_id=787006777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47796854, -0.4616637)
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="MathMachine/NotebookSpawn" unique_id=183230373]
+_spawnable_scenes = PackedStringArray("uid://byl75xlecy6r4")
+spawn_path = NodePath("..")
+spawn_limit = 1
+
+[node name="Balloons" type="Node3D" parent="." unique_id=247289829]
+
+[node name="0" parent="Balloons" unique_id=2026888385 instance=ExtResource("6_7qd8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="1" parent="Balloons" unique_id=182832605 instance=ExtResource("6_7qd8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+value = 1
+
+[node name="2" parent="Balloons" unique_id=1700088157 instance=ExtResource("6_7qd8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+value = 2
+
+[node name="3" parent="Balloons" unique_id=863292304 instance=ExtResource("6_7qd8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+value = 3
+
+[node name="4" parent="Balloons" unique_id=604479894 instance=ExtResource("6_7qd8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+value = 4
+
+[node name="5" parent="Balloons" unique_id=2031023146 instance=ExtResource("6_7qd8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+value = 5
+
+[node name="6" parent="Balloons" unique_id=813587331 instance=ExtResource("6_7qd8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+value = 6
+
+[node name="7" parent="Balloons" unique_id=1468654035 instance=ExtResource("6_7qd8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+value = 7
+
+[node name="8" parent="Balloons" unique_id=1873986578 instance=ExtResource("6_7qd8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+value = 8
+
+[node name="9" parent="Balloons" unique_id=331894218 instance=ExtResource("6_7qd8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+value = 9
