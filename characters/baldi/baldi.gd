@@ -59,8 +59,8 @@ func move(delta: float):
 		#slap_effect.rpc()
 	if true:#slap_buffer > 0.0:
 		var direction := (transform.basis * Vector3.FORWARD).normalized()
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * remap(SLAP_INTERVAL, 1.0, 0.3, 1.0, 2.0)
+		velocity.z = direction.z * remap(SLAP_INTERVAL, 1.0, 0.3, 1.0, 2.0)
 	else:
 		velocity.x = 0
 		velocity.z = 0
