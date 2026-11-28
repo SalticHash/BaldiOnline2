@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ca0iptq0ow0dc" path="res://activity/math_machine/math_machine.gd" id="1_sncx5"]
 [ext_resource type="Material" uid="uid://bf2q6iu302asy" path="res://activity/math_machine/default_material.tres" id="2_61fv6"]
 [ext_resource type="AudioStream" uid="uid://cqmoy8t27lngx" path="res://activity/Activity_Correct.wav" id="3_mej2f"]
+[ext_resource type="FontFile" uid="uid://c82nhh6cv1uqt" path="res://font/comic-sans-ms-font-family/COMIC.TTF" id="4_1fayl"]
 [ext_resource type="AudioStream" uid="uid://bp3c65d6pc4w6" path="res://activity/Activity_Incorrect.wav" id="4_7qd8x"]
 [ext_resource type="PackedScene" uid="uid://cmmd7nf0kmdgy" path="res://activity/math_machine/balloons/number_balloon.tscn" id="6_7qd8x"]
 
@@ -38,8 +39,8 @@ script = ExtResource("1_mej2f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_jh3y0")
 
-[node name="MathMachine" type="Area3D" parent="." unique_id=51746221 groups=["interact"]]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+[node name="MathMachine" type="Area3D" parent="." unique_id=51746221 groups=["interact", "math_machine"]]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_sncx5")
@@ -61,38 +62,50 @@ material_override = ExtResource("2_61fv6")
 mesh = SubResource("BoxMesh_jh3y0")
 
 [node name="Num1" type="Label3D" parent="MathMachine" unique_id=1071013989]
-transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1, 0.36497185, 0.364, -0.247)
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1, 0.367, 0.364, -0.247)
+pixel_size = 0.006
 double_sided = false
 alpha_cut = 1
 texture_filter = 0
 modulate = Color(0, 0, 0, 1)
-text = "X"
+text = "5"
+font = ExtResource("4_1fayl")
+font_size = 40
 outline_size = 0
 
 [node name="Op" type="Label3D" parent="MathMachine" unique_id=373757481]
 transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1, 0.20046096, 0.364, -0.247)
+pixel_size = 0.006
 double_sided = false
 alpha_cut = 1
 texture_filter = 0
 modulate = Color(0, 0, 0, 1)
 text = "+"
+font = ExtResource("4_1fayl")
+font_size = 40
 outline_size = 0
 
 [node name="Num2" type="Label3D" parent="MathMachine" unique_id=1627085987]
 transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1, 0.03041486, 0.364, -0.247)
+pixel_size = 0.006
 double_sided = false
 alpha_cut = 1
 texture_filter = 0
 modulate = Color(0, 0, 0, 1)
-text = "Y"
+text = "6"
+font = ExtResource("4_1fayl")
+font_size = 40
 outline_size = 0
 
 [node name="Result" type="Label3D" parent="MathMachine" unique_id=394390894]
-transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1, -0.35286507, 0.364, -0.24700001)
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1, -0.35491654, 0.3726154, -0.24700004)
+pixel_size = 0.006
 double_sided = false
 alpha_cut = 1
 texture_filter = 0
 text = "?"
+font = ExtResource("4_1fayl")
+font_size = 40
 outline_size = 0
 
 [node name="Correct" type="AudioStreamPlayer3D" parent="MathMachine" unique_id=1820570075]
@@ -107,7 +120,7 @@ stream = ExtResource("4_7qd8x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.55)
 
 [node name="NotebookSpawn" type="Marker3D" parent="MathMachine" unique_id=787006777]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47796854, -0.4616637)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.519, -0.35)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="MathMachine/NotebookSpawn" unique_id=183230373]
 _spawnable_scenes = PackedStringArray("uid://byl75xlecy6r4")

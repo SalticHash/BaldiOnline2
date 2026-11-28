@@ -18,6 +18,8 @@ func _physics_process(delta: float) -> void:
 	var speed = SPEED_WALK if play_cooldown > 0.0 else SPEED_RUN
 	if playing: speed = 0.0
 	velocity = Vector3(direction.x * speed, velocity.y, direction.z * speed)
+	if override_velocity:
+		velocity = override_velocity.velocity * 0.99 + velocity * 0.3
 	move_and_slide()
 	global_position.y = max(global_position.y, 0.0)
 
@@ -47,6 +49,7 @@ func _on_area_body_entered(body: Node3D) -> void:
 	if body == self: return
 	if play_cooldown > 0.0: return
 	if body.jumping_rope: return
+	if body.is_in_group("sweep") and body.sweeping: return
 	play_cooldown = 15.0
 	body.start_jumping_rope(self)
 	play_sound.rpc("ready")

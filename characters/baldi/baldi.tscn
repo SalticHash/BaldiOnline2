@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dn4htwh73rbwi" path="res://characters/baldi/sprites/Baldi_Talk_Standing_Sheet.png" id="8_7kqed"]
 [ext_resource type="AudioStream" uid="uid://ctanpaq6wh7n6" path="res://characters/baldi/slap.wav" id="8_8irye"]
 [ext_resource type="Script" uid="uid://dc4r27qbo58jf" path="res://characters/baldi/input_sync.gd" id="9_8fcnu"]
+[ext_resource type="Texture2D" uid="uid://dhjhw0hrw41ku" path="res://characters/baldi/sprites/basi.png" id="10_5s10v"]
 [ext_resource type="AudioStream" uid="uid://c11rejkve11mc" path="res://characters/baldi/sounds/BAL_FoundLocker.wav" id="10_7kqed"]
 [ext_resource type="AudioStream" uid="uid://cac1t3hv8fxkh" path="res://characters/baldi/sounds/apple/BAL_Apple.wav" id="12_smu0b"]
 [ext_resource type="AudioStream" uid="uid://uxxxed7bvvil" path="res://characters/baldi/sounds/praise/BAL_Praise1.wav" id="14_ksrfo"]
@@ -22,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://crucgtsxcn6fy" path="res://characters/baldi/sounds/praise/BAL_Praise4.wav" id="17_4j3ba"]
 [ext_resource type="AudioStream" uid="uid://dxw0qcc06gm5k" path="res://characters/baldi/sounds/praise/BAL_Praise5.wav" id="18_nxh6s"]
 [ext_resource type="AudioStream" uid="uid://bjd5tsprt7so3" path="res://characters/baldi/sounds/praise/BAL_Praise6.wav" id="19_1ov7a"]
+[ext_resource type="AudioStream" uid="uid://dbscpkomic0xr" path="res://characters/baldi/Ambience.wav" id="24_7s1i0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jh3y0"]
 radius = 0.123046875
@@ -161,6 +163,7 @@ properties/1/spawn = true
 properties/1/replication_mode = 2
 
 [node name="Baldi" unique_id=991214998 groups=["baldi"] instance=ExtResource("1_pfkde")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.803747)
 collision_layer = 1280
 collision_mask = 9
 script = ExtResource("2_1rn1s")
@@ -177,20 +180,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84, 0)
 
 [node name="Sprite" type="AnimatedSprite3D" parent="." index="3" unique_id=856986327]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.384, 0)
+visible = false
 pixel_size = 0.003
 billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_jh3y0")
 animation = &"ruler"
 
-[node name="SlapSound" type="AudioStreamPlayer3D" parent="." index="4" unique_id=1249167152]
+[node name="Balsi" type="Sprite3D" parent="." index="4" unique_id=175400178]
+transform = Transform3D(0.568, 0, 0, 0, 0.568, 0, 0, 0, 0.568, 0, 0.325, 0)
+pixel_size = 0.003
+billboard = 2
+texture_filter = 0
+texture = ExtResource("10_5s10v")
+
+[node name="SlapSound" type="AudioStreamPlayer3D" parent="." index="5" unique_id=1249167152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1000, 0)
 stream = ExtResource("8_8irye")
 max_polyphony = 4
 
-[node name="InspectLockerSound" type="AudioStreamPlayer3D" parent="." index="5" unique_id=1357447691]
+[node name="InspectLockerSound" type="AudioStreamPlayer3D" parent="." index="6" unique_id=1357447691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1000, 0)
 stream = ExtResource("10_7kqed")
 
-[node name="EatSound" type="AudioStreamPlayer3D" parent="." index="6" unique_id=1597790600]
+[node name="EatSound" type="AudioStreamPlayer3D" parent="." index="7" unique_id=1597790600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1000, 0)
 stream = ExtResource("16_vfqcy")
 max_polyphony = 25
 
@@ -198,10 +212,12 @@ max_polyphony = 25
 wait_time = 0.05
 autostart = true
 
-[node name="ThankAppleSound" type="AudioStreamPlayer3D" parent="." index="7" unique_id=387834567]
+[node name="ThankAppleSound" type="AudioStreamPlayer3D" parent="." index="8" unique_id=387834567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1000, 0)
 stream = ExtResource("12_smu0b")
 
-[node name="PraiseSounds" type="Node3D" parent="." index="8" unique_id=633468661]
+[node name="PraiseSounds" type="Node3D" parent="." index="9" unique_id=633468661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1000, 0)
 
 [node name="0" type="AudioStreamPlayer3D" parent="PraiseSounds" index="0" unique_id=485886148]
 stream = ExtResource("14_ksrfo")
@@ -221,9 +237,9 @@ stream = ExtResource("18_nxh6s")
 [node name="5" type="AudioStreamPlayer3D" parent="PraiseSounds" index="5" unique_id=466015950]
 stream = ExtResource("19_1ov7a")
 
-[node name="Highlights" type="Node3D" parent="." index="10" unique_id=1429456648]
+[node name="Highlights" type="Node3D" parent="." index="11" unique_id=1429456648]
 
-[node name="Area" type="Area3D" parent="." index="11" unique_id=840447406]
+[node name="Area" type="Area3D" parent="." index="12" unique_id=840447406]
 collision_layer = 0
 collision_mask = 512
 
@@ -231,7 +247,7 @@ collision_mask = 512
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36694336, 0)
 shape = SubResource("CapsuleShape3D_jh3y0")
 
-[node name="UI" type="Control" parent="." index="12" unique_id=1409917834]
+[node name="UI" type="Control" parent="." index="13" unique_id=1409917834]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -275,23 +291,28 @@ position = Vector2(-2, 484)
 scale = Vector2(2, 2)
 overflow_max = 1.0
 
-[node name="ServerSync" type="MultiplayerSynchronizer" parent="." index="13" unique_id=374456494]
+[node name="ServerSync" type="MultiplayerSynchronizer" parent="." index="14" unique_id=374456494]
 replication_config = SubResource("SceneReplicationConfig_mgn76")
 
-[node name="InputSync" type="MultiplayerSynchronizer" parent="." index="14" unique_id=880549000]
+[node name="InputSync" type="MultiplayerSynchronizer" parent="." index="15" unique_id=880549000]
 replication_config = SubResource("SceneReplicationConfig_ae1l2")
 public_visibility = false
 script = ExtResource("9_8fcnu")
 
-[node name="PeerSync" type="MultiplayerSynchronizer" parent="." index="15" unique_id=52560936]
+[node name="PeerSync" type="MultiplayerSynchronizer" parent="." index="16" unique_id=52560936]
 replication_config = SubResource("SceneReplicationConfig_8fcnu")
 
-[node name="OwnerSync" type="MultiplayerSynchronizer" parent="." index="16" unique_id=540204516]
+[node name="OwnerSync" type="MultiplayerSynchronizer" parent="." index="17" unique_id=540204516]
 replication_config = SubResource("SceneReplicationConfig_suoda")
 public_visibility = false
 
-[node name="InspectLockerTimer" type="Timer" parent="." index="17" unique_id=1763981538]
+[node name="InspectLockerTimer" type="Timer" parent="." index="18" unique_id=1763981538]
 wait_time = 3.5
 one_shot = true
+
+[node name="ScaryAmbience" type="AudioStreamPlayer3D" parent="." index="21" unique_id=1121553467]
+stream = ExtResource("24_7s1i0")
+autoplay = true
+max_distance = 8.0
 
 [connection signal="timeout" from="EatSound/Timer" to="." method="_on_eat_sound_timeout"]

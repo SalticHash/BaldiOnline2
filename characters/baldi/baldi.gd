@@ -1,6 +1,6 @@
 extends BaseController
 
-const SPEED: float = 7.5
+const SPEED: float = 1.0#7.5 #TODO FIX
 
 var slapping: bool = false
 var slap_buffer: float = 0.0
@@ -8,7 +8,7 @@ var slap_interval: float = 0.0
 const SLAP_BUFFER: float = 0.167 #10 frames in a 60fps game
 var SLAP_INTERVAL: float = 2.0
 var apple: float = 0.0
-var praise_time: float = 5.0
+var praise_time: float = 0.0
 var anger: float = 0.0
 func _physics_process(delta: float) -> void:
 
@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 				break
 			b.lose(self)
 	
-	SLAP_INTERVAL = 1.0 - (Server.notebooks * 0.1) / remap(anger, 0.0, 1.0, 0.0, 2.0)
+	SLAP_INTERVAL = 1.0 - (Server.notebooks * 0.1) / remap(anger, 0.0, 1.0, 1.0, 2.0)
 	if apple > 0.0 and praise_time < 0.0:
 		apple -= delta
 		if apple <= 0.0: slap_effect.rpc(true)
@@ -43,18 +43,21 @@ func _physics_process(delta: float) -> void:
 		return
 	if !jumping_rope: move(delta)
 	else: velocity = Vector3(0, velocity.y, 0)
-
+	
+	if override_velocity:
+		velocity = override_velocity.velocity * 0.99 + velocity * 0.3
 	move_and_slide()
 	global_position.y = max(global_position.y, 0.0)
 
 func move(delta: float):
 	slap_buffer -= delta
+	#TODO FIX
 	if slap_interval > 0.0: slap_interval -= delta
-	if slapping and slap_interval <= 0.0:
-		slap_buffer = SLAP_BUFFER
-		slap_interval = SLAP_INTERVAL
-		slap_effect.rpc()
-	if slap_buffer > 0.0:
+	#if slapping and slap_interval <= 0.0:
+		#slap_buffer = SLAP_BUFFER
+		#slap_interval = SLAP_INTERVAL
+		#slap_effect.rpc()
+	if true:#slap_buffer > 0.0:
 		var direction := (transform.basis * Vector3.FORWARD).normalized()
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -105,10 +108,12 @@ func praise_effect(num: int):
 
 func bad_math():
 	anger += 1.0
+	return
 	print("ANGRY")
 
 func praise(activity: StringName):
 	if !is_multiplayer_authority(): return
+	return
 	match activity:
 		&"math":
 			praise_effect.rpc(randi_range(0, 5))

@@ -63,8 +63,6 @@ func get_player_reach() -> float:
 	return longest
 
 
-func alert_baldi(noise: int, position: Vector3 = Vector3.INF):
-	if position == Vector3.INF:
-		position = get_type_instance(TYPE.PLAYER).global_position
-	
+func alert_baldi(noise: int, player: Node3D, position: Vector3 = Vector3.INF):
+	if position == Vector3.INF: position = player.global_position
 	rpc_type(Server.TYPE.BALDI, "spawn_highlight", position, noise)

@@ -5,8 +5,6 @@ class_name BaseInputSync
 var DPI: float = 0.01
 
 func _ready() -> void:
-	if OS.has_feature("pc"):
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if !is_multiplayer_authority():
 		process_mode = Node.PROCESS_MODE_DISABLED
 		return
@@ -18,6 +16,7 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if Input.is_action_just_pressed("click"):
 		player.jump.rpc_id(1)
 	

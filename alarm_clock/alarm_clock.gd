@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	if time <= 0.0:
 		rang = true
 		play_sound.rpc()
-		Server.alert_baldi(112, $SP.global_position)
+		Server.alert_baldi(112, null, $SP.global_position)
 		return
 	time -= delta
 

@@ -117,59 +117,6 @@ func exited_locker():
 
 #endregion
 
-func _process(delta: float) -> void:
-	if multiplayer.get_unique_id() != id: return
-	super(delta)
-	if lost:
-		get_node("/root/Game/World/Skybox").hide()
-		var s = $Camera/Darkness.mesh.size.x
-		var l = 0.5
-		if s <= l:
-			$UI/Darkness.show()
-			$Lose.stop()
-			return
-		s = clampf(s - (delta * 80 / 1.2), l, 80.5)
-		$Camera/Darkness.mesh.size = Vector3(s, 80.5, s)
-	
-	$UI.show()
-	$Camera/Darkness.show()
-	$Camera/Hand3D.hide()
-	$Camera/Darkness.global_position = $Camera.global_position
-	$UI/NotebookAmount.text = str(Server.notebooks) + "/7"
-	
-	$UI/Stamina.value = stamina
-	
-	if glove_time > 0.0:
-		$UI/Effects/Glove.show()
-		$UI/Effects/Glove/Time.value = glove_time
-	else:
-		$UI/Effects/Glove.hide()
-	
-	if has_node(locker):
-		get_node(locker).get_node("Camera").make_current()
-		$UI/Hand.hide()
-		$UI/Cursor.hide()
-		$UI/LockerOverlay.show()
-		if Input.is_action_just_pressed("click"):
-			exit_locker.rpc_id(1)
-		return
-	else:
-		$UI/Cursor.show()
-		$UI/LockerOverlay.hide()
-		$Camera.make_current()
-	
-	$Camera.rotation.y = PI if Input.is_action_pressed("flip") else 0.0
-
-
-	
-	# Update inventory
-	update_inventory()
-	
-	interact()
-	
-	if Input.is_action_just_pressed("use"):
-		use_item.rpc_id(1, cursor_pos)
-
 func update_inventory():
 	for i in range(inventory.size()):
 		var slot = $UI/Inventory.get_child(i)
@@ -248,7 +195,7 @@ func grab():
 	var new_balloon = obj
 	if new_balloon.player: return
 	if balloon:
-		balloon.release()
+		balloon.release(new_balloon.position)
 	balloon = new_balloon
 	if !balloon: return
 	balloon.grab(self)
@@ -344,25 +291,12 @@ func use_item(cursor):
 				
 			
 
-@rpc("authority", "call_local", "reliable")
-func play_sound(sound):
-	$Sounds.get_node(sound).play()
 
 func lose(b):
 	if !is_multiplayer_authority(): return
 	if lost: return
 	lost = true
 	got_by_baldi.rpc(b.get_path())
-
-@rpc("authority", "call_local", "reliable")
-func got_by_baldi(path):
-	if multiplayer.get_unique_id() != id:
-		hide()
-		return
-	$VoiceChat.stop()
-	$UI/Baldi.show()
-	$Lose.play()
-	get_node(path).hide()
 
 func has_item(item: ITEM) -> int:
 	if !is_multiplayer_authority():
@@ -375,3 +309,79 @@ func set_item(slot: int, item: ITEM) -> void:
 		push_error("Cant set as is not authority")
 		return
 	inventory[slot] = item
+
+#region OWNER
+func _process(delta: float) -> void:
+	if multiplayer.get_unique_id() != id: return
+	super(delta)
+	if lost:
+		get_node("/root/Game/World/Skybox").hide()
+		var s = $Camera/Darkness.mesh.size.x
+		var l = 0.5
+		if s <= l:
+			$UI/Darkness.show()
+			$Lose.stop()
+			return
+		s = clampf(s - (delta * 80 / 1.2), l, 80.5)
+		$Camera/Darkness.mesh.size = Vector3(s, 80.5, s)
+	
+	$UI.show()
+	$Camera/Darkness.show()
+	$Camera/Hand3D.hide()
+	$Camera/Darkness.global_position = $Camera.global_position
+	$UI/NotebookAmount.text = str(Server.notebooks) + "/7"
+	
+	$UI/Stamina.value = stamina
+	
+	if glove_time > 0.0:
+		$UI/Effects/Glove.show()
+		$UI/Effects/Glove/Time.value = glove_time
+	else:
+		$UI/Effects/Glove.hide()
+	
+	if has_node(locker):
+		get_node(locker).get_node("Camera").make_current()
+		$UI/Hand.hide()
+		$UI/Cursor.hide()
+		$UI/LockerOverlay.show()
+		if Input.is_action_just_pressed("click"):
+			exit_locker.rpc_id(1)
+		return
+	else:
+		$UI/Cursor.show()
+		$UI/LockerOverlay.hide()
+		$Camera.make_current()
+	
+	$Camera.rotation.y = PI if Input.is_action_pressed("flip") else 0.0
+
+
+	
+	# Update inventory
+	update_inventory()
+	
+	interact()
+	
+	if Input.is_action_just_pressed("use"):
+		use_item.rpc_id(1, cursor_pos)
+
+@rpc("authority", "call_local", "reliable")
+func got_by_baldi(path):
+	if multiplayer.get_unique_id() != id:
+		$Particles.restart()
+		$Kill.play()
+		$Sprite.hide()
+		$Camera/Hand3D.hide()
+		return
+	$VoiceChat.stop()
+	$UI/Baldi.show()
+	$Lose.play()
+	get_node(path).hide()
+
+#endregion
+
+#region CLIENT
+
+@rpc("authority", "call_local", "reliable")
+func play_sound(sound):
+	$Sounds.get_node(sound).play()
+#endregion

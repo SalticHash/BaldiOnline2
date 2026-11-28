@@ -6763,7 +6763,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.9
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.013509989, 0.145666, -11.9133)
 
 [node name="ExitTrigger" parent="Exits/Exit_004" unique_id=1368345779 node_paths=PackedStringArray("block") instance=ExtResource("14_6g8ja")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.98600006, 0.146, -11.413)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.9860001, 0.146, -11.413)
 block = NodePath("../../Block_004")
 
 [node name="Faculty Rooms" type="Node3D" parent="." unique_id=766873794]
@@ -8024,7 +8024,7 @@ collision_layer = 5
 shape = SubResource("ConcavePolygonShape3D_pofak")
 
 [node name="Wall_438" type="MeshInstance3D" parent="Outdoor Elements/OWalls" unique_id=1803608046]
-transform = Transform3D(0, 0.5, 0, 0, 0, 0.5, 0.5, 0, 0, 2.51351, 1.145667, -14.4133)
+transform = Transform3D(0, 0.5, 0, 0, 0, 0.5, 0.5, 0, 0, 2.51351, 0.14566693, -14.4133)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_iiy2q")
 
@@ -8765,6 +8765,7 @@ curve = SubResource("Curve3D_b8rm8")
 curve = SubResource("Curve3D_pq2rk")
 
 [node name="SweepRooms" type="Node3D" parent="." unique_id=723073780]
+visible = false
 
 [node name="Area3D" type="Area3D" parent="SweepRooms" unique_id=692947993]
 

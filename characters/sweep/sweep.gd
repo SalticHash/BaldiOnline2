@@ -31,6 +31,8 @@ func move():
 	if jumping_rope:
 		velocity.x = 0
 		velocity.z = 0
+	if override_velocity:
+		velocity = override_velocity.velocity * 0.99 + velocity * 0.3
 	move_and_slide()
 	global_position.y = max(global_position.y, 0.0)
 

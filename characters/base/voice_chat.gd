@@ -5,7 +5,7 @@ var recording: AudioStreamWAV
 @onready var player: BaseController = get_parent()
 
 func _ready() -> void:
-	return
+	if true: return
 	if multiplayer.get_unique_id() != player.id: return
 	var bus_index = AudioServer.get_bus_index(&"Record")
 	effect = AudioServer.get_bus_effect(bus_index, 0)

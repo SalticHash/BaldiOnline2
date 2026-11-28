@@ -8,6 +8,7 @@ func _ready() -> void:
 
 func balloon_exited(body: Node3D):
 	if body.popped or body.removed or !body.can_grab: return
+	if body.get_parent() != $Balloons: return
 	body.pop(random_pos())
 
 func random_pos() -> Vector3:
@@ -19,8 +20,9 @@ func random_pos() -> Vector3:
 	return local
 
 func pop_balloons() -> void:
-	for b in $Balloons.get_children(): b.update.rpc(&"no_interact")
-	await get_tree().create_timer(0.5).timeout
-	for b in $Balloons.get_children():
-		await get_tree().create_timer(0.1).timeout
+	var balloons = $Balloons.get_children()
+	balloons.shuffle()
+	for b in balloons: b.update.rpc(&"no_interact")
+	for b in balloons:
 		b.pop(Vector3.ZERO, false)
+		await get_tree().create_timer(randf_range(0.1, 0.3)).timeout

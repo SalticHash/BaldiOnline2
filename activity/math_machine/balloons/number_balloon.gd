@@ -16,11 +16,11 @@ var dir: Vector3 = Vector3.ZERO
 var hovered: bool = false
 
 func _ready() -> void:
-	$Label3D.text = str(value)
 	if !is_multiplayer_authority(): return
 	$Bounce.area_entered.connect(bounce)
 
 func bounce(balloon: Node3D):
+	if !balloon.is_in_group("balloon"): return
 	var normal = balloon.global_position.direction_to(global_position)
 	normal.y = 0.0
 	normal = normal.normalized()
@@ -34,19 +34,25 @@ func change_dir():
 	dir = Vector3(sin(a), 0, cos(a))
 	wander_time = randf_range(min_wander_time, max_wander_time)
 
-func _physics_process(delta: float) -> void:
-	if !is_multiplayer_authority(): return
-	if popped: return
-	wander_time -= delta
-	if !player: move(delta)
-	else: grabbed_move()
-
 func _process(delta: float) -> void:
 	$Sprite.offset.y = move_toward(
 		$Sprite.offset.y,
 		-55.0 if hovered else 0.0,
 		555.0 * delta
 	)
+func _physics_process(delta: float) -> void:
+	if !is_multiplayer_authority(): return
+
+	for body in $Bounce.get_overlapping_bodies():
+		if body.get_parent().is_in_group(&"math_machine"):
+			position = body.get_node("../SP").position
+	
+	if popped: return
+	wander_time -= delta
+	if !player: move(delta)
+	else: grabbed_move()
+
+
 
 func move(delta) -> void:
 	if wander_time <= 0.0: change_dir()
@@ -68,9 +74,10 @@ func grab(new_player: Node3D):
 	if player: return
 	player = new_player
 
-func release():
+func release(new_pos: Vector3):
 	if !is_multiplayer_authority(): return
 	player = null
+	position = new_pos
 
 var spawn_pos: Vector3
 func pop(new_position: Vector3, restore: bool = true):
@@ -78,7 +85,7 @@ func pop(new_position: Vector3, restore: bool = true):
 	if popped or removed:
 		if !restore: $PopTimer.stop()
 		return
-	release()
+	release(position)
 	spawn_pos = new_position
 	update.rpc(&"pop")
 	if restore: $PopTimer.start()
@@ -86,7 +93,7 @@ func pop(new_position: Vector3, restore: bool = true):
 var removed: bool = false
 func remove():
 	if !is_multiplayer_authority(): return
-	release()
+	release(position)
 	removed = true
 	update.rpc(&"remove")
 

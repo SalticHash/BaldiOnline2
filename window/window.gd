@@ -11,8 +11,8 @@ extends StaticBody3D
 func _ready() -> void:
 	$Mesh/Front.mesh = green_mesh if window_front == "normal" else wood_mesh
 	$Mesh/Front.material_override = front_material
-	$Sprites/Front.animation = window_front + "_normal"
+	$Sprites/Front.animation = window_front + "_broken"
 	
 	$Mesh/Back.mesh = green_mesh if window_back == "normal" else wood_mesh
 	$Mesh/Back.material_override = back_material
-	$Sprites/Back.animation = window_back + "_normal"
+	$Sprites/Back.animation = window_back + "_broken"

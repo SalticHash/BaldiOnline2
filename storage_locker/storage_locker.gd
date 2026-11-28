@@ -9,9 +9,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if !is_multiplayer_authority(): return
 	if !open: return
-	var d2 = Server.get_closest(Server.TYPE.PLAYER, global_position)[1]
-	if d2 > Server.get_player_reach():
-		Server.alert_baldi(78, $SP.global_position)
+	var closest = Server.get_closest(Server.TYPE.PLAYER, global_position)
+	if closest[1] > Server.get_player_reach():
+		Server.alert_baldi(78, closest[0], $SP.global_position)
 		change_state.rpc(false)
 
 # Client requests the current state.
@@ -52,5 +52,5 @@ func toggle_locker(id: int = -1):
 		push_error("Unreachable locker togled")
 		return
 	
-	if open: Server.alert_baldi(78, $SP.global_position)
+	if open: Server.alert_baldi(78, sender_inst, $SP.global_position)
 	change_state.rpc(!open)

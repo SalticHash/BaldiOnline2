@@ -162,9 +162,9 @@ stream = ExtResource("13_iorwe")
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1476681292]
 replication_config = SubResource("SceneReplicationConfig_m2lrt")
 
-[node name="Bounce" type="Area3D" parent="." unique_id=850073567]
+[node name="Bounce" type="Area3D" parent="." unique_id=850073567 groups=["balloon"]]
 collision_layer = 32
-collision_mask = 32
+collision_mask = 33
 
 [node name="Collision" type="CollisionShape3D" parent="Bounce" unique_id=529148358]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.461, 0)
@@ -173,11 +173,5 @@ shape = SubResource("BoxShape3D_jh3y0")
 [node name="PopTimer" type="Timer" parent="." unique_id=869465984]
 wait_time = 0.5
 one_shot = true
-
-[node name="Label3D" type="Label3D" parent="." unique_id=1060768271]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6267725, -0.02186954)
-pixel_size = 0.016
-billboard = 1
-text = "0"
 
 [connection signal="timeout" from="PopTimer" to="." method="_on_pop_timer_timeout"]

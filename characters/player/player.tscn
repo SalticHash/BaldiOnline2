@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b4nu4m3rm0b6t" path="res://characters/player/NotebookIcon_Sheet.png" id="12_gqopd"]
 [ext_resource type="PackedScene" uid="uid://cae78tmpqm2rq" path="res://characters/base/MeterProgressBar/MeterProgressBar.tscn" id="13_8v65i"]
 [ext_resource type="AudioStream" uid="uid://bnr1df7405ua" path="res://characters/player/NotebookCollect.wav" id="14_icpky"]
+[ext_resource type="FontFile" uid="uid://c82nhh6cv1uqt" path="res://font/comic-sans-ms-font-family/COMIC.TTF" id="14_pagxt"]
 [ext_resource type="Texture2D" uid="uid://cn0pr8dixu5p4" path="res://item/textures/thumb/StretchyGloveIcon_Small.png" id="14_sbttr"]
 [ext_resource type="AudioStream" uid="uid://bn4r1n3g4rk4y" path="res://item/ErrorMaybe.wav" id="15_4cx7u"]
 [ext_resource type="AudioStream" uid="uid://b1u4pcxfc3q2w" path="res://characters/player/ChipCrunch.wav" id="15_8l73k"]
@@ -36,6 +37,7 @@
 [ext_resource type="AudioStream" uid="uid://cbgxmp8flr2ua" path="res://characters/player/GloveSnapOn.wav" id="28_e0pgg"]
 [ext_resource type="AudioStream" uid="uid://drfqkwm1fr1n4" path="res://item/Scissors.wav" id="35_jepfe"]
 [ext_resource type="AudioStream" uid="uid://cpc2t68hrn3u1" path="res://item/CoinDrop.wav" id="36_iopkm"]
+[ext_resource type="AudioStream" uid="uid://c8iibfmkxvcg4" path="res://characters/player/kill.wav" id="38_2qgir"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jh3y0"]
 radius = 0.10498047
@@ -190,6 +192,11 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_m2lrt"]
+font = ExtResource("14_pagxt")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_jh3y0"]
 radius = 71.0
 
@@ -203,6 +210,33 @@ stream_4/stream = ExtResource("21_e0pgg")
 stream_5/stream = ExtResource("22_sbttr")
 stream_6/stream = ExtResource("23_6pj1p")
 stream_7/stream = ExtResource("24_3a7m8")
+
+[sub_resource type="Curve" id="Curve_o3aog"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.7840204, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_2dco2"]
+curve = SubResource("Curve_o3aog")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jh3y0"]
+lifetime_randomness = 1.0
+direction = Vector3(0, 1.069, 0)
+spread = 55.681
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+scale_curve = SubResource("CurveTexture_2dco2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4u0j"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_togml"]
+material = SubResource("StandardMaterial3D_a4u0j")
+shape = 0
+size = 0.025
+section_segments = 8
 
 [node name="Player" unique_id=991214998 groups=["player"] instance=ExtResource("1_508ok")]
 collision_layer = 768
@@ -500,9 +534,8 @@ offset_left = 65.0
 offset_top = 30.0
 offset_right = 139.0
 offset_bottom = 97.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
 text = "0/7"
+label_settings = SubResource("LabelSettings_m2lrt")
 
 [node name="Effects" type="VBoxContainer" parent="UI" index="8" unique_id=143944519]
 layout_mode = 1
@@ -609,3 +642,17 @@ stream = ExtResource("35_jepfe")
 
 [node name="quarter" type="AudioStreamPlayer3D" parent="Sounds" index="4" unique_id=1162085182]
 stream = ExtResource("36_iopkm")
+
+[node name="Kill" type="AudioStreamPlayer3D" parent="." index="17" unique_id=200184756]
+stream = ExtResource("38_2qgir")
+
+[node name="Particles" type="GPUParticles3D" parent="." index="18" unique_id=965857731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39508927, 0)
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 0.09999999999999999
+process_material = SubResource("ParticleProcessMaterial_jh3y0")
+draw_pass_1 = SubResource("RibbonTrailMesh_togml")
