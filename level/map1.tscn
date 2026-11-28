@@ -25,10 +25,6 @@ item/0/shapes = []
 item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/0/navigation_layers = 1
 
-[sub_resource type="Environment" id="Environment_jh3y0"]
-adjustment_enabled = true
-adjustment_brightness = 0.4
-
 [node name="World" type="Node3D" unique_id=330580091]
 script = ExtResource("1_8h20c")
 
@@ -54,12 +50,10 @@ spawn_path = NodePath("..")
 
 [node name="EscapeMusic" type="AudioStreamPlayer" parent="." unique_id=1414626487]
 stream = ExtResource("5_ap4oy")
-pitch_scale = 0.2
 
 [node name="AntiHearing" type="AudioStreamPlayer" parent="." unique_id=630183235]
 stream = ExtResource("7_tjhul")
 volume_db = -10.0
-pitch_scale = 0.2
 
 [node name="GridMap" type="GridMap" parent="." unique_id=996651160]
 mesh_library = SubResource("MeshLibrary_1d8oa")
@@ -243,6 +237,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -18)
 
 [node name="Player3" parent="." unique_id=1828578751 instance=ExtResource("13_uqr5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -17)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=628999948]
-environment = SubResource("Environment_jh3y0")

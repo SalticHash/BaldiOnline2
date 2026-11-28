@@ -1,6 +1,6 @@
 extends BaseController
 
-const SPEED: float = 1.0#7.5 #TODO FIX
+const SPEED: float = 7.5
 
 var slapping: bool = false
 var slap_buffer: float = 0.0
@@ -51,16 +51,15 @@ func _physics_process(delta: float) -> void:
 
 func move(delta: float):
 	slap_buffer -= delta
-	#TODO FIX
 	if slap_interval > 0.0: slap_interval -= delta
-	#if slapping and slap_interval <= 0.0:
-		#slap_buffer = SLAP_BUFFER
-		#slap_interval = SLAP_INTERVAL
-		#slap_effect.rpc()
-	if true:#slap_buffer > 0.0:
+	if slapping and slap_interval <= 0.0:
+		slap_buffer = SLAP_BUFFER
+		slap_interval = SLAP_INTERVAL
+		slap_effect.rpc()
+	if slap_buffer > 0.0:
 		var direction := (transform.basis * Vector3.FORWARD).normalized()
-		velocity.x = direction.x * remap(SLAP_INTERVAL, 1.0, 0.3, 1.0, 2.0)
-		velocity.z = direction.z * remap(SLAP_INTERVAL, 1.0, 0.3, 1.0, 2.0)
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
 	else:
 		velocity.x = 0
 		velocity.z = 0
@@ -108,16 +107,14 @@ func praise_effect(num: int):
 
 func bad_math():
 	anger += 1.0
-	return
-	print("ANGRY")
 
 func praise(activity: StringName):
 	if !is_multiplayer_authority(): return
-	return
 	match activity:
 		&"math":
 			praise_effect.rpc(randi_range(0, 5))
 			praise_time += 5.0
+
 func _process(delta: float) -> void:
 	super(delta)
 	if praise_time > 0.0:
